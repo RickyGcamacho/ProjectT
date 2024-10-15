@@ -86,5 +86,7 @@ crashlytics-build.properties
 
 # Excluir desktop.ini.meta en todas las ubicaciones
 desktop.ini.meta
+desktop.ini
+
 
 
