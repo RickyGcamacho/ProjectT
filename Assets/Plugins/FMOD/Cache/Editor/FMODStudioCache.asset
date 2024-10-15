@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/environment_openables.bank
   Name: environment_openables
   StudioPath: bank:/environment/environment_openables
-  lastModified: 638645591406416214
+  lastModified: 638645596237195150
   FileSizes:
   - Name: Desktop
     Value: 494
@@ -252,7 +252,7 @@ MonoBehaviour:
   - {fileID: 420789510835918352}
   StringsBanks:
   - {fileID: 8019213994784591755}
-  cacheTime: 638645591406416214
+  cacheTime: 638645596237195150
   cacheVersion: 131620
 --- !u!114 &420789510835918352
 MonoBehaviour:
@@ -269,7 +269,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638645591406303446
+  lastModified: 638645596237094979
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -491,7 +491,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/environment_misc.bank
   Name: environment_misc
   StudioPath: bank:/environment/environment_misc
-  lastModified: 638645591406406209
+  lastModified: 638645596237175072
   FileSizes:
   - Name: Desktop
     Value: 2495136
@@ -531,7 +531,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638645591406316896
+  lastModified: 638645596237104941
   FileSizes:
   - Name: Desktop
     Value: 1178
@@ -551,7 +551,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/ui.bank
   Name: ui
   StudioPath: bank:/ui
-  lastModified: 638645591406416214
+  lastModified: 638645596237195150
   FileSizes:
   - Name: Desktop
     Value: 43040
