@@ -60,6 +60,7 @@ sysinfo.txt
 *.aab
 *.unitypackage
 *.app
+*desktop.ini.meta
 *desktop.ini
 
 # Crashlytics generated file
@@ -77,11 +78,5 @@ crashlytics-build.properties
 /Assets/Files/*.tmp.driveupload
 /Assets/Files/*.tmp.drivedownload
 
+# Excluir todos los archivos .meta en la carpeta Files y sus subcarpetas
 
-# FMOD
-fmod.log
-fmod_editor.log
-/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
-/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset.meta
-
-/Assets/Plugins/FMOD/Cache/Editor.meta
