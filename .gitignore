@@ -76,8 +76,11 @@ crashlytics-build.properties
 
 /.idea
 /ProjectSettings/Packages/com.unity.testtools.codecoverage
-/Assets/Graphics/.tmp.driveupload
-/Assets/Audio/.tmp.driveupload
+/Assets/Graphics/*.tmp.driveupload
+/Assets/Audio/*.tmp.driveupload
+/Assets/Graphics/*.tmp.driveupload
+/Assets/Audio/*.tmp.drivedownload
+/Assets/Graphics/*.tmp.drivedownload
 
 
 # Excluir todos los archivos .meta en la carpeta Audio y subcarpetas
