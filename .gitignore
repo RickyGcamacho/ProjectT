@@ -74,9 +74,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 *.ini
 
-/.idea
-/ProjectSettings/Packages/com.unity.testtools.codecoverage
-
 # Excluir archivos temporales en la carpeta Files
 /Assets/Files/*.tmp.driveupload
 /Assets/Files/*.tmp.drivedownload
@@ -86,7 +83,3 @@ crashlytics-build.properties
 
 # Excluir desktop.ini.meta en todas las ubicaciones
 desktop.ini.meta
-desktop.ini
-
-
-
