@@ -65,3 +65,4 @@
 [LOG] SoundI::release                          : environment_radio_static (00000241307093E8)
 [LOG] SoundI::release                          :     environment_radio_static (0000024127AA0418)
 [LOG] SoundI::release                          :     environment_radio_static (00000241E8E445A8)
+[ERR] assert                                   : assertion: 'gSystemInitCount == 0' failed
