@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5cd3a889-11ed-4cb9-a5fe-fc9c369e1f2a}">
+		<property name="assetPath">
+			<value>foley_player_steps/foley_player_steps_run_c.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b9bd1177-7e95-4758-8a90-211c79bd7098}</destination>
+		</relationship>
+	</object>
+</objects>

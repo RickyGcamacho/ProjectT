@@ -526,8 +526,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: D:/Godot/FMOD/ProjectT/ProjectT.fspro
-  sourceBankPath: D:/Godot/FMOD/ProjectT/Build
+  sourceProjectPath: Assets/Audio/FMOD/ProjectT/ProjectT.fspro
+  sourceBankPath: Assets/Audio/FMOD/ProjectT/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -552,6 +552,7 @@ MonoBehaviour:
   - Master
   Banks:
   - environment_misc
+  - environment_openables
   - ui
   BanksToLoad: []
   LiveUpdatePort: 9264
