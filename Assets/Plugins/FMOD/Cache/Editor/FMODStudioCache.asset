@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: D:/Godot/FMOD/ProjectT/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638645383177874592
+  lastModified: 638645409082915181
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -136,10 +136,10 @@ MonoBehaviour:
   Path: D:/Godot/FMOD/ProjectT/Build/Desktop/environment_misc.bank
   Name: environment_misc
   StudioPath: bank:/environment/environment_misc
-  lastModified: 638645383201240224
+  lastModified: 638645409090051996
   FileSizes:
   - Name: Desktop
-    Value: 2006784
+    Value: 2495136
   Exists: 1
 --- !u!114 &-1503993428543585791
 MonoBehaviour:
@@ -191,12 +191,13 @@ MonoBehaviour:
   - {fileID: -1503993428543585791}
   - {fileID: 4029911237658908905}
   - {fileID: -6000517184612530638}
+  - {fileID: 6106477814401303052}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8393146162074183959}
   StringsBanks:
   - {fileID: 2295576567867976792}
-  cacheTime: 638645383201240224
+  cacheTime: 638645409090051996
   cacheVersion: 131620
 --- !u!114 &2295576567867976792
 MonoBehaviour:
@@ -213,10 +214,10 @@ MonoBehaviour:
   Path: D:/Godot/FMOD/ProjectT/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638645383177884563
+  lastModified: 638645409082920238
   FileSizes:
   - Name: Desktop
-    Value: 1072
+    Value: 1126
   Exists: 1
 --- !u!114 &4029911237658908905
 MonoBehaviour:
@@ -245,3 +246,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &6106477814401303052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/environment_misc/environment_radiostatic
+  m_EditorClassIdentifier: 
+  Path: event:/environment_misc/environment_radiostatic
+  Guid:
+    Data1: 726158841
+    Data2: 1085061577
+    Data3: -2083729020
+    Data4: 794048677
+  Banks:
+  - {fileID: -2675459014920983552}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 44730
