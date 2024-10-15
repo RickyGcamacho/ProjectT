@@ -79,3 +79,5 @@ crashlytics-build.properties
 /ProjectSettings/Packages/com.unity.testtools.codecoverage
 /Assets/Graphics/.tmp.driveupload
 /Assets/Audio/.tmp.driveupload
+/Assets/Audio/.meta
+/Assets/Graphics/.meta
