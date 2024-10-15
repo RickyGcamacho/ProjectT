@@ -73,11 +73,15 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 *.ini
-/Assets/Graphics/.meta
-/Assets/Audio/.meta
+
 /.idea
 /ProjectSettings/Packages/com.unity.testtools.codecoverage
 /Assets/Graphics/.tmp.driveupload
 /Assets/Audio/.tmp.driveupload
-/Assets/Audio/.meta
-/Assets/Graphics/.meta
+
+
+# Excluir todos los archivos .meta en la carpeta Audio y subcarpetas
+/Assets/Audio/*.meta
+
+# Excluir todos los archivos .meta en la carpeta Graphics y subcarpetas
+/Assets/Graphics/*.meta
