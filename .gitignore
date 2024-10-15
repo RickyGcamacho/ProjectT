@@ -76,9 +76,10 @@ crashlytics-build.properties
 
 /.idea
 /ProjectSettings/Packages/com.unity.testtools.codecoverage
+
+# Excluir archivos temporales en la carpeta Files
 /Assets/Files/*.tmp.driveupload
 /Assets/Files/*.tmp.drivedownload
 
-
-# Excluir todos los archivos .meta en la carpeta Files
-/Assets/Files/*.meta
+# Excluir todos los archivos .meta en la carpeta Files y sus subcarpetas
+/Assets/Files/**/*.meta
