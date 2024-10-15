@@ -83,3 +83,8 @@ crashlytics-build.properties
 
 # Excluir todos los archivos .meta en la carpeta Files y sus subcarpetas
 /Assets/Files/**/*.meta
+
+# Excluir desktop.ini.meta en todas las ubicaciones
+desktop.ini.meta
+
+
