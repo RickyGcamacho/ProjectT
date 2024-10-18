@@ -1,4 +1,9 @@
-﻿public enum SoundsPlayer
+﻿
+public enum Sounds
+{
+
+}
+public enum SoundsPlayer
 {
     Default,
     PLAYER_STEPS,
