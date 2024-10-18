@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MenuShake : MonoBehaviour
 {
-    public float moveDistance = 1f; // Distancia que la cámara se moverá hacia adelante y hacia atrás
-    public float moveSpeed = 2f;    // Velocidad de movimiento de la cámara
+    [SerializeField] private float moveDistance = 6f; // Distancia que la cámara se moverá hacia adelante y hacia atrás
+    [SerializeField] private float moveSpeed = 2f;    // Velocidad de movimiento de la cámara
     private Vector3 initialPosition; // Posición inicial de la cámara
 
     void Start()
