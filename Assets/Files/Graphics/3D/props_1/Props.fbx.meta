@@ -3,7 +3,107 @@ guid: 85e361a9913994945b6f9d8a959c487b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: armchair
+    second: {fileID: 2800000, guid: 2d81794d4fff99e4b9ac02261daaa784, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bottle
+    second: {fileID: 2800000, guid: d0785bc574466a64fb368fb5ae8a5b63, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_office
+    second: {fileID: 2800000, guid: e6f0e50e025e13347bf897ea8b8edc92, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chairs_link
+    second: {fileID: 2800000, guid: 3b4826a9492f6454a80875482c9eda72, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: clonazepam
+    second: {fileID: 2800000, guid: 4046648c58871d24686f83ac535e9d3e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: generator
+    second: {fileID: 2800000, guid: 98c8b0a34d6b89545a783893b6e64c54, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: jerry_can
+    second: {fileID: 2800000, guid: 83f4d1c4ae0a7774f982a32b2641f4e4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: keys_keys_v1_BaseColor
+    second: {fileID: 2800000, guid: 47a7b8e079a51904eb59840e94c59022, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: lamp_ceiling
+    second: {fileID: 2800000, guid: d5b5753b13d460642a9a543afaf6e8da, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: lamp_table
+    second: {fileID: 2800000, guid: 1e2cfa2e9905a17438f90650a82edd3f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plant_01
+    second: {fileID: 2800000, guid: 747c7b32417736d47990fbd6b69a166a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plant_02
+    second: {fileID: 2800000, guid: 7a751e7dfdf4db341b4f0f02147acfab, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: radio
+    second: {fileID: 2800000, guid: 325434e819d16ff40b65dd373224e80c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: table_bedside
+    second: {fileID: 2800000, guid: 001c8077e9aafae4284d157f329580ef, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: table_coffee
+    second: {fileID: 2800000, guid: f297f592a7f77044398fd598cbf385af, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: taza
+    second: {fileID: 2800000, guid: 932d9f5e9fb4e0d42b2111b7de9b3d19, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: telephone_telephone_v2_BaseColor_v3
+    second: {fileID: 2800000, guid: c2608e52bc3f92e4e993c6c45a3c7fdf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: trash_bin
+    second: {fileID: 2800000, guid: 56924fb0a58f62f4fb6698185498a88d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tray
+    second: {fileID: 2800000, guid: eecf9edfb995df14ab48ad352ce3eb6c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tv
+    second: {fileID: 2800000, guid: 6edd09327b01f884ba522e1d9c0c2fd5, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -67,7 +167,7 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
     strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
