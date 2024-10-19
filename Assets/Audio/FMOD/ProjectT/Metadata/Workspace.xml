@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Workspace" id="{726eecb8-d31d-45a5-a3b5-e1a2ceb242fd}">
-		<property name="builtBanksOutputDirectory">
-			<value>C:/Users/Batata/Documents/GitHub/ProjectT/Assets/Audio/FMOD Build</value>
-		</property>
+		<property name="builtBanksOutputDirectory" />
 		<relationship name="masterEventFolder">
 			<destination>{7fbf61b8-2481-4b92-b89b-4b40439e7a7a}</destination>
 		</relationship>
