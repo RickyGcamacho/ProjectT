@@ -50,7 +50,7 @@ public class FMODEvents : MonoBehaviour
     {
         EventReferencesPlayer = new Dictionary<SoundsPlayer, EventReference>
         {
-            { SoundsPlayer.PLAYER_STEPS, playerSteps_SEvent },
+            { SoundsPlayer.PLAYER_WALK, playerSteps_SEvent },
             { SoundsPlayer.FLASHLIGHT_INTERACTION, flashLight_SEvent },
             { SoundsPlayer.PLAYER_RUN, playerRun_SEvent },
             { SoundsPlayer.PLAYER_HEARTBEATS, heartBeats_SEvent },

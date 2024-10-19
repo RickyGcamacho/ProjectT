@@ -446,6 +446,126 @@ PrefabInstance:
       propertyPath: m_Name
       value: FMODManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <grab_SEvent>k__BackingField.Path
+      value: event:/ui/ui_accept
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <heal_SEvent>k__BackingField.Path
+      value: event:/environment_openables/environment_drawer_close
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <playerRun_SEvent>k__BackingField.Path
+      value: event:/environment_misc/environment_generator
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <flashLight_SEvent>k__BackingField.Path
+      value: event:/environment_openables/environment_drawer_close
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <grab_SEvent>k__BackingField.Guid.Data1
+      value: -1382701454
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <grab_SEvent>k__BackingField.Guid.Data2
+      value: 1078185824
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <grab_SEvent>k__BackingField.Guid.Data3
+      value: 1159459001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <grab_SEvent>k__BackingField.Guid.Data4
+      value: 1615697027
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <heal_SEvent>k__BackingField.Guid.Data1
+      value: -1238163541
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <heal_SEvent>k__BackingField.Guid.Data2
+      value: 1107381966
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <heal_SEvent>k__BackingField.Guid.Data3
+      value: -1095408235
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <heal_SEvent>k__BackingField.Guid.Data4
+      value: 1691045486
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <heartBeats_SEvent>k__BackingField.Path
+      value: event:/environment_misc/environment_radiostatic
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <playerSteps_SEvent>k__BackingField.Path
+      value: event:/player/foley_player_flashlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <playerRun_SEvent>k__BackingField.Guid.Data1
+      value: 1954994697
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <playerRun_SEvent>k__BackingField.Guid.Data2
+      value: 1200361606
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <playerRun_SEvent>k__BackingField.Guid.Data3
+      value: -837264965
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <playerRun_SEvent>k__BackingField.Guid.Data4
+      value: 1244528115
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <flashLight_SEvent>k__BackingField.Guid.Data1
+      value: -1238163541
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <flashLight_SEvent>k__BackingField.Guid.Data2
+      value: 1107381966
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <flashLight_SEvent>k__BackingField.Guid.Data3
+      value: -1095408235
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <flashLight_SEvent>k__BackingField.Guid.Data4
+      value: 1691045486
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <heartBeats_SEvent>k__BackingField.Guid.Data1
+      value: 1101767782
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <heartBeats_SEvent>k__BackingField.Guid.Data2
+      value: 1126877043
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <heartBeats_SEvent>k__BackingField.Guid.Data3
+      value: 1103516819
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <heartBeats_SEvent>k__BackingField.Guid.Data4
+      value: -1202171831
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <playerSteps_SEvent>k__BackingField.Guid.Data1
+      value: -2123317091
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <playerSteps_SEvent>k__BackingField.Guid.Data2
+      value: 1168827579
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <playerSteps_SEvent>k__BackingField.Guid.Data3
+      value: -77527897
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <playerSteps_SEvent>k__BackingField.Guid.Data4
+      value: 1467314048
+      objectReference: {fileID: 0}
     - target: {fileID: 5021336704071717300, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
