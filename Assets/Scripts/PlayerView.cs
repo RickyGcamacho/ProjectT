@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerView : ActorView
 {
-    [field: SerializeField] private SoundsPlayer _stepsSfx;
-    [field: SerializeField] private SoundsPlayer _grabSfx;
+    [field: SerializeField] private Sounds _stepsSfx;
+    [field: SerializeField] private Sounds _grabSfx;
 
 
     public override void SetReferences()

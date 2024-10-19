@@ -1,11 +1,7 @@
-﻿
-public enum Sounds
-{
-
-}
-public enum SoundsPlayer
+﻿public enum Sounds
 {
     Default,
+
     PLAYER_WALK,
     PLAYER_RUN,
     FLASHLIGHT_INTERACTION,
@@ -13,14 +9,15 @@ public enum SoundsPlayer
     PLAYER_HEAL,
     PLAYER_GRAB,
 
-}
-
-public enum SoundsEnemy
-{
-    Default,
     ENEMY_STEPS,
     ENEMY_RUN,
-    ENEMY_DETECT
+    ENEMY_DETECT,
+
+    UI_MOVECURSOR,
+    UI_PLAYBUTTON,
+    UI_MUSIC,
 
 }
+
+
 

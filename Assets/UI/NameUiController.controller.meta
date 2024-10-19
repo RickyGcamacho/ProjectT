@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/UI/NameUiController.controller.meta
+guid: a77590e5766883e409804e725f1723b9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+========
+guid: 6343eeb40e8b87c46a7797517de43f66
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+>>>>>>>> sound:Assets/Plugins/FMOD/Resources/FMODStudioSettings.asset.meta
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
