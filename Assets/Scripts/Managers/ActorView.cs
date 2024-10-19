@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class ActorView : MonoBehaviour
 {
-    protected Dictionary<SoundsPlayer, FMODUnity.EventReference> _dicReferences;
+    protected Dictionary<Sounds, FMODUnity.EventReference> _dicReferences;
 
-    public Dictionary<SoundsPlayer, EventInstance> _sounds { get; private set; }
+    public Dictionary<Sounds, EventInstance> _sounds { get; private set; }
 
     protected virtual void Start()
     {
@@ -19,7 +19,7 @@ public abstract class ActorView : MonoBehaviour
     }
     private void InitializeInstances()
     {
-        _sounds = new Dictionary<SoundsPlayer, EventInstance>();
+        _sounds = new Dictionary<Sounds, EventInstance>();
         var eventReferences = _dicReferences;
 
         foreach (var reference in eventReferences)
@@ -28,7 +28,7 @@ public abstract class ActorView : MonoBehaviour
         }
     }
 
-    public void PlaySoundSFX(SoundsPlayer soundKey)
+    public void PlaySoundSFX(Sounds soundKey)
     {
         if (_sounds.ContainsKey(soundKey))
         {
@@ -36,7 +36,7 @@ public abstract class ActorView : MonoBehaviour
         }
     }
 
-    public void StopSoundSFX(SoundsPlayer soundKey, STOP_MODE mode)
+    public void StopSoundSFX(Sounds soundKey, STOP_MODE mode)
     {
         if (_sounds.ContainsKey(soundKey))
         {
@@ -44,7 +44,7 @@ public abstract class ActorView : MonoBehaviour
         }
     }
 
-    public void UpdateSound(SoundsPlayer soundKey)
+    public void UpdateSound(Sounds soundKey)
     {
         if (_sounds.TryGetValue(soundKey, out EventInstance soundInstance))
         {
