@@ -6,8 +6,8 @@ using UnityEngine;
 public class PlayerActions : MonoBehaviour
 {
     [Header("Walk Paramenter")]
-    [SerializeField] private float speed = 5f;
-    private float x,y;
+    [SerializeField] private float speedWalk;
+
 
     [Header("Look Paramenter")]
     [SerializeField, Range(1, 10)] private float lookSpeedX;
@@ -15,25 +15,29 @@ public class PlayerActions : MonoBehaviour
     [SerializeField, Range(1, 180)] private float lowerLookLimit;
     [SerializeField, Range(1, 180)] private float uperLookLimit;
 
-    [Header("Jump Paramenter")]
-    private Rigidbody rb;
-    [SerializeField] private float jumpForce;
-    private bool isGround;
+   
+
 
     [Header("Zoom Parameters")]
     private Coroutine zoomRoutine;
     [SerializeField] private float timeToZoom,zoomFOV;
     private float defaultFOV;
 
+    [Header("Run Parameters")]
+    [SerializeField] private float runSpeed;
+
+    [Header("Parameters")]
+    [SerializeField] private float height, crouchedHeight, crouchedSpeed;
 
     private Camera playerCamera;
     private Vector3 moveDirection;
     private Vector2 currentInput;
-    private float rotationX;
+    private float rotationX,speed,x, y;
+
+    public float Speed { get => speed; set => speed = value; }
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
         playerCamera = GetComponentInChildren<Camera>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -55,26 +59,23 @@ public class PlayerActions : MonoBehaviour
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
 
-        transform.Translate(Vector3.forward * y * speed * Time.deltaTime);
-
-        if (isGround && Input.GetKey(KeyCode.Space))
-        {
-            rb.AddForce(Vector3.up * jumpForce * Time.deltaTime, ForceMode.Impulse);
-        }
-
-        float height = transform.position.y;
-        float crouched;
+        transform.Translate(Vector3.forward * y * Speed * Time.deltaTime);
+        height = transform.position.y;
+        Speed = speedWalk;
         if (Input.GetKey(KeyCode.LeftControl))
         {
-           height = 0.3f;
-           crouched = 1; 
+           height = crouchedHeight;
+           Speed = crouchedSpeed;
         }
-        else
-        {
-            crouched = 5;
-        }
+
         transform.position = new Vector3(transform.position.x,height,transform.position.z);
-        speed = crouched;
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            Speed = runSpeed;
+        }
+
+        
     }
 
 
@@ -126,15 +127,5 @@ public class PlayerActions : MonoBehaviour
 
         playerCamera.fieldOfView = targetFOV;
         zoomRoutine = null;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        isGround = true;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        isGround = false;
     }
 }
