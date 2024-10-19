@@ -6,12 +6,12 @@ public enum Sounds
 public enum SoundsPlayer
 {
     Default,
-    PLAYER_STEPS,
-    PLAYER_RUN,
+    PLAYER_WALK,
     FLASHLIGHT_INTERACTION,
     PLAYER_HEARTBEATS,
     PLAYER_HEAL,
-    PLAYER_GRAB
+    PLAYER_GRAB,
+
 }
 
 public enum SoundsEnemy
