@@ -80,3 +80,5 @@ crashlytics-build.properties
 
 # Excluir todos los archivos .meta en la carpeta Files y sus subcarpetas
 
+# JetBrains Rider cache directory
+/.idea
