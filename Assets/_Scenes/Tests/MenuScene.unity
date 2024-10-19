@@ -2459,15 +2459,15 @@ RectTransform:
   m_GameObject: {fileID: 1546998228}
   m_LocalRotation: {x: 0, y: 0, z: 0.052335896, w: 0.9986295}
   m_LocalPosition: {x: 0, y: 0, z: 128.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.1374, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 267704739}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 36, y: -29.2}
-  m_SizeDelta: {x: 20, y: 5}
+  m_AnchoredPosition: {x: 35.9, y: -25.6}
+  m_SizeDelta: {x: 20, y: 16.604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1546998230
 MonoBehaviour:
@@ -2491,8 +2491,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "TURNO \nNOCTURNO"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1edb81291bbf9d34fa7b2bb42bba6c98, type: 2}
-  m_sharedMaterial: {fileID: -568647781922664521, guid: 1edb81291bbf9d34fa7b2bb42bba6c98, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 00a19918f97ec174db46b38ef2fb6061, type: 2}
+  m_sharedMaterial: {fileID: 4806448390769347317, guid: 00a19918f97ec174db46b38ef2fb6061, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2516,8 +2516,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 110
-  m_fontSizeBase: 110
+  m_fontSize: 82.58
+  m_fontSizeBase: 82.58
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2581,7 +2581,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -568647781922664521, guid: 1edb81291bbf9d34fa7b2bb42bba6c98, type: 2}
+  - {fileID: 4806448390769347317, guid: 00a19918f97ec174db46b38ef2fb6061, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
