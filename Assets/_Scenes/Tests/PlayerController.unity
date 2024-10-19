@@ -333,7 +333,6 @@ GameObject:
   - component: {fileID: 497929647}
   - component: {fileID: 497929646}
   - component: {fileID: 497929650}
-  - component: {fileID: 497929651}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -458,26 +457,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &497929651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 497929644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7c56b59082f9f54686b7a79385da24f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  lookSpeedX: 2
-  lookSpeedY: 2
-  lowerLookLimit: 80
-  uperLookLimit: 80
-  jumpForce: 100
-  timeToZoom: 0.3
-  zoomFOV: 30
 --- !u!1 &1759201028
 GameObject:
   m_ObjectHideFlags: 0
