@@ -7,6 +7,7 @@ public enum SoundsPlayer
 {
     Default,
     PLAYER_WALK,
+    PLAYER_RUN,
     FLASHLIGHT_INTERACTION,
     PLAYER_HEARTBEATS,
     PLAYER_HEAL,

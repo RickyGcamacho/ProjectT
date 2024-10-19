@@ -47,6 +47,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 46912
   Exists: 1
+--- !u!114 &-6024338390643888765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/player/player_run
+  m_EditorClassIdentifier: 
+  Path: event:/player/player_run
+  Guid:
+    Data1: -112587172
+    Data2: 1220208488
+    Data3: 1320720011
+    Data4: 1476451649
+  Banks:
+  - {fileID: 2994667019893180942}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5717052288870096655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +251,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1400
   Exists: 1
+--- !u!114 &-139568172759344883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/player/player_crouch
+  m_EditorClassIdentifier: 
+  Path: event:/player/player_crouch
+  Guid:
+    Data1: 2026391598
+    Data2: 1313618899
+    Data3: 1829885859
+    Data4: -1590982974
+  Banks:
+  - {fileID: 2994667019893180942}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,12 +309,15 @@ MonoBehaviour:
   - {fileID: 7099042282014350704}
   - {fileID: -4847856385256359405}
   - {fileID: -5717052288870096655}
+  - {fileID: -139568172759344883}
+  - {fileID: -6024338390643888765}
+  - {fileID: 4542312307172675730}
   EditorParameters: []
   MasterBanks:
   - {fileID: -399884599050519719}
   StringsBanks:
   - {fileID: 6682785624168726525}
-  cacheTime: 638648944130233893
+  cacheTime: 638648955873326719
   cacheVersion: 131620
 --- !u!114 &344643505259668082
 MonoBehaviour:
@@ -350,11 +407,38 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/player.bank
   Name: player
   StudioPath: bank:/player
-  lastModified: 638648944130233893
+  lastModified: 638648955873326719
   FileSizes:
   - Name: Desktop
-    Value: 10560
+    Value: 138624
   Exists: 1
+--- !u!114 &4542312307172675730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/player/player_walk
+  m_EditorClassIdentifier: 
+  Path: event:/player/player_walk
+  Guid:
+    Data1: -1666871131
+    Data2: 1331741249
+    Data3: 938044292
+    Data4: -1851839255
+  Banks:
+  - {fileID: 2994667019893180942}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5273333568347557492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,10 +508,10 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638648944130063842
+  lastModified: 638648955873306732
   FileSizes:
   - Name: Desktop
-    Value: 1698
+    Value: 1834
   Exists: 1
 --- !u!114 &7099042282014350704
 MonoBehaviour:
