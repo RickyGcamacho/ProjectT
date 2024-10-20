@@ -29,7 +29,6 @@
 			<destination>{593374f5-6d82-4a02-add4-eee6567306af}</destination>
 		</relationship>
 		<relationship name="parameters">
-			<destination>{3465bca4-f877-48ab-8ba8-afb27054c87d}</destination>
 			<destination>{4c906bcb-0d4d-4989-90ab-9b47d96d9bb7}</destination>
 		</relationship>
 		<relationship name="banks">
@@ -43,7 +42,6 @@
 	</object>
 	<object class="MasterTrack" id="{da44b694-f64f-4268-8418-bf056b825c54}">
 		<relationship name="modules">
-			<destination>{c7de89d3-a7c0-44ae-855c-58a1ee4f9223}</destination>
 			<destination>{b646d0b3-6c1f-4d1c-a9a8-84a6b2d521e7}</destination>
 			<destination>{a8b20819-b938-4f9a-8823-c67097b45367}</destination>
 		</relationship>
@@ -69,11 +67,6 @@
 			<value>false</value>
 		</property>
 	</object>
-	<object class="ActionSheet" id="{3465bca4-f877-48ab-8ba8-afb27054c87d}">
-		<relationship name="modules">
-			<destination>{c7de89d3-a7c0-44ae-855c-58a1ee4f9223}</destination>
-		</relationship>
-	</object>
 	<object class="ParameterProxy" id="{4c906bcb-0d4d-4989-90ab-9b47d96d9bb7}">
 		<relationship name="modules">
 			<destination>{b646d0b3-6c1f-4d1c-a9a8-84a6b2d521e7}</destination>
@@ -94,7 +87,6 @@
 			<destination>{9ca785b6-9fde-497f-9128-9f1f3a6b3d28}</destination>
 		</relationship>
 	</object>
-	<object class="MultiSound" id="{c7de89d3-a7c0-44ae-855c-58a1ee4f9223}" />
 	<object class="SingleSound" id="{b646d0b3-6c1f-4d1c-a9a8-84a6b2d521e7}">
 		<relationship name="audioFile">
 			<destination>{fb5e5e8b-0fb9-4a12-8415-cb18ce2b480c}</destination>

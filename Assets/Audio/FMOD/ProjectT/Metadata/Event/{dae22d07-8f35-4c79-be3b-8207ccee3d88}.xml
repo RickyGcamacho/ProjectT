@@ -5,7 +5,7 @@
 			<value>player_calmdown</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{2b63ca2a-a429-4fd4-9447-a16cfb90b566}</destination>
@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{5b9266bb-23ca-475b-b654-b0da97211eb4}">
+		<property name="volume">
+			<value>-2.5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{a03d1446-4e71-49a8-8d74-ca7432c788db}</destination>
 		</relationship>
@@ -96,7 +99,7 @@
 	<object class="MixerBusEffectChain" id="{a03d1446-4e71-49a8-8d74-ca7432c788db}">
 		<relationship name="effects">
 			<destination>{2e73031e-6342-491c-93c9-184ec45378a8}</destination>
-			<destination>{8173bbb0-db9c-4cf4-9229-202cdb3a1587}</destination>
+			<destination>{16f195dc-e4e8-4a3a-ae35-d6de1b8108c9}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{38372913-abc1-4e4d-a9e1-fb056c2fcda2}" />
@@ -107,7 +110,17 @@
 	</object>
 	<object class="MixerBusFader" id="{4c03d21f-b52c-4dde-9977-32fffcfa2af6}" />
 	<object class="MixerBusFader" id="{2e73031e-6342-491c-93c9-184ec45378a8}" />
-	<object class="SpatialiserEffect" id="{8173bbb0-db9c-4cf4-9229-202cdb3a1587}" />
+	<object class="MixerSend" id="{16f195dc-e4e8-4a3a-ae35-d6de1b8108c9}">
+		<property name="level">
+			<value>-28</value>
+		</property>
+		<property name="inputFormat">
+			<value>1</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{386ab8c3-c727-48de-addf-d581f3f721b7}</destination>
+		</relationship>
+	</object>
 	<object class="SingleSound" id="{8d4b573c-f870-4e74-88fc-857b7a05c2a9}">
 		<relationship name="audioFile">
 			<destination>{b61c3114-68b6-4f32-8e68-7dc7aa5922b0}</destination>

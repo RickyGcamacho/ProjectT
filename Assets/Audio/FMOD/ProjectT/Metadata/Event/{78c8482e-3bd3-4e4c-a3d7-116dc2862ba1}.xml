@@ -5,7 +5,7 @@
 			<value>player_crouch</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{2b63ca2a-a429-4fd4-9447-a16cfb90b566}</destination>
@@ -96,7 +96,6 @@
 	<object class="MixerBusEffectChain" id="{94b0ff2e-3ebf-4c73-ba2f-26c0ad7198b9}">
 		<relationship name="effects">
 			<destination>{ccc4aa59-786a-43cc-b79e-0893f6c47fbf}</destination>
-			<destination>{8302ab66-6d72-4e4a-b68c-103bb0d5f283}</destination>
 			<destination>{b9fdbf7d-313f-452d-9231-39d4fcfe322f}</destination>
 		</relationship>
 	</object>
@@ -111,13 +110,12 @@
 	</object>
 	<object class="MixerBusFader" id="{0f233368-ac73-4dd4-b438-f87312672973}" />
 	<object class="MixerBusFader" id="{ccc4aa59-786a-43cc-b79e-0893f6c47fbf}" />
-	<object class="SpatialiserEffect" id="{8302ab66-6d72-4e4a-b68c-103bb0d5f283}" />
 	<object class="MixerSend" id="{b9fdbf7d-313f-452d-9231-39d4fcfe322f}">
 		<property name="level">
 			<value>-27.5</value>
 		</property>
 		<property name="inputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="mixerReturn">
 			<destination>{386ab8c3-c727-48de-addf-d581f3f721b7}</destination>
