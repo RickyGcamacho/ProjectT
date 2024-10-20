@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
     public void HighlightButton()
     {
         AudioManager.instance.PlaySoundSFX(ui_highlight);
-        AudioManager.instance.Sounds[ui_highlight].start();
+        //AudioManager.instance.Sounds[ui_highlight].
  
 
     }
