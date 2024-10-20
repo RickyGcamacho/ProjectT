@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Custom_VHSEffect
+  m_Shader: {fileID: 4800000, guid: f8ef3f797a0c9e44cbce4099cfdc16c8, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _HorizontalLinesTex:
+        m_Texture: {fileID: 2800000, guid: 1dd6d641746df2b40a36a3735c87abe7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: c8438120644dfea45a170cd441d3bf93, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: 25564cf201546144f9fbdb8775bcdcbd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ScanlineTex:
+        m_Texture: {fileID: 2800000, guid: 5d4ef7da65115c04982ed92a56dc3d71, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _VerticalLinesTex:
+        m_Texture: {fileID: 2800000, guid: aebd17c152956d54db486b59c2231e13, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _DistortionAmount: 0
+    - _HorizontalLineAmplitude: 0.36
+    - _HorizontalLineAmplitudeSlider: 1
+    - _HorizontalLineFrequency: 600
+    - _HorizontalLineFrequencySlider: 3.8
+    - _HorizontalLineOpacity: 0
+    - _LineAmplitude: 0
+    - _LineAmplitudeSlider: 0.053
+    - _LineFrequency: 74.56
+    - _LineFrequencySlider: 20
+    - _NoiseAmount: 48.44
+    - _NoiseOpacity: 1
+    - _Opacity: 0.915
+    - _ScanlineOpacity: 0.024
+    - _ScanlineSpeed: 7.4
+    - _VerticalLineOpacity: 0
+    m_Colors: []
+  m_BuildTextureStacks: []

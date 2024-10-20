@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: d8171d6b83ea70746891b88dd8c2571a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pixelateMaterial: {fileID: 2100000, guid: 4a5082090fab4ca42a0648b21172aed5, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
