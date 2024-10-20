@@ -15,76 +15,94 @@ public class PlayerActions : MonoBehaviour
     [SerializeField, Range(1, 180)] private float lowerLookLimit;
     [SerializeField, Range(1, 180)] private float uperLookLimit;
 
-   
+
 
 
     [Header("Zoom Parameters")]
     private Coroutine zoomRoutine;
-    [SerializeField] private float timeToZoom,zoomFOV;
+    [SerializeField] private float timeToZoom, zoomFOV;
     private float defaultFOV;
 
     [Header("Run Parameters")]
     [SerializeField] private float runSpeed;
 
     [Header("Parameters")]
-    [SerializeField] private float height, crouchedHeight, crouchedSpeed;
+    [SerializeField] private float height, crouchedHeight, crouchedSpeed, crouchedHeightSizeOriginal, crouchedHeightCenterOriginal,crouchedHeightSizeNew, crouchedHeightCenterNew;
+
+    public GameObject cameraCrouched;
 
     private Camera playerCamera;
+    private Rigidbody _rb;
     private Vector3 moveDirection;
     private Vector2 currentInput;
-    private float rotationX,speed,x, y;
+    private float rotationX, speed, x, z;
 
     public float Speed { get => speed; set => speed = value; }
 
     private void Awake()
     {
+        _rb = GetComponent<Rigidbody>();
         playerCamera = GetComponentInChildren<Camera>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         defaultFOV = playerCamera.fieldOfView;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Movement();
+        Walking();
+        Crouching();
+        Running();
         HandleMouseLook();
         HandleZoom();
- 
+
     }
 
-    //Movimiento Player
-    void Movement()
+    private void Crouching()
     {
-        x = Input.GetAxis("Horizontal");
-        y = Input.GetAxis("Vertical");
-
-        transform.Translate(Vector3.forward * y * Speed * Time.deltaTime);
-        height = transform.position.y;
-        Speed = speedWalk;
         if (Input.GetKey(KeyCode.LeftControl))
         {
-           height = crouchedHeight;
-           Speed = crouchedSpeed;
+            cameraCrouched.SetActive(true);
+            playerCamera.gameObject.SetActive(false);
+            GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x, crouchedHeightSizeNew, GetComponent<BoxCollider>().size.z);
+            GetComponent<BoxCollider>().center = new Vector3(GetComponent<BoxCollider>().center.x, crouchedHeightCenterNew, GetComponent<BoxCollider>().center.z);
+            Speed = crouchedSpeed;
+        }
+        else
+        {
+            cameraCrouched.SetActive(false);
+            playerCamera.gameObject.SetActive(true);
+            GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x, crouchedHeightSizeOriginal, GetComponent<BoxCollider>().size.z);
+            GetComponent<BoxCollider>().center = new Vector3(GetComponent<BoxCollider>().center.x, crouchedHeightCenterOriginal, GetComponent<BoxCollider>().center.z);
         }
 
-        transform.position = new Vector3(transform.position.x,height,transform.position.z);
+    }
+    private void Walking()
+    {
+        z = Input.GetAxis("Vertical");
 
+        Vector3 dir = transform.forward * z;
+        Vector3 dirSpeed = dir * (Speed);
+        _rb.velocity = dirSpeed;
+
+        Speed = speedWalk;
+        dirSpeed.y = _rb.velocity.y;
+        dir.y = 0;
+    }
+    private void Running()
+    {
         if (Input.GetKey(KeyCode.LeftShift))
         {
             Speed = runSpeed;
         }
-
-        
     }
-
 
     //Camara
     private void HandleMouseLook()
     {
         rotationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
         rotationX = Mathf.Clamp(rotationX, -uperLookLimit, lowerLookLimit);
-        playerCamera.transform.localRotation = Quaternion.Euler(rotationX,0,0);
+        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
         transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeedX, 0);
     }
 
@@ -112,7 +130,7 @@ public class PlayerActions : MonoBehaviour
     }
 
 
-   private IEnumerator ToggleZoom(bool isEnter)
+    private IEnumerator ToggleZoom(bool isEnter)
     {
         float targetFOV = isEnter ? zoomFOV : defaultFOV;
         float startingFOV = playerCamera.fieldOfView;

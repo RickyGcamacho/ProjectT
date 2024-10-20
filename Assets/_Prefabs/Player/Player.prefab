@@ -104,7 +104,6 @@ GameObject:
   - component: {fileID: 4731730061147239434}
   - component: {fileID: 3410456711197768621}
   - component: {fileID: 3074110250051885063}
-  - component: {fileID: 2477142006491431733}
   - component: {fileID: 3071888309444871575}
   - component: {fileID: 8392837236198156846}
   - component: {fileID: 8004419946183448128}
@@ -183,29 +182,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2477142006491431733
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878507677596200927}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3071888309444871575
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -256,6 +232,11 @@ MonoBehaviour:
   height: 1
   crouchedHeight: 0.3
   crouchedSpeed: 1
+  crouchedHeightSizeOriginal: 0
+  crouchedHeightCenterOriginal: 0
+  crouchedHeightSizeNew: 0
+  crouchedHeightCenterNew: 0
+  cameraCrouched: {fileID: 0}
 --- !u!114 &8004419946183448128
 MonoBehaviour:
   m_ObjectHideFlags: 0
