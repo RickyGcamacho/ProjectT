@@ -45,17 +45,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DistortionAmount: 0
-    - _HorizontalLineAmplitude: 0.36
+    - _DistortionAmount: 0.003
+    - _HorizontalLineAmplitude: 0.06
     - _HorizontalLineAmplitudeSlider: 1
     - _HorizontalLineFrequency: 600
     - _HorizontalLineFrequencySlider: 3.8
     - _HorizontalLineOpacity: 0
-    - _LineAmplitude: 0
+    - _LineAmplitude: 0.01
     - _LineAmplitudeSlider: 0.053
     - _LineFrequency: 74.56
     - _LineFrequencySlider: 20
-    - _NoiseAmount: 48.44
+    - _NoiseAmount: 0.03
     - _NoiseOpacity: 1
     - _Opacity: 0.915
     - _ScanlineOpacity: 0.024

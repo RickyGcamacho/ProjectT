@@ -3,7 +3,12 @@ guid: 0b662dbb89fbca242943562d1ca10715
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: closet
+    second: {fileID: 2800000, guid: 31ef15c7c80672840a7e47d884acebe2, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
