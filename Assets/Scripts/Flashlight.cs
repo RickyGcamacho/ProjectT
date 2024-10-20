@@ -5,33 +5,23 @@ using UnityEngine;
 public class Flashlight : MonoBehaviour
 {
     public GameObject flashlight;
-    private bool on;
+    private bool isOn;
 
-    private void Start()
+    private void Update()
     {
-        on = true;
+        Interact();
     }
-    // Update is called once per frame
-    void FixedUpdate()
+    void Interact()
     {
-        FlashlightSystem();
-    }
-
-    void FlashlightSystem()
-    {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            if (on)
-            {
-                flashlight.SetActive(false);
-                on = false;
-            }
-            else
-            {
-                flashlight.SetActive(true);
-                on = true;
-            }
+            isOn = !isOn; // Alterna el valor de isOn entre true y false
+            flashlight.SetActive(isOn); // Activa o desactiva la linterna según el estado de isOn
         }
+
+
+
+
     }
 
 }
