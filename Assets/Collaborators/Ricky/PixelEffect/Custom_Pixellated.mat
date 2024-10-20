@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_XenonLightShader
-  m_Shader: {fileID: 4800000, guid: e88edfec6e3432744b854aadb20ebc49, type: 3}
+  m_Name: Custom_Pixellated
+  m_Shader: {fileID: 4800000, guid: f6a2f9ec8b98e1b47957f423e17d3a6e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -22,14 +22,13 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: c8438120644dfea45a170cd441d3bf93, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BlinkSpeed: 2
-    - _ExternalIntensity: 1.2613246
-    - _MaxIntensity: 1
-    - _MinIntensity: 0.2
-    - _NoiseScale: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _PixelSize: -210
+    m_Colors: []
   m_BuildTextureStacks: []

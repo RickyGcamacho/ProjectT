@@ -1474,6 +1474,8 @@ GameObject:
   - component: {fileID: 920204903}
   - component: {fileID: 920204902}
   - component: {fileID: 920204904}
+  - component: {fileID: 920204905}
+  - component: {fileID: 920204906}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1561,6 +1563,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nonRigidbodyVelocity: 0
   attenuationObject: {fileID: 0}
+--- !u!114 &920204905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920204900}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073c0ed34516dea4fb725f9025be8bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vhsMaterial: {fileID: 2100000, guid: b7d894db864b64c419f6939060fbd19f, type: 2}
+--- !u!114 &920204906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920204900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8171d6b83ea70746891b88dd8c2571a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pixelateMaterial: {fileID: 2100000, guid: 4a5082090fab4ca42a0648b21172aed5, type: 2}
 --- !u!4 &928859400 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 982933047019774321, guid: 3baac219452b6724eb54267308d0134b, type: 3}
