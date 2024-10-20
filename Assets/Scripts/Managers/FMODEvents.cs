@@ -14,7 +14,6 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference flashLight_SEvent { get; private set; }
     [field: SerializeField] public EventReference playerRun_SEvent { get; private set; }
     [field: SerializeField] public EventReference heartBeats_SEvent { get; private set; }
-    [field: SerializeField] public EventReference heal_SEvent { get; private set; }
     [field: SerializeField] public EventReference grab_SEvent { get; private set; }
 
     [field: Header("Enemy"), Space(5)]
@@ -24,9 +23,10 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference enemyDetect_SEvent { get; private set; }
 
     [field: Header("UI"), Space(5)]
-    [field: SerializeField] public EventReference playButton_SEvent { get; private set; }
-    [field: SerializeField] public EventReference moveCursor_SEvent { get; private set; }
-    [field: SerializeField] public EventReference ambient_SEvent { get; private set; }
+    [field: SerializeField] public EventReference ui_play_SEvent { get; private set; }
+    [field: SerializeField] public EventReference ui_highlight_SEvent { get; private set; }
+    [field: SerializeField] public EventReference ui_cancel_SEvent { get; private set; }
+    [field: SerializeField] public EventReference ui_music_SEvent { get; private set; }
 
 
     public static FMODEvents instance { get; private set; }
@@ -57,7 +57,6 @@ public class FMODEvents : MonoBehaviour
             { Sounds.FLASHLIGHT_INTERACTION, flashLight_SEvent },
             { Sounds.PLAYER_RUN, playerRun_SEvent },
             { Sounds.PLAYER_HEARTBEATS, heartBeats_SEvent },
-            { Sounds.PLAYER_HEAL, heal_SEvent },
             { Sounds.PLAYER_GRAB, grab_SEvent }
         };
     }
@@ -76,9 +75,10 @@ public class FMODEvents : MonoBehaviour
     {
         EventReferencesUI = new Dictionary<Sounds, EventReference>
         {
-            { Sounds.UI_MOVECURSOR, playerSteps_SEvent },
-            { Sounds.UI_PLAYBUTTON, flashLight_SEvent },
-            { Sounds.UI_MUSIC, playerRun_SEvent },
+            { Sounds.UI_HIGHLIGHT, ui_highlight_SEvent },
+            { Sounds.UI_PLAYBUTTON, ui_play_SEvent },
+            {Sounds.UI_CANCEL, ui_cancel_SEvent },
+            { Sounds.UI_MUSIC, ui_music_SEvent },
         };
     }
 }

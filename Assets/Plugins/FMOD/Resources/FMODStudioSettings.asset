@@ -478,11 +478,19 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - enemy
+  - enemy.assets
   - environment_misc
+  - environment_misc.assets
   - environment_openables
+  - environment_openables.assets
   - interactions
+  - interactions.assets
+  - Master.assets
   - player
+  - player.assets
   - ui
+  - ui.assets
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
