@@ -639,7 +639,7 @@
 	</object>
 	<object class="ParameterCondition" id="{587d432b-7c31-4a6c-8879-e67653eb714b}">
 		<property name="minimum">
-			<value>9</value>
+			<value>8</value>
 		</property>
 		<property name="maximum">
 			<value>10</value>

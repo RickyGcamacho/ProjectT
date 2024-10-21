@@ -5,7 +5,7 @@
 			<value>player_grunt</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{2b63ca2a-a429-4fd4-9447-a16cfb90b566}</destination>
@@ -96,7 +96,6 @@
 	<object class="MixerBusEffectChain" id="{574b845d-ce24-4054-a747-a81f2a6bef53}">
 		<relationship name="effects">
 			<destination>{3769a86f-ee01-478c-8c57-4852233fe1fa}</destination>
-			<destination>{13f71b93-d2f8-4b22-8c12-7cb355d31e5f}</destination>
 			<destination>{95dfc870-1875-434e-98f9-7bb093ddbb79}</destination>
 		</relationship>
 	</object>
@@ -114,13 +113,12 @@
 	</object>
 	<object class="MixerBusFader" id="{5ec8952f-f543-4754-926e-9f86258a4bf6}" />
 	<object class="MixerBusFader" id="{3769a86f-ee01-478c-8c57-4852233fe1fa}" />
-	<object class="SpatialiserEffect" id="{13f71b93-d2f8-4b22-8c12-7cb355d31e5f}" />
 	<object class="MixerSend" id="{95dfc870-1875-434e-98f9-7bb093ddbb79}">
 		<property name="level">
 			<value>-48</value>
 		</property>
 		<property name="inputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="mixerReturn">
 			<destination>{386ab8c3-c727-48de-addf-d581f3f721b7}</destination>

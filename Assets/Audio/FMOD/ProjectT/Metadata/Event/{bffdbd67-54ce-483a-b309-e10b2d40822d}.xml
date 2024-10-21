@@ -5,7 +5,7 @@
 			<value>environment_roomtone_a</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{a2382d09-5c83-4bbc-8cee-7670d45ee1f4}</destination>
@@ -190,7 +190,6 @@
 	<object class="MixerBusEffectChain" id="{3409ef95-1a96-4db3-9df9-a04ad100b85e}">
 		<relationship name="effects">
 			<destination>{b7ddb598-2f48-4010-89e2-28b795443ce4}</destination>
-			<destination>{37c4b3d8-037f-42ac-a97f-7d697ee94195}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{04ffec8d-c76e-4654-b4a6-66d0efc91bc4}" />
@@ -235,7 +234,6 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{b7ddb598-2f48-4010-89e2-28b795443ce4}" />
-	<object class="SpatialiserEffect" id="{37c4b3d8-037f-42ac-a97f-7d697ee94195}" />
 	<object class="AutomationPoint" id="{863536e7-49e5-4a7f-ad81-ce0551d39043}">
 		<property name="position">
 			<value>0</value>
