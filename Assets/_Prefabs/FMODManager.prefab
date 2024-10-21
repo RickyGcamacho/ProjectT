@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5021336704071717300}
   - component: {fileID: 3999099932776858009}
+  - component: {fileID: 901265318761224145}
   m_Layer: 0
   m_Name: FMODManager
   m_TagString: Untagged
@@ -46,78 +47,116 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <playerSteps_SEvent>k__BackingField:
     Guid:
+      Data1: -1666871131
+      Data2: 1331741249
+      Data3: 938044292
+      Data4: -1851839255
+    Path: event:/player/player_walk
+  <flashLight_SEvent>k__BackingField:
+    Guid:
+      Data1: -2123317091
+      Data2: 1168827579
+      Data3: -77527897
+      Data4: 1467314048
+    Path: event:/player/foley_player_flashlight
+  <playerRun_SEvent>k__BackingField:
+    Guid:
+      Data1: -112587172
+      Data2: 1220208488
+      Data3: 1320720011
+      Data4: 1476451649
+    Path: event:/player/player_run
+  <heartBeats_SEvent>k__BackingField:
+    Guid:
+      Data1: -1255801347
+      Data2: 1325331879
+      Data3: 765017985
+      Data4: -1660228109
+    Path: event:/player/heartbeat
+  <grab_SEvent>k__BackingField:
+    Guid:
+      Data1: 447877380
+      Data2: 1279316530
+      Data3: -1925229162
+      Data4: 1830643000
+    Path: event:/player/grabitem
+  <enemySteps_SEvent>k__BackingField:
+    Guid:
+      Data1: 936332762
+      Data2: 1130409688
+      Data3: 949992622
+      Data4: -1796290403
+    Path: event:/enemy/enemy_steps
+  <enemyRun_SEvent>k__BackingField:
+    Guid:
+      Data1: -1722762691
+      Data2: 1275892383
+      Data3: 38559146
+      Data4: -54901197
+    Path: event:/enemy/enemy_pursuit
+  <enemyDetect_SEvent>k__BackingField:
+    Guid:
+      Data1: 695651780
+      Data2: 1162692653
+      Data3: 376183971
+      Data4: -597079402
+    Path: event:/enemy/enemy_detect
+  <ui_play_SEvent>k__BackingField:
+    Guid:
       Data1: -1382701454
       Data2: 1078185824
       Data3: 1159459001
       Data4: 1615697027
     Path: event:/ui/ui_accept
-  <flashLight_SEvent>k__BackingField:
-    Guid:
-      Data1: -1816289027
-      Data2: 1168665477
-      Data3: 1528309162
-      Data4: 95620599
-    Path: event:/ui/ui_cancel
-  <playerRun_SEvent>k__BackingField:
+  <ui_highlight_SEvent>k__BackingField:
     Guid:
       Data1: 1245003027
       Data2: 1089170302
       Data3: 2127974541
       Data4: -942599214
     Path: event:/ui/ui_movecursor
-  <heartBeats_SEvent>k__BackingField:
+  <ui_cancel_SEvent>k__BackingField:
     Guid:
-      Data1: -1486473782
-      Data2: 1292988418
-      Data3: 1320718505
-      Data4: -1993659032
-    Path: event:/ui/ui_talk
-  <heal_SEvent>k__BackingField:
-    Guid:
-      Data1: 726158841
-      Data2: 1085061577
-      Data3: -2083729020
-      Data4: 794048677
-    Path: event:/environment_misc/environment_radiostatic
-  <grab_SEvent>k__BackingField:
+      Data1: -1816289027
+      Data2: 1168665477
+      Data3: 1528309162
+      Data4: 95620599
+    Path: event:/ui/ui_cancel
+  <ui_music_SEvent>k__BackingField:
     Guid:
       Data1: -1073889945
       Data2: 1211782350
       Data3: 199297459
       Data4: 763510829
     Path: event:/environment_misc/environment_roomtone_a
-  <enemySteps_SEvent>k__BackingField:
+--- !u!114 &901265318761224145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620741053634244775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <enemyRun_SEvent>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <enemyDetect_SEvent>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <button_SEvent>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <talk_SEvent>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1073889945
+      Data2: 1211782350
+      Data3: 199297459
+      Data4: 763510829
+    Path: event:/environment_misc/environment_roomtone_a
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
