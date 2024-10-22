@@ -110,7 +110,7 @@ public class PlayerActions : MonoBehaviour
     //Zoom
     private void HandleZoom()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             if (zoomRoutine != null)
             {
@@ -119,7 +119,7 @@ public class PlayerActions : MonoBehaviour
             }
             zoomRoutine = StartCoroutine(ToggleZoom(true));
         }
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetKeyUp(KeyCode.Z))
         {
             if (zoomRoutine != null)
             {
