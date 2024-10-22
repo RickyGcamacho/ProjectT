@@ -60,7 +60,7 @@ public class PlayerActions : MonoBehaviour
 
     private void Crouching()
     {
-        if (Input.GetKey(KeyCode.C))
+        if (Input.GetKey(KeyCode.LeftControl))
         {
             cameraCrouched.SetActive(true);
             playerCamera.gameObject.SetActive(false);
@@ -68,7 +68,7 @@ public class PlayerActions : MonoBehaviour
             GetComponent<BoxCollider>().center = new Vector3(GetComponent<BoxCollider>().center.x, crouchedHeightCenterNew, GetComponent<BoxCollider>().center.z);
             Speed = crouchedSpeed;
         }
-        if (Input.GetKeyUp(KeyCode.C)) //&& isNotHide)
+        if (Input.GetKeyUp(KeyCode.LeftControl)) //&& isNotHide)
         {
             //pararse
             cameraCrouched.SetActive(false);
@@ -76,7 +76,7 @@ public class PlayerActions : MonoBehaviour
             GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x, crouchedHeightSizeOriginal, GetComponent<BoxCollider>().size.z);
             GetComponent<BoxCollider>().center = new Vector3(GetComponent<BoxCollider>().center.x, crouchedHeightCenterOriginal, GetComponent<BoxCollider>().center.z);
         }
-
+        
     }
     private void Walking()
     {
