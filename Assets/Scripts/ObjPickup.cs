@@ -22,7 +22,7 @@ public class ObjPickup : MonoBehaviour
     //MouseLookScript mouseLookScript;
     void Start()
     {
-        LayerNumber = LayerMask.NameToLayer("holdLayer"); //if your holdLayer is named differently make sure to change this ""
+        LayerNumber = LayerMask.NameToLayer("Interactuable"); //if your holdLayer is named differently make sure to change this ""
 
         //mouseLookScript = player.GetComponent<MouseLookScript>();
     }
