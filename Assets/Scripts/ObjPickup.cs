@@ -28,7 +28,7 @@ public class ObjPickup : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1)) 
+        if (Input.GetMouseButtonDown(0)) 
         {
             if (heldObj == null) //if currently not holding anything
             {
@@ -36,9 +36,11 @@ public class ObjPickup : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, pickUpRange))
                 {
+                    print(hit.transform.gameObject.name);
                     //make sure pickup tag is attached
                     if (hit.transform.gameObject.tag == "canPickUp")
                     {
+                        print("PICKUP");
                         //pass in object hit into the PickUpObject function
                         PickUpObject(hit.transform.gameObject);
                     }
@@ -56,7 +58,7 @@ public class ObjPickup : MonoBehaviour
         if (heldObj != null) //if player is holding object
         {
   
-            if (Input.GetKeyDown(KeyCode.Mouse0) && canDrop == true) //Mous0 (leftclick) is used to throw, change this if you want another button to be used)
+            if (Input.GetMouseButtonUp(0)&& canDrop == true) //Mous0 (leftclick) is used to throw, change this if you want another button to be used)
             {
                 StopClipping();
                 ThrowObject();
@@ -117,6 +119,6 @@ public class ObjPickup : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(mainCamera.transform.position, mainCamera.transform.forward);
+        Gizmos.DrawLine(mainCamera.transform.position, mainCamera.transform.position + mainCamera.transform.forward * 10f);
     }
 }
