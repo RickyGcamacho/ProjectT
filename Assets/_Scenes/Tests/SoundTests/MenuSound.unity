@@ -713,6 +713,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4fc37f38f2c08d4c89ec5c2eb6b1327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ui_test:
+    Guid:
+      Data1: 1245003027
+      Data2: 1089170302
+      Data3: 2127974541
+      Data4: -942599214
+    Path: event:/ui/ui_movecursor
   ui_highlight: 10
   ui_play: 11
   ui_cancel: 13
@@ -7486,7 +7493,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901265318761224145, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
       propertyPath: EventPlayTrigger
-      value: 1
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1620741053634244775, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
       propertyPath: m_Name
@@ -7532,8 +7539,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 901265318761224145, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

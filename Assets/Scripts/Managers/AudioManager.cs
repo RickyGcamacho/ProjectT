@@ -6,10 +6,10 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance { get; private set; }
-    public Dictionary<Sounds, EventInstance> Sounds { get => _sounds; set => _sounds = value; }
 
-    private Dictionary<Sounds, EventInstance> _sounds;
-
+    public Dictionary<Sounds, EventInstance> SoundsUI { get; private set; }
+    public Dictionary<Sounds, EventInstance> SoundsEnemy { get; private set; }
+    public Dictionary<Sounds, EventInstance> SoundsPlayer { get; private set; }
 
     private void Awake()
     {
@@ -19,52 +19,63 @@ public class AudioManager : MonoBehaviour
             return;
         }
         instance = this;
-
     }
 
-    public void InitializeInstances(Dictionary<Sounds, EventReference> dicReferences)
+    private void Start()
     {
-        _sounds = new Dictionary<Sounds, EventInstance>();
+        SoundsUI = InitialInstances(FMODEvents.instance.EventReferencesUI);
+        SoundsPlayer = InitialInstances(FMODEvents.instance.EventReferencesPlayer);
+        SoundsEnemy = InitialInstances(FMODEvents.instance.EventReferencesEnemy);
+    }
+    public Dictionary<Sounds, EventInstance> InitialInstances(Dictionary<Sounds, EventReference> dicReferences)
+    {
+        // Crear un nuevo diccionario para almacenar las instancias de eventos
+        Dictionary<Sounds, EventInstance> soundsInstances = new Dictionary<Sounds, EventInstance>();
+
         foreach (var reference in dicReferences)
         {
-            _sounds[reference.Key] = CreateInstance(reference.Value);
+            // Crear la instancia del evento
+            EventInstance instance = RuntimeManager.CreateInstance(reference.Value);
+
+            // Almacenar en el diccionario
+            soundsInstances[reference.Key] = instance;
         }
+
+        // Retornar el diccionario de instancias
+        return soundsInstances;
     }
 
-    public EventInstance CreateInstance(EventReference eventReference)
-    {
-        return RuntimeManager.CreateInstance(eventReference);
-    }
 
     public void PlayOneShot(EventReference sound, Vector2 worldPos)
     {
         RuntimeManager.PlayOneShot(sound, worldPos);
     }
 
-    public void PlaySoundSFX(Sounds soundKey)
+    public void PlaySoundSFX(Dictionary<Sounds, EventInstance> typeSound, Sounds soundKey)
     {
-        if (_sounds.ContainsKey(soundKey))
+        if (typeSound.ContainsKey(soundKey))
         {
-            _sounds[soundKey].start();
+            typeSound[soundKey].start();
         }
     }
 
-    public void StopSoundSFX(Sounds soundKey, FMOD.Studio.STOP_MODE mode)
+    public void StopSoundSFX(Dictionary<Sounds, EventInstance> typeSound,Sounds soundKey, FMOD.Studio.STOP_MODE mode)
     {
-        if (_sounds.ContainsKey(soundKey))
+        if (typeSound.ContainsKey(soundKey))
         {
-            _sounds[soundKey].stop(mode);
+            typeSound[soundKey].stop(mode);
         }
     }
 
-    public void UpdateSound(Sounds soundKey)
+
+    public void UpdateSound(Dictionary<Sounds, EventInstance> typeSound,Sounds soundKey)
     {
-        if (_sounds.TryGetValue(soundKey, out EventInstance soundInstance))
+        if (typeSound.TryGetValue(soundKey, out EventInstance soundInstance))
         {
             soundInstance.getPlaybackState(out PLAYBACK_STATE playbackState);
             if (playbackState == PLAYBACK_STATE.STOPPED)
             {
-                PlaySoundSFX(soundKey);
+                PlaySoundSFX(typeSound,soundKey);
             }
         }
         else

@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using FMODUnity;
 using System.Collections.Generic;
 using UnityEngine;
@@ -77,8 +78,10 @@ public class FMODEvents : MonoBehaviour
         {
             { Sounds.UI_HIGHLIGHT, ui_highlight_SEvent },
             { Sounds.UI_PLAYBUTTON, ui_play_SEvent },
-            {Sounds.UI_CANCEL, ui_cancel_SEvent },
+            { Sounds.UI_CANCEL, ui_cancel_SEvent },
             { Sounds.UI_MUSIC, ui_music_SEvent },
         };
     }
+
+
 }

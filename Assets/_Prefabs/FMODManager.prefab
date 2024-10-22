@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5021336704071717300}
   - component: {fileID: 3999099932776858009}
-  - component: {fileID: 901265318761224145}
   m_Layer: 0
   m_Name: FMODManager
   m_TagString: Untagged
@@ -129,34 +128,3 @@ MonoBehaviour:
       Data3: 199297459
       Data4: 763510829
     Path: event:/environment_misc/environment_roomtone_a
---- !u!114 &901265318761224145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1620741053634244775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -1073889945
-      Data2: 1211782350
-      Data3: 199297459
-      Data4: 763510829
-    Path: event:/environment_misc/environment_roomtone_a
-  Event: 
-  EventPlayTrigger: 0
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
