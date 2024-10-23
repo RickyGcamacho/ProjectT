@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class FMODEvents : MonoBehaviour
 {
+    public Dictionary<Sounds, EventInstance> SoundsUI { get; private set; }
+    public Dictionary<Sounds, EventInstance> SoundsEnemy { get; private set; }
+    public Dictionary<Sounds, EventInstance> SoundsPlayer { get; private set; }
     public Dictionary<Sounds, EventReference> EventReferencesPlayer { get; private set; }
     public Dictionary<Sounds, EventReference> EventReferencesEnemy { get; private set; }
     public Dictionary<Sounds, EventReference> EventReferencesUI { get; private set; }
@@ -46,8 +49,9 @@ public class FMODEvents : MonoBehaviour
         InitializeEventRefPlayer();
         InitializeEventRefEnemy();
         InitializeEventRefUI();
-
-
+        SoundsUI = InitialInstances(EventReferencesUI);
+        SoundsEnemy = InitialInstances(EventReferencesEnemy);
+        SoundsPlayer = InitialInstances(EventReferencesPlayer);
     }
 
     private void InitializeEventRefPlayer()
@@ -83,5 +87,21 @@ public class FMODEvents : MonoBehaviour
         };
     }
 
+    public Dictionary<Sounds, EventInstance> InitialInstances(Dictionary<Sounds, EventReference> dicReferences)
+    {
+        // Crear un nuevo diccionario para almacenar las instancias de eventos
+        Dictionary<Sounds, EventInstance> soundsInstances = new Dictionary<Sounds, EventInstance>();
 
+        foreach (var reference in dicReferences)
+        {
+            // Crear la instancia del evento
+            EventInstance instance = RuntimeManager.CreateInstance(reference.Value);
+
+            // Almacenar en el diccionario
+            soundsInstances[reference.Key] = instance;
+        }
+
+        // Retornar el diccionario de instancias
+        return soundsInstances;
+    }
 }

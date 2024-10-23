@@ -7,9 +7,9 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance { get; private set; }
 
-    public Dictionary<Sounds, EventInstance> SoundsUI { get; private set; }
-    public Dictionary<Sounds, EventInstance> SoundsEnemy { get; private set; }
-    public Dictionary<Sounds, EventInstance> SoundsPlayer { get; private set; }
+    //public Dictionary<Sounds, EventInstance> SoundsUI { get; private set; }
+    //public Dictionary<Sounds, EventInstance> SoundsEnemy { get; private set; }
+    //public Dictionary<Sounds, EventInstance> SoundsPlayer { get; private set; }
 
     private void Awake()
     {
@@ -19,31 +19,33 @@ public class AudioManager : MonoBehaviour
             return;
         }
         instance = this;
+
+     
     }
 
-    private void Start()
-    {
-        SoundsUI = InitialInstances(FMODEvents.instance.EventReferencesUI);
-        SoundsPlayer = InitialInstances(FMODEvents.instance.EventReferencesPlayer);
-        SoundsEnemy = InitialInstances(FMODEvents.instance.EventReferencesEnemy);
-    }
-    public Dictionary<Sounds, EventInstance> InitialInstances(Dictionary<Sounds, EventReference> dicReferences)
-    {
-        // Crear un nuevo diccionario para almacenar las instancias de eventos
-        Dictionary<Sounds, EventInstance> soundsInstances = new Dictionary<Sounds, EventInstance>();
+    //private void Start()
+    //{
+    //    SoundsUI = InitialInstances(FMODEvents.instance.EventReferencesUI);
+    //    SoundsPlayer = InitialInstances(FMODEvents.instance.EventReferencesPlayer);
+    //    SoundsEnemy = InitialInstances(FMODEvents.instance.EventReferencesEnemy);
+    //}
+    //public Dictionary<Sounds, EventInstance> InitialInstances(Dictionary<Sounds, EventReference> dicReferences)
+    //{
+    //    // Crear un nuevo diccionario para almacenar las instancias de eventos
+    //    Dictionary<Sounds, EventInstance> soundsInstances = new Dictionary<Sounds, EventInstance>();
 
-        foreach (var reference in dicReferences)
-        {
-            // Crear la instancia del evento
-            EventInstance instance = RuntimeManager.CreateInstance(reference.Value);
+    //    foreach (var reference in dicReferences)
+    //    {
+    //        // Crear la instancia del evento
+    //        EventInstance instance = RuntimeManager.CreateInstance(reference.Value);
 
-            // Almacenar en el diccionario
-            soundsInstances[reference.Key] = instance;
-        }
+    //        // Almacenar en el diccionario
+    //        soundsInstances[reference.Key] = instance;
+    //    }
 
-        // Retornar el diccionario de instancias
-        return soundsInstances;
-    }
+    //    // Retornar el diccionario de instancias
+    //    return soundsInstances;
+    //}
 
 
     public void PlayOneShot(EventReference sound, Vector2 worldPos)
