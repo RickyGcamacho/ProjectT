@@ -1,0 +1,23 @@
+﻿public enum Sounds
+{
+    Default,
+
+    PLAYER_WALK,
+    PLAYER_RUN,
+    FLASHLIGHT_INTERACTION,
+    PLAYER_HEARTBEATS,
+    PLAYER_HEAL,
+    PLAYER_GRAB,
+
+    ENEMY_STEPS,
+    ENEMY_RUN,
+    ENEMY_DETECT,
+
+    UI_MOVECURSOR,
+    UI_PLAYBUTTON,
+    UI_MUSIC,
+
+}
+
+
+
