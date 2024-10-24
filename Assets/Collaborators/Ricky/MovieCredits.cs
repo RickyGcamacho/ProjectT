@@ -12,9 +12,20 @@ public class MovieCreditsImages : MonoBehaviour
     // Iniciar la secuencia de créditos
     void Start()
     {
+       
+    }
+    public void ResetCredits()
+    {
+        foreach (Image credit in creditImages)
+        {
+            credit.gameObject.SetActive(false);  // Desactivar las imágenes
+            credit.color = new Color(credit.color.r, credit.color.g, credit.color.b, 0);  // Poner la transparencia en 0
+        }
+    }
+    public void InitialCredits()
+    {
         StartCoroutine(ShowCreditsSequence());
     }
-
     // Coroutine para manejar la secuencia de imágenes de los créditos
     IEnumerator ShowCreditsSequence()
     {

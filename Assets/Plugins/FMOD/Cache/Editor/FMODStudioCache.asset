@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/environment_openables.bank
   Name: environment_openables
   StudioPath: bank:/environment/environment_openables
-  lastModified: 638652423476197316
+  lastModified: 638653862465319453
   FileSizes:
   - Name: Desktop
     Value: 46912
@@ -199,7 +199,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/environment_misc.bank
   Name: environment_misc
   StudioPath: bank:/environment/environment_misc
-  lastModified: 638652423476187335
+  lastModified: 638653862465199431
   FileSizes:
   - Name: Desktop
     Value: 2495584
@@ -246,7 +246,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638652423475980421
+  lastModified: 638653862464819337
   FileSizes:
   - Name: Desktop
     Value: 1400
@@ -317,7 +317,7 @@ MonoBehaviour:
   - {fileID: -399884599050519719}
   StringsBanks:
   - {fileID: 6682785624168726525}
-  cacheTime: 638652423476227312
+  cacheTime: 638653862465909599
   cacheVersion: 131620
 --- !u!114 &344643505259668082
 MonoBehaviour:
@@ -387,7 +387,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/interactions.bank
   Name: interactions
   StudioPath: bank:/interactions
-  lastModified: 638652423476207298
+  lastModified: 638653862465709546
   FileSizes:
   - Name: Desktop
     Value: 312544
@@ -407,7 +407,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/player.bank
   Name: player
   StudioPath: bank:/player
-  lastModified: 638652423476227312
+  lastModified: 638653862465889619
   FileSizes:
   - Name: Desktop
     Value: 138624
@@ -508,7 +508,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638652423475990494
+  lastModified: 638653862464889353
   FileSizes:
   - Name: Desktop
     Value: 1834
@@ -582,7 +582,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/ui.bank
   Name: ui
   StudioPath: bank:/ui
-  lastModified: 638652414969381783
+  lastModified: 638653862465909599
   FileSizes:
   - Name: Desktop
     Value: 43040
