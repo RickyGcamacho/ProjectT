@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Gameplay/Game.unity
     guid: 2efc9896b9be25c428f59b57a6e9517e
+  - enabled: 1
+    path: Assets/_Scenes/Tests/Ricky/LevelDesign.unity
+    guid: 2c2c37cebf375654a90bcbf73403cc17
   m_configObjects: {}
