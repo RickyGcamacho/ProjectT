@@ -1,4 +1,6 @@
+using FMODUnity;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,28 +11,25 @@ public class UIManager : MonoBehaviour
     [field: SerializeField] private Sounds ui_play;
     [field: SerializeField] private Sounds ui_cancel;
     [field: SerializeField] private Sounds ui_music;
-
+    private Dictionary<Sounds, EventReference> soundsUI;
 
     private void Start()
     {
-        var soundsUI = FMODEvents.instance.SoundsUI;
-        AudioManager.instance.PlaySoundSFX(soundsUI, ui_music); ///sonido ambiente
+         soundsUI = FMODEvents.instance.References_UI;
+         AudioManager.instance.PlaySoundSFX(soundsUI, ui_music); ///sonido ambiente
     }
 
     public void HighlightButton()
     {
-        var soundsUI = FMODEvents.instance.SoundsUI;
         AudioManager.instance.PlaySoundSFX(soundsUI, ui_highlight);
     }
     public void PlayButton()
     {
-        var soundsUI = FMODEvents.instance.SoundsUI;
         AudioManager.instance.PlaySoundSFX(soundsUI, ui_play);
     }
 
     public void BackButton()
     {
-        var soundsUI = FMODEvents.instance.SoundsUI;
         AudioManager.instance.PlaySoundSFX(soundsUI, ui_cancel);
     }
 

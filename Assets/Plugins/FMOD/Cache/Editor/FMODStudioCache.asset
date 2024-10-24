@@ -117,7 +117,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/ui.bank
   Name: ui
   StudioPath: bank:/ui
-  lastModified: 638652104930462848
+  lastModified: 638653858260559377
   FileSizes:
   - Name: Desktop
     Value: 5498
@@ -164,7 +164,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/player.bank
   Name: player
   StudioPath: bank:/player
-  lastModified: 638652104930242804
+  lastModified: 638653858249035064
   FileSizes:
   - Name: Desktop
     Value: 19280
@@ -503,7 +503,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/player.assets.bank
   Name: player.assets
   StudioPath: bank:/player.assets
-  lastModified: 638652104930042749
+  lastModified: 638653859327199909
   FileSizes:
   - Name: Desktop
     Value: 390688
@@ -768,7 +768,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/ui.assets.bank
   Name: ui.assets
   StudioPath: bank:/ui.assets
-  lastModified: 638652104930322813
+  lastModified: 638653859326839799
   FileSizes:
   - Name: Desktop
     Value: 39168
@@ -839,7 +839,7 @@ MonoBehaviour:
   - {fileID: 8674967272527011081}
   StringsBanks:
   - {fileID: 7912540353085797842}
-  cacheTime: 638652104930462848
+  cacheTime: 638653859329630417
   cacheVersion: 131620
 --- !u!114 &764974937634507395
 MonoBehaviour:
@@ -993,7 +993,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/enemy.bank
   Name: enemy
   StudioPath: bank:/enemy
-  lastModified: 638652104928402380
+  lastModified: 638653858181798679
   FileSizes:
   - Name: Desktop
     Value: 12692
@@ -1013,7 +1013,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/environment_misc.bank
   Name: environment_misc
   StudioPath: bank:/environment/environment_misc
-  lastModified: 638652104929332597
+  lastModified: 638653858271707617
   FileSizes:
   - Name: Desktop
     Value: 18014
@@ -1277,7 +1277,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/enemy.assets.bank
   Name: enemy.assets
   StudioPath: bank:/enemy.assets
-  lastModified: 638652104928182331
+  lastModified: 638653859329630417
   FileSizes:
   - Name: Desktop
     Value: 561984
@@ -1297,7 +1297,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/environment_misc.assets.bank
   Name: environment_misc.assets
   StudioPath: bank:/environment/environment_misc.assets
-  lastModified: 638652104929052525
+  lastModified: 638653859329110339
   FileSizes:
   - Name: Desktop
     Value: 3558528
@@ -1344,7 +1344,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/Master.assets.bank
   Name: Master.assets
   StudioPath: bank:/Master.assets
-  lastModified: 638652104927682224
+  lastModified: 638653858248289828
   FileSizes:
   - Name: Desktop
     Value: 494
@@ -1364,7 +1364,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638652104927952277
+  lastModified: 638653858248319834
   FileSizes:
   - Name: Desktop
     Value: 3334
@@ -1384,7 +1384,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/interactions.assets.bank
   Name: interactions.assets
   StudioPath: bank:/interactions.assets
-  lastModified: 638652104929762686
+  lastModified: 638653859327850052
   FileSizes:
   - Name: Desktop
     Value: 443392
@@ -1431,7 +1431,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638652104927892262
+  lastModified: 638653858248269814
   FileSizes:
   - Name: Desktop
     Value: 1742
@@ -1451,7 +1451,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/ProjectT/Build/Desktop/interactions.bank
   Name: interactions
   StudioPath: bank:/interactions
-  lastModified: 638652104929902721
+  lastModified: 638653859327509945
   FileSizes:
   - Name: Desktop
     Value: 11384

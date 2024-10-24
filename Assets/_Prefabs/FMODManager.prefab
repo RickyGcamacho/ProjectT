@@ -44,84 +44,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bebdb19333545cd48bea40aa5060fd72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <playerSteps_SEvent>k__BackingField:
+  <Event_PlayerSteps>k__BackingField:
     Guid:
       Data1: -1666871131
       Data2: 1331741249
       Data3: 938044292
       Data4: -1851839255
     Path: event:/player/player_walk
-  <flashLight_SEvent>k__BackingField:
+  <Event_Flashlight>k__BackingField:
     Guid:
       Data1: -2123317091
       Data2: 1168827579
       Data3: -77527897
       Data4: 1467314048
     Path: event:/player/foley_player_flashlight
-  <playerRun_SEvent>k__BackingField:
+  <Event_PlayerRun>k__BackingField:
     Guid:
       Data1: -112587172
       Data2: 1220208488
       Data3: 1320720011
       Data4: 1476451649
     Path: event:/player/player_run
-  <heartBeats_SEvent>k__BackingField:
+  <Event_HeartBeats>k__BackingField:
     Guid:
-      Data1: -1255801347
-      Data2: 1325331879
-      Data3: 765017985
-      Data4: -1660228109
-    Path: event:/player/heartbeat
-  <grab_SEvent>k__BackingField:
+      Data1: -112587172
+      Data2: 1220208488
+      Data3: 1320720011
+      Data4: 1476451649
+    Path: event:/player/player_run
+  <Event_GrabObject>k__BackingField:
     Guid:
       Data1: 447877380
       Data2: 1279316530
       Data3: -1925229162
       Data4: 1830643000
     Path: event:/player/grabitem
-  <enemySteps_SEvent>k__BackingField:
+  <Event_EnemySteps>k__BackingField:
     Guid:
       Data1: 936332762
       Data2: 1130409688
       Data3: 949992622
       Data4: -1796290403
     Path: event:/enemy/enemy_steps
-  <enemyRun_SEvent>k__BackingField:
+  <Event_EnemyRun>k__BackingField:
     Guid:
       Data1: -1722762691
       Data2: 1275892383
       Data3: 38559146
       Data4: -54901197
     Path: event:/enemy/enemy_pursuit
-  <enemyDetect_SEvent>k__BackingField:
+  <Event_DetectPlayer>k__BackingField:
     Guid:
       Data1: 695651780
       Data2: 1162692653
       Data3: 376183971
       Data4: -597079402
     Path: event:/enemy/enemy_detect
-  <ui_play_SEvent>k__BackingField:
+  <Event_PlayUI>k__BackingField:
     Guid:
       Data1: -1382701454
       Data2: 1078185824
       Data3: 1159459001
       Data4: 1615697027
     Path: event:/ui/ui_accept
-  <ui_highlight_SEvent>k__BackingField:
+  <Event_HighlightUI>k__BackingField:
     Guid:
       Data1: 1245003027
       Data2: 1089170302
       Data3: 2127974541
       Data4: -942599214
     Path: event:/ui/ui_movecursor
-  <ui_cancel_SEvent>k__BackingField:
+  <Event_CancelUI>k__BackingField:
     Guid:
       Data1: -1816289027
       Data2: 1168665477
       Data3: 1528309162
       Data4: 95620599
     Path: event:/ui/ui_cancel
-  <ui_music_SEvent>k__BackingField:
+  <Event_MenuMusicUI>k__BackingField:
     Guid:
       Data1: -1073889945
       Data2: 1211782350

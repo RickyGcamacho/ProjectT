@@ -1434,23 +1434,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8153784916924808256, guid: 5294843e89a846e459828618ffc299dc, type: 3}
   m_PrefabInstance: {fileID: 1047089581}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &422242317 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1620741053634244775, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
-  m_PrefabInstance: {fileID: 2095420692}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &422242320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 422242317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7244460c260ef6f4da07c5a07a93a6dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &435159378
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,8 +2510,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -18.23291, y: 0}
-  m_SizeDelta: {x: -24.077, y: 0}
+  m_AnchoredPosition: {x: -3.097229, y: 0}
+  m_SizeDelta: {x: 6.1946, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &677324431
 MonoBehaviour:
@@ -3122,7 +3105,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
-    m_HighlightedColor: {r: 0.7921569, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.60912424, g: 0.60912424, b: 0.60912424, a: 1}
     m_PressedColor: {r: 0.15629405, g: 0.12621042, b: 0.12621042, a: 1}
     m_SelectedColor: {r: 0.13601798, g: 0.12362659, b: 0.12362659, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -3169,7 +3152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7921569, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3932,7 +3915,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
-    m_HighlightedColor: {r: 0.7921569, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.60912424, g: 0.60912424, b: 0.60912424, a: 1}
     m_PressedColor: {r: 0.15629405, g: 0.12621042, b: 0.12621042, a: 1}
     m_SelectedColor: {r: 0.13601798, g: 0.12362659, b: 0.12362659, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -3979,7 +3962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7921569, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4908,7 +4891,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
-    m_HighlightedColor: {r: 0.7921569, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.60912424, g: 0.60912424, b: 0.60912424, a: 1}
     m_PressedColor: {r: 0.15629405, g: 0.12621042, b: 0.12621042, a: 1}
     m_SelectedColor: {r: 0.13601798, g: 0.12362659, b: 0.12362659, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -4955,7 +4938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7921569, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5772,7 +5755,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
-    m_HighlightedColor: {r: 0.7921569, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.60912424, g: 0.60912424, b: 0.60912424, a: 1}
     m_PressedColor: {r: 0.15629405, g: 0.12621042, b: 0.12621042, a: 1}
     m_SelectedColor: {r: 0.13601798, g: 0.12362659, b: 0.12362659, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -5819,7 +5802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7921569, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6290,6 +6273,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2844884273392706064, guid: 1078799259855b44588dab00be95f6f4, type: 3}
+      propertyPath: test
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844884273392706064, guid: 1078799259855b44588dab00be95f6f4, type: 3}
+      propertyPath: test2
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2866896747622290568, guid: 1078799259855b44588dab00be95f6f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7501,13 +7492,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 901265318761224145, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
-      propertyPath: EventPlayTrigger
-      value: 13
-      objectReference: {fileID: 0}
     - target: {fileID: 1620741053634244775, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
       propertyPath: m_Name
       value: FMODManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <Event_MenuMusicUI>k__BackingField.Path
+      value: event:/environment_misc/environment_roomtone_a
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <Event_MenuMusicUI>k__BackingField.Guid.Data1
+      value: -1073889945
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <Event_MenuMusicUI>k__BackingField.Guid.Data2
+      value: 1211782350
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <Event_MenuMusicUI>k__BackingField.Guid.Data3
+      value: 199297459
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999099932776858009, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <Event_MenuMusicUI>k__BackingField.Guid.Data4
+      value: 763510829
       objectReference: {fileID: 0}
     - target: {fileID: 5021336704071717300, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7552,10 +7559,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1620741053634244775, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 422242320}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
 --- !u!1001 &2098962844
 PrefabInstance:

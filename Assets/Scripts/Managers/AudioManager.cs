@@ -5,12 +5,9 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public float test=20;
+    public float test2=20;
     public static AudioManager instance { get; private set; }
-
-    //public Dictionary<Sounds, EventInstance> SoundsUI { get; private set; }
-    //public Dictionary<Sounds, EventInstance> SoundsEnemy { get; private set; }
-    //public Dictionary<Sounds, EventInstance> SoundsPlayer { get; private set; }
-
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -22,67 +19,92 @@ public class AudioManager : MonoBehaviour
 
      
     }
+    private void Start()
+    {
+        
+    }
+    public void SetAttributes(Dictionary<Sounds, EventInstance> typeSound)
+    {
+        foreach (var item in typeSound)
+        {
+            FMOD.ATTRIBUTES_3D attributes = new FMOD.ATTRIBUTES_3D();
 
-    //private void Start()
-    //{
-    //    SoundsUI = InitialInstances(FMODEvents.instance.EventReferencesUI);
-    //    SoundsPlayer = InitialInstances(FMODEvents.instance.EventReferencesPlayer);
-    //    SoundsEnemy = InitialInstances(FMODEvents.instance.EventReferencesEnemy);
-    //}
-    //public Dictionary<Sounds, EventInstance> InitialInstances(Dictionary<Sounds, EventReference> dicReferences)
-    //{
-    //    // Crear un nuevo diccionario para almacenar las instancias de eventos
-    //    Dictionary<Sounds, EventInstance> soundsInstances = new Dictionary<Sounds, EventInstance>();
+            // Define la posición correcta utilizando transform.position para x, y, z
+            attributes.position = new FMOD.VECTOR
+            {
+                x = transform.position.x,
+                y = transform.position.y,
+                z = transform.position.z
+            };
 
-    //    foreach (var reference in dicReferences)
-    //    {
-    //        // Crear la instancia del evento
-    //        EventInstance instance = RuntimeManager.CreateInstance(reference.Value);
-
-    //        // Almacenar en el diccionario
-    //        soundsInstances[reference.Key] = instance;
-    //    }
-
-    //    // Retornar el diccionario de instancias
-    //    return soundsInstances;
-    //}
-
+            // Aplica los atributos 3D al sonido
+            item.Value.set3DAttributes(attributes);
+        }
+    }
 
     public void PlayOneShot(EventReference sound, Vector2 worldPos)
     {
+     
         RuntimeManager.PlayOneShot(sound, worldPos);
     }
 
-    public void PlaySoundSFX(Dictionary<Sounds, EventInstance> typeSound, Sounds soundKey)
-    {
+    public void PlaySoundSFX(Dictionary<Sounds, EventReference> typeSound, Sounds soundKey)
+    {     
         if (typeSound.ContainsKey(soundKey))
         {
-            typeSound[soundKey].start();
+            EventInstance instance = RuntimeManager.CreateInstance(typeSound[soundKey]);
+            var feet3DPosition = RuntimeUtils.To3DAttributes(gameObject.transform.position);
+            instance.set3DAttributes(feet3DPosition);
+
+            // Obtener la descripción del evento
+            FMOD.Studio.EventDescription eventDescription;
+            instance.getDescription(out eventDescription);
+
+            // Obtener la descripción y el ID del parámetro 'generator_condition'
+            FMOD.Studio.PARAMETER_DESCRIPTION parameterDescription;
+            FMOD.Studio.PARAMETER_DESCRIPTION parameterDescription2;
+            eventDescription.getParameterDescriptionByName("generator_condition", out parameterDescription);
+            eventDescription.getParameterDescriptionByName("Distance", out parameterDescription2);
+            FMOD.Studio.PARAMETER_ID parameterID = parameterDescription.id;
+            FMOD.Studio.PARAMETER_ID parameterID2 = parameterDescription2.id;
+
+            // Cambiar el valor del parámetro a 'start'
+            instance.setParameterByID(parameterID, test);  // 1.0f para encender
+            instance.setParameterByID(parameterID, test2);  // 1.0f para encender
+
+
+            instance.start();
+  
+            //typeSound[soundKey].setParameterByName("Distance", test);
+            //typeSound[soundKey].start();
         }
     }
 
-    public void StopSoundSFX(Dictionary<Sounds, EventInstance> typeSound,Sounds soundKey, FMOD.Studio.STOP_MODE mode)
+    public void StopSoundSFX(Dictionary<Sounds, EventReference> typeSound,Sounds soundKey, FMOD.Studio.STOP_MODE mode)
     {
         if (typeSound.ContainsKey(soundKey))
         {
-            typeSound[soundKey].stop(mode);
+            EventInstance instance = RuntimeManager.CreateInstance(typeSound[soundKey]);
+            instance.start();
         }
     }
 
 
-    public void UpdateSound(Dictionary<Sounds, EventInstance> typeSound,Sounds soundKey)
+    public void UpdateSound(Dictionary<Sounds, EventReference> typeSound,Sounds soundKey)
     {
-        if (typeSound.TryGetValue(soundKey, out EventInstance soundInstance))
+        if (typeSound.ContainsKey(soundKey))
         {
-            soundInstance.getPlaybackState(out PLAYBACK_STATE playbackState);
+            EventInstance instance = RuntimeManager.CreateInstance(typeSound[soundKey]);
+            instance.getPlaybackState(out PLAYBACK_STATE playbackState);
             if (playbackState == PLAYBACK_STATE.STOPPED)
             {
-                PlaySoundSFX(typeSound,soundKey);
+                instance.start();
+            }
+            else
+            {
+                Debug.LogWarning($"No sound instance found for key: {soundKey}");
             }
         }
-        else
-        {
-            Debug.LogWarning($"No sound instance found for key: {soundKey}");
-        }
+ 
     }
 }
