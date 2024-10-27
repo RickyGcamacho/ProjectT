@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="ParameterPreset" id="{e3487555-d3b1-4376-9358-ec2f76c38770}">
+	<object class="ParameterPreset" id="{38016815-54d5-4108-bc1b-8d24900dfa3f}">
 		<property name="name">
-			<value>generator_condition</value>
+			<value>on-off</value>
 		</property>
 		<relationship name="folder">
 			<destination>{b7ce4c5e-ef45-4bcc-8e9f-a6a46b872964}</destination>
 		</relationship>
 		<relationship name="parameter">
-			<destination>{3ae4cc03-6c1a-4004-a7a0-302b5859f295}</destination>
+			<destination>{a7b453cb-4fc3-403d-abf3-89522361abf0}</destination>
 		</relationship>
 	</object>
-	<object class="GameParameter" id="{3ae4cc03-6c1a-4004-a7a0-302b5859f295}">
+	<object class="GameParameter" id="{a7b453cb-4fc3-403d-abf3-89522361abf0}">
 		<property name="parameterType">
 			<value>2</value>
 		</property>
@@ -19,8 +19,8 @@
 			<value>2</value>
 		</property>
 		<property name="enumerationLabels">
-			<value>nostart</value>
-			<value>start</value>
+			<value>on</value>
+			<value>off</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
