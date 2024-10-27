@@ -13,7 +13,7 @@ public class Flashlight : MonoBehaviour
     }
     void Interact()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             isOn = !isOn; // Alterna el valor de isOn entre true y false
             flashlight.SetActive(isOn); // Activa o desactiva la linterna según el estado de isOn

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerReturn" id="{386ab8c3-c727-48de-addf-d581f3f721b7}">
+		<property name="color">
+			<value>Yellow</value>
+		</property>
 		<property name="overridingInputFormat">
 			<value>2</value>
 		</property>
@@ -27,7 +30,7 @@
 	<object class="MixerBusPanner" id="{7a0ee3b9-1d3a-438d-b6e7-a4f7ff20e737}" />
 	<object class="SFXReverbEffect" id="{7660eaf2-9dd8-48b5-9fe1-99b0435bf440}">
 		<property name="decayTime">
-			<value>10000</value>
+			<value>5500</value>
 		</property>
 		<property name="earlyDelay">
 			<value>42</value>
@@ -39,7 +42,7 @@
 			<value>280</value>
 		</property>
 		<property name="highCut">
-			<value>2100</value>
+			<value>1700</value>
 		</property>
 		<property name="earlyLateMix">
 			<value>56</value>

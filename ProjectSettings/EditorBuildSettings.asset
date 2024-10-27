@@ -6,15 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/Tests/MenuScene.unity
-    guid: dafec29a502a173449621fef187fef53
+    path: Assets/_Scenes/Tests/SoundTests/MenuSound.unity
+    guid: a57b387f193c3444cbcb9bded3861d2c
   - enabled: 1
-    path: Assets/_Scenes/Tests/LevelDesign.unity
-    guid: 4c976e58969e8334c86324650a75270c
+    path: Assets/_Scenes/Gameplay/Game.unity
+    guid: 2efc9896b9be25c428f59b57a6e9517e
   - enabled: 1
-    path: Assets/_Scenes/Tests/Credits.unity
-    guid: 8e8b092a3c2518645b1e03656a1cda4b
-  - enabled: 1
-    path: Assets/_Scenes/Tests/Options.unity
-    guid: b7d977781fd676e458aaac416a36bc82
+    path: Assets/_Scenes/Tests/Ricky/LevelDesign.unity
+    guid: 2c2c37cebf375654a90bcbf73403cc17
   m_configObjects: {}

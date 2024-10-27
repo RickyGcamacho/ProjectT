@@ -1,32 +1,36 @@
+using FMOD.Studio;
 using FMODUnity;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FMODEvents : MonoBehaviour
 {
-    public Dictionary<Sounds, EventReference> EventReferencesPlayer { get; private set; }
-    public Dictionary<Sounds, EventReference> EventReferencesEnemy { get; private set; }
-    public Dictionary<Sounds, EventReference> EventReferencesUI { get; private set; }
 
     [field: Header("Player"), Space(5)]
+    public Dictionary<Sounds, EventInstance> Sounds_Player { get; private set; }
+    public Dictionary<Sounds, EventReference> References_Player { get; private set; }
 
-    [field: SerializeField] public EventReference playerSteps_SEvent { get; private set; }
-    [field: SerializeField] public EventReference flashLight_SEvent { get; private set; }
-    [field: SerializeField] public EventReference playerRun_SEvent { get; private set; }
-    [field: SerializeField] public EventReference heartBeats_SEvent { get; private set; }
-    [field: SerializeField] public EventReference heal_SEvent { get; private set; }
-    [field: SerializeField] public EventReference grab_SEvent { get; private set; }
+    [field: SerializeField] public EventReference Event_PlayerSteps { get; private set; }
+    [field: SerializeField] public EventReference Event_Flashlight { get; private set; }
+    [field: SerializeField] public EventReference Event_PlayerRun { get; private set; }
+    [field: SerializeField] public EventReference Event_HeartBeats { get; private set; }
+    [field: SerializeField] public EventReference Event_GrabObject { get; private set; }
 
     [field: Header("Enemy"), Space(5)]
+    public Dictionary<Sounds, EventInstance> Sounds_Enemy { get; private set; }
+    public Dictionary<Sounds, EventReference> References_UI { get; private set; }
+    public Dictionary<Sounds, EventReference> References_Enemy { get; private set; }
 
-    [field: SerializeField] public EventReference enemySteps_SEvent { get; private set; }
-    [field: SerializeField] public EventReference enemyRun_SEvent { get; private set; }
-    [field: SerializeField] public EventReference enemyDetect_SEvent { get; private set; }
+    [field: SerializeField] public EventReference Event_EnemySteps { get; private set; }
+    [field: SerializeField] public EventReference Event_EnemyRun { get; private set; }
+    [field: SerializeField] public EventReference Event_DetectPlayer { get; private set; }
 
     [field: Header("UI"), Space(5)]
-    [field: SerializeField] public EventReference playButton_SEvent { get; private set; }
-    [field: SerializeField] public EventReference moveCursor_SEvent { get; private set; }
-    [field: SerializeField] public EventReference ambient_SEvent { get; private set; }
+    public Dictionary<Sounds, EventInstance> Sounds_UI { get; private set; }
+    [field: SerializeField] public EventReference Event_PlayUI { get; private set; }
+    [field: SerializeField] public EventReference Event_HighlightUI { get; private set; }
+    [field: SerializeField] public EventReference Event_CancelUI { get; private set; }
+    [field: SerializeField] public EventReference Event_MenuMusicUI { get; private set; }
 
 
     public static FMODEvents instance { get; private set; }
@@ -42,43 +46,64 @@ public class FMODEvents : MonoBehaviour
         // Si no hay instancia, asigna esta instancia
         instance = this;
 
-        InitializeEventRefPlayer();
-        InitializeEventRefEnemy();
-        InitializeEventRefUI();
-
+        InitializeReferences();
 
     }
-
-    private void InitializeEventRefPlayer()
+    public void InitializeReferences()
     {
-        EventReferencesPlayer = new Dictionary<Sounds, EventReference>
+        SetBanksPlayer();
+        SetBanksEnemy();
+        SetBanksUI();
+    }
+
+    private void SetBanksPlayer()
+    {
+        References_Player = new Dictionary<Sounds, EventReference>
         {
-            { Sounds.PLAYER_WALK, playerSteps_SEvent },
-            { Sounds.FLASHLIGHT_INTERACTION, flashLight_SEvent },
-            { Sounds.PLAYER_RUN, playerRun_SEvent },
-            { Sounds.PLAYER_HEARTBEATS, heartBeats_SEvent },
-            { Sounds.PLAYER_HEAL, heal_SEvent },
-            { Sounds.PLAYER_GRAB, grab_SEvent }
+            { Sounds.PLAYER_WALK, Event_PlayerSteps },
+            { Sounds.FLASHLIGHT_INTERACTION, Event_Flashlight },
+            { Sounds.PLAYER_RUN, Event_PlayerRun },
+            { Sounds.PLAYER_HEARTBEATS, Event_HeartBeats },
+            { Sounds.PLAYER_GRAB, Event_GrabObject }
         };
     }
 
-    private void InitializeEventRefEnemy()
+    private void SetBanksEnemy()
     {
-        EventReferencesEnemy = new Dictionary<Sounds, EventReference>
+        References_Enemy = new Dictionary<Sounds, EventReference>
         {
-            { Sounds.ENEMY_STEPS, enemySteps_SEvent },
-            { Sounds.ENEMY_RUN, enemyRun_SEvent },
-            { Sounds.ENEMY_DETECT, enemyDetect_SEvent }
+            { Sounds.ENEMY_STEPS, Event_EnemySteps },
+            { Sounds.ENEMY_RUN, Event_EnemyRun },
+            { Sounds.ENEMY_DETECT, Event_DetectPlayer }
         };
     }
 
-    private void InitializeEventRefUI()
+    private void SetBanksUI()
     {
-        EventReferencesUI = new Dictionary<Sounds, EventReference>
+        References_UI = new Dictionary<Sounds, EventReference>
         {
-            { Sounds.UI_MOVECURSOR, playerSteps_SEvent },
-            { Sounds.UI_PLAYBUTTON, flashLight_SEvent },
-            { Sounds.UI_MUSIC, playerRun_SEvent },
+            { Sounds.UI_HIGHLIGHT, Event_HighlightUI },
+            { Sounds.UI_PLAYBUTTON, Event_PlayUI },
+            { Sounds.UI_CANCEL, Event_CancelUI },
+            { Sounds.UI_MUSIC, Event_MenuMusicUI },
         };
+    }
+
+    public Dictionary<Sounds, EventInstance> CreateInstances(Dictionary<Sounds, EventReference> dicReferences)
+    {
+        // Crear un nuevo diccionario para almacenar las instancias de eventos
+        Dictionary<Sounds, EventInstance> soundsInstances = new Dictionary<Sounds, EventInstance>();
+
+        foreach (var reference in dicReferences)
+        {
+            // Crear la instancia del evento
+            EventInstance instance = RuntimeManager.CreateInstance(reference.Value);
+
+            // Almacenar en el diccionario
+            soundsInstances[reference.Key] = instance;
+        }
+
+        // Retornar el diccionario de instancias
+        return soundsInstances;
     }
 }

@@ -78,6 +78,11 @@ crashlytics-build.properties
 /Assets/Files/*.tmp.driveupload
 /Assets/Files/*.tmp.drivedownload
 
+/Assets/FMODStudioCache.asset
+/Assets/FMODStudioCache.asset.meta
+fmod.log
+fmod_editor.log
+
 # Excluir todos los archivos .meta en la carpeta Files y sus subcarpetas
 
 # JetBrains Rider cache directory

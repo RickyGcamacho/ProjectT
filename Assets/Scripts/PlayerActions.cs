@@ -46,13 +46,14 @@ public class PlayerActions : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         defaultFOV = playerCamera.fieldOfView;
+        Speed = speedWalk;
     }
 
     void Update()
     {
+        Running();
         Walking();
         Crouching();
-        Running();
         HandleMouseLook();
         HandleZoom();
 
@@ -60,7 +61,7 @@ public class PlayerActions : MonoBehaviour
 
     private void Crouching()
     {
-        if (Input.GetKey(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             cameraCrouched.SetActive(true);
             playerCamera.gameObject.SetActive(false);
@@ -68,7 +69,7 @@ public class PlayerActions : MonoBehaviour
             GetComponent<BoxCollider>().center = new Vector3(GetComponent<BoxCollider>().center.x, crouchedHeightCenterNew, GetComponent<BoxCollider>().center.z);
             Speed = crouchedSpeed;
         }
-        if (Input.GetKeyUp(KeyCode.C)) //&& isNotHide)
+        if (Input.GetKeyUp(KeyCode.LeftControl)) //&& isNotHide)
         {
             //pararse
             cameraCrouched.SetActive(false);
@@ -81,20 +82,23 @@ public class PlayerActions : MonoBehaviour
     private void Walking()
     {
         z = Input.GetAxis("Vertical");
+        x = Input.GetAxis("Horizontal");
 
-        Vector3 dir = transform.forward * z;
+        Vector3 dir = (transform.forward * z) + (transform.right * x);
         Vector3 dirSpeed = dir * (Speed);
         _rb.velocity = dirSpeed;
-
-        Speed = speedWalk;
         dirSpeed.y = _rb.velocity.y;
         dir.y = 0;
     }
     private void Running()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             Speed = runSpeed;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            Speed = speedWalk;
         }
     }
 
@@ -110,7 +114,7 @@ public class PlayerActions : MonoBehaviour
     //Zoom
     private void HandleZoom()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.V))
         {
             if (zoomRoutine != null)
             {
@@ -119,7 +123,7 @@ public class PlayerActions : MonoBehaviour
             }
             zoomRoutine = StartCoroutine(ToggleZoom(true));
         }
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetKeyUp(KeyCode.V))
         {
             if (zoomRoutine != null)
             {

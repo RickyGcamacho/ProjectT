@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerReturn" id="{86183ab7-38e6-4aaf-abee-fb82b30004ad}">
+		<property name="color">
+			<value>Red</value>
+		</property>
+		<property name="name">
+			<value>Head Reverb</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{3e80856c-ad77-4519-bbc9-8eb8a756b4bd}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{d0f26b66-11da-434b-a098-4ff815898826}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{03dac85e-a1f4-4fc9-ba03-6020f26c0340}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{3e80856c-ad77-4519-bbc9-8eb8a756b4bd}">
+		<relationship name="effects">
+			<destination>{e5210ea8-d769-4e27-8f66-c7c192f7d2e1}</destination>
+			<destination>{d7bf5bfd-5cab-480a-95dd-a290828da232}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{d0f26b66-11da-434b-a098-4ff815898826}" />
+	<object class="MixerBusFader" id="{e5210ea8-d769-4e27-8f66-c7c192f7d2e1}" />
+	<object class="SFXReverbEffect" id="{d7bf5bfd-5cab-480a-95dd-a290828da232}" />
+</objects>

@@ -13,9 +13,10 @@
     ENEMY_RUN,
     ENEMY_DETECT,
 
-    UI_MOVECURSOR,
+    UI_HIGHLIGHT,
     UI_PLAYBUTTON,
     UI_MUSIC,
+    UI_CANCEL,
 
 }
 
