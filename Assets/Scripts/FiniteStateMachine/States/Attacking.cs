@@ -17,9 +17,14 @@ namespace FiniteStateMachine.States
             _distanceToAttack = distanceToAttack;
         }
 
+        public override void Enter()
+        {
+            Debug.Log("Attack!");
+        }
+
         public override void UpdateLogic()
         {
-            if ((_player.position - _myTransform.position).magnitude > _distanceToAttack)
+            if ((_player.position - _myTransform.position).magnitude > _distanceToAttack * 1.5f)
             {
                 stateMachine.ChangeState(((PatientStateMachine) stateMachine).pursuingState);
             }

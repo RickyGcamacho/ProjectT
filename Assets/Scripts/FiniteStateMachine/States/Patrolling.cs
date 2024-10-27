@@ -11,35 +11,36 @@ namespace FiniteStateMachine.States
         private int _targetIndex;
         
         private readonly Transform _myTransform;
-        private readonly Rigidbody _rigidBody;
+        private readonly Transform _player;
         private readonly NavMeshAgent _agent;
         
-        //private readonly float _speed;
+        private readonly float _speed;
         private readonly float _distanceToChangeWaypoint;
-        private readonly float _distanceToDetect;
-
-        private readonly Transform _player;
-
+        private readonly float _distanceToChase;
+        
         private float _timerToChange;
+        
+        private readonly LayerMask _layerMask;
 
         // ReSharper disable once SuggestBaseTypeForParameter
-        public Patrolling(PatientStateMachine stateMachine, Transform myTransform, Rigidbody rigidBody, NavMeshAgent agent, float speed, float distanceToChangeWaypoint, float distanceToDetect, Transform[] waypoints, Transform player) : base(stateMachine)
+        public Patrolling(PatientStateMachine stateMachine, Transform myTransform, Transform player, NavMeshAgent agent, float speed, float distanceToChangeWaypoint, float distanceToChase, Transform[] waypoints, LayerMask layerMask) : base(stateMachine)
         {
             this.stateMachine = stateMachine;
             
             _myTransform = myTransform;
-            _rigidBody = rigidBody;
+            _player = player;
             
             _agent = agent;
-            agent.speed = speed;
-            agent.acceleration = speed;
-            //_speed = speed;
+            _speed = speed;
+            _agent.speed = speed;
+            _agent.acceleration = speed * 4;
             
             _distanceToChangeWaypoint = distanceToChangeWaypoint;
-            _distanceToDetect = distanceToDetect;
+            _distanceToChase = distanceToChase;
 
             _waypoints = waypoints;
-            _player = player;
+
+            _layerMask = layerMask;
         }
 
         public override void Enter()
@@ -47,16 +48,25 @@ namespace FiniteStateMachine.States
             _targetIndex = Random.Range(0, _waypoints.Length);
             _currentTarget = _waypoints[_targetIndex];
             _agent.SetDestination(_currentTarget.position);
+
+            _agent.speed = _speed;
+            _agent.acceleration = _speed;
         }
 
         public override void UpdatePhysics()
         {
-            if ((_player.position - _myTransform.position).magnitude < _distanceToDetect)
-            {
-                stateMachine.ChangeState(((PatientStateMachine) stateMachine).pursuingState);
-                return;
-            }
+            var myPosition = _myTransform.position;
+            var ray = new Ray(myPosition, (_player.position - myPosition).normalized);
             
+            if (Physics.Raycast(ray, out var hit, _distanceToChase, _layerMask, QueryTriggerInteraction.Ignore))
+            {
+                if (hit.transform.gameObject.CompareTag("Player"))
+                {
+                    stateMachine.ChangeState(((PatientStateMachine) stateMachine).pursuingState);
+                    return;
+                }
+            }
+
             var directionalVector = _currentTarget.position - _myTransform.position;
 
             if (directionalVector.magnitude < _distanceToChangeWaypoint)
@@ -67,9 +77,9 @@ namespace FiniteStateMachine.States
 
         private void ChangeWaypoint()
         {
-            _timerToChange += Time.deltaTime;
+            _timerToChange += Time.fixedDeltaTime;
 
-            if (_timerToChange < 3) return; // After this time has past we change the waypoint
+            if (_timerToChange < 4) return;
             
             _timerToChange = 0;
                 
