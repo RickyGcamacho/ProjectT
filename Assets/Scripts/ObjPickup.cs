@@ -1,12 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class ObjPickup : MonoBehaviour
 {
     public GameObject player;
     public Transform holdPos;
-    public Camera mainCamera;
     //if you copy from below this point, you are legally required to like the video
     public float throwForce = 500f; //force at which the object is thrown at
     public float pickUpRange = 5f; //how far the player can pickup the object from
@@ -22,25 +24,23 @@ public class ObjPickup : MonoBehaviour
     //MouseLookScript mouseLookScript;
     void Start()
     {
-        LayerNumber = LayerMask.NameToLayer("Interactuable"); //if your holdLayer is named differently make sure to change this ""
+        LayerNumber = LayerMask.NameToLayer("holdLayer"); //if your holdLayer is named differently make sure to change this ""
 
         //mouseLookScript = player.GetComponent<MouseLookScript>();
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) 
+        if (Input.GetMouseButtonDown(1)) //change E to whichever key you want to press to pick up
         {
             if (heldObj == null) //if currently not holding anything
             {
                 //perform raycast to check if player is looking at object within pickuprange
                 RaycastHit hit;
-                if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, pickUpRange))
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange))
                 {
-                    print(hit.transform.gameObject.name);
                     //make sure pickup tag is attached
                     if (hit.transform.gameObject.tag == "canPickUp")
                     {
-                        print("PICKUP");
                         //pass in object hit into the PickUpObject function
                         PickUpObject(hit.transform.gameObject);
                     }
@@ -57,8 +57,9 @@ public class ObjPickup : MonoBehaviour
         }
         if (heldObj != null) //if player is holding object
         {
-  
-            if (Input.GetMouseButtonUp(0)&& canDrop == true) //Mous0 (leftclick) is used to throw, change this if you want another button to be used)
+            MoveObject(); //keep object position at holdPos
+;
+            if (Input.GetKeyDown(KeyCode.Mouse0) && canDrop == true) //Mous0 (leftclick) is used to throw, change this if you want another button to be used)
             {
                 StopClipping();
                 ThrowObject();
@@ -88,6 +89,11 @@ public class ObjPickup : MonoBehaviour
         heldObj.transform.parent = null; //unparent object
         heldObj = null; //undefine game object
     }
+    void MoveObject()
+    {
+        //keep object position the same as the holdPosition position
+        heldObj.transform.position = holdPos.transform.position;
+    }
 
 
     void ThrowObject()
@@ -114,11 +120,5 @@ public class ObjPickup : MonoBehaviour
             heldObj.transform.position = transform.position + new Vector3(0f, -0.5f, 0f); //offset slightly downward to stop object dropping above player 
             //if your player is small, change the -0.5f to a smaller number (in magnitude) ie: -0.1f
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(mainCamera.transform.position, mainCamera.transform.position + mainCamera.transform.forward * 10f);
     }
 }

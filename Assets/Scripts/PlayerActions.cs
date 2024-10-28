@@ -38,6 +38,7 @@ public class PlayerActions : MonoBehaviour
     private float rotationX, speed, x, z;
 
     public float Speed { get => speed; set => speed = value; }
+    public float LookSpeedX { get => lookSpeedX; set => lookSpeedX = value; }
 
     private void Awake()
     {
@@ -81,12 +82,11 @@ public class PlayerActions : MonoBehaviour
     private void Walking()
     {
         z = Input.GetAxis("Vertical");
+        x = Input.GetAxis("Horizontal");
 
-        Vector3 dir = transform.forward * z;
-        Vector3 dirSpeed = dir * (Speed);
+        Vector3 dir = (transform.forward * z) + (transform.right * x);
+        Vector3 dirSpeed = dir * (speedWalk);
         _rb.velocity = dirSpeed;
-
-        Speed = speedWalk;
         dirSpeed.y = _rb.velocity.y;
         dir.y = 0;
     }
@@ -101,10 +101,13 @@ public class PlayerActions : MonoBehaviour
     //Camara
     private void HandleMouseLook()
     {
-        rotationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
-        rotationX = Mathf.Clamp(rotationX, -uperLookLimit, lowerLookLimit);
-        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-        transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeedX, 0);
+        if (Time.timeScale == 1)
+        {
+            rotationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
+            rotationX = Mathf.Clamp(rotationX, -uperLookLimit, lowerLookLimit);
+            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * LookSpeedX, 0);
+        }
     }
 
     //Zoom

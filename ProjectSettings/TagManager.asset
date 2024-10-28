@@ -5,16 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - canPickUp
+  - Interactuable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Interactuable
+  - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Door
+  - ThrowLayer
+  - Inspection
   - 
   - 
   - 
