@@ -43,9 +43,30 @@ public class AudioManager : MonoBehaviour
     }
 
     public void PlayOneShot(EventReference sound, Vector2 worldPos)
-    {
-     
-        RuntimeManager.PlayOneShot(sound, worldPos);
+    {      
+        EventInstance instance = RuntimeManager.CreateInstance(sound);
+        var feet3DPosition = RuntimeUtils.To3DAttributes(gameObject.transform.position);
+        instance.set3DAttributes(feet3DPosition);
+
+        // Obtener la descripción del evento
+        FMOD.Studio.EventDescription eventDescription;
+        instance.getDescription(out eventDescription);
+
+        // Obtener la descripción y el ID del parámetro 'generator_condition'
+        FMOD.Studio.PARAMETER_DESCRIPTION parameterDescription;
+        FMOD.Studio.PARAMETER_DESCRIPTION parameterDescription2;
+        eventDescription.getParameterDescriptionByName("generator_condition", out parameterDescription);
+        eventDescription.getParameterDescriptionByName("Distance", out parameterDescription2);
+        FMOD.Studio.PARAMETER_ID parameterID = parameterDescription.id;
+        FMOD.Studio.PARAMETER_ID parameterID2 = parameterDescription2.id;
+
+        //Cambiar el valor del parámetro a 'start'
+        instance.setParameterByID(parameterID, test);  // 1.0f para encender
+        instance.setParameterByID(parameterID, test2);  // 1.0f para encender
+
+
+        instance.start();
+
     }
 
     public void PlaySoundSFX(Dictionary<Sounds, EventReference> typeSound, Sounds soundKey)
@@ -56,27 +77,9 @@ public class AudioManager : MonoBehaviour
             var feet3DPosition = RuntimeUtils.To3DAttributes(gameObject.transform.position);
             instance.set3DAttributes(feet3DPosition);
 
-            // Obtener la descripción del evento
-            FMOD.Studio.EventDescription eventDescription;
-            instance.getDescription(out eventDescription);
-
-            // Obtener la descripción y el ID del parámetro 'generator_condition'
-            FMOD.Studio.PARAMETER_DESCRIPTION parameterDescription;
-            FMOD.Studio.PARAMETER_DESCRIPTION parameterDescription2;
-            eventDescription.getParameterDescriptionByName("generator_condition", out parameterDescription);
-            eventDescription.getParameterDescriptionByName("Distance", out parameterDescription2);
-            FMOD.Studio.PARAMETER_ID parameterID = parameterDescription.id;
-            FMOD.Studio.PARAMETER_ID parameterID2 = parameterDescription2.id;
-
-            // Cambiar el valor del parámetro a 'start'
-            instance.setParameterByID(parameterID, test);  // 1.0f para encender
-            instance.setParameterByID(parameterID, test2);  // 1.0f para encender
-
-
             instance.start();
   
-            //typeSound[soundKey].setParameterByName("Distance", test);
-            //typeSound[soundKey].start();
+
         }
     }
 

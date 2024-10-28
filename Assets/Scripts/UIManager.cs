@@ -13,12 +13,18 @@ public class UIManager : MonoBehaviour
     [field: SerializeField] private Sounds ui_music;
     private Dictionary<Sounds, EventReference> soundsUI;
 
+    [field: SerializeField] public EventReference Event_Test { get; private set; }
     private void Start()
     {
-         soundsUI = FMODEvents.instance.References_UI;
-         AudioManager.instance.PlaySoundSFX(soundsUI, ui_music); ///sonido ambiente
+        soundsUI = FMODEvents.instance.References_UI;
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            AudioManager.instance.PlayOneShot(Event_Test,transform.position);
+        }
+    }
     public void HighlightButton()
     {
         AudioManager.instance.PlaySoundSFX(soundsUI, ui_highlight);
