@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public float test=20;
-    public float test2=20;
+
     public static AudioManager instance { get; private set; }
     private void Awake()
     {
@@ -42,7 +41,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayOneShot(EventReference sound, Vector2 worldPos)
+    public void PlayOneShot(EventReference sound, Vector2 worldPos, int value)
     {      
         EventInstance instance = RuntimeManager.CreateInstance(sound);
         var feet3DPosition = RuntimeUtils.To3DAttributes(gameObject.transform.position);
@@ -54,15 +53,11 @@ public class AudioManager : MonoBehaviour
 
         // Obtener la descripción y el ID del parámetro 'generator_condition'
         FMOD.Studio.PARAMETER_DESCRIPTION parameterDescription;
-        FMOD.Studio.PARAMETER_DESCRIPTION parameterDescription2;
         eventDescription.getParameterDescriptionByName("generator_condition", out parameterDescription);
-        eventDescription.getParameterDescriptionByName("Distance", out parameterDescription2);
         FMOD.Studio.PARAMETER_ID parameterID = parameterDescription.id;
-        FMOD.Studio.PARAMETER_ID parameterID2 = parameterDescription2.id;
 
         //Cambiar el valor del parámetro a 'start'
-        instance.setParameterByID(parameterID, test);  // 1.0f para encender
-        instance.setParameterByID(parameterID, test2);  // 1.0f para encender
+        instance.setParameterByID(parameterID, value);  // 1.0f para encender
 
 
         instance.start();

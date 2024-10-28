@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+
+    public int test = 3;
     [field: Header("Sounds"), Space(5)]
     [field: SerializeField] private Sounds ui_highlight;
     [field: SerializeField] private Sounds ui_play;
@@ -22,7 +24,7 @@ public class UIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            AudioManager.instance.PlayOneShot(Event_Test,transform.position);
+            AudioManager.instance.PlayOneShot(Event_Test,transform.position,test);
         }
     }
     public void HighlightButton()
