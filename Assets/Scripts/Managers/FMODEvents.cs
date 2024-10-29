@@ -5,36 +5,37 @@ using UnityEngine;
 
 public class FMODEvents : MonoBehaviour
 {
-
     [field: Header("Player"), Space(5)]
+    [field: SerializeField] public EventReference Player_Steps { get; private set; }
+    [field: SerializeField] public EventReference Player_Flashlight { get; private set; }
+    [field: SerializeField] public EventReference Player_Run { get; private set; }
+    [field: SerializeField] public EventReference Player_HeartBeats { get; private set; }
+    [field: SerializeField] public EventReference Player_GrabObject { get; private set; }
     public Dictionary<Sounds, EventReference> References_Player { get; private set; }
-    public Dictionary<Sounds, EventInstance> Sounds_Player { get; private set; }
-
-    [field: SerializeField] public EventReference Event_PlayerSteps { get; private set; }
-    [field: SerializeField] public EventReference Event_Flashlight { get; private set; }
-    [field: SerializeField] public EventReference Event_PlayerRun { get; private set; }
-    [field: SerializeField] public EventReference Event_HeartBeats { get; private set; }
-    [field: SerializeField] public EventReference Event_GrabObject { get; private set; }
 
     [field: Header("Enemy"), Space(5)]
+    [field: SerializeField] public EventReference Enemy_Steps { get; private set; }
+    [field: SerializeField] public EventReference Enemy_Run { get; private set; }
+    [field: SerializeField] public EventReference Enemy_DetectPlayer { get; private set; }
     public Dictionary<Sounds, EventReference> References_Enemy { get; private set; }
-    public Dictionary<Sounds, EventInstance> Sounds_Enemy { get; private set; }
 
-    [field: SerializeField] public EventReference Event_EnemySteps { get; private set; }
-    [field: SerializeField] public EventReference Event_EnemyRun { get; private set; }
-    [field: SerializeField] public EventReference Event_DetectPlayer { get; private set; }
+
+    [field: Header("Props"), Space(5)]
+    [field: SerializeField] public EventReference Prop_Generator { get; private set; }
+    [field: SerializeField] public EventReference Prop_TV { get; private set; }
+    [field: SerializeField] public EventReference Prop_Radio { get; private set; }
+    public Dictionary<Sounds, EventReference> References_Props { get; private set; }
 
     [field: Header("UI"), Space(5)]
+    [field: SerializeField] public EventReference Button_Play { get; private set; }
+    [field: SerializeField] public EventReference Button_Highlight { get; private set; }
+    [field: SerializeField] public EventReference Button_Cancel { get; private set; }
+    [field: SerializeField] public EventReference UI_Music { get; private set; }
     public Dictionary<Sounds, EventReference> References_UI { get; private set; }
-    public Dictionary<Sounds, EventInstance> Sounds_UI { get; private set; }
-    [field: SerializeField] public EventReference Event_PlayUI { get; private set; }
-    [field: SerializeField] public EventReference Event_HighlightUI { get; private set; }
-    [field: SerializeField] public EventReference Event_CancelUI { get; private set; }
-    [field: SerializeField] public EventReference Event_MenuMusicUI { get; private set; }
-
 
     public static FMODEvents instance { get; private set; }
 
+    
 
     private void Awake()
     {
@@ -53,6 +54,7 @@ public class FMODEvents : MonoBehaviour
     {
         SetBanksPlayer();
         SetBanksEnemy();
+        SetBanksProps();
         SetBanksUI();
     }
 
@@ -60,11 +62,11 @@ public class FMODEvents : MonoBehaviour
     {
         References_Player = new Dictionary<Sounds, EventReference>
         {
-            { Sounds.PLAYER_WALK, Event_PlayerSteps },
-            { Sounds.FLASHLIGHT_INTERACTION, Event_Flashlight },
-            { Sounds.PLAYER_RUN, Event_PlayerRun },
-            { Sounds.PLAYER_HEARTBEATS, Event_HeartBeats },
-            { Sounds.PLAYER_GRAB, Event_GrabObject }
+            { Sounds.PLAYER_WALK, Player_Steps },
+            { Sounds.FLASHLIGHT_INTERACTION, Player_Flashlight },
+            { Sounds.PLAYER_RUN, Player_Run },
+            { Sounds.PLAYER_HEARTBEATS, Player_HeartBeats },
+            { Sounds.PLAYER_GRAB, Player_GrabObject }
         };
     }
 
@@ -72,38 +74,30 @@ public class FMODEvents : MonoBehaviour
     {
         References_Enemy = new Dictionary<Sounds, EventReference>
         {
-            { Sounds.ENEMY_STEPS, Event_EnemySteps },
-            { Sounds.ENEMY_RUN, Event_EnemyRun },
-            { Sounds.ENEMY_DETECT, Event_DetectPlayer }
+            { Sounds.ENEMY_STEPS, Enemy_Steps },
+            { Sounds.ENEMY_RUN, Enemy_Run },
+            { Sounds.ENEMY_DETECT, Enemy_DetectPlayer }
         };
     }
 
+    private void SetBanksProps()
+    {
+        References_Props = new Dictionary<Sounds, EventReference>
+        {
+            { Sounds.PROPS_GENERATOR, Prop_Generator },
+            { Sounds.PROPS_RADIO, Prop_Radio },
+            { Sounds.PROPS_TV, Prop_TV }
+        };
+    }
     private void SetBanksUI()
     {
         References_UI = new Dictionary<Sounds, EventReference>
         {
-            { Sounds.UI_HIGHLIGHT, Event_HighlightUI },
-            { Sounds.UI_PLAYBUTTON, Event_PlayUI },
-            { Sounds.UI_CANCEL, Event_CancelUI },
-            { Sounds.UI_MUSIC, Event_MenuMusicUI },
+            { Sounds.UI_HIGHLIGHT, Button_Highlight },
+            { Sounds.UI_PLAYBUTTON, Button_Play },
+            { Sounds.UI_CANCEL, Button_Cancel },
+            { Sounds.UI_MUSIC, UI_Music },
         };
     }
 
-    public Dictionary<Sounds, EventInstance> CreateInstances(Dictionary<Sounds, EventReference> dicReferences)
-    {
-        // Crear un nuevo diccionario para almacenar las instancias de eventos
-        Dictionary<Sounds, EventInstance> soundsInstances = new Dictionary<Sounds, EventInstance>();
-
-        foreach (var reference in dicReferences)
-        {
-            // Crear la instancia del evento
-            EventInstance instance = RuntimeManager.CreateInstance(reference.Value);
-
-            // Almacenar en el diccionario
-            soundsInstances[reference.Key] = instance;
-        }
-
-        // Retornar el diccionario de instancias
-        return soundsInstances;
-    }
 }

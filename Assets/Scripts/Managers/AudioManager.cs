@@ -46,7 +46,7 @@ public class AudioManager : MonoBehaviour
         instance.setParameterByIDWithLabel(parameterID, label);
     }
 
-    public EventInstance GetInstance(Sounds soundKey, Dictionary<Sounds, EventReference> dictionary)
+    public EventInstance GetEventInstance(Dictionary<Sounds, EventReference> dictionary,Sounds soundKey)
     {
         // Inicializa la instancia como un valor por defecto
         EventInstance instance = default;

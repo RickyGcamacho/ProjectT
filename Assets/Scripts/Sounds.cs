@@ -18,6 +18,11 @@
     UI_MUSIC,
     UI_CANCEL,
 
+    PROPS_GENERATOR,
+    PROPS_TV,
+    PROPS_RADIO,
+
+
 }
 
 

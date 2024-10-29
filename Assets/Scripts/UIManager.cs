@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         soundsUI = FMODEvents.instance.References_UI;
-       _event_generator = AudioManager.instance.GetInstances(soundsUI, ui_music);
+       _event_generator = AudioManager.instance.GetEventInstance(soundsUI, ui_music);
 
 
     }
@@ -46,21 +46,20 @@ public class UIManager : MonoBehaviour
         {
             //Cambiar el valor del parámetro a 'start'
             AudioManager.instance.SetParameterByLabel(_event_generator, "generator_condition", "stop");
-            _event_generator.getPlaybackState(out PLAYBACK_STATE playbackState);
         }
     }
     public void HighlightButton()
     {
-        AudioManager.instance.GetInstances(soundsUI, ui_highlight).start();
+        AudioManager.instance.GetEventInstance(soundsUI, ui_highlight).start();
     }
     public void PlayButton()
     {
-        AudioManager.instance.GetInstances(soundsUI, ui_play).start();
+        AudioManager.instance.GetEventInstance(soundsUI, ui_play).start();
     }
 
     public void BackButton()
     {
-        AudioManager.instance.GetInstances(soundsUI, ui_cancel).start();
+        AudioManager.instance.GetEventInstance(soundsUI, ui_cancel).start();
     }
 
     public void StartScene(string value)
