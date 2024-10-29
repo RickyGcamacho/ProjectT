@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/environment_misc.bank
   Name: environment_misc
   StudioPath: bank:/environment/environment_misc
-  lastModified: 638657622889764832
+  lastModified: 638657753782748506
   FileSizes:
   - Name: Desktop
-    Value: 22420
+    Value: 22956
   Exists: 1
 --- !u!114 &-8162474709528260665
 MonoBehaviour:
@@ -35,7 +35,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/environment_misc.assets.bank
   Name: environment_misc.assets
   StudioPath: bank:/environment/environment_misc.assets
-  lastModified: 638657622919697312
+  lastModified: 638657753783172973
   FileSizes:
   - Name: Desktop
     Value: 3865152
@@ -164,7 +164,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638657622882996304
+  lastModified: 638657695102743409
   FileSizes:
   - Name: Desktop
     Value: 3334
@@ -184,10 +184,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/interactions.bank
   Name: interactions
   StudioPath: bank:/interactions
-  lastModified: 638657622879876461
+  lastModified: 638657753782146017
   FileSizes:
   - Name: Desktop
-    Value: 10802
+    Value: 11338
   Exists: 1
 --- !u!114 &-5348328986648389684
 MonoBehaviour:
@@ -239,7 +239,7 @@ MonoBehaviour:
   - {fileID: -8831533182896561790}
   - {fileID: -6065738292800601960}
   IsStream: 1
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters:
   - {fileID: -4630623589058090498}
@@ -450,7 +450,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/enemy.bank
   Name: enemy
   StudioPath: bank:/enemy
-  lastModified: 638657622874939183
+  lastModified: 638657648295032687
   FileSizes:
   - Name: Desktop
     Value: 12692
@@ -660,7 +660,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/enemy.assets.bank
   Name: enemy.assets
   StudioPath: bank:/enemy.assets
-  lastModified: 638657622879425951
+  lastModified: 638657648295398545
   FileSizes:
   - Name: Desktop
     Value: 561984
@@ -880,7 +880,7 @@ MonoBehaviour:
   - {fileID: 1742421047247471688}
   StringsBanks:
   - {fileID: -6551386997080517620}
-  cacheTime: 638657622921918119
+  cacheTime: 638657753783172973
   cacheVersion: 131620
 --- !u!114 &764974937634507395
 MonoBehaviour:
@@ -924,7 +924,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638657622882951217
+  lastModified: 638657695102711350
   FileSizes:
   - Name: Desktop
     Value: 1742
@@ -999,7 +999,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.assets.bank
   Name: Master.assets
   StudioPath: bank:/Master.assets
-  lastModified: 638657622882971238
+  lastModified: 638657695102728263
   FileSizes:
   - Name: Desktop
     Value: 494
@@ -1222,7 +1222,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/interactions.assets.bank
   Name: interactions.assets
   StudioPath: bank:/interactions.assets
-  lastModified: 638657622882786938
+  lastModified: 638657753782371155
   FileSizes:
   - Name: Desktop
     Value: 443392

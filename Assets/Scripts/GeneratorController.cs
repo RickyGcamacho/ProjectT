@@ -15,6 +15,8 @@ public class GeneratorController : MonoBehaviour
     {
         canFuel = true;
         _eventGenerator = AudioManager.instance.GetEventInstance(FMODEvents.instance.References_Props, prop_generator);
+        _eventGenerator.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform)); // Establecer atributos 3D
+
         StartCoroutine(StartGenerator());
     }
     private void Update()
@@ -78,7 +80,7 @@ public class GeneratorController : MonoBehaviour
     {
         isRunning = true;
         AudioManager.instance.SetParameterByLabel(_eventGenerator, "generator_condition", "start");
-        _eventGenerator.start(); // Iniciar el sonido
+        _eventGenerator.start(); // Iniciar el sonido si es necesario
 
         while (fuelLevel >= 1)
         {

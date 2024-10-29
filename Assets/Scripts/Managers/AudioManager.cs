@@ -37,15 +37,29 @@ public class AudioManager : MonoBehaviour
         return parameterDescription.id;
 
     }
-    public void SetParameterByLabel(EventInstance instance, string parameterName, string label)
+    public void SetParameterByLabel(EventInstance instance, string parameterName, string value)
     {
         // Obtiene el PARAMETER_ID del parámetro (asumiendo que tienes la función GetID)
         PARAMETER_ID parameterID = GetID(instance, parameterName);
 
         // Llama a setParameterByIDWithLabel para ajustar el valor usando la etiqueta
-        instance.setParameterByIDWithLabel(parameterID, label);
-    }
+        instance.setParameterByIDWithLabel(parameterID, value);
 
+
+
+    }
+    public StudioEventEmitter InitializeEventEmitter(Dictionary<Sounds, EventReference> dictionary, Sounds soundKey, GameObject emitterGO)
+    {
+        if (dictionary.ContainsKey(soundKey))
+        {
+            StudioEventEmitter emitter = emitterGO.GetComponent<StudioEventEmitter>();
+            emitter.EventReference = dictionary[soundKey];
+            return emitter;
+
+        }
+        return null;
+    }
+            
     public EventInstance GetEventInstance(Dictionary<Sounds, EventReference> dictionary,Sounds soundKey)
     {
         // Inicializa la instancia como un valor por defecto

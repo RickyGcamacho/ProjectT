@@ -26,28 +26,10 @@ public class UIManager : MonoBehaviour
    
     private void Update()
     {
-        Generator();
+
       
     }
-    public void Generator()
-    {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            _event_generator.start();
-        }
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            AudioManager.instance.SetParameterByLabel(_event_generator, "generator_condition", "start");
-            _event_generator.start();
-
-
-        }
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            //Cambiar el valor del parámetro a 'start'
-            AudioManager.instance.SetParameterByLabel(_event_generator, "generator_condition", "stop");
-        }
-    }
+   
     public void HighlightButton()
     {
         AudioManager.instance.GetEventInstance(soundsUI, ui_highlight).start();
