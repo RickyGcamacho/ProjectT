@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-
-    public static AudioManager instance { get; private set; }
+   public static AudioManager instance { get; private set; }
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -22,54 +21,49 @@ public class AudioManager : MonoBehaviour
     {
         
     }
-    public void SetAttributes(Dictionary<Sounds, EventInstance> typeSound)
+   
+
+    public void PlayOneShot(EventReference sound, Vector2 worldPos)
     {
-        foreach (var item in typeSound)
-        {
-            FMOD.ATTRIBUTES_3D attributes = new FMOD.ATTRIBUTES_3D();
-
-            // Define la posición correcta utilizando transform.position para x, y, z
-            attributes.position = new FMOD.VECTOR
-            {
-                x = transform.position.x,
-                y = transform.position.y,
-                z = transform.position.z
-            };
-
-            // Aplica los atributos 3D al sonido
-            item.Value.set3DAttributes(attributes);
-        }
-    }
-
-    public EventInstance PlayOneShot(EventReference sound, Vector2 worldPos)
-    {      
-        EventInstance instance = RuntimeManager.CreateInstance(sound);   
-        return instance;
+        RuntimeManager.PlayOneShot(sound, worldPos);
 
     }
-
-    public void PlaySoundSFX(Dictionary<Sounds, EventReference> typeSound, Sounds soundKey)
-    {     
-        if (typeSound.ContainsKey(soundKey))
-        {
-            EventInstance instance = RuntimeManager.CreateInstance(typeSound[soundKey]);
-            var feet3DPosition = RuntimeUtils.To3DAttributes(gameObject.transform.position);
-            instance.set3DAttributes(feet3DPosition);
-
-            instance.start();
-  
-
-        }
-    }
-
-    public void StopSoundSFX(Dictionary<Sounds, EventReference> typeSound,Sounds soundKey, FMOD.Studio.STOP_MODE mode)
+    private PARAMETER_ID GetID(EventInstance instance, string parameterName)
     {
-        if (typeSound.ContainsKey(soundKey))
-        {
-            EventInstance instance = RuntimeManager.CreateInstance(typeSound[soundKey]);
-            instance.start();
-        }
+        EventDescription eventDescription;
+        instance.getDescription(out eventDescription);
+        PARAMETER_DESCRIPTION parameterDescription;
+        eventDescription.getParameterDescriptionByName(parameterName, out parameterDescription);
+        return parameterDescription.id;
+
     }
+    public void SetParameterByLabel(EventInstance instance, string parameterName, string label)
+    {
+        // Obtiene el PARAMETER_ID del parámetro (asumiendo que tienes la función GetID)
+        PARAMETER_ID parameterID = GetID(instance, parameterName);
+
+        // Llama a setParameterByIDWithLabel para ajustar el valor usando la etiqueta
+        instance.setParameterByIDWithLabel(parameterID, label);
+    }
+
+    public EventInstance GetInstance(Sounds soundKey, Dictionary<Sounds, EventReference> dictionary)
+    {
+        // Inicializa la instancia como un valor por defecto
+        EventInstance instance = default;
+        if (dictionary.ContainsKey(soundKey))
+        {
+            instance = RuntimeManager.CreateInstance(dictionary[soundKey]);
+        }
+        else
+        {
+            Debug.LogWarning($"Sound key '{soundKey}' not found in typeSound dictionary.");
+        }
+
+        return instance; // Devolver la instancia (puede ser nula si no se encontró la clave)
+
+    }
+
+    
 
 
     public void UpdateSound(Dictionary<Sounds, EventReference> typeSound,Sounds soundKey)

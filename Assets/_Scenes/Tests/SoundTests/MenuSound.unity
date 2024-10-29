@@ -713,11 +713,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4fc37f38f2c08d4c89ec5c2eb6b1327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: 0
+  states: []
+  count: 0
   ui_highlight: 10
   ui_play: 11
   ui_cancel: 13
-  ui_music: 3
+  ui_music: 12
   <Event_Test>k__BackingField:
     Guid:
       Data1: 1954994697
@@ -2518,7 +2519,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.097229, y: 0}
+  m_AnchoredPosition: {x: -3.097168, y: 0}
   m_SizeDelta: {x: 6.1946, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &677324431

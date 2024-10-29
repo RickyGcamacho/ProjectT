@@ -7,8 +7,8 @@ public class FMODEvents : MonoBehaviour
 {
 
     [field: Header("Player"), Space(5)]
-    public Dictionary<Sounds, EventInstance> Sounds_Player { get; private set; }
     public Dictionary<Sounds, EventReference> References_Player { get; private set; }
+    public Dictionary<Sounds, EventInstance> Sounds_Player { get; private set; }
 
     [field: SerializeField] public EventReference Event_PlayerSteps { get; private set; }
     [field: SerializeField] public EventReference Event_Flashlight { get; private set; }
@@ -17,15 +17,15 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference Event_GrabObject { get; private set; }
 
     [field: Header("Enemy"), Space(5)]
-    public Dictionary<Sounds, EventInstance> Sounds_Enemy { get; private set; }
-    public Dictionary<Sounds, EventReference> References_UI { get; private set; }
     public Dictionary<Sounds, EventReference> References_Enemy { get; private set; }
+    public Dictionary<Sounds, EventInstance> Sounds_Enemy { get; private set; }
 
     [field: SerializeField] public EventReference Event_EnemySteps { get; private set; }
     [field: SerializeField] public EventReference Event_EnemyRun { get; private set; }
     [field: SerializeField] public EventReference Event_DetectPlayer { get; private set; }
 
     [field: Header("UI"), Space(5)]
+    public Dictionary<Sounds, EventReference> References_UI { get; private set; }
     public Dictionary<Sounds, EventInstance> Sounds_UI { get; private set; }
     [field: SerializeField] public EventReference Event_PlayUI { get; private set; }
     [field: SerializeField] public EventReference Event_HighlightUI { get; private set; }

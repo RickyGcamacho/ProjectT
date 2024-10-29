@@ -4,75 +4,63 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 public class UIManager : MonoBehaviour
 {
-
-    public string[] states;
-    public int count;
     [field: Header("Sounds"), Space(5)]
     [field: SerializeField] private Sounds ui_highlight;
     [field: SerializeField] private Sounds ui_play;
     [field: SerializeField] private Sounds ui_cancel;
     [field: SerializeField] private Sounds ui_music;
     private Dictionary<Sounds, EventReference> soundsUI;
-    private EventInstance _instance;
+    private EventInstance _event_generator;
 
-    [field: SerializeField] public EventReference Event_Test { get; private set; }
     private void Start()
     {
         soundsUI = FMODEvents.instance.References_UI;
-        _instance = AudioManager.instance.PlayOneShot(Event_Test, transform.position);
+       _event_generator = AudioManager.instance.GetInstances(soundsUI, ui_music);
 
 
     }
-    public PARAMETER_ID GetID(EventInstance instance, string parameterName)
-    {
-        EventDescription eventDescription;
-        instance.getDescription(out eventDescription);
-        PARAMETER_DESCRIPTION parameterDescription;
-        eventDescription.getParameterDescriptionByName(parameterName, out parameterDescription);
-        return parameterDescription.id;
-
-    }
-    public void SetParameterByLabel(EventInstance instance,string parameterName, string label)
-    {
-        // Obtiene el PARAMETER_ID del parámetro (asumiendo que tienes la función GetID)
-        PARAMETER_ID parameterID = GetID(instance, parameterName);
-
-        // Llama a setParameterByIDWithLabel para ajustar el valor usando la etiqueta
-        instance.setParameterByIDWithLabel(parameterID, label);
-    }
+   
     private void Update()
     {
+        Generator();
+      
+    }
+    public void Generator()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            _event_generator.start();
+        }
         if (Input.GetKeyDown(KeyCode.T))
         {
-            SetParameterByLabel(_instance, "generator_condition", "notstart");
-            _instance.start();
+            AudioManager.instance.SetParameterByLabel(_event_generator, "generator_condition", "start");
+            _event_generator.start();
+
 
         }
         if (Input.GetKeyDown(KeyCode.G))
         {
             //Cambiar el valor del parámetro a 'start'
-            SetParameterByLabel(_instance,"generator_condition" ,"start");
-            _instance.start();
-
-
+            AudioManager.instance.SetParameterByLabel(_event_generator, "generator_condition", "stop");
+            _event_generator.getPlaybackState(out PLAYBACK_STATE playbackState);
         }
-      
     }
     public void HighlightButton()
     {
-        AudioManager.instance.PlaySoundSFX(soundsUI, ui_highlight);
+        AudioManager.instance.GetInstances(soundsUI, ui_highlight).start();
     }
     public void PlayButton()
     {
-        AudioManager.instance.PlaySoundSFX(soundsUI, ui_play);
+        AudioManager.instance.GetInstances(soundsUI, ui_play).start();
     }
 
     public void BackButton()
     {
-        AudioManager.instance.PlaySoundSFX(soundsUI, ui_cancel);
+        AudioManager.instance.GetInstances(soundsUI, ui_cancel).start();
     }
 
     public void StartScene(string value)
