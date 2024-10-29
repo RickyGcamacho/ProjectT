@@ -41,26 +41,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayOneShot(EventReference sound, Vector2 worldPos, int value)
+    public EventInstance PlayOneShot(EventReference sound, Vector2 worldPos)
     {      
-        EventInstance instance = RuntimeManager.CreateInstance(sound);
-        var feet3DPosition = RuntimeUtils.To3DAttributes(gameObject.transform.position);
-        instance.set3DAttributes(feet3DPosition);
-
-        // Obtener la descripción del evento
-        FMOD.Studio.EventDescription eventDescription;
-        instance.getDescription(out eventDescription);
-
-        // Obtener la descripción y el ID del parámetro 'generator_condition'
-        FMOD.Studio.PARAMETER_DESCRIPTION parameterDescription;
-        eventDescription.getParameterDescriptionByName("generator_condition", out parameterDescription);
-        FMOD.Studio.PARAMETER_ID parameterID = parameterDescription.id;
-
-        //Cambiar el valor del parámetro a 'start'
-        instance.setParameterByID(parameterID, value);  // 1.0f para encender
-
-
-        instance.start();
+        EventInstance instance = RuntimeManager.CreateInstance(sound);   
+        return instance;
 
     }
 
