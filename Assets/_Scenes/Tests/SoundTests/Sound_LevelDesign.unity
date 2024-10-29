@@ -3400,6 +3400,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4c112879adb01c540a2688dc34ff2b32, type: 3}
   m_PrefabInstance: {fileID: 152620554}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &152871499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 945432083153890288, guid: 1880885d7287e614ca8879637fa02718, type: 3}
+  m_PrefabInstance: {fileID: 236828892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &152984763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 849166042983138175, guid: 65d0c0eee41f0a849a615d23e98f9731, type: 3}
@@ -4870,16 +4875,66 @@ PrefabInstance:
       propertyPath: m_Name
       value: chair_wooden (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 2479478631588018350, guid: 1880885d7287e614ca8879637fa02718, type: 3}
+      propertyPath: m_Size.x
+      value: 51.646893
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479478631588018350, guid: 1880885d7287e614ca8879637fa02718, type: 3}
+      propertyPath: m_Size.z
+      value: 50.49161
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479478631588018350, guid: 1880885d7287e614ca8879637fa02718, type: 3}
+      propertyPath: m_Center.x
+      value: 0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479478631588018350, guid: 1880885d7287e614ca8879637fa02718, type: 3}
+      propertyPath: m_Center.z
+      value: -2.084629
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 945432083153890288, guid: 1880885d7287e614ca8879637fa02718, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 236828897}
   m_SourcePrefab: {fileID: 100100000, guid: 1880885d7287e614ca8879637fa02718, type: 3}
 --- !u!4 &236828893 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 456281747296186698, guid: 1880885d7287e614ca8879637fa02718, type: 3}
   m_PrefabInstance: {fileID: 236828892}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &236828897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152871499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Event: 
+  EventPlayTrigger: 3
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!1001 &237437949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10995,7 +11050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0012f54269509d34dacf60eb294bfaa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prop_generator: 14
+  prop_generator: 15
   fuelLevel: 5
 --- !u!1001 &502460446
 PrefabInstance:
@@ -18197,6 +18252,26 @@ PrefabInstance:
     - target: {fileID: 5021336704071717300, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032759644925368796, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <Player_Crouch>k__BackingField.Path
+      value: event:/player/player_crouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032759644925368796, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <Player_Crouch>k__BackingField.Guid.Data1
+      value: 2026391598
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032759644925368796, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <Player_Crouch>k__BackingField.Guid.Data2
+      value: 1313618899
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032759644925368796, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <Player_Crouch>k__BackingField.Guid.Data3
+      value: 1829885859
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032759644925368796, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <Player_Crouch>k__BackingField.Guid.Data4
+      value: -1590982974
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42167,7 +42242,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.9494508, b: 0.9494508, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -44407,7 +44482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7908038269790652125, guid: 1e87824c50b735e47b1242539459bf6a, type: 3}
       propertyPath: OverrideMaxDistance
-      value: 3.1870794
+      value: 9.968534
       objectReference: {fileID: 0}
     - target: {fileID: 7908038269790652125, guid: 1e87824c50b735e47b1242539459bf6a, type: 3}
       propertyPath: OverrideMinDistance
@@ -44599,7 +44674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c56b59082f9f54686b7a79385da24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedWalk: 5
+  speedWalk: 3
   lookSpeedX: 2
   lookSpeedY: 2
   lowerLookLimit: 80
@@ -46451,6 +46526,7 @@ GameObject:
   - component: {fileID: 1535575225552621075}
   - component: {fileID: 7028659647673671656}
   - component: {fileID: 693286375770051227}
+  - component: {fileID: 7028659647673671657}
   m_Layer: 0
   m_Name: Player_test
   m_TagString: Player
@@ -46475,6 +46551,23 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &7028659647673671657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6938869206952949644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806bd27b2090bf2478ba180391c67641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxWalk: 1
+  _sfxRun: 2
+  _sfxCrouch: 7
+  _sfxFlashlight: 3
+  _sfxGrab: 6
 --- !u!20 &7223960769836226727
 Camera:
   m_ObjectHideFlags: 0

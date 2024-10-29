@@ -23,9 +23,9 @@ public class AudioManager : MonoBehaviour
     }
    
 
-    public void PlayOneShot(EventReference sound, Vector2 worldPos)
+    public void PlayOneShot(Dictionary<Sounds, EventReference> dictionary, Sounds soundKey, Vector2 worldPos=default)
     {
-        RuntimeManager.PlayOneShot(sound, worldPos);
+        RuntimeManager.PlayOneShot(dictionary[soundKey], worldPos);
 
     }
     private PARAMETER_ID GetID(EventInstance instance, string parameterName)
@@ -80,21 +80,13 @@ public class AudioManager : MonoBehaviour
     
 
 
-    public void UpdateSound(Dictionary<Sounds, EventReference> typeSound,Sounds soundKey)
+    public void UpdateSound(EventInstance instance)
     {
-        if (typeSound.ContainsKey(soundKey))
+        instance.getPlaybackState(out PLAYBACK_STATE playbackState);
+        if (playbackState == PLAYBACK_STATE.STOPPED)
         {
-            EventInstance instance = RuntimeManager.CreateInstance(typeSound[soundKey]);
-            instance.getPlaybackState(out PLAYBACK_STATE playbackState);
-            if (playbackState == PLAYBACK_STATE.STOPPED)
-            {
-                instance.start();
-            }
-            else
-            {
-                Debug.LogWarning($"No sound instance found for key: {soundKey}");
-            }
+            instance.start();
         }
- 
+
     }
 }

@@ -1,27 +1,80 @@
-
-using System.Collections;
+using FMOD.Studio;
+using FMODUnity;
 using System.Collections.Generic;
 using UnityEngine;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerView : MonoBehaviour
 {
-    [field: SerializeField] private Sounds _stepsSfx;
-    [field: SerializeField] private Sounds _grabSfx;
+    [field: SerializeField] private Sounds _sfxWalk;
+    [field: SerializeField] private Sounds _sfxRun;
+    [field: SerializeField] private Sounds _sfxCrouch;
+    [field: SerializeField] private Sounds _sfxFlashlight;
+    [field: SerializeField] private Sounds _sfxGrab;
+    private Rigidbody _rb;
+    private Dictionary<Sounds, EventReference> _banksPlayer;
+    private EventInstance playerWalk;
+    private EventInstance playerCrouch;
+
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody>();
+        
+    }
 
 
- 
-
-    // Update is called once per frame
+    private void Start()
+    {
+        _banksPlayer = FMODEvents.instance.References_Player;
+        playerWalk = AudioManager.instance.GetEventInstance(_banksPlayer, _sfxWalk);
+        playerCrouch = AudioManager.instance.GetEventInstance(_banksPlayer, _sfxCrouch);
+        
+    }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T)) // Reproduce el sonido 
+
+
+
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            //PlaySoundSFX(_stepsSfx);
+            Movement(playerCrouch);
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            Movement(playerWalk);
+        }
+        else
+        {
+            Movement(playerWalk);
         }
 
-        if (Input.GetKeyDown(KeyCode.Y)) // Detiene el sonido
+    }
+
+    public void Movement(EventInstance move)
+    {
+
+        if (_rb.velocity != Vector3.zero) // Reproduce el sonido 
         {
-            //StopSoundSFX(_stepsSfx, FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            PLAYBACK_STATE playbackState;
+            move.getPlaybackState(out playbackState);
+            if (playbackState == PLAYBACK_STATE.STOPPED)
+            {
+                move.start();
+            }
+        }
+        else
+        {
+            move.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+
+    }
+    public void Crouch()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            AudioManager.instance.PlayOneShot(_banksPlayer, _sfxCrouch);
         }
     }
+
 }

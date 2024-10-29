@@ -48,6 +48,7 @@ public class PlayerActions : MonoBehaviour
         defaultFOV = playerCamera.fieldOfView;
     }
 
+
     void Update()
     {
         Walking();
@@ -60,7 +61,7 @@ public class PlayerActions : MonoBehaviour
 
     private void Crouching()
     {
-        if (Input.GetKey(KeyCode.C))
+        if (Input.GetKey(KeyCode.LeftControl))
         {
             cameraCrouched.SetActive(true);
             playerCamera.gameObject.SetActive(false);
@@ -68,7 +69,7 @@ public class PlayerActions : MonoBehaviour
             GetComponent<BoxCollider>().center = new Vector3(GetComponent<BoxCollider>().center.x, crouchedHeightCenterNew, GetComponent<BoxCollider>().center.z);
             Speed = crouchedSpeed;
         }
-        if (Input.GetKeyUp(KeyCode.C)) //&& isNotHide)
+        if (Input.GetKeyUp(KeyCode.LeftControl)) //&& isNotHide)
         {
             //pararse
             cameraCrouched.SetActive(false);

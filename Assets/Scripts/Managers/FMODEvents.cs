@@ -11,6 +11,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference Player_Run { get; private set; }
     [field: SerializeField] public EventReference Player_HeartBeats { get; private set; }
     [field: SerializeField] public EventReference Player_GrabObject { get; private set; }
+    [field: SerializeField] public EventReference Player_Crouch{ get; private set; }
     public Dictionary<Sounds, EventReference> References_Player { get; private set; }
 
     [field: Header("Enemy"), Space(5)]
@@ -62,11 +63,12 @@ public class FMODEvents : MonoBehaviour
     {
         References_Player = new Dictionary<Sounds, EventReference>
         {
-            { Sounds.PLAYER_WALK, Player_Steps },
+            { Sounds.PLAYER_STEPS, Player_Steps },
             { Sounds.FLASHLIGHT_INTERACTION, Player_Flashlight },
             { Sounds.PLAYER_RUN, Player_Run },
             { Sounds.PLAYER_HEARTBEATS, Player_HeartBeats },
-            { Sounds.PLAYER_GRAB, Player_GrabObject }
+            { Sounds.PLAYER_GRAB, Player_GrabObject },
+            {Sounds.PLAYER_CROUCH, Player_Crouch }
         };
     }
 
