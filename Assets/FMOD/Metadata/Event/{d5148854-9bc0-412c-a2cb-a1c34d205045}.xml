@@ -175,36 +175,5 @@
 		<property name="nameOfPropertyBeingAutomated">
 			<value>level</value>
 		</property>
-		<relationship name="automationCurves">
-			<destination>{6582ff0c-e5e5-46b7-89af-045ad369b6a8}</destination>
-		</relationship>
-	</object>
-	<object class="AutomationCurve" id="{6582ff0c-e5e5-46b7-89af-045ad369b6a8}">
-		<relationship name="parameter">
-			<destination>{7921138d-fa94-4b55-8e2a-3afbb5285490}</destination>
-		</relationship>
-		<relationship name="automationPoints">
-			<destination>{40c74768-85e5-4cd0-b038-909e72493785}</destination>
-			<destination>{30a711e0-eff8-4c3e-802b-21f27c028fee}</destination>
-		</relationship>
-	</object>
-	<object class="AutomationPoint" id="{40c74768-85e5-4cd0-b038-909e72493785}">
-		<property name="position">
-			<value>20</value>
-		</property>
-		<property name="value">
-			<value>2</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{30a711e0-eff8-4c3e-802b-21f27c028fee}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="value">
-			<value>-80</value>
-		</property>
-		<property name="curveShape">
-			<value>-0.601103425</value>
-		</property>
 	</object>
 </objects>
