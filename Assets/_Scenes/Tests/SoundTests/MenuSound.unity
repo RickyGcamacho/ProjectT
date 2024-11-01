@@ -713,10 +713,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4fc37f38f2c08d4c89ec5c2eb6b1327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui_highlight: 10
-  ui_play: 11
-  ui_cancel: 13
-  ui_music: 12
+  ui_highlight: 11
+  ui_play: 12
+  ui_cancel: 14
+  ui_music: 13
 --- !u!1 &267704737
 GameObject:
   m_ObjectHideFlags: 0
@@ -4922,7 +4922,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Game
+          m_StringArgument: Sound_LevelDesign
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1248188413
@@ -7527,6 +7527,26 @@ PrefabInstance:
     - target: {fileID: 5021336704071717300, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032759644925368796, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <Player_Crouch>k__BackingField.Path
+      value: event:/player/player_crouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032759644925368796, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <Player_Crouch>k__BackingField.Guid.Data1
+      value: 2026391598
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032759644925368796, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <Player_Crouch>k__BackingField.Guid.Data2
+      value: 1313618899
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032759644925368796, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <Player_Crouch>k__BackingField.Guid.Data3
+      value: 1829885859
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032759644925368796, guid: bc34ca6c160fa824da6ed2eb8c64abe9, type: 3}
+      propertyPath: <Player_Crouch>k__BackingField.Guid.Data4
+      value: -1590982974
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
