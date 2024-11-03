@@ -52422,7 +52422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _patientStateMachine: {fileID: 787324649}
-  visionEffect: {fileID: 7028659647673671658}
+  _visionEffect: {fileID: 0}
 --- !u!1001 &1780899257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57861,10 +57861,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4319065755029302361}
     - target: {fileID: 853325469743785280, guid: f8c606fee1d8b8d4095535958a00cb60, type: 3}
-      propertyPath: waypoints.Array.size
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 853325469743785280, guid: f8c606fee1d8b8d4095535958a00cb60, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 1845044619}
@@ -57966,10 +57962,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2581401290061544765, guid: f8c606fee1d8b8d4095535958a00cb60, type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4333482911991850016, guid: f8c606fee1d8b8d4095535958a00cb60, type: 3}
-      propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6173690034834764601, guid: f8c606fee1d8b8d4095535958a00cb60, type: 3}
