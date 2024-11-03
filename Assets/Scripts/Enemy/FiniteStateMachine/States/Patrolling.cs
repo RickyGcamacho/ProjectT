@@ -1,8 +1,7 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace FiniteStateMachine.States
+namespace Enemy.FiniteStateMachine.States
 {
     public class Patrolling : BaseState
     {

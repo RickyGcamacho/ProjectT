@@ -1,20 +1,18 @@
-using System;
-using FiniteStateMachine.States;
+using Enemy.FiniteStateMachine.States;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace FiniteStateMachine
+namespace Enemy.FiniteStateMachine
 {
-    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(NavMeshAgent))]
     public class PatientStateMachine : StateMachine
     {
         [HideInInspector] public Patrolling patrollingState;
         [HideInInspector] public Pursuing pursuingState;
-        [HideInInspector] public Attacking attackingState; // probably needs a StateMachine, my transform, the player transform, and the distance to chase the player again
+        [HideInInspector] public Attacking attackingState;
         [HideInInspector] public Searching searchingState;
         
         public Transform[] waypoints;
-        public Rigidbody rigidBody;
         public NavMeshAgent agent;
 
         public float speed = 5;
@@ -25,6 +23,12 @@ namespace FiniteStateMachine
         public float distanceToChangeWaypoint;
         public float distanceToChase;
         public float distanceToAttack;
+        [Tooltip("Time needed for the attack to occur")]
+        [Range(0f, 10f)]
+        public float timeToAttack;
+        [Tooltip("Times of successful attacks needed to defeat the player")]
+        [Range(2, 10)]
+        public int timesBeforeDefeat;
 
         public Transform player;
 
@@ -33,12 +37,10 @@ namespace FiniteStateMachine
 
         private void Awake()
         {
-            if (!rigidBody) rigidBody = GetComponent<Rigidbody>();
-            
             var myTransform = transform;
             patrollingState = new Patrolling(this, myTransform, player, agent, speed, distanceToChangeWaypoint, distanceToChase, waypoints, layerMask);
             pursuingState = new Pursuing(this, myTransform, player, agent, speed, speedMultiplier, distanceToChase, distanceToAttack, layerMask);
-            attackingState = new Attacking(this, myTransform, player, distanceToAttack);
+            attackingState = new Attacking(this, myTransform, player, distanceToAttack, timeToAttack, timesBeforeDefeat);
             searchingState = new Searching(this, myTransform, player, agent, speed, distanceToAttack, distanceToChase, waypoints, layerMask);
         }
 
@@ -63,7 +65,6 @@ namespace FiniteStateMachine
             
             var destination = vectorToPlayer.normalized * (vectorToPlayer.magnitude - 3);
             Gizmos.color = Color.red;
-            //Gizmos.DrawRay(position, destination);
             Gizmos.DrawLine(position, destination + position);
         }
     }

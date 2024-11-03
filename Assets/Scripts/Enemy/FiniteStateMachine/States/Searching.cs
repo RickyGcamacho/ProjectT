@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace FiniteStateMachine.States
+namespace Enemy.FiniteStateMachine.States
 {
     public class Searching : BaseState
     {
@@ -18,11 +18,9 @@ namespace FiniteStateMachine.States
         private readonly LayerMask _layerMask;
         private Vector3 _playerLastKnownPosition;
 
-        private List<Transform> _transformsToSearch = new List<Transform>();
+        private readonly List<Transform> _transformsToSearch = new List<Transform>();
         
-        private Transform _currentTarget;//
-        //private int _targetIndex;//
-        //private float _distanceToChangeWaypoint;//
+        private Transform _currentTarget;
 
         private bool _firstSearch;
         private float _timerBeforePatrol;
@@ -104,7 +102,7 @@ namespace FiniteStateMachine.States
                 {
                     _transformsToSearch.Add(waypoint);
                 }
-            } Debug.Log($"Tengo algo {_transformsToSearch.Count}");
+            } Debug.Log($"I have {_transformsToSearch.Count} waypoint to search");
         }
 
         private void SearchNearbyWaypoints()
@@ -127,7 +125,7 @@ namespace FiniteStateMachine.States
                     
                     _timerBeforePatrol = 0;
                     
-                    stateMachine.ChangeState(((PatientStateMachine) stateMachine).patrollingState); Debug.Log($"I have no more waypoints, now I patrol");
+                    stateMachine.ChangeState(((PatientStateMachine) stateMachine).patrollingState); Debug.Log("I have no more waypoints, now I patrol");
                 }
             }
             else

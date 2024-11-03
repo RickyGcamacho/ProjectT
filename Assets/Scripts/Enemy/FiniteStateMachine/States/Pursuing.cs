@@ -1,25 +1,23 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-// ReSharper disable FieldCanBeMadeReadOnly.Local
-
-namespace FiniteStateMachine.States
+namespace Enemy.FiniteStateMachine.States
 {
     public class Pursuing : BaseState
     {
-        private Transform _myTransform;
-        private Transform _player;
-        private NavMeshAgent _agent;
+        private readonly Transform _myTransform;
+        private readonly Transform _player;
+        private readonly NavMeshAgent _agent;
         
-        private float _speed;
-        private float _speedMultiplier;
-        private float _distanceToAttack;
-        private float _distanceToChase;
+        private readonly float _speed;
+        private readonly float _speedMultiplier;
+        private readonly float _distanceToAttack;
+        private readonly float _distanceToChase;
         
         private float _timerToChange;
 
         public Vector3 playerLastKnownPosition;
-        private LayerMask _layerMask;
+        private readonly LayerMask _layerMask;
         
         // ReSharper disable once SuggestBaseTypeForParameter
         public Pursuing(PatientStateMachine stateMachine, Transform myTransform, Transform player, NavMeshAgent agent, float speed, float speedMultiplier, float distanceToChase, float distanceToAttack, LayerMask layerMask) : base(stateMachine)
