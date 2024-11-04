@@ -338,16 +338,12 @@ PrefabInstance:
       value: bottle (4)
       objectReference: {fileID: 0}
     - target: {fileID: 5334044322374371369, guid: 1c2ad2812d461e24fbd2705ccf7e7db3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 99.999985
-      objectReference: {fileID: 0}
-    - target: {fileID: 5334044322374371369, guid: 1c2ad2812d461e24fbd2705ccf7e7db3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -414.5
       objectReference: {fileID: 0}
     - target: {fileID: 5334044322374371369, guid: 1c2ad2812d461e24fbd2705ccf7e7db3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 39.6
+      value: 39.86
       objectReference: {fileID: 0}
     - target: {fileID: 5334044322374371369, guid: 1c2ad2812d461e24fbd2705ccf7e7db3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3234,18 +3230,6 @@ PrefabInstance:
     - target: {fileID: 1336215756303885749, guid: 1c2ad2812d461e24fbd2705ccf7e7db3, type: 3}
       propertyPath: m_Name
       value: bottle (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5334044322374371369, guid: 1c2ad2812d461e24fbd2705ccf7e7db3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 56
-      objectReference: {fileID: 0}
-    - target: {fileID: 5334044322374371369, guid: 1c2ad2812d461e24fbd2705ccf7e7db3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 56
-      objectReference: {fileID: 0}
-    - target: {fileID: 5334044322374371369, guid: 1c2ad2812d461e24fbd2705ccf7e7db3, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 5334044322374371369, guid: 1c2ad2812d461e24fbd2705ccf7e7db3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7749,6 +7733,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jerry_can (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2744715031625083823, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -9101,9 +9089,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 274727778}
+  - component: {fileID: 274727779}
   m_Layer: 0
   m_Name: SelectableObjects
-  m_TagString: Untagged
+  m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9141,6 +9130,18 @@ Transform:
   - {fileID: 1823827588}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &274727779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274727777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6867c6c928661ba489d25cce7205897e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &275227383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9460,6 +9461,10 @@ PrefabInstance:
     - target: {fileID: 2744715031625083823, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_Name
       value: jerry_can (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744715031625083823, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalScale.x
@@ -17848,6 +17853,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jerry_can (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2744715031625083823, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -21973,6 +21982,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jerry_can (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2744715031625083823, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -22619,6 +22632,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jerry_can (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2744715031625083823, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -23061,6 +23078,10 @@ PrefabInstance:
     - target: {fileID: 2882237929669845393, guid: 988350b9cfba60e41b2b1676073a0932, type: 3}
       propertyPath: m_Name
       value: key_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882237929669845393, guid: 988350b9cfba60e41b2b1676073a0932, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26854,6 +26875,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: key_01
       objectReference: {fileID: 0}
+    - target: {fileID: 9113892057279317547, guid: 429ac00c6364a81409bfc0bea896757d, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27889,6 +27914,10 @@ PrefabInstance:
     - target: {fileID: 8115574236060426411, guid: e48c5a43cb9721c4085e13bd7b022f6d, type: 3}
       propertyPath: m_Name
       value: key_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8115574236060426411, guid: e48c5a43cb9721c4085e13bd7b022f6d, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30514,6 +30543,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: clonazepam (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4009533447470940746, guid: 5294843e89a846e459828618ffc299dc, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 8153784916924808256, guid: 5294843e89a846e459828618ffc299dc, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -30649,6 +30682,10 @@ PrefabInstance:
     - target: {fileID: 2744715031625083823, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_Name
       value: jerry_can
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744715031625083823, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalScale.x
@@ -36553,6 +36590,10 @@ PrefabInstance:
     - target: {fileID: 2744715031625083823, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_Name
       value: jerry_can (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744715031625083823, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalScale.x
@@ -43148,6 +43189,10 @@ PrefabInstance:
     - target: {fileID: 2744715031625083823, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_Name
       value: jerry_can (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744715031625083823, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalScale.x
@@ -53146,6 +53191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: clonazepam (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4009533447470940746, guid: 5294843e89a846e459828618ffc299dc, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 8153784916924808256, guid: 5294843e89a846e459828618ffc299dc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.60000014
@@ -56998,10 +57047,6 @@ PrefabInstance:
       value: bottle (9)
       objectReference: {fileID: 0}
     - target: {fileID: 5334044322374371369, guid: 1c2ad2812d461e24fbd2705ccf7e7db3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 100.000015
-      objectReference: {fileID: 0}
-    - target: {fileID: 5334044322374371369, guid: 1c2ad2812d461e24fbd2705ccf7e7db3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1683.7759
       objectReference: {fileID: 0}
@@ -59008,6 +59053,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: clonazepam (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4009533447470940746, guid: 5294843e89a846e459828618ffc299dc, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 8153784916924808256, guid: 5294843e89a846e459828618ffc299dc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6
@@ -59155,6 +59204,10 @@ PrefabInstance:
     - target: {fileID: 2744715031625083823, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_Name
       value: jerry_can (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744715031625083823, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalScale.x
@@ -62307,14 +62360,6 @@ PrefabInstance:
       value: bottle (2)
       objectReference: {fileID: 0}
     - target: {fileID: 5334044322374371369, guid: 1c2ad2812d461e24fbd2705ccf7e7db3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 99.999985
-      objectReference: {fileID: 0}
-    - target: {fileID: 5334044322374371369, guid: 1c2ad2812d461e24fbd2705ccf7e7db3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 99.999985
-      objectReference: {fileID: 0}
-    - target: {fileID: 5334044322374371369, guid: 1c2ad2812d461e24fbd2705ccf7e7db3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1660.6274
       objectReference: {fileID: 0}
@@ -64045,6 +64090,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: clonazepam (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4009533447470940746, guid: 5294843e89a846e459828618ffc299dc, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 8153784916924808256, guid: 5294843e89a846e459828618ffc299dc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.60000014
@@ -64580,10 +64629,6 @@ PrefabInstance:
     - target: {fileID: 1336215756303885749, guid: 1c2ad2812d461e24fbd2705ccf7e7db3, type: 3}
       propertyPath: m_Name
       value: bottle (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5334044322374371369, guid: 1c2ad2812d461e24fbd2705ccf7e7db3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 100.000015
       objectReference: {fileID: 0}
     - target: {fileID: 5334044322374371369, guid: 1c2ad2812d461e24fbd2705ccf7e7db3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -68999,51 +69044,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2744715031625083823, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.462299
+      value: -4.22
       objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.4864707
+      value: -2.49
       objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.6219482
+      value: -4.72
       objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.56823194
+      value: 0.19600217
       objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.5682318
+      value: -0.19600198
       objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.4208475
+      value: 0.6793992
       objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.4208474
+      value: 0.67939913
       objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -89.972
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -69051,7 +69084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8950038825589349957, guid: 6c6ece7f9f27e2648bfd4bb8e2d7556b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 73.049
+      value: 147.815
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -73447,6 +73480,10 @@ PrefabInstance:
     - target: {fileID: 4009533447470940746, guid: 5294843e89a846e459828618ffc299dc, type: 3}
       propertyPath: m_Name
       value: clonazepam
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009533447470940746, guid: 5294843e89a846e459828618ffc299dc, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 8153784916924808256, guid: 5294843e89a846e459828618ffc299dc, type: 3}
       propertyPath: m_LocalScale.x
@@ -77963,7 +78000,7 @@ Transform:
   m_GameObject: {fileID: 5469392337794362986}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.94, y: 0.82, z: 5.93}
+  m_LocalPosition: {x: -5.05, y: 0.82, z: 12.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
