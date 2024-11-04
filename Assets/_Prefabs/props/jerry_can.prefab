@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7116654101392969111}
   - component: {fileID: 5607632879019403437}
   - component: {fileID: 2851209844543998343}
+  - component: {fileID: 1819892610361061782}
   m_Layer: 0
   m_Name: jerry_can
   m_TagString: Untagged
@@ -105,3 +106,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.32804924, y: 0.12247532, z: 0.4706729}
   m_Center: {x: 0.002950795, y: 0.0000000018626448, z: 0.23533645}
+--- !u!114 &1819892610361061782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2744715031625083823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c860c3b71a1f44094d88de634f3807, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterial: {fileID: 5616552410749283204, guid: 85e361a9913994945b6f9d8a959c487b, type: 3}
+  outlineScale: -1.03
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  RotateSpeed: 0.2
+  RotateDirection: 1
