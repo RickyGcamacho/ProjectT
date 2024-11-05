@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace FiniteStateMachine
+namespace Enemy.FiniteStateMachine
 {
     public class StateMachine : MonoBehaviour
     {
