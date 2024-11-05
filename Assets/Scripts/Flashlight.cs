@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class Flashlight : MonoBehaviour
 {
-    public GameObject flashlight;
+    public GameObject flashlightCrouching, flashlightStandUp;
     private bool isOn;
 
     private void Update()
     {
         Interact();
     }
-    void Interact()
+    public void Interact()
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
             isOn = !isOn; // Alterna el valor de isOn entre true y false
-            flashlight.SetActive(isOn); // Activa o desactiva la linterna según el estado de isOn
+            flashlightStandUp.SetActive(isOn); // Activa o desactiva la linterna según el estado de isOn
+            flashlightCrouching.SetActive(isOn);
         }
 
 

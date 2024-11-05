@@ -38,6 +38,7 @@ public class PlayerActions : MonoBehaviour
     private float rotationX, speed, x, z;
 
     public float Speed { get => speed; set => speed = value; }
+    public float LookSpeedX { get => lookSpeedX; set => lookSpeedX = value; }
 
     private void Awake()
     {
@@ -46,14 +47,13 @@ public class PlayerActions : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         defaultFOV = playerCamera.fieldOfView;
-        Speed = speedWalk;
     }
 
     void Update()
     {
-        Running();
         Walking();
         Crouching();
+        Running();
         HandleMouseLook();
         HandleZoom();
 
@@ -61,7 +61,7 @@ public class PlayerActions : MonoBehaviour
 
     private void Crouching()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.LeftControl))
         {
             cameraCrouched.SetActive(true);
             playerCamera.gameObject.SetActive(false);
@@ -77,7 +77,7 @@ public class PlayerActions : MonoBehaviour
             GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x, crouchedHeightSizeOriginal, GetComponent<BoxCollider>().size.z);
             GetComponent<BoxCollider>().center = new Vector3(GetComponent<BoxCollider>().center.x, crouchedHeightCenterOriginal, GetComponent<BoxCollider>().center.z);
         }
-
+        
     }
     private void Walking()
     {
@@ -85,36 +85,35 @@ public class PlayerActions : MonoBehaviour
         x = Input.GetAxis("Horizontal");
 
         Vector3 dir = (transform.forward * z) + (transform.right * x);
-        Vector3 dirSpeed = dir * (Speed);
+        Vector3 dirSpeed = dir * (speedWalk);
         _rb.velocity = dirSpeed;
         dirSpeed.y = _rb.velocity.y;
         dir.y = 0;
     }
     private void Running()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             Speed = runSpeed;
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            Speed = speedWalk;
         }
     }
 
     //Camara
     private void HandleMouseLook()
     {
-        rotationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
-        rotationX = Mathf.Clamp(rotationX, -uperLookLimit, lowerLookLimit);
-        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-        transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeedX, 0);
+        if (Time.timeScale == 1)
+        {
+            rotationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
+            rotationX = Mathf.Clamp(rotationX, -uperLookLimit, lowerLookLimit);
+            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * LookSpeedX, 0);
+        }
     }
 
     //Zoom
     private void HandleZoom()
     {
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             if (zoomRoutine != null)
             {
@@ -123,7 +122,7 @@ public class PlayerActions : MonoBehaviour
             }
             zoomRoutine = StartCoroutine(ToggleZoom(true));
         }
-        if (Input.GetKeyUp(KeyCode.V))
+        if (Input.GetKeyUp(KeyCode.Z))
         {
             if (zoomRoutine != null)
             {
