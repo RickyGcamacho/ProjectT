@@ -13,23 +13,21 @@ Shader "Custom/Outline Mask" {
 
   SubShader {
     Tags {
-      "Queue" = "Overlay+100"  // Asegúrate de que la máscara se renderice primero
+      "Queue" = "Transparent+100"
       "RenderType" = "Transparent"
     }
 
     Pass {
       Name "Mask"
       Cull Off
-      ZWrite Off
       ZTest [_ZTest]
-      ColorMask 0  // No escribe color, solo en el stencil buffer
+      ZWrite Off
+      ColorMask 0
 
       Stencil {
         Ref 1
-        Comp Always  // Esto asegura que marque todas las áreas
-        Pass Replace  // Reemplaza el valor en el stencil buffer con 1
+        Pass Replace
       }
     }
   }
 }
-
