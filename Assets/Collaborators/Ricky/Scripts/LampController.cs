@@ -16,8 +16,8 @@ public class LampController : MonoBehaviour
         // Obtener al jugador en la escena (asume que tiene la etiqueta "Player")
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        // Asegúrate de que el texto esté desactivado al inicio
-        interactionText.gameObject.SetActive(false);
+        
+        
     }
 
     void Update()
@@ -29,7 +29,8 @@ public class LampController : MonoBehaviour
         // Si el jugador está cerca, verifica si la lámpara está en su línea de visión
         if (isPlayerNear && IsLampInView())
         {
-            interactionText.gameObject.SetActive(true);
+            print("funciono pito pitoooooo culo");
+            
             interactionText.text = lampLight.enabled ? "Presiona 'E' para apagar" : "Presiona 'E' para encender";
 
             // Si el jugador presiona 'E', cambiar el estado de la luz
@@ -40,7 +41,7 @@ public class LampController : MonoBehaviour
         }
         else
         {
-            interactionText.gameObject.SetActive(false);
+            interactionText.text = "";
         }
     }
 
@@ -58,6 +59,7 @@ public class LampController : MonoBehaviour
             if (Physics.Raycast(player.position, directionToLamp, out hit, interactionDistance))
             {
                 // Retorna true solo si el objeto golpeado por el raycast es la lámpara
+                print(hit.transform == transform);
                 return hit.transform == transform;
             }
         }

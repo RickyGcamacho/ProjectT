@@ -15288,11 +15288,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5334044322374371369, guid: 1c2ad2812d461e24fbd2705ccf7e7db3, type: 3}
   m_PrefabInstance: {fileID: 397273332}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &397307512 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1841223399081031479, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
-  m_PrefabInstance: {fileID: 404131182}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &398250164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15587,9 +15582,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: lamp_table_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5213013860771778547, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
+      propertyPath: interactionText
+      value: 
+      objectReference: {fileID: 1553638903}
     - target: {fileID: 6306242284659226884, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1603.2001
+      value: -1649.3
       objectReference: {fileID: 0}
     - target: {fileID: 6306242284659226884, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15597,7 +15596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6306242284659226884, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3229.0002
+      value: 3227.5
       objectReference: {fileID: 0}
     - target: {fileID: 6306242284659226884, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15630,32 +15629,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1841223399081031479, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 404131187}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
 --- !u!4 &404131183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6306242284659226884, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
   m_PrefabInstance: {fileID: 404131182}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &404131187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 397307512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3070ca4c4b14b9b458325007446171eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lampLight: {fileID: 621167088}
-  interactionText: {fileID: 1553638903}
-  interactionDistance: 1.8
-  viewAngleThreshold: 60
 --- !u!1001 &405425851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23863,11 +23843,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 620647523}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!108 &621167088 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 781367275153055695, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
-  m_PrefabInstance: {fileID: 404131182}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &622164054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26382,6 +26357,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lamp_table_01
       objectReference: {fileID: 0}
+    - target: {fileID: 5213013860771778547, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
+      propertyPath: interactionText
+      value: 
+      objectReference: {fileID: 1553638903}
     - target: {fileID: 6306242284659226884, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2450.6458
@@ -26425,10 +26404,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1841223399081031479, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1556434884}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
 --- !u!4 &701629238 stripped
 Transform:
@@ -27166,6 +27142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lamp_table_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5213013860771778547, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
+      propertyPath: interactionText
+      value: 
+      objectReference: {fileID: 1553638903}
     - target: {fileID: 6306242284659226884, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2007.4285
@@ -28049,11 +28029,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 748272699}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!108 &750452152 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 781367275153055695, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
-  m_PrefabInstance: {fileID: 701629237}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &750803630 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8687496815330043498, guid: ea93ae84e203ab240869812b6c2a88ed, type: 3}
@@ -35651,11 +35626,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2801970385731704420, guid: 01b3e1de6763b6f49b70959bcaff95fc, type: 3}
   m_PrefabInstance: {fileID: 974327772}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &977829221 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1841223399081031479, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
-  m_PrefabInstance: {fileID: 1237851029}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &977832103 stripped
 Transform:
@@ -44124,6 +44094,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lamp_table_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5213013860771778547, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
+      propertyPath: interactionText
+      value: 
+      objectReference: {fileID: 1553638903}
     - target: {fileID: 6306242284659226884, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
       propertyPath: m_LocalScale.x
       value: 100.000015
@@ -44175,32 +44149,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1841223399081031479, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1237851034}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
 --- !u!4 &1237851030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6306242284659226884, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
   m_PrefabInstance: {fileID: 1237851029}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1237851034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 977829221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3070ca4c4b14b9b458325007446171eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lampLight: {fileID: 1947571010}
-  interactionText: {fileID: 1553638903}
-  interactionDistance: 1.8
-  viewAngleThreshold: 60
 --- !u!1001 &1238010426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55179,7 +55134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1553638902
 RectTransform:
   m_ObjectHideFlags: 0
@@ -55219,7 +55174,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Presiona 'E' para apagar/encender
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -55389,27 +55344,6 @@ MonoBehaviour:
   minFlickerTime: 0.05
   maxFlickerTime: 0.3
   flickerDuration: 0.1
---- !u!1 &1556434880 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1841223399081031479, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
-  m_PrefabInstance: {fileID: 701629237}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1556434884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1556434880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3070ca4c4b14b9b458325007446171eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lampLight: {fileID: 750452152}
-  interactionText: {fileID: 1553638903}
-  interactionDistance: 1.8
-  viewAngleThreshold: 60
 --- !u!1001 &1557381653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65073,6 +65007,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lamp_table_01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5213013860771778547, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
+      propertyPath: interactionText
+      value: 
+      objectReference: {fileID: 1553638903}
     - target: {fileID: 6306242284659226884, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -388
@@ -65116,42 +65054,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1841223399081031479, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1812109884}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
 --- !u!4 &1812109881 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6306242284659226884, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
   m_PrefabInstance: {fileID: 1812109880}
   m_PrefabAsset: {fileID: 0}
---- !u!108 &1812109882 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 781367275153055695, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
-  m_PrefabInstance: {fileID: 1812109880}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1812109883 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1841223399081031479, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
-  m_PrefabInstance: {fileID: 1812109880}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1812109884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1812109883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3070ca4c4b14b9b458325007446171eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lampLight: {fileID: 1812109882}
-  interactionText: {fileID: 1553638903}
-  interactionDistance: 1.8
-  viewAngleThreshold: 60
 --- !u!1001 &1813617895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70212,11 +70121,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a623db6f636321c43a004675fb2436ac, type: 3}
   m_PrefabInstance: {fileID: 1946566339}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &1947571010 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 781367275153055695, guid: f66f20fc7ac57f64aaeb88e030c58aa9, type: 3}
-  m_PrefabInstance: {fileID: 1237851029}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1950869268
 PrefabInstance:
