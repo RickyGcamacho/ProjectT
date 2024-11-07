@@ -26,7 +26,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BlinkSpeed: 2
-    - _ExternalIntensity: 0.8397178
+    - _ExternalIntensity: 1.5
     - _MaxIntensity: 1
     - _MinIntensity: 0.2
     - _NoiseScale: 1

@@ -9,7 +9,7 @@ public class LampController : MonoBehaviour
     public float viewAngleThreshold = 60f; // Ángulo máximo para que el jugador esté mirando a la lámpara
 
     private Transform player;
-    private bool isPlayerNear = false;
+    private bool isPlayerNear;
 
     void Start()
     {
@@ -22,6 +22,7 @@ public class LampController : MonoBehaviour
 
     void Update()
     {
+
         // Calcular la distancia entre el jugador y la lámpara
         float distance = Vector3.Distance(player.position, transform.position);
         isPlayerNear = distance <= interactionDistance;
