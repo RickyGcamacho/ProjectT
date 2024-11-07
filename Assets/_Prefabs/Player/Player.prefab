@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 2169246332195602676}
   - component: {fileID: 5029152570817179833}
   - component: {fileID: 759066864525719445}
+  - component: {fileID: 2188233685649365019}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -163,6 +164,22 @@ MonoBehaviour:
   holdPos: {fileID: 3927141387821315219}
   throwForce: 500
   pickUpRange: 5
+--- !u!114 &2188233685649365019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121377034301266719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46fe9011eecef3e4ea00190f21ee766d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1878507677596200927}
+  holdPos: {fileID: 4323410225706691989}
+  throwForce: 500
+  pickUpRange: 5
 --- !u!1 &1878507677596200927
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +223,7 @@ Transform:
   - {fileID: 7771111023323552116}
   - {fileID: 2276745521296483680}
   - {fileID: 3927141387821315219}
+  - {fileID: 4323410225706691989}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3410456711197768621
@@ -312,6 +330,7 @@ MonoBehaviour:
   crouchedHeightSizeNew: 0.1
   crouchedHeightCenterNew: -0.8
   cameraCrouched: {fileID: 8262751944922399060}
+  isNotCrouching: 0
 --- !u!114 &8004419946183448128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,7 +398,7 @@ MonoBehaviour:
   cam: {fileID: 2169246332195602676}
   doorLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
 --- !u!114 &1465758189699572469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -761,3 +780,56 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8262751944922399060}
   m_Enabled: 1
+--- !u!1 &8928010949111670641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4323410225706691989}
+  - component: {fileID: 8067310951693129969}
+  m_Layer: 0
+  m_Name: Socket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4323410225706691989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928010949111670641}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.116999626, y: 0.21000004, z: 1.3450003}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4731730061147239434}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8067310951693129969
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928010949111670641}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

@@ -31,7 +31,6 @@ public class Interactuable : MonoBehaviour
                 if (hit.transform.gameObject.tag == "Interactuable")
                 {
                     menuInteractuable.SetActive(true);
-                    playerAction.Speed = 0;
                 }
             }
 
