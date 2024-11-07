@@ -52422,7 +52422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _patientStateMachine: {fileID: 787324649}
-  _visionEffect: {fileID: 0}
+  _visionEffect: {fileID: 7028659647673671658}
 --- !u!1001 &1780899257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64160,7 +64160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 526e947d76afaf140a6e2e50dda4eaf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashlight: {fileID: 3024073990372639927}
+  flashlightCrouching: {fileID: 0}
+  flashlightStandUp: {fileID: 0}
 --- !u!4 &1560109061804114901 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 567830031933908347, guid: d5998889d635f04429c8fda4c39824d4, type: 3}
