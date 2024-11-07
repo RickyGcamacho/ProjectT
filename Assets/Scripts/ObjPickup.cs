@@ -16,7 +16,6 @@ public class ObjPickup : MonoBehaviour
     private GameObject heldObj; //object which we pick up
     private Rigidbody heldObjRb; //rigidbody of object we pick up
     private bool canDrop = true; //this is needed so we don't throw/drop object when rotating the object
-    private int LayerNumber; //layer index
 
     //Reference to script which includes mouse movement of player (looking around)
     //we want to disable the player looking around when rotating the object
@@ -24,13 +23,12 @@ public class ObjPickup : MonoBehaviour
     //MouseLookScript mouseLookScript;
     void Start()
     {
-        LayerNumber = LayerMask.NameToLayer("holdLayer"); //if your holdLayer is named differently make sure to change this ""
 
         //mouseLookScript = player.GetComponent<MouseLookScript>();
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(1)) //change E to whichever key you want to press to pick up
+        if (Input.GetMouseButtonDown(0)) //change E to whichever key you want to press to pick up
         {
             if (heldObj == null) //if currently not holding anything
             {
@@ -59,8 +57,9 @@ public class ObjPickup : MonoBehaviour
         {
             MoveObject(); //keep object position at holdPos
 ;
-            if (Input.GetKeyDown(KeyCode.Mouse0) && canDrop == true) //Mous0 (leftclick) is used to throw, change this if you want another button to be used)
+            if (Input.GetKeyDown(KeyCode.Mouse1) && canDrop == true) //Mous0 (leftclick) is used to throw, change this if you want another button to be used)
             {
+                heldObj.tag = "Pickup";
                 StopClipping();
                 ThrowObject();
             }
@@ -75,14 +74,15 @@ public class ObjPickup : MonoBehaviour
             heldObjRb = pickUpObj.GetComponent<Rigidbody>(); //assign Rigidbody
             heldObjRb.isKinematic = true;
             heldObjRb.transform.parent = holdPos.transform; //parent object to holdposition
-            heldObj.layer = LayerNumber; //change the object layer to the holdLayer
             //make sure object doesnt collide with player, it can cause weird bugs
             Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
+            heldObj.tag = "Untagged";
         }
     }
     void DropObject()
     {
         //re-enable collision with player
+
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
         heldObj.layer = 0; //object assigned back to default layer
         heldObjRb.isKinematic = false;
@@ -98,6 +98,7 @@ public class ObjPickup : MonoBehaviour
 
     void ThrowObject()
     {
+
         //same as drop function, but add force to object before undefining it
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
         heldObj.layer = 0;

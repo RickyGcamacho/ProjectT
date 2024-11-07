@@ -7,11 +7,12 @@ public class OutlineSelected : MonoBehaviour
     private RaycastHit raycastHit;
     public GameObject handUI;
     public GameObject normalUI;
-    public Material[] _mats;
 
-    private MeshRenderer render;
-    private bool materialsAdded;
+    private bool outlineAdded;
     private bool menuInteractuable;
+    private Outline outline;
+    [SerializeField, Range(0f, 10f)]
+    private float outlineWidth = 2f;
 
     public bool interactMenuVisible { get => menuInteractuable; set => menuInteractuable = value; }
 
@@ -32,70 +33,65 @@ public class OutlineSelected : MonoBehaviour
             highlight = raycastHit.transform;
 
             // Si el objeto es interactuable y no es el mismo que ya estaba seleccionado
-            if (highlight.CompareTag("Selectable") )
+            if (highlight.CompareTag("Selectable") || highlight.CompareTag("Pickup"))
             {
-                render = highlight.gameObject.GetComponent<MeshRenderer>();
-
-                // Verificar si el MeshRenderer es válido y si aún no se han añadido los materiales
-                if (render != null && !materialsAdded)
+                normalUI.SetActive(false);
+                handUI.SetActive(true);
+                if (highlight.CompareTag("Selectable"))
                 {
-                    AddOutline(); // Agregar los materiales
+                    if (!outlineAdded) // Si aún no se ha agregado el outline, agregarlo
+                    {
+                        AddOutline();
+                    }
                 }
+        
             }
-            else if (render != null && materialsAdded)
+            else
             {
+                normalUI.SetActive(true);
+                handUI.SetActive(false);
 
-                // Eliminar materiales si ya fueron añadidos
-                RemoveOutline();
+                if (outlineAdded) // Si el outline fue añadido pero no hay objeto seleccionable, eliminarlo
+                {
+                    RemoveOutline();
+                    normalUI.SetActive(true);
+                    handUI.SetActive(false);
+                }
+
             }
-        }
-        else
-        {
-            RemoveOutline();
         }
 
     }
 
-
     private void AddOutline()
     {
-
-        normalUI.SetActive(false);
-        handUI.SetActive(true);
-        // Verificar si el MeshRenderer tiene al menos 1 material (índice 0 ya tiene algo)
-        if (render.materials.Length >= 1)
+        if (highlight != null)
         {
-            // Crear un nuevo array de materiales de tamaño 3
-            Material[] newMaterials = new Material[3];
-            newMaterials[0] = render.materials[0];
-            newMaterials[1] = _mats[0]; // Primer material
-            newMaterials[2] = _mats[1]; // Segundo material
-            render.materials = newMaterials;
+            if (!highlight.gameObject.TryGetComponent(out outline))
+            {
+                outline = highlight.gameObject.AddComponent<Outline>(); // Añadir el Outline si no existe
+            }
+            if (outline != null)
+            {
+                outline = highlight.gameObject.GetComponent<Outline>();
+                outline.OutlineWidth = outlineWidth;
+                outline.enabled = true; // Habilitar el Outline
+                outlineAdded = true;
+            }
+
         }
 
-        materialsAdded = true; // Marcar que los materiales fueron agregados
+   
     }
 
     private void RemoveOutline()
     {
-        highlight = null; // Resetear el highlight si no hay objeto bajo el puntero
-        normalUI.SetActive(true);
-        handUI.SetActive(false);
-
-        if (render!=null && render.materials.Length >= 3 )
+        highlight = null;
+        // Si el Outline existe, deshabilitarlo
+        if (outline != null)
         {
-            // Obtener los materiales actuales
-            Material[] currentMaterials = render.materials;
-
-            // Remover los materiales en los índices 1 y 2
-            currentMaterials[1] = null; // Eliminar material en el índice 1
-            currentMaterials[2] = null; // Eliminar material en el índice 2
-
-            // Asignar el array modificado de vuelta al MeshRenderer
-            render.materials = currentMaterials;
-
-            materialsAdded = false; // Marcar que los materiales han sido eliminados
+            outline.enabled = false;
         }
+        outlineAdded = false;
     }
-
 }

@@ -35,7 +35,7 @@ public class MenuInteractuable : MonoBehaviour
         if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, 20f))
         {
          
-            if (hit.transform.gameObject.tag == "Interactuable" && isSelected == false)
+            if (hit.transform.gameObject.tag == "Selectable" && isSelected == false)
             {
                 outlineSelected.interactMenuVisible = true;
                 Cursor.visible = true;
@@ -59,9 +59,9 @@ public class MenuInteractuable : MonoBehaviour
             menuInspection.SetActive(false);
             item.OnHandlePickUp();
             isSelected = false;
-            Cursor.lockState = CursorLockMode.Confined; // Asegúrate de que no esté bloqueado.
-            Cursor.visible = true; // Asegúrate de que sea visible.
             outlineSelected.interactMenuVisible = false;
+            Cursor.lockState = CursorLockMode.Locked; // Asegúrate de que no esté bloqueado.
+            Cursor.visible = false; // Asegúrate de que sea visible.
 
         }
     }
@@ -82,9 +82,9 @@ public class MenuInteractuable : MonoBehaviour
     {
         menuInspection.SetActive(false);
         isSelected = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true; // Asegúrate de que sea visible.
         outlineSelected.interactMenuVisible = false;
+        Cursor.visible = false; // Asegúrate de que sea visible.
+        Cursor.lockState = CursorLockMode.Locked; // Asegúrate de que no esté bloqueado.
 
     }
 
