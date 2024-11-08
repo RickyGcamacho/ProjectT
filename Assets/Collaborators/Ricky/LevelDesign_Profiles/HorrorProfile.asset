@@ -102,7 +102,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.78
+    value: 0.8
   color:
     overrideState: 1
     value: {r: 0, g: 0, b: 0, a: 1}
@@ -1502,7 +1502,7 @@ MonoBehaviour:
     value: 360
   sampleCount:
     overrideState: 1
-    value: 15
+    value: 32
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1541,22 +1541,22 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 305
+    value: 40
   threshold:
     overrideState: 1
-    value: 1
+    value: 2.5
   softKnee:
     overrideState: 1
     value: 0.1
   clamp:
     overrideState: 1
-    value: 6
+    value: 4
   diffusion:
     overrideState: 1
     value: 1
   anamorphicRatio:
     overrideState: 1
-    value: 0.319
+    value: 0.5
   color:
     overrideState: 1
     value: {r: 0.1277145, g: 0.13207549, b: 0.12846257, a: 1}
