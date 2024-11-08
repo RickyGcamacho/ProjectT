@@ -45,18 +45,18 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1.62
-  m_Range: 4.26
+  m_Range: 5
   m_SpotAngle: 90.15427
   m_InnerSpotAngle: 9
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_Bias: 0
+    m_NormalBias: 0
+    m_NearPlane: 0.05
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -103,6 +103,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2801970385731704420}
+  - component: {fileID: 903891089215578234}
+  - component: {fileID: 629290172230100335}
   m_Layer: 7
   m_Name: Lamp1
   m_TagString: Untagged
@@ -128,6 +130,44 @@ Transform:
   - {fileID: 4446819595631154465}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &903891089215578234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935747827025164460}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af25b26afa4b6d4daf85e0e93993fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dirLight: {fileID: 4181851296582576723}
+  xenonMaterial: {fileID: 1788269377728665300, guid: 85e361a9913994945b6f9d8a959c487b, type: 3}
+  minIntensity: 0.1
+  maxIntensity: 1
+  minFlickerTime: 0.05
+  maxFlickerTime: 0.3
+  flickerDuration: 0.1
+--- !u!114 &629290172230100335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935747827025164460}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af25b26afa4b6d4daf85e0e93993fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dirLight: {fileID: 4181851296582576723}
+  xenonMaterial: {fileID: 1788269377728665300, guid: 85e361a9913994945b6f9d8a959c487b, type: 3}
+  minIntensity: 0.1
+  maxIntensity: 1
+  minFlickerTime: 0.05
+  maxFlickerTime: 0.3
+  flickerDuration: 0.1
 --- !u!1001 &2683035629585224473
 PrefabInstance:
   m_ObjectHideFlags: 0
