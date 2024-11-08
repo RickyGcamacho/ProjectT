@@ -13,7 +13,7 @@ GameObject:
   m_Layer: 7
   m_Name: Light
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -208,6 +208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3163733211563487119}
+  - component: {fileID: 1619015514331389230}
   m_Layer: 7
   m_Name: Terrofier
   m_TagString: Untagged
@@ -223,7 +224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4439744867723405064}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 25.796, y: -0.43000007, z: 40.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -233,6 +234,25 @@ Transform:
   - {fileID: 1282877727450797067}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1619015514331389230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4439744867723405064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af25b26afa4b6d4daf85e0e93993fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dirLight: {fileID: 4743061605802193624}
+  xenonMaterial: {fileID: 2100000, guid: 462999a0ef7f2d543bef1ba1b9ff89ef, type: 2}
+  minIntensity: 0.1
+  maxIntensity: 1
+  minFlickerTime: 0.05
+  maxFlickerTime: 0.3
+  flickerDuration: 0.1
 --- !u!1 &6833377951946514808
 GameObject:
   m_ObjectHideFlags: 0
