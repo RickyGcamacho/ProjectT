@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Selectable
   - Pickup
+  - Saveables
   layers:
   - Default
   - TransparentFX
@@ -14,9 +15,9 @@ TagManager:
   - Water
   - UI
   - PP
+  - Player
   - 
-  - 
-  - 
+  - Hovering
   - 
   - 
   - 

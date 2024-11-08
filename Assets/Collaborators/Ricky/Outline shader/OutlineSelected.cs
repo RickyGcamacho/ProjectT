@@ -26,6 +26,7 @@ public class OutlineSelected : MonoBehaviour
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        ray.origin += ray.direction * 2;
 
         // Asegúrate de que no estés pasando el cursor sobre un UI y que hay un objeto interactuable en el raycast
         if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit) && !interactMenuVisible)
@@ -59,6 +60,11 @@ public class OutlineSelected : MonoBehaviour
                 }
 
             }
+        }
+        else
+        {
+            normalUI.SetActive(true);
+            handUI.SetActive(false);
         }
 
     }

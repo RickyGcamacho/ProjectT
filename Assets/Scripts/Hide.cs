@@ -11,12 +11,14 @@ public class Hide : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        trigger = true;
+        if (other.gameObject.CompareTag("Player"))
+            trigger = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        trigger = false;
+        if (other.gameObject.CompareTag("Player"))
+            trigger = false;
     }
 
     private void Update()

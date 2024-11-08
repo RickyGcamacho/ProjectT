@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3326576050997011814}
   - component: {fileID: 2154625507068672401}
   - component: {fileID: 9109877075389503071}
-  m_Layer: 0
+  - component: {fileID: 2942592908566776590}
+  m_Layer: 9
   m_Name: jerry_can
-  m_TagString: Selectable
+  m_TagString: Saveables
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,3 +120,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: e28c445d7053dda419bc151594e2aad4, type: 2}
+--- !u!65 &2942592908566776590
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8621755852863756902}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.32804924, y: 0.12247531, z: 0.47067288}
+  m_Center: {x: 0.002950795, y: 0.0000000018626447, z: 0.23533644}

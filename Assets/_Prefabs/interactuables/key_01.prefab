@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3032208320027110784}
   - component: {fileID: 4165009572248355956}
   - component: {fileID: 3222694988873532204}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: key_01
-  m_TagString: Selectable
+  m_TagString: Saveables
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -13.258, y: -0, z: 16.187}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6012708, y: 0.60127085, z: 0.6012709}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
