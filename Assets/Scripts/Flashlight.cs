@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Flashlight : MonoBehaviour
 {
-    public GameObject flashlightCrouching, flashlightStandUp;
+    public GameObject flashlightStandUp;
     private bool isOn;
 
     private void Update()
@@ -17,7 +17,6 @@ public class Flashlight : MonoBehaviour
         {
             isOn = !isOn; // Alterna el valor de isOn entre true y false
             flashlightStandUp.SetActive(isOn); // Activa o desactiva la linterna según el estado de isOn
-            flashlightCrouching.SetActive(isOn);
         }
 
 

@@ -29,7 +29,7 @@ public class PlayerActions : MonoBehaviour
     [Header("Parameters")]
     [SerializeField] private float height, crouchedSpeed, crouchedHeightSizeOriginal, crouchedHeightCenterOriginal, crouchedHeightSizeNew, crouchedHeightCenterNew;
 
-    public GameObject cameraCrouched;
+
     public bool isNotCrouching;
 
     private Camera playerCamera;
@@ -54,7 +54,7 @@ public class PlayerActions : MonoBehaviour
     void Update()
     {
         Walking();
-        Crouching();
+        //Crouching();
         Running();
         HandleMouseLook();
         HandleZoom();
@@ -69,7 +69,7 @@ public class PlayerActions : MonoBehaviour
           CrouchingMovement();
             if (isNotCrouching == false)
             {
-                cameraCrouched.SetActive(true);
+                //cameraCrouched.SetActive(true);
                 playerCamera.gameObject.SetActive(false);
                 GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x, crouchedHeightSizeNew, GetComponent<BoxCollider>().size.z);
                 GetComponent<BoxCollider>().center = new Vector3(GetComponent<BoxCollider>().center.x, crouchedHeightCenterNew, GetComponent<BoxCollider>().center.z);
@@ -78,7 +78,7 @@ public class PlayerActions : MonoBehaviour
             else
             {
                 //pararse
-                cameraCrouched.SetActive(false);
+                //cameraCrouched.SetActive(false);
                 playerCamera.gameObject.SetActive(true);
                 GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x, crouchedHeightSizeOriginal, GetComponent<BoxCollider>().size.z);
                 GetComponent<BoxCollider>().center = new Vector3(GetComponent<BoxCollider>().center.x, crouchedHeightCenterOriginal, GetComponent<BoxCollider>().center.z);
