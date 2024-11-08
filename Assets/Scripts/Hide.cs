@@ -29,17 +29,18 @@ public class Hide : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && trigger == true && isHide == false)
         {
             player.GetComponent<Animation>().Play("Hide");
-            player.GetComponent<PlayerActions>().Speed = 0;
             isHide = true;
+            player.GetComponent<PlayerActions>().enabled = false;
         }
         else
         {
             if (Input.GetKeyDown(KeyCode.E) && trigger == false && isHide == true)
             {
                 player.GetComponent<Animation>().Play("Unhide");
-                player.GetComponent<PlayerActions>().Speed = 5;
                 isHide = false;
+                player.GetComponent<PlayerActions>().enabled = true;
             }
         }
+
     }
 }
