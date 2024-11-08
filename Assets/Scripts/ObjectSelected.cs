@@ -40,7 +40,7 @@ public class ObjectSelected : MonoBehaviour
     private void Update()
     {
        
-        if (!inMenu)
+        if (!inMenu && !isPickUp)
         {
             CheckForHover();
         }
@@ -52,27 +52,29 @@ public class ObjectSelected : MonoBehaviour
                 MenuInteraction();
             }
 
-            if (highlight.CompareTag("Pickup") && !isPickUp)
-            {            
-                Pickup();
+            if (highlight.CompareTag("Pickup"))
+            {
+                if (!isPickUp)
+                {
+                    Pickup();
+                }
+                else
+                {
+                    isHolding = true;
+                }
+
+              
             }
             
 
         }
-        if (isPickUp && highlight != null)
+        if (highlight != null && isPickUp)
         {
             _objHandling.MoveObject();
-            if (Input.GetMouseButtonDown(0)) // El clic izquierdo está presionado
+            if (Input.GetMouseButtonDown(0) && isHolding)
             {
-                isHolding = true;
-            }
-            else if (Input.GetMouseButtonUp(0))
-            {
-                if (isHolding)
-                {
-                    _objHandling.ThrowObject();
-                    ResetPick();
-                }
+                _objHandling.ThrowObject();
+                ResetPick();
             }
             if (Input.GetMouseButtonDown(1)) // Clic derecho para dejar el objeto
             {
@@ -81,18 +83,20 @@ public class ObjectSelected : MonoBehaviour
             }
 
         }
+        
 
     }
     private void ResetPick()
     {
         isHolding = false; // Resetear el estado de "sosteniendo"
-        isPickUp = false;
         _objHandling.StopClipping();
         highlight = null;
+        isPickUp = false;
     }
    
     private void Pickup()
     {
+        SetPointer(true, false);
         isPickUp = true;
         _objHandling.SetHeldObj(highlight.gameObject);
         _objHandling.PickUpObject();
@@ -118,6 +122,8 @@ public class ObjectSelected : MonoBehaviour
         }
         else
         {
+            highlight = null;
+
             SetPointer(true, false);
             RemoveOutline();
         }
@@ -131,6 +137,7 @@ public class ObjectSelected : MonoBehaviour
             item.OnHandlePickUp();
             Cursor.lockState = CursorLockMode.Locked; // Asegúrate de que no esté bloqueado.
             Cursor.visible = false; // Asegúrate de que sea visible.
+            inMenu = false;
 
         }
     }
@@ -140,15 +147,17 @@ public class ObjectSelected : MonoBehaviour
         menuInspection.SetActive(false);
         item.transform.position = socket.transform.position;
         _mainCam.transform.rotation = Quaternion.Euler(Vector3.zero);
+        inMenu = false;
 
     }
 
     public void ExitMenu()
     {
-        inMenu = false;
+   
         menuInspection.SetActive(false);
         Cursor.visible = false; // Asegúrate de que sea visible.
         Cursor.lockState = CursorLockMode.Locked; // Asegúrate de que no esté bloqueado.
+        inMenu = false;
 
     }
 

@@ -20,17 +20,23 @@ public class ObjectHandling : MonoBehaviour
     }
     public void PickUpObject()
     {
-        heldObjRb = heldObj.GetComponent<Rigidbody>(); //assign Rigidbody
-        heldObjRb.isKinematic = true;
-        heldObjRb.transform.parent = holdPos.transform; //parent object to holdposition
-        Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
+        if (heldObj != null)
+        {
+            heldObjRb = heldObj.GetComponent<Rigidbody>(); // asigna el Rigidbody
+            heldObjRb.isKinematic = true;
+            heldObjRb.transform.parent = holdPos.transform; // parenta el objeto a la posición de sujeción
+            Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
+        }
+        else
+        {
+            Debug.LogWarning("No se puede levantar el objeto, porque 'heldObj' es nulo.");
+        }
     }
     public void DropObject()
     {
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
         heldObjRb.isKinematic = false;
         heldObj.transform.parent = null; //unparent object
-        heldObj = null; //undefine game object
     }
     public void MoveObject()
     {
@@ -45,7 +51,7 @@ public class ObjectHandling : MonoBehaviour
         heldObjRb.isKinematic = false;
         heldObj.transform.parent = null;
         heldObjRb.AddForce(transform.forward * throwForce);
-        heldObj = null;
+
     }
     public void StopClipping() //function only called when dropping/throwing
     {
@@ -58,9 +64,15 @@ public class ObjectHandling : MonoBehaviour
         if (hits.Length > 1)
         {
             //change object position to camera position 
-            heldObj.transform.position = transform.position + new Vector3(0f, -0.5f, 0f); //offset slightly downward to stop object dropping above player 
+            heldObj.transform.position = transform.position + new Vector3(0f, -0.5f, 0f);
+            heldObj = null;//offset slightly downward to stop object dropping above player 
             //if your player is small, change the -0.5f to a smaller number (in magnitude) ie: -0.1f
         }
+        else
+        {
+            heldObj = null;
+        }
+
     }
 
     public void SetHeldObj(GameObject obj)
