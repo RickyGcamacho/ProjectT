@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/Tests/SoundTests/MenuSound.unity
+    path: Assets/_Scenes/SoundTests/MenuSound.unity
     guid: a57b387f193c3444cbcb9bded3861d2c
   - enabled: 0
     path: Assets/_Scenes/Gameplay/Game.unity
     guid: 2efc9896b9be25c428f59b57a6e9517e
   - enabled: 1
-    path: Assets/_Scenes/Tests/Ricky/LevelDesign.unity
+    path: Assets/__Members/Ricky/_ScenesTest/LevelDesign.unity
     guid: 2c2c37cebf375654a90bcbf73403cc17
   m_configObjects: {}
