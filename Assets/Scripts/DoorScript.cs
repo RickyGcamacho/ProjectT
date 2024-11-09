@@ -10,6 +10,10 @@ public class DoorScript : MonoBehaviour
     int leftDoor = 0;
     [SerializeField] LayerMask doorLayer;
 
+    private void Start()
+    {
+        cam = Camera.main;
+    }
     void Update()
     {
         //Raycast
