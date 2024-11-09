@@ -384,6 +384,7 @@ GameObject:
   - component: {fileID: 5138637942435132942}
   - component: {fileID: 1367702000591164064}
   - component: {fileID: 7578160160581412023}
+  - component: {fileID: 5724634160139907151}
   m_Layer: 0
   m_Name: Player_PP
   m_TagString: Player
@@ -584,3 +585,19 @@ MonoBehaviour:
   _objHandling: {fileID: 6091975687070666982}
   _rayDistance: 5
   outlineWidth: 10
+--- !u!114 &5724634160139907151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8621732540394449603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7db68ad8b6654542bb4ac3b5efa5658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 3915305136784000060}
+  doorLayer:
+    serializedVersion: 2
+    m_Bits: 1024

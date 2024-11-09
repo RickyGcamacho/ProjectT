@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 4869317645279689588}
   - component: {fileID: 6210642787902756720}
   m_Layer: 0
-  m_Name: door_wooden (3)
+  m_Name: door_jint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -282,7 +282,7 @@ Transform:
   m_GameObject: {fileID: 6539694146412494812}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.99981636, z: -0, w: -0.019166568}
-  m_LocalPosition: {x: -12.348001, y: -0.011626968, z: 30.442}
+  m_LocalPosition: {x: -1.6, y: -0.011626968, z: 18.2}
   m_LocalScale: {x: 0.009381205, y: 0.009643873, z: 0.009381205}
   m_ConstrainProportionsScale: 0
   m_Children:
