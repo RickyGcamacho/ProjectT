@@ -36,7 +36,7 @@ public class PlayerActions : MonoBehaviour
     private Rigidbody _rb;
     private Vector3 moveDirection;
     private Vector2 currentInput;
-    private float rotationX, x, z;
+    private float rotationX, x, z, crouchingHeight = 0.2f,standingHeight = 1;
 
 
     public float LookSpeedX { get => lookSpeedX; set => lookSpeedX = value; }
@@ -54,7 +54,7 @@ public class PlayerActions : MonoBehaviour
     void Update()
     {
         Walking();
-        //Crouching();
+        Crouching();
         Running();
         HandleMouseLook();
         HandleZoom();
@@ -69,19 +69,19 @@ public class PlayerActions : MonoBehaviour
           CrouchingMovement();
             if (isNotCrouching == false)
             {
-                //cameraCrouched.SetActive(true);
-                playerCamera.gameObject.SetActive(false);
+                ///TODO: mover la posicion de la camara
                 GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x, crouchedHeightSizeNew, GetComponent<BoxCollider>().size.z);
                 GetComponent<BoxCollider>().center = new Vector3(GetComponent<BoxCollider>().center.x, crouchedHeightCenterNew, GetComponent<BoxCollider>().center.z);
+                playerCamera.transform.position = new Vector3(playerCamera.transform.position.x, crouchingHeight, playerCamera.transform.position.z);
                 Movement(crouchedSpeed);
             }
             else
             {
+                ///TODO: mover la posicion de la camara
                 //pararse
-                //cameraCrouched.SetActive(false);
-                playerCamera.gameObject.SetActive(true);
                 GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x, crouchedHeightSizeOriginal, GetComponent<BoxCollider>().size.z);
                 GetComponent<BoxCollider>().center = new Vector3(GetComponent<BoxCollider>().center.x, crouchedHeightCenterOriginal, GetComponent<BoxCollider>().center.z);
+                playerCamera.transform.position = new Vector3(playerCamera.transform.position.x, standingHeight, playerCamera.transform.position.z);
                 Movement(speedWalk);
             }
         }
@@ -129,7 +129,7 @@ public class PlayerActions : MonoBehaviour
     //Zoom
     private void HandleZoom()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             if (zoomRoutine != null)
             {
@@ -138,7 +138,7 @@ public class PlayerActions : MonoBehaviour
             }
             zoomRoutine = StartCoroutine(ToggleZoom(true));
         }
-        if (Input.GetKeyUp(KeyCode.Z))
+        if (Input.GetKeyUp(KeyCode.Mouse1))
         {
             if (zoomRoutine != null)
             {
