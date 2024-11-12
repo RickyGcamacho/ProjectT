@@ -7,6 +7,7 @@ TagManager:
   - Selectable
   - Pickup
   - Saveables
+  - Switchable
   layers:
   - Default
   - TransparentFX

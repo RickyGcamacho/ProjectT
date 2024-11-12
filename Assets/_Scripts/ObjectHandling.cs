@@ -8,18 +8,14 @@ public class ObjectHandling : MonoBehaviour
     public float pickUpRange = 5f; //how far the player can pickup the object from
     private GameObject heldObj; //object which we pick up
     private Rigidbody heldObjRb; //rigidbody of object we pick up
-
-    void Update()
-    {
-       
-    }
+    private Vector3 offSet = new Vector3(0, -0.2f, 0);//Vector so that the grab element appears more in the center when following the camera
+ 
     public void PickUpObject()
     {
         if (heldObj != null)
         {
             heldObjRb = heldObj.GetComponent<Rigidbody>(); // asigna el Rigidbody
             heldObjRb.isKinematic = true;
-            heldObjRb.transform.parent = holdPos.transform; // parenta el objeto a la posición de sujeción
             Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
         }
         else
@@ -27,6 +23,7 @@ public class ObjectHandling : MonoBehaviour
             Debug.LogWarning("No se puede levantar el objeto, porque 'heldObj' es nulo.");
         }
     }
+
     public void DropObject()
     {
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
@@ -35,16 +32,19 @@ public class ObjectHandling : MonoBehaviour
     }
     public void MoveObject()
     {
-        //keep object position the same as the holdPosition position
-        heldObj.transform.position = holdPos.transform.position;
+        heldObj.transform.SetParent(this.transform);
+        heldObj.transform.LookAt(this.transform);
     }
 
+
+    
 
     public void ThrowObject()
     {
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
         heldObjRb.isKinematic = false;
         heldObj.transform.parent = null;
+
         heldObjRb.AddForce(transform.forward * throwForce);
 
     }
