@@ -54,8 +54,9 @@ public class PlayerActions : MonoBehaviour
     void Update()
     {
         Walking();
-        Crouching();
         Running();
+        Crouching();
+      
         HandleMouseLook();
         HandleZoom();
 

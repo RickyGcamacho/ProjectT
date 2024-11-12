@@ -65,7 +65,11 @@ public class ObjectSelected : MonoBehaviour
 
               
             }
-            
+
+            //if (highlight.CompareTag("Toggle"))
+            //{
+
+            //}
 
         }
         if (highlight != null && isPickUp)
@@ -94,6 +98,7 @@ public class ObjectSelected : MonoBehaviour
         isPickUp = false;
     }
    
+
     private void Pickup()
     {
         SetPointer(true, false);
@@ -129,6 +134,7 @@ public class ObjectSelected : MonoBehaviour
         }
     }
 
+    //TODO pasar esto a un solo script
     public void Save()
     {
         if (inventory.transform.childCount <= 2)
@@ -161,6 +167,7 @@ public class ObjectSelected : MonoBehaviour
 
     }
 
+    //TODO pasar esto a un solo script
     private void AddOutline()
     {   
         if (!highlight.gameObject.TryGetComponent(out outline))
