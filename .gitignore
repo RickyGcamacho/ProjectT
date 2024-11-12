@@ -89,7 +89,5 @@ fmod_editor.log
 # JetBrains Rider cache directory
 /.idea
 fmod_editor.log
-fmod_editor.log
-fmod_editor.log
 Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
 Assets/FMOD.meta
