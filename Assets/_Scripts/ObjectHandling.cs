@@ -1,6 +1,4 @@
 using UnityEngine;
-
-
 public class ObjectHandling : MonoBehaviour
 {
     public GameObject player;
