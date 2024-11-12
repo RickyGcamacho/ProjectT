@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6897503671000076561}
   - component: {fileID: 5453964983917852419}
   - component: {fileID: 8056612815755088280}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lamp_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4552058229692276208}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 333.1397, y: 250, z: 0.00000037252903}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 2.0507152, y: 2.0507145, z: 2.0507145}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &6897503671000076561
 MeshFilter:
   m_ObjectHideFlags: 0

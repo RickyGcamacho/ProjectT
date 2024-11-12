@@ -1,45 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8831533182896561790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/environment_misc.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/environment_misc.bank
-  Name: environment_misc
-  StudioPath: bank:/environment/environment_misc
-  lastModified: 638665296929481237
-  FileSizes:
-  - Name: Desktop
-    Value: 22488
-  Exists: 1
---- !u!114 &-8162474709528260665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/environment_misc.assets.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/environment_misc.assets.bank
-  Name: environment_misc.assets
-  StudioPath: bank:/environment/environment_misc.assets
-  lastModified: 638665296929471238
-  FileSizes:
-  - Name: Desktop
-    Value: 3865152
-  Exists: 1
 --- !u!114 &-8157926367867891143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,7 +19,7 @@ MonoBehaviour:
     Data3: -928857978
     Data4: 1087276777
   Banks:
-  - {fileID: -8831533182896561790}
+  - {fileID: 3115601773506744850}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -86,7 +46,7 @@ MonoBehaviour:
     Data3: -1087574617
     Data4: 958715567
   Banks:
-  - {fileID: -8831533182896561790}
+  - {fileID: 3115601773506744850}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -113,7 +73,7 @@ MonoBehaviour:
     Data3: -1927102031
     Data4: -612503198
   Banks:
-  - {fileID: -6065738292800601960}
+  - {fileID: 8860465626997964846}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -141,7 +101,7 @@ MonoBehaviour:
     Data3: 1103516819
     Data4: -1202171831
   Banks:
-  - {fileID: -8831533182896561790}
+  - {fileID: 3115601773506744850}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -149,7 +109,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 44730
---- !u!114 &-6551386997080517620
+--- !u!114 &-5380406625493018240
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,35 +119,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Name: bank:/enemy.assets.bank
   m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638665296929129088
+  Path: Assets/FMOD/Build/Desktop/enemy.assets.bank
+  Name: enemy.assets
+  StudioPath: bank:/enemy.assets
+  lastModified: 638667157240859054
   FileSizes:
   - Name: Desktop
-    Value: 3334
-  Exists: 1
---- !u!114 &-6065738292800601960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/interactions.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/interactions.bank
-  Name: interactions
-  StudioPath: bank:/interactions
-  lastModified: 638665296929561505
-  FileSizes:
-  - Name: Desktop
-    Value: 11338
+    Value: 561984
   Exists: 1
 --- !u!114 &-5348328986648389684
 MonoBehaviour:
@@ -208,7 +148,7 @@ MonoBehaviour:
     Data3: 1422939276
     Data4: 1320708837
   Banks:
-  - {fileID: -1741303181888493600}
+  - {fileID: -5182530599642542559}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -236,8 +176,8 @@ MonoBehaviour:
     Data3: -837264965
     Data4: 1244528115
   Banks:
-  - {fileID: -8831533182896561790}
-  - {fileID: -6065738292800601960}
+  - {fileID: 3115601773506744850}
+  - {fileID: 8860465626997964846}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -246,6 +186,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 28000
+--- !u!114 &-5182530599642542559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/environment_openables.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/Build/Desktop/environment_openables.bank
+  Name: environment_openables
+  StudioPath: bank:/environment/environment_openables
+  lastModified: 638667157242454541
+  FileSizes:
+  - Name: Desktop
+    Value: 7834
+  Exists: 1
 --- !u!114 &-5081214367538248357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,7 +253,7 @@ MonoBehaviour:
     Data3: 1528309162
     Data4: 95620599
   Banks:
-  - {fileID: -413503714265174681}
+  - {fileID: -1309837050769482952}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -373,7 +333,7 @@ MonoBehaviour:
     Data3: 1320718505
     Data4: -1993659032
   Banks:
-  - {fileID: -413503714265174681}
+  - {fileID: -1309837050769482952}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -400,7 +360,7 @@ MonoBehaviour:
     Data3: -323158605
     Data4: -748016243
   Banks:
-  - {fileID: -8831533182896561790}
+  - {fileID: 3115601773506744850}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -435,26 +395,6 @@ MonoBehaviour:
   - start
   - stop
   Exists: 1
---- !u!114 &-4494465224873341996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/enemy.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/enemy.bank
-  Name: enemy
-  StudioPath: bank:/enemy
-  lastModified: 638665296929182927
-  FileSizes:
-  - Name: Desktop
-    Value: 12692
-  Exists: 1
 --- !u!114 &-4114962669686816751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,7 +414,7 @@ MonoBehaviour:
     Data3: 2095366834
     Data4: 1555883141
   Banks:
-  - {fileID: -8831533182896561790}
+  - {fileID: 3115601773506744850}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -482,6 +422,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-3782206405810543111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/ui.assets.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/Build/Desktop/ui.assets.bank
+  Name: ui.assets
+  StudioPath: bank:/ui.assets
+  lastModified: 638667157243814856
+  FileSizes:
+  - Name: Desktop
+    Value: 39168
+  Exists: 1
 --- !u!114 &-3687444373152174699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,7 +461,7 @@ MonoBehaviour:
     Data3: 2127974541
     Data4: -942599214
   Banks:
-  - {fileID: -413503714265174681}
+  - {fileID: -1309837050769482952}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -528,7 +488,7 @@ MonoBehaviour:
     Data3: -333164882
     Data4: -2084821826
   Banks:
-  - {fileID: -6065738292800601960}
+  - {fileID: 8860465626997964846}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -556,7 +516,7 @@ MonoBehaviour:
     Data3: 938044292
     Data4: -1851839255
   Banks:
-  - {fileID: 5927959839123043137}
+  - {fileID: 3669999816815935898}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -609,7 +569,7 @@ MonoBehaviour:
     Data3: 1829885859
     Data4: -1590982974
   Banks:
-  - {fileID: 5927959839123043137}
+  - {fileID: 3669999816815935898}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -636,7 +596,7 @@ MonoBehaviour:
     Data3: -77527897
     Data4: 1467314048
   Banks:
-  - {fileID: 5927959839123043137}
+  - {fileID: 3669999816815935898}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -645,7 +605,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-2199719885546427330
+--- !u!114 &-2128780473254233861
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -655,15 +615,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/enemy.assets.bank
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/enemy.assets.bank
-  Name: enemy.assets
-  StudioPath: bank:/enemy.assets
-  lastModified: 638665296929182927
+  Path: Assets/FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638667157240393894
   FileSizes:
   - Name: Desktop
-    Value: 561984
+    Value: 1742
   Exists: 1
 --- !u!114 &-2122283931727294419
 MonoBehaviour:
@@ -684,7 +644,7 @@ MonoBehaviour:
     Data3: 38559146
     Data4: -54901197
   Banks:
-  - {fileID: -4494465224873341996}
+  - {fileID: 7033597898495574429}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -711,7 +671,7 @@ MonoBehaviour:
     Data3: 765017985
     Data4: -1660228109
   Banks:
-  - {fileID: 5927959839123043137}
+  - {fileID: 3669999816815935898}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -739,7 +699,7 @@ MonoBehaviour:
     Data3: -1925229162
     Data4: 1830643000
   Banks:
-  - {fileID: 5927959839123043137}
+  - {fileID: 3669999816815935898}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -766,7 +726,7 @@ MonoBehaviour:
     Data3: 1320720011
     Data4: 1476451649
   Banks:
-  - {fileID: 5927959839123043137}
+  - {fileID: 3669999816815935898}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -774,7 +734,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-1741303181888493600
+--- !u!114 &-1574692818845945999
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -784,17 +744,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/environment_openables.bank
+  m_Name: bank:/player.assets.bank
   m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/environment_openables.bank
-  Name: environment_openables
-  StudioPath: bank:/environment/environment_openables
-  lastModified: 638665296929516255
+  Path: Assets/FMOD/Build/Desktop/player.assets.bank
+  Name: player.assets
+  StudioPath: bank:/player.assets
+  lastModified: 638667157243114692
   FileSizes:
   - Name: Desktop
-    Value: 7834
+    Value: 390688
   Exists: 1
---- !u!114 &-413503714265174681
+--- !u!114 &-1309837050769482952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -809,10 +769,30 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/ui.bank
   Name: ui
   StudioPath: bank:/ui
-  lastModified: 638665296929611520
+  lastModified: 638667157243944879
   FileSizes:
   - Name: Desktop
     Value: 5498
+  Exists: 1
+--- !u!114 &-1225186170343108263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.assets.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/Build/Desktop/Master.assets.bank
+  Name: Master.assets
+  StudioPath: bank:/Master.assets
+  lastModified: 638667157239943791
+  FileSizes:
+  - Name: Desktop
+    Value: 494
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -827,21 +807,21 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -6551386997080517620}
-  - {fileID: -2199719885546427330}
-  - {fileID: -4494465224873341996}
-  - {fileID: -8162474709528260665}
-  - {fileID: -8831533182896561790}
-  - {fileID: 5479305814541696807}
-  - {fileID: -1741303181888493600}
-  - {fileID: 5545036018594255650}
-  - {fileID: -6065738292800601960}
-  - {fileID: 2563130563330502493}
-  - {fileID: 1742421047247471688}
-  - {fileID: 6763647496213610851}
-  - {fileID: 5927959839123043137}
-  - {fileID: 4132126670385281374}
-  - {fileID: -413503714265174681}
+  - {fileID: 459868491277030609}
+  - {fileID: -5380406625493018240}
+  - {fileID: 7033597898495574429}
+  - {fileID: 2026464430717376842}
+  - {fileID: 3115601773506744850}
+  - {fileID: 638335753720946882}
+  - {fileID: -5182530599642542559}
+  - {fileID: 2460522254415281660}
+  - {fileID: 8860465626997964846}
+  - {fileID: -1225186170343108263}
+  - {fileID: -2128780473254233861}
+  - {fileID: -1574692818845945999}
+  - {fileID: 3669999816815935898}
+  - {fileID: -3782206405810543111}
+  - {fileID: -1309837050769482952}
   EditorEvents:
   - {fileID: 7324755012482555635}
   - {fileID: -2122283931727294419}
@@ -877,11 +857,51 @@ MonoBehaviour:
   - {fileID: -5011546093479305995}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 1742421047247471688}
+  - {fileID: -2128780473254233861}
   StringsBanks:
-  - {fileID: -6551386997080517620}
-  cacheTime: 638665296929611520
+  - {fileID: 459868491277030609}
+  cacheTime: 638667157243944879
   cacheVersion: 131620
+--- !u!114 &459868491277030609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638667157240563940
+  FileSizes:
+  - Name: Desktop
+    Value: 3334
+  Exists: 1
+--- !u!114 &638335753720946882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/environment_openables.assets.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/Build/Desktop/environment_openables.assets.bank
+  Name: environment_openables.assets
+  StudioPath: bank:/environment/environment_openables.assets
+  lastModified: 638667157242314517
+  FileSizes:
+  - Name: Desktop
+    Value: 332128
+  Exists: 1
 --- !u!114 &764974937634507395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,7 +921,7 @@ MonoBehaviour:
     Data3: 157807505
     Data4: -308816148
   Banks:
-  - {fileID: -8831533182896561790}
+  - {fileID: 3115601773506744850}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -909,7 +929,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &1742421047247471688
+--- !u!114 &2026464430717376842
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -919,15 +939,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Name: bank:/environment_misc.assets.bank
   m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638665296929114062
+  Path: Assets/FMOD/Build/Desktop/environment_misc.assets.bank
+  Name: environment_misc.assets
+  StudioPath: bank:/environment/environment_misc.assets
+  lastModified: 638667157241614351
   FileSizes:
   - Name: Desktop
-    Value: 1742
+    Value: 3865152
   Exists: 1
 --- !u!114 &2097943979317628783
 MonoBehaviour:
@@ -948,7 +968,7 @@ MonoBehaviour:
     Data3: -1012806750
     Data4: 1162879053
   Banks:
-  - {fileID: -8831533182896561790}
+  - {fileID: 3115601773506744850}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -956,6 +976,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 22000
+--- !u!114 &2460522254415281660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/interactions.assets.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/Build/Desktop/interactions.assets.bank
+  Name: interactions.assets
+  StudioPath: bank:/interactions.assets
+  lastModified: 638667157242614577
+  FileSizes:
+  - Name: Desktop
+    Value: 443392
+  Exists: 1
 --- !u!114 &2509289637111945974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,7 +1015,7 @@ MonoBehaviour:
     Data3: -1562841695
     Data4: -1545204642
   Banks:
-  - {fileID: -1741303181888493600}
+  - {fileID: -5182530599642542559}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -984,26 +1024,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &2563130563330502493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.assets.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/Master.assets.bank
-  Name: Master.assets
-  StudioPath: bank:/Master.assets
-  lastModified: 638665296929114062
-  FileSizes:
-  - Name: Desktop
-    Value: 494
-  Exists: 1
 --- !u!114 &2914825674060935545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,7 +1043,7 @@ MonoBehaviour:
     Data3: -1969575281
     Data4: -511786399
   Banks:
-  - {fileID: -1741303181888493600}
+  - {fileID: -5182530599642542559}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1032,6 +1052,46 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3115601773506744850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/environment_misc.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/Build/Desktop/environment_misc.bank
+  Name: environment_misc
+  StudioPath: bank:/environment/environment_misc
+  lastModified: 638667157241954426
+  FileSizes:
+  - Name: Desktop
+    Value: 22488
+  Exists: 1
+--- !u!114 &3669999816815935898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/player.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/Build/Desktop/player.bank
+  Name: player
+  StudioPath: bank:/player
+  lastModified: 638667157243454767
+  FileSizes:
+  - Name: Desktop
+    Value: 20528
+  Exists: 1
 --- !u!114 &4052566656375934857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1051,7 +1111,7 @@ MonoBehaviour:
     Data3: 199297459
     Data4: 763510829
   Banks:
-  - {fileID: -8831533182896561790}
+  - {fileID: 3115601773506744850}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1059,26 +1119,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 154500
---- !u!114 &4132126670385281374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/ui.assets.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/ui.assets.bank
-  Name: ui.assets
-  StudioPath: bank:/ui.assets
-  lastModified: 638665296929601512
-  FileSizes:
-  - Name: Desktop
-    Value: 39168
-  Exists: 1
 --- !u!114 &4507433834981882225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1098,7 +1138,7 @@ MonoBehaviour:
     Data3: 125975486
     Data4: -2009207092
   Banks:
-  - {fileID: 5927959839123043137}
+  - {fileID: 3669999816815935898}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1151,7 +1191,7 @@ MonoBehaviour:
     Data3: 2053111449
     Data4: 280136452
   Banks:
-  - {fileID: 5927959839123043137}
+  - {fileID: 3669999816815935898}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -1178,7 +1218,7 @@ MonoBehaviour:
     Data3: 2108373154
     Data4: 2112558294
   Banks:
-  - {fileID: -1741303181888493600}
+  - {fileID: -5182530599642542559}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1187,66 +1227,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &5479305814541696807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/environment_openables.assets.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/environment_openables.assets.bank
-  Name: environment_openables.assets
-  StudioPath: bank:/environment/environment_openables.assets
-  lastModified: 638665296929516255
-  FileSizes:
-  - Name: Desktop
-    Value: 332128
-  Exists: 1
---- !u!114 &5545036018594255650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/interactions.assets.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/interactions.assets.bank
-  Name: interactions.assets
-  StudioPath: bank:/interactions.assets
-  lastModified: 638665296929551501
-  FileSizes:
-  - Name: Desktop
-    Value: 443392
-  Exists: 1
---- !u!114 &5927959839123043137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/player.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/player.bank
-  Name: player
-  StudioPath: bank:/player
-  lastModified: 638665296929591511
-  FileSizes:
-  - Name: Desktop
-    Value: 20528
-  Exists: 1
 --- !u!114 &6248705555938789715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1275,26 +1255,6 @@ MonoBehaviour:
   - close
   - hinge
   Exists: 1
---- !u!114 &6763647496213610851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/player.assets.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/player.assets.bank
-  Name: player.assets
-  StudioPath: bank:/player.assets
-  lastModified: 638665296929591511
-  FileSizes:
-  - Name: Desktop
-    Value: 390688
-  Exists: 1
 --- !u!114 &6850173837342235281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1314,7 +1274,7 @@ MonoBehaviour:
     Data3: 376183971
     Data4: -597079402
   Banks:
-  - {fileID: -4494465224873341996}
+  - {fileID: 7033597898495574429}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1322,6 +1282,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7033597898495574429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/enemy.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/Build/Desktop/enemy.bank
+  Name: enemy
+  StudioPath: bank:/enemy
+  lastModified: 638667157240939073
+  FileSizes:
+  - Name: Desktop
+    Value: 12692
+  Exists: 1
 --- !u!114 &7220458193202815161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1368,7 +1348,7 @@ MonoBehaviour:
     Data3: -2049070190
     Data4: 396652596
   Banks:
-  - {fileID: -4494465224873341996}
+  - {fileID: 7033597898495574429}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1395,7 +1375,7 @@ MonoBehaviour:
     Data3: 1159459001
     Data4: 1615697027
   Banks:
-  - {fileID: -413503714265174681}
+  - {fileID: -1309837050769482952}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1422,7 +1402,7 @@ MonoBehaviour:
     Data3: 2021022600
     Data4: -1894104277
   Banks:
-  - {fileID: 5927959839123043137}
+  - {fileID: 3669999816815935898}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1449,7 +1429,7 @@ MonoBehaviour:
     Data3: 949992622
     Data4: -1796290403
   Banks:
-  - {fileID: -4494465224873341996}
+  - {fileID: 7033597898495574429}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1457,6 +1437,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8860465626997964846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/interactions.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/Build/Desktop/interactions.bank
+  Name: interactions
+  StudioPath: bank:/interactions
+  lastModified: 638667157242964659
+  FileSizes:
+  - Name: Desktop
+    Value: 11338
+  Exists: 1
 --- !u!114 &9040484595671372176
 MonoBehaviour:
   m_ObjectHideFlags: 0
