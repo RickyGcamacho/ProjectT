@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{2687e6d4-6afe-4d82-8601-893c503db391}">
+		<property name="assetPath">
+			<value>SFX/Props/sfx_tvstatic.wav.meta</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b9bd1177-7e95-4758-8a90-211c79bd7098}</destination>
+		</relationship>
+	</object>
+</objects>

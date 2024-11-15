@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d2e2850a-3b65-446b-9abe-3b7a18c6b9a3}">
+		<property name="assetPath">
+			<value>SFX/Menu/sfx_menuradio.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>48.598041666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b9bd1177-7e95-4758-8a90-211c79bd7098}</destination>
+		</relationship>
+	</object>
+</objects>

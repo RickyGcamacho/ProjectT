@@ -4501,6 +4501,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8985901683917198475, guid: 22329d11c3a4c094096779c9c670d969, type: 3}
   m_PrefabInstance: {fileID: 209314475}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &211255189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 211255191}
+  - component: {fileID: 211255190}
+  m_Layer: 0
+  m_Name: Emitterbaseambient
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &211255190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211255189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1073889945
+      Data2: 1211782350
+      Data3: 199297459
+      Data4: 763510829
+    Path: event:/environment_misc/environment_roomtone_a
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!4 &211255191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211255189}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.1, y: -24.59413, z: -17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &213990574 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 426121543210104412, guid: 24ffbe032514c954c819c50499239841, type: 3}
@@ -42633,6 +42696,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8784483963695487948, guid: 29123fd247eb21744911a014af93a6d1, type: 3}
   m_PrefabInstance: {fileID: 2065700914}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2067323408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2067323410}
+  - component: {fileID: 2067323409}
+  m_Layer: 0
+  m_Name: EmitterWaterdrops
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2067323409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067323408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1865787974
+      Data2: 1335458143
+      Data3: -1135723109
+      Data4: 1564665559
+    Path: event:/environment_misc/environment_waterdrops
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 0.67571926
+  OverrideMaxDistance: 4.4
+--- !u!4 &2067323410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067323408}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -32.727, y: 0.229, z: 13.739}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2070012041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44776,7 +44902,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 526e947d76afaf140a6e2e50dda4eaf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashlight: {fileID: 3024073990372639927}
+  flashlightCrouching: {fileID: 0}
+  flashlightStandUp: {fileID: 0}
 --- !u!4 &1560109061804114901 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 567830031933908347, guid: d5998889d635f04429c8fda4c39824d4, type: 3}
@@ -46847,3 +46974,5 @@ SceneRoots:
   - {fileID: 360230730}
   - {fileID: 4544861160120884946}
   - {fileID: 134021562971440806}
+  - {fileID: 211255191}
+  - {fileID: 2067323410}
