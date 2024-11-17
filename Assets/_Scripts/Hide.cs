@@ -28,6 +28,7 @@ public class Hide : MonoBehaviour
         {
             playerT.position = Vector3.Lerp(playerT.position, dentro.position, time * Time.deltaTime);
             playerT.rotation = Quaternion.Lerp(playerT.rotation, dentro.rotation, time * Time.deltaTime);
+            player.GetComponent<Rigidbody>().isKinematic = true;
 
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -42,6 +43,7 @@ public class Hide : MonoBehaviour
             playerT.position = Vector3.Lerp(playerT.position, fuera.position, time * Time.deltaTime);
             playerT.rotation = Quaternion.Lerp(playerT.rotation, fuera.rotation, time * Time.deltaTime);
             StartCoroutine(FinEscondite());
+            player.GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 
