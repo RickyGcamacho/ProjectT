@@ -14,7 +14,7 @@ public class Hide : MonoBehaviour
     private Transform playerT;
     private GameObject player;
     private bool exit;
-    private bool isNearLocker;
+
 
     private void Awake()
     {
@@ -24,20 +24,17 @@ public class Hide : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isNearLocker)
-        {
-            enter = true;
-            exit = false;
-        }
         if (enter == true)
         {
             playerT.position = Vector3.Lerp(playerT.position, dentro.position, time * Time.deltaTime);
             playerT.rotation = Quaternion.Lerp(playerT.rotation, dentro.rotation, time * Time.deltaTime);
 
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 enter = false;
                 exit = true;
+     
+                
             }
         }
         if (exit == true)
@@ -48,20 +45,6 @@ public class Hide : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            isNearLocker = true;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            isNearLocker = false;
-        }
-    }
     IEnumerator FinEscondite()
     {
         yield return new WaitForSeconds(2);

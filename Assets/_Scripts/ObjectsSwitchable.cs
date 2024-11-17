@@ -1,37 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectsSwitchable : MonoBehaviour
 {
+    public Text message;
+
     private Light ligth = null;
-    private bool onObject;
+    private bool onObject,inRange;
 
 
 
     private void Start()
     {
+        if (message != null)
+        {
+            message.gameObject.SetActive(false);
+        }
         ligth = GetComponentInChildren<Light>();
         onObject = true;
-    }
+            if (ligth.GetComponent<Light>().enabled != true)
+            {
+
+                message.text = "Presiona click izquierdo para encender";
+            }
+            else
+            {
+
+                message.text = "Presiona click izquierdo para apagar";
+            }
+        }
+    
 
     void OnMouseDown()
     {
-        if (gameObject.tag == "Switchable")
+        if (gameObject.tag == "Switchable" && inRange)
         {
 
                 if (ligth != null)
                 {
                     if (onObject == true)
                     {
-                        ligth.gameObject.SetActive(false);
+                        ligth.GetComponent<Light>().enabled = false;
                     onObject = false;
+                    message.text = "Presiona click izquierdo para encender";
                     }
                     else
                     {
-                        ligth.gameObject.SetActive(true);
+                    ligth.GetComponent<Light>().enabled = true;
                     onObject = true;
-                    }
+                    message.text = "Presiona click izquierdo para apagar";
+                }
                 }
             else if (ligth == null)
             {
@@ -39,16 +59,44 @@ public class ObjectsSwitchable : MonoBehaviour
                 {
                     Debug.Log(gameObject.name + " se ha apagado");
                     onObject = false;
+                    message.text = "Presiona click izquierdo para encender";
                 }
                 else
                 {
                     Debug.Log(gameObject.name + " se ha encendido");
                     onObject = true;
+                    message.text = "Presiona click izquierdo para apagar";
                 }
                 
             }
         }
         
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            inRange = true;
+
+            if (message != null)
+            {
+                message.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            inRange = true;
+
+            if (message != null)
+            {
+                message.gameObject.SetActive(false);
+            }
+        }
     }
 }

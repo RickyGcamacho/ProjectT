@@ -8,6 +8,8 @@ TagManager:
   - Pickup
   - Saveables
   - Switchable
+  - Drawer
+  - Table
   layers:
   - Default
   - TransparentFX

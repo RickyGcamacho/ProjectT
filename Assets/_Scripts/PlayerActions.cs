@@ -37,9 +37,10 @@ public class PlayerActions : MonoBehaviour
     private Vector3 moveDirection;
     private Vector2 currentInput;
     private float rotationX, x, z, crouchingHeight = 0.2f,standingHeight = 1;
-
+    private bool isTableUnder;
 
     public float LookSpeedX { get => lookSpeedX; set => lookSpeedX = value; }
+    public bool IsTableUnder { get => isTableUnder; set => isTableUnder = value; }
 
     private void Awake()
     {
@@ -65,7 +66,7 @@ public class PlayerActions : MonoBehaviour
     private void Crouching()
     {
 
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !IsTableUnder)
         {
           CrouchingMovement();
             if (isNotCrouching == false)
@@ -97,7 +98,7 @@ public class PlayerActions : MonoBehaviour
             isNotCrouching = false;
  
         }
-        else
+        else 
         {
             isNotCrouching = true;
         }
@@ -118,13 +119,12 @@ public class PlayerActions : MonoBehaviour
     //Camara
     private void HandleMouseLook()
     {
-        if (Time.timeScale == 1)
-        {
+ 
             rotationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
             rotationX = Mathf.Clamp(rotationX, -uperLookLimit, lowerLookLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * LookSpeedX, 0);
-        }
+        
     }
 
     //Zoom
@@ -177,5 +177,7 @@ public class PlayerActions : MonoBehaviour
         playerCamera.fieldOfView = targetFOV;
         zoomRoutine = null;
     }
+
+
 
 }

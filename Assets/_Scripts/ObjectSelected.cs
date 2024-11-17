@@ -82,14 +82,17 @@ public class ObjectSelected : MonoBehaviour
             _objHandling.MoveObject();
             if (Input.GetMouseButtonDown(0) && isHolding)
             {
+                _playerActions.GetComponent<Rigidbody>().isKinematic = true;
+            }else if (Input.GetMouseButtonUp(0) && isHolding)
+            {
                 _objHandling.ThrowObject();
                 ResetPick();
+                _playerActions.GetComponent<Rigidbody>().isKinematic = false;
             }
-            if (Input.GetMouseButtonDown(1)) // Clic derecho para dejar el objeto
-            {
-                _objHandling.DropObject();
-                ResetPick();
-            }
+
+              
+            
+  
 
         }
         

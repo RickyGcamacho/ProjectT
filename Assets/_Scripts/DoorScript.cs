@@ -1,90 +1,156 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DoorScript : MonoBehaviour
 {
-    [SerializeField] Camera cam;
-    Transform selectedDoor;
-    GameObject dragPointGameobject;
-    int leftDoor = 0;
-    [SerializeField] LayerMask doorLayer;
+    [SerializeField] private float maxGrabDistance = 20f; // Maximum raycast distance to check if there is a rigidbody on the way
+    [SerializeField] private float maxEmptyDistance = 25f; // Maximum empty distance from the camera when moving shpere with mouse
+    [SerializeField] private float grabSpring = 40f;  // Adjust grab strength values / SpringJoint values
+    [SerializeField] private float grabDamper = 0.2f; // Adjust grab strength values / SpringJoint values
+    [SerializeField] private float throwForce = 10.0f;
+    [SerializeField] private float emptyMoveSpeed = 0.1f; // move empty with mouse speed 
+    [SerializeField] private Image image1;  // Can grab image
+    [SerializeField] private Image image2;  // Is grabbing image
 
-    void Update()
+    private Rigidbody _hitRigidbody;
+    private RaycastHit _hitInfo;
+
+    private GameObject _empty;
+    private Rigidbody _emptyRb;
+
+
+    [SerializeField] private Camera mainCamera;
+    private void Start()
     {
-        //Raycast
-        RaycastHit hit;
+        _empty = new GameObject();
+        _empty.transform.parent = mainCamera.transform;
+        _empty.AddComponent<Rigidbody>();
+        _emptyRb = _empty.GetComponent<Rigidbody>();
+        _emptyRb.isKinematic = true;
+  
+    }
 
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 20, doorLayer))
+    private void Update()
+    {
+        ShootRaycast();
+
+        
+            if (Input.GetMouseButton(0))
+            {
+                ApplySpringConstraint();
+                MoveEmptyWithMouse();
+            }
+            else if (Input.GetMouseButtonUp(0) && _hitRigidbody != null)
+            {
+
+                // Release the object by removing the SpringJoint
+                Destroy(_hitRigidbody.GetComponent<SpringJoint>());
+                _hitRigidbody = null;
+
+
+            
+        }
+    }
+
+    private void ShootRaycast()
+    {
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out _hitInfo, maxGrabDistance))
         {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (_hitInfo.collider.GetComponent<Hide>() == true)
+                {
+                    _hitInfo.collider.GetComponent<Hide>().enter = true;
+                }
+            }
+           
             if (Input.GetMouseButtonDown(0))
             {
-                selectedDoor = hit.collider.gameObject.transform;
+               
+                _hitRigidbody = _hitInfo.collider.GetComponent<Rigidbody>();
+                MoveEmpty(_hitInfo.point);
             }
         }
+         
 
-        if (selectedDoor != null)
+    }
+
+    private void MoveEmpty(Vector3 position)
+    {
+        _empty.transform.position = position;
+        _empty.transform.parent = mainCamera.transform;
+    }
+
+    private void ApplySpringConstraint()
+    {
+       
+            if (_hitRigidbody && _empty)
+            {
+            if (_hitRigidbody.gameObject.tag != "Pickup")
+            {
+                SpringJoint spring = _hitRigidbody.gameObject.GetComponent<SpringJoint>();
+                if (!spring)
+                {
+                    spring = _hitRigidbody.gameObject.AddComponent<SpringJoint>();
+                    spring.autoConfigureConnectedAnchor = false;
+                    spring.connectedBody = _emptyRb;
+                    spring.connectedAnchor = Vector3.zero;
+                    spring.spring = grabSpring;
+                    spring.damper = grabDamper;
+
+                    spring.massScale = 1f;
+                    spring.minDistance = 0.1f;
+                    spring.maxDistance = 0f;
+
+                    // Set the spring joint anchors
+                    Vector3 localHitPoint = _hitInfo.point - _hitRigidbody.gameObject.transform.position;
+                    Vector3 scaleOfHitObject = _hitRigidbody.gameObject.transform.localScale;
+                    Quaternion rotation = Quaternion.Euler(_hitRigidbody.transform.rotation.eulerAngles);
+                    rotation.x *= -1;
+                    rotation.y *= -1;
+                    rotation.z *= -1;
+                    Vector3 rotatedLocalHitPoint = rotation * localHitPoint;
+                    rotatedLocalHitPoint = new Vector3(
+                        rotatedLocalHitPoint.x / scaleOfHitObject.x,
+                        rotatedLocalHitPoint.y / scaleOfHitObject.y,
+                        rotatedLocalHitPoint.z / scaleOfHitObject.z);
+                    //Debug.Log(rotatedLocalHitPoint);
+                    spring.anchor = rotatedLocalHitPoint;
+                }
+
+
+                
+            }
+        }
+    }
+
+    private void MoveEmptyWithMouse()
+    {
+        float mouseY = Input.GetAxis("Mouse Y");
+        if (_empty)
         {
-            HingeJoint joint = selectedDoor.GetComponent<HingeJoint>();
-            JointMotor motor = joint.motor;
+          
+            Vector3 emptyMovement = mainCamera.transform.forward * (emptyMoveSpeed * mouseY);
+            Vector3 emptyPos = _empty.transform.position + emptyMovement;
 
-            //Create drag point object for reference where players mouse is pointing
-            if (dragPointGameobject == null)
+            // Clamp empty position relative to the camera
+           float emptyDistanceFromCamera = Vector3.Distance(Camera.main.transform.position, emptyPos);
+            if (emptyDistanceFromCamera <= maxEmptyDistance && emptyDistanceFromCamera > 0.4f)
             {
-                dragPointGameobject = new GameObject("Ray door");
-                dragPointGameobject.transform.parent = selectedDoor;
+                _empty.transform.position = emptyPos;
             }
+        }
+    }
+  
 
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            dragPointGameobject.transform.position = ray.GetPoint(Vector3.Distance(selectedDoor.position, transform.position));
-            dragPointGameobject.transform.rotation = selectedDoor.rotation;
-
-
-            float delta = Mathf.Pow(Vector3.Distance(dragPointGameobject.transform.position, selectedDoor.position), 3);
-
-            //Deciding if it is left or right door
-            if (selectedDoor.GetComponent<MeshRenderer>().localBounds.center.x > selectedDoor.localPosition.x)
-            {
-                leftDoor = 1;
-            }
-            else
-            {
-                leftDoor = -1;
-            }
-
-            //Applying velocity to door motor
-            float speedMultiplier = 60000;
-            if (Mathf.Abs(selectedDoor.parent.forward.z) > 0.5f)
-            {
-                if (dragPointGameobject.transform.position.x > selectedDoor.position.x)
-                {
-                    motor.targetVelocity = delta * -speedMultiplier * Time.deltaTime * leftDoor;
-                }
-                else
-                {
-                    motor.targetVelocity = delta * speedMultiplier * Time.deltaTime * leftDoor;
-                }
-            }
-            else
-            {
-                if (dragPointGameobject.transform.position.z > selectedDoor.position.z)
-                {
-                    motor.targetVelocity = delta * -speedMultiplier * Time.deltaTime * leftDoor;
-                }
-                else
-                {
-                    motor.targetVelocity = delta * speedMultiplier * Time.deltaTime * leftDoor;
-                }
-            }
-            joint.motor = motor;
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                selectedDoor = null;
-                motor.targetVelocity = 0;
-                joint.motor = motor;
-                Destroy(dragPointGameobject);
-            }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        if (_empty != null)
+        {
+            Gizmos.DrawWireSphere(_empty.transform.position, 0.2f);
         }
     }
 }
