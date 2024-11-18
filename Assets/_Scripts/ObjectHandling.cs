@@ -2,7 +2,6 @@ using UnityEngine;
 public class ObjectHandling : MonoBehaviour
 {
     public GameObject player;
-    public Transform holdPos;
     //if you copy from below this point, you are legally required to like the video
     public float throwForce = 500f; //force at which the object is thrown at
     public float pickUpRange = 5f; //how far the player can pickup the object from
@@ -33,7 +32,7 @@ public class ObjectHandling : MonoBehaviour
     public void MoveObject()
     {
         heldObj.transform.SetParent(this.transform);
-        heldObj.transform.LookAt(this.transform);
+        //heldObj.transform.LookAt(this.transform);
     }
 
 

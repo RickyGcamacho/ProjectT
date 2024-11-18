@@ -145,14 +145,14 @@ public class ObjectSelected : MonoBehaviour
     //TODO pasar esto a un solo script
     public void Save()
     {
-        if (inventory.transform.childCount <= 2)
+        if (inventory.transform.childCount <= 3)
         {
             menuInspection.SetActive(false);
             item.OnHandlePickUp();
             Cursor.lockState = CursorLockMode.Locked; // Asegúrate de que no esté bloqueado.
             Cursor.visible = false; // Asegúrate de que sea visible.
             inMenu = false;
-
+            _playerActions.GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 

@@ -22,20 +22,21 @@ public class InventorySystem : MonoBehaviour
     public void Add(InventoryItemData itemData)
     {
       
-            if (itemDictionary.TryGetValue(itemData, out InventoryItem value))
+            if (!itemDictionary.TryGetValue(itemData, out InventoryItem value))
             {
-                Debug.Log("Sumar Stack en item");
-                value.AddStack();
-                onInventoryChangedEventCallback.Invoke();
-            }
-            else
+
+            Debug.Log("Agregar un nuevo item");
+            InventoryItem newItem = new InventoryItem(itemData);
+            inventory.Add(newItem);
+            itemDictionary.Add(itemData, newItem);
+            onInventoryChangedEventCallback.Invoke();
+        }
+           /* else
             {
-                Debug.Log("Agregar un nuevo item");
-                InventoryItem newItem = new InventoryItem(itemData);
-                inventory.Add(newItem);
-                itemDictionary.Add(itemData, newItem);
-                onInventoryChangedEventCallback.Invoke();
-            }
+            Debug.Log("Sumar Stack en item");
+            value.AddStack();
+            onInventoryChangedEventCallback.Invoke();
+            }*/
          
         
     }
