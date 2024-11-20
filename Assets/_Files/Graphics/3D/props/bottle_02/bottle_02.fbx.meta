@@ -3,7 +3,12 @@ guid: 4ada649f14e92864084b161247f0b9bf
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bottle_02
+    second: {fileID: 2800000, guid: fff5bf5d486c53d42a02d5e897188f12, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: table_kitchen_02
-    second: {fileID: 2800000, guid: a8d926371d7b6ee4b8852628c592787c, type: 3}
+    second: {fileID: 2800000, guid: 4b505072a48d38c4b9432255304de0be, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
