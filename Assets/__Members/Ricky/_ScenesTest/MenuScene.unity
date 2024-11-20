@@ -9900,6 +9900,10 @@ PrefabInstance:
       value: Start
       objectReference: {fileID: 0}
     - target: {fileID: 7730979512669448255, guid: 41f710f445cc0dc499ec716663f68413, type: 3}
+      propertyPath: m_Transition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730979512669448255, guid: 41f710f445cc0dc499ec716663f68413, type: 3}
       propertyPath: m_Colors.m_FadeDuration
       value: 0.2
       objectReference: {fileID: 0}
