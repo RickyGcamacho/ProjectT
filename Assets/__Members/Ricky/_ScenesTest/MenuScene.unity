@@ -1017,7 +1017,7 @@ Transform:
   m_GameObject: {fileID: 348994693}
   serializedVersion: 2
   m_LocalRotation: {x: 0.70616, y: -0, z: -0, w: 0.7080524}
-  m_LocalPosition: {x: 4.137, y: -1.516, z: -15.878}
+  m_LocalPosition: {x: 4.173, y: -1.483, z: -16.032}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1035,8 +1035,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 78
+  m_Intensity: 1.3
+  m_Range: 100
   m_SpotAngle: 90.15427
   m_InnerSpotAngle: 9
   m_CookieSize: 10
@@ -4317,19 +4317,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4181851296582576723, guid: 01b3e1de6763b6f49b70959bcaff95fc, type: 3}
       propertyPath: m_Range
-      value: 78
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181851296582576723, guid: 01b3e1de6763b6f49b70959bcaff95fc, type: 3}
+      propertyPath: m_Intensity
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 4446819595631154465, guid: 01b3e1de6763b6f49b70959bcaff95fc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.908
+      value: 2.841
       objectReference: {fileID: 0}
     - target: {fileID: 4446819595631154465, guid: 01b3e1de6763b6f49b70959bcaff95fc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.119
+      value: -1.326
       objectReference: {fileID: 0}
     - target: {fileID: 4446819595631154465, guid: 01b3e1de6763b6f49b70959bcaff95fc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.703
+      value: -15.707
       objectReference: {fileID: 0}
     - target: {fileID: 8935747827025164460, guid: 01b3e1de6763b6f49b70959bcaff95fc, type: 3}
       propertyPath: m_Name
@@ -6244,11 +6248,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4743061605802193624, guid: c4e710b606474084ab74b17614b64991, type: 3}
       propertyPath: m_Range
-      value: 300
+      value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 4743061605802193624, guid: c4e710b606474084ab74b17614b64991, type: 3}
       propertyPath: m_Intensity
-      value: 1.3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6105259008891856618, guid: c4e710b606474084ab74b17614b64991, type: 3}
       propertyPath: m_Materials.Array.data[0]
