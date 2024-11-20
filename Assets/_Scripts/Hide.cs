@@ -28,6 +28,7 @@ public class Hide : MonoBehaviour
         {
             playerT.position = Vector3.Lerp(playerT.position, dentro.position, time * Time.deltaTime);
             playerT.rotation = Quaternion.Lerp(playerT.rotation, dentro.rotation, time * Time.deltaTime);
+            player.GetComponent<PlayerActions>().isNotCrouching = false;
             player.GetComponent<Rigidbody>().isKinematic = true;
 
             if (Input.GetKeyDown(KeyCode.E))

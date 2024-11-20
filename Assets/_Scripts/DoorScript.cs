@@ -27,28 +27,28 @@ public class DoorScript : MonoBehaviour
         _empty.AddComponent<Rigidbody>();
         _emptyRb = _empty.GetComponent<Rigidbody>();
         _emptyRb.isKinematic = true;
-  
+
     }
 
     private void Update()
     {
         ShootRaycast();
 
-        
-            if (Input.GetMouseButton(0))
-            {
-                ApplySpringConstraint();
-                MoveEmptyWithMouse();
-            }
-            else if (Input.GetMouseButtonUp(0) && _hitRigidbody != null)
-            {
 
-                // Release the object by removing the SpringJoint
-                Destroy(_hitRigidbody.GetComponent<SpringJoint>());
-                _hitRigidbody = null;
+        if (Input.GetMouseButton(0))
+        {
+            ApplySpringConstraint();
+            MoveEmptyWithMouse();
+        }
+        else if (Input.GetMouseButtonUp(0) && _hitRigidbody != null)
+        {
+
+            // Release the object by removing the SpringJoint
+            Destroy(_hitRigidbody.GetComponent<SpringJoint>());
+            _hitRigidbody = null;
 
 
-            
+
         }
     }
 
@@ -65,15 +65,15 @@ public class DoorScript : MonoBehaviour
                     _hitInfo.collider.GetComponent<Hide>().enter = true;
                 }
             }
-           
+
             if (Input.GetMouseButtonDown(0))
             {
-               
+
                 _hitRigidbody = _hitInfo.collider.GetComponent<Rigidbody>();
                 MoveEmpty(_hitInfo.point);
             }
         }
-         
+
 
     }
 
@@ -85,9 +85,9 @@ public class DoorScript : MonoBehaviour
 
     private void ApplySpringConstraint()
     {
-       
-            if (_hitRigidbody && _empty)
-            {
+
+        if (_hitRigidbody && _empty)
+        {
             if (_hitRigidbody.gameObject.tag != "Pickup")
             {
                 SpringJoint spring = _hitRigidbody.gameObject.GetComponent<SpringJoint>();
@@ -121,7 +121,7 @@ public class DoorScript : MonoBehaviour
                 }
 
 
-                
+
             }
         }
     }
@@ -131,19 +131,19 @@ public class DoorScript : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y");
         if (_empty)
         {
-          
+
             Vector3 emptyMovement = mainCamera.transform.forward * (emptyMoveSpeed * mouseY);
             Vector3 emptyPos = _empty.transform.position + emptyMovement;
 
             // Clamp empty position relative to the camera
-           float emptyDistanceFromCamera = Vector3.Distance(Camera.main.transform.position, emptyPos);
+            float emptyDistanceFromCamera = Vector3.Distance(Camera.main.transform.position, emptyPos);
             if (emptyDistanceFromCamera <= maxEmptyDistance && emptyDistanceFromCamera > 0.4f)
             {
                 _empty.transform.position = emptyPos;
             }
         }
     }
-  
+
 
     private void OnDrawGizmos()
     {

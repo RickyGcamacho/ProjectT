@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerActions : MonoBehaviour
 {
@@ -36,7 +37,7 @@ public class PlayerActions : MonoBehaviour
     private Rigidbody _rb;
     private Vector3 moveDirection;
     private Vector2 currentInput;
-    private float rotationX, x, z, crouchingHeight = 0.2f,standingHeight = 1;
+    private float rotationX, x, z, crouchingHeight, standingHeight;
     private bool isTableUnder;
 
     public float LookSpeedX { get => lookSpeedX; set => lookSpeedX = value; }
@@ -50,6 +51,8 @@ public class PlayerActions : MonoBehaviour
         Cursor.visible = false;
         defaultFOV = playerCamera.fieldOfView;
         isNotCrouching = true;
+        crouchingHeight = 0.2f;
+        standingHeight = playerCamera.transform.position.y;
     }
 
     void Update()
@@ -126,6 +129,8 @@ public class PlayerActions : MonoBehaviour
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * LookSpeedX, 0);
         
     }
+
+
 
     //Zoom
     private void HandleZoom()

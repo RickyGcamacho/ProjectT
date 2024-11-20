@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8408468277548211446}
   - component: {fileID: 4358103442542004497}
-  - component: {fileID: 6597448178960455367}
   m_Layer: 0
   m_Name: locker
   m_TagString: Untagged
@@ -53,27 +52,6 @@ MonoBehaviour:
   dentro: {fileID: 3077379221902731963}
   fuera: {fileID: 578928924082621079}
   time: 1
---- !u!65 &6597448178960455367
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2320698052899581153}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.6200564, y: 0.45889038, z: 1.0938398}
-  m_Center: {x: -0.047268495, y: 0.2705548, z: 0.5977269}
 --- !u!1 &2821951649740870887
 GameObject:
   m_ObjectHideFlags: 0

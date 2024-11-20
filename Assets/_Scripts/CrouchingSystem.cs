@@ -13,7 +13,7 @@ public class CrouchingSystem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Table")
+        if (other.tag == "Player")
         {
             player.IsTableUnder = true;
 
@@ -23,7 +23,7 @@ public class CrouchingSystem : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Table")
+        if (other.tag == "Player")
         {
             player.IsTableUnder = false;
 
