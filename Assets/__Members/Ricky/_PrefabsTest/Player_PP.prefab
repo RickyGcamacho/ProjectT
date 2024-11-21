@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 723543785622457773}
   - component: {fileID: 2518805234498953891}
   - component: {fileID: 6091975687070666982}
+  - component: {fileID: 8510959564998100606}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -290,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8171d6b83ea70746891b88dd8c2571a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixelateMaterial: {fileID: 2100000, guid: 4a5082090fab4ca42a0648b21172aed5, type: 2}
+  pixelateMaterial: {fileID: 2100000, guid: e5526b2dba6c32d4a922eeb245d98202, type: 2}
 --- !u!114 &2518805234498953891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +368,19 @@ MonoBehaviour:
   holdPos: {fileID: 991603029381809223}
   throwForce: 500
   pickUpRange: 5
+--- !u!114 &8510959564998100606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6384869945141543097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d827bdfb44ebb643abbd3c3353922f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectMaterial: {fileID: 2100000, guid: 19589f5acb736d54093ad37c9e1cdad2, type: 2}
 --- !u!1 &8621732540394449603
 GameObject:
   m_ObjectHideFlags: 0
