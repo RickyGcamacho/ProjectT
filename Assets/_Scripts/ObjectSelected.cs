@@ -49,7 +49,7 @@ public class ObjectSelected : MonoBehaviour
         {
             if (highlight.CompareTag("Saveables"))
             {
-                MenuInteraction();
+              //  MenuInteraction();
             }
 
             if (highlight.CompareTag("Pickup"))

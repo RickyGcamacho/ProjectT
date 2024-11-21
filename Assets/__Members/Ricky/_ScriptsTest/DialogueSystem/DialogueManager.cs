@@ -9,10 +9,12 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager Instance;
 
     public Image characterIcon;
+    public GameObject dialogo;
     public TextMeshProUGUI characterName;
     public TextMeshProUGUI dialogueArea;
 
     private Queue<DialogueLine> lines;
+    private PlayerActions playerActions;
 
     public bool isDialogueActive = false;
 
@@ -22,17 +24,31 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
+     //   playerActions = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActions>();
+
+        dialogo.SetActive(false);
         if (Instance == null)
             Instance = this;
-
+      
         lines = new Queue<DialogueLine>();
     }
-
-    public void StartDialogue(Dialogue dialogue)
+    private void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            DisplayNextDialogueLine();
+        }
+    }
+    public void StartDialogue(Dialogue dialogue)
+    {  
+        dialogo.SetActive(true);
         isDialogueActive = true;
+      //  playerActions.GetComponent<Rigidbody>().isKinematic = true;
+       // Cursor.visible = true;
+       // Cursor.lockState = CursorLockMode.Confined;
 
-       // animator.Play("show");
+
+        // animator.Play("show");
 
         lines.Clear();
 
@@ -51,15 +67,16 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
+       
+            DialogueLine currentLine = lines.Dequeue();
 
-        DialogueLine currentLine = lines.Dequeue();
+            characterIcon.sprite = currentLine.character.icon;
+            characterName.text = currentLine.character.name;
 
-        characterIcon.sprite = currentLine.character.icon;
-        characterName.text = currentLine.character.name;
+            //StopAllCoroutines();
 
-        StopAllCoroutines();
-
-        StartCoroutine(TypeSentence(currentLine));
+            StartCoroutine(TypeSentence(currentLine));
+        
     }
 
     IEnumerator TypeSentence(DialogueLine dialogueLine)
@@ -75,6 +92,10 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         isDialogueActive = false;
-      //  animator.Play("hide");
+        dialogo.SetActive(false);
+      //  playerActions.GetComponent<Rigidbody>().isKinematic = false;
+        //  Cursor.lockState = CursorLockMode.Locked; // Asegúrate de que no esté bloqueado.
+        //  Cursor.visible = false; // Asegúrate de que sea visible.
+        //  animator.Play("hide");
     }
 }
