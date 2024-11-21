@@ -16876,11 +16876,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1786528751358273364, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 581.1823
+      value: 618.7386
       objectReference: {fileID: 0}
     - target: {fileID: 1786528751358273364, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -14.2089
+      value: 4.5692
       objectReference: {fileID: 0}
     - target: {fileID: 3019775896844479098, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
