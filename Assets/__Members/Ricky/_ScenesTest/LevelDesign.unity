@@ -40118,7 +40118,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 2116522077}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ccc5fea4b483804980ffcb4bd5b489f, type: 3}
   m_Name: 
@@ -74912,6 +74912,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 723543785622457773, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2048073912675356278, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.05
@@ -74958,7 +74962,7 @@ PrefabInstance:
       objectReference: {fileID: 451746757}
     - target: {fileID: 7578160160581412023, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7578160160581412023, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
       propertyPath: pointerHand
@@ -74972,6 +74976,10 @@ PrefabInstance:
       propertyPath: pointerStandard
       value: 
       objectReference: {fileID: 807826265}
+    - target: {fileID: 8510959564998100606, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8621732540394449603, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
       propertyPath: m_Name
       value: Player_PP
