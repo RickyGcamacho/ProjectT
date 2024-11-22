@@ -74912,10 +74912,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 723543785622457773, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2048073912675356278, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.05
@@ -74956,14 +74952,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6819389263024386554, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
+      propertyPath: m_Looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819389263024386554, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 52d63a2eb55128c498456280a99c2990, type: 3}
+    - target: {fileID: 6819389263024386554, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
+      propertyPath: m_RenderMode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819389263024386554, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
+      propertyPath: m_AudioOutputMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7578160160581412023, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 451746757}
-    - target: {fileID: 7578160160581412023, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7578160160581412023, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
       propertyPath: pointerHand
       value: 
@@ -74978,7 +74986,7 @@ PrefabInstance:
       objectReference: {fileID: 807826265}
     - target: {fileID: 8510959564998100606, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8621732540394449603, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
       propertyPath: m_Name
