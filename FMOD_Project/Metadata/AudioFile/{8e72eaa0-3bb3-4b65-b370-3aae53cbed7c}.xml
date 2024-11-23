@@ -4,9 +4,6 @@
 		<property name="assetPath">
 			<value>environment_generator/environment_generator_idle.wav</value>
 		</property>
-		<property name="isStreaming">
-			<value>true</value>
-		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
 		</property>
