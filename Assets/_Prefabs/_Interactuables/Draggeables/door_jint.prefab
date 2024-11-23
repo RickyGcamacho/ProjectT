@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 7221389448552593705}
   - component: {fileID: 6032302656401093404}
   - component: {fileID: 7798746845931419696}
+  - component: {fileID: 7037418930700490843}
   m_Layer: 10
   m_Name: door_wooden
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +126,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 2, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -50.00002, y: 102.00001, z: -9.999974}
+  m_ConnectedAnchor: {x: -1.1276891, y: 0.9720481, z: 18.275766}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:
@@ -173,6 +174,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 101.406136, y: 198.58418, z: 16.962652}
   m_Center: {x: -48.72993, y: -0.7078971, z: 0.00000047683744}
+--- !u!114 &7037418930700490843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645867283167159911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb3ac52dab6fb434fb176155ec93cb43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4572900316239988282
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,8 +292,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -296,7 +309,7 @@ GameObject:
   - component: {fileID: 6210642787902756720}
   m_Layer: 0
   m_Name: door_jint
-  m_TagString: Door
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: door_reinforced (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2175663294513242104, guid: 4c112879adb01c540a2688dc34ff2b32, type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -80,6 +84,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2175663294513242104, guid: 4c112879adb01c540a2688dc34ff2b32, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5667893708218663460}
+    - targetCorrespondingSourceObject: {fileID: 2175663294513242104, guid: 4c112879adb01c540a2688dc34ff2b32, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1985512634255083484}
     - targetCorrespondingSourceObject: {fileID: -7020513353543997560, guid: 4c112879adb01c540a2688dc34ff2b32, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7279111911018089692}
@@ -143,8 +150,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -240,3 +247,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 97.78895, y: 198.5842, z: 11.763808}
   m_Center: {x: -50.755756, y: -0.707901, z: 2.6086156}
+--- !u!114 &1985512634255083484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186366300716126677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb3ac52dab6fb434fb176155ec93cb43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

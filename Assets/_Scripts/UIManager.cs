@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         soundsUI = FMODEvents.instance.References_UI;
-        AudioManager.instance.GetEventInstance(soundsUI, ui_music).start();
+
 
 
     }

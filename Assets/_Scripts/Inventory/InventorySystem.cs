@@ -5,40 +5,37 @@ using UnityEngine;
 public class InventorySystem : MonoBehaviour
 {
     public static InventorySystem Instance;
+    public List<InventoryItem> inventory;
     public delegate void onInventoryChangedEvent();
     public event onInventoryChangedEvent onInventoryChangedEventCallback;
-    public List<InventoryItem> inventory;
 
     private Dictionary<InventoryItemData, InventoryItem> itemDictionary;
 
     private void Awake()
     {
-        inventory = new List<InventoryItem> ();
-        itemDictionary = new Dictionary<InventoryItemData , InventoryItem> ();
-        Instance = this;
+        inventory = new List<InventoryItem>();
+        itemDictionary = new Dictionary<InventoryItemData, InventoryItem> ();
 
+        Instance = this;
     }
 
     public void Add(InventoryItemData itemData)
     {
-      
-            if (!itemDictionary.TryGetValue(itemData, out InventoryItem value))
-            {
+        if (itemDictionary.TryGetValue(itemData,out InventoryItem value))
+        {
+            Debug.Log("SUMAR STACK EN ITEM");
+            value.AddStack();
 
-            Debug.Log("Agregar un nuevo item");
-            InventoryItem newItem = new InventoryItem(itemData);
-            inventory.Add(newItem);
-            itemDictionary.Add(itemData, newItem);
             onInventoryChangedEventCallback.Invoke();
         }
-           /* else
-            {
-            Debug.Log("Sumar Stack en item");
-            value.AddStack();
+        else
+        {
+            Debug.Log("AGREGAR NUEVO ITEM");
+            InventoryItem newItem = new InventoryItem(itemData);
+            inventory.Add(newItem);
+            itemDictionary.Add(itemData,newItem);
             onInventoryChangedEventCallback.Invoke();
-            }*/
-         
-        
+        }
     }
 
     public void Remove(InventoryItemData itemData)
