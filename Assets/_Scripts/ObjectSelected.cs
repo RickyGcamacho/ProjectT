@@ -14,12 +14,14 @@ public class ObjectSelected : MonoBehaviour
     public GameObject pointerStandard,pointerHand;
     
     private ItemObject item;
+    private ObjectsSwitchable objSwitch;
 
     [SerializeField]private GameObject inventory;
     [SerializeField] private ObjectHandling _objHandling;
   
     private Transform highlight;
     private RaycastHit _raycastHit;
+    private PlayerActions _playerActions;
     [SerializeField] private float _rayDistance = 5;
 
     private Outline outline;
@@ -36,6 +38,7 @@ public class ObjectSelected : MonoBehaviour
     {
         menuInspection.SetActive(false);
         SetPointer(true, false);
+        _playerActions = GameObject.Find("Player_Agus").GetComponent<PlayerActions>();
     }
     private void Update()
     {
@@ -66,6 +69,8 @@ public class ObjectSelected : MonoBehaviour
               
             }
 
+
+
             //if (highlight.CompareTag("Toggle"))
             //{
 
@@ -77,14 +82,17 @@ public class ObjectSelected : MonoBehaviour
             _objHandling.MoveObject();
             if (Input.GetMouseButtonDown(0) && isHolding)
             {
+                _playerActions.GetComponent<Rigidbody>().isKinematic = true;
+            }else if (Input.GetMouseButtonUp(0) && isHolding)
+            {
                 _objHandling.ThrowObject();
                 ResetPick();
+                _playerActions.GetComponent<Rigidbody>().isKinematic = false;
             }
-            if (Input.GetMouseButtonDown(1)) // Clic derecho para dejar el objeto
-            {
-                _objHandling.DropObject();
-                ResetPick();
-            }
+
+              
+            
+  
 
         }
         
@@ -137,14 +145,14 @@ public class ObjectSelected : MonoBehaviour
     //TODO pasar esto a un solo script
     public void Save()
     {
-        if (inventory.transform.childCount <= 2)
+        if (inventory.transform.childCount <= 3)
         {
             menuInspection.SetActive(false);
             item.OnHandlePickUp();
             Cursor.lockState = CursorLockMode.Locked; // Asegúrate de que no esté bloqueado.
             Cursor.visible = false; // Asegúrate de que sea visible.
             inMenu = false;
-
+            _playerActions.GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 
@@ -164,6 +172,7 @@ public class ObjectSelected : MonoBehaviour
         Cursor.visible = false; // Asegúrate de que sea visible.
         Cursor.lockState = CursorLockMode.Locked; // Asegúrate de que no esté bloqueado.
         inMenu = false;
+        _playerActions.GetComponent<Rigidbody>().isKinematic = false;
 
     }
 
@@ -207,5 +216,6 @@ public class ObjectSelected : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         menuInspection.SetActive(true);
         item = highlight.GetComponent<ItemObject>();
+        _playerActions.GetComponent<Rigidbody>().isKinematic = true;
     }
 }

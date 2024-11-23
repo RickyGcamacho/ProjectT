@@ -7,6 +7,9 @@ TagManager:
   - Selectable
   - Pickup
   - Saveables
+  - Switchable
+  - Drawer
+  - Table
   layers:
   - Default
   - TransparentFX

@@ -2,50 +2,80 @@ using UnityEngine;
 public class ObjectHandling : MonoBehaviour
 {
     public GameObject player;
-    public Transform holdPos;
+    public Transform holdPoint; // Punto donde se sostiene el objeto
+    public float moveSpeed = 10f; // Velocidad de movimiento hacia el holdPoint
     //if you copy from below this point, you are legally required to like the video
     public float throwForce = 500f; //force at which the object is thrown at
     public float pickUpRange = 5f; //how far the player can pickup the object from
     private GameObject heldObj; //object which we pick up
     private Rigidbody heldObjRb; //rigidbody of object we pick up
-
+    private Vector3 offSet = new Vector3(0, -0.2f, 0);//Vector so that the grab element appears more in the center when following the camera
     void Update()
     {
-       
+        // Continuar moviendo el objeto si está agarrado
+        if (heldObj != null)
+        {
+            MoveObject();
+
+            // Soltar con botón derecho del mouse
+            if (Input.GetMouseButtonDown(1))
+            {
+                DropObject();
+            }
+        }
     }
+
     public void PickUpObject()
     {
         if (heldObj != null)
         {
             heldObjRb = heldObj.GetComponent<Rigidbody>(); // asigna el Rigidbody
-            heldObjRb.isKinematic = true;
-            heldObjRb.transform.parent = holdPos.transform; // parenta el objeto a la posición de sujeción
+            heldObjRb.useGravity = false; // Desactiva la gravedad
+            heldObjRb.constraints = RigidbodyConstraints.None; // Permite movimiento y rotación
             Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
+            
         }
         else
         {
             Debug.LogWarning("No se puede levantar el objeto, porque 'heldObj' es nulo.");
         }
     }
+
     public void DropObject()
     {
-        Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
-        heldObjRb.isKinematic = false;
-        heldObj.transform.parent = null; //unparent object
+        if (heldObj != null)
+        {
+            // Restaurar las propiedades físicas originales
+            heldObjRb.useGravity = true;
+            heldObj = null;
+        }
     }
+
     public void MoveObject()
     {
-        //keep object position the same as the holdPosition position
-        heldObj.transform.position = holdPos.transform.position;
+        if (heldObj != null)
+        {
+            // Calcular la dirección hacia el punto de agarre
+            Vector3 direction = (holdPoint.position - heldObj.transform.position);
+
+            // Aplicar una fuerza para mover el objeto hacia el punto
+            heldObjRb.velocity = direction * moveSpeed;
+
+            // Asegurarse de que el objeto siga rotando normalmente
+            heldObjRb.angularVelocity = Vector3.zero;
+        }
     }
+
+
 
 
     public void ThrowObject()
     {
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
-        heldObjRb.isKinematic = false;
         heldObj.transform.parent = null;
+        heldObjRb.useGravity = true;
         heldObjRb.AddForce(transform.forward * throwForce);
+      
 
     }
     public void StopClipping() //function only called when dropping/throwing
