@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -39,6 +40,9 @@ public class ObjectSelected : MonoBehaviour
         menuInspection.SetActive(false);
         SetPointer(true, false);
         _playerActions = GameObject.Find("Player_Agus").GetComponent<PlayerActions>();
+
+        item = GameObject.FindWithTag("Saveables").GetComponent<ItemObject>();
+ 
     }
     private void Update()
     {
@@ -52,7 +56,10 @@ public class ObjectSelected : MonoBehaviour
         {
             if (highlight.CompareTag("Saveables"))
             {
-                MenuInteraction();
+                if (inventory.transform.childCount <= 3)
+                {
+                    item.OnHandlePickUp();
+                }
             }
 
             if (highlight.CompareTag("Pickup"))
@@ -145,21 +152,13 @@ public class ObjectSelected : MonoBehaviour
     //TODO pasar esto a un solo script
     public void Save()
     {
-        if (inventory.transform.childCount <= 3)
-        {
-            menuInspection.SetActive(false);
-            item.OnHandlePickUp();
-            Cursor.lockState = CursorLockMode.Locked; // Asegúrate de que no esté bloqueado.
-            Cursor.visible = false; // Asegúrate de que sea visible.
-            inMenu = false;
-            _playerActions.GetComponent<Rigidbody>().isKinematic = false;
-        }
+    
     }
 
     public void Inspection()
     {
         menuInspection.SetActive(false);
-        item.transform.position = socket.transform.position;
+       // item.transform.position = socket.transform.position;
         _mainCam.transform.rotation = Quaternion.Euler(Vector3.zero);
         inMenu = false;
 

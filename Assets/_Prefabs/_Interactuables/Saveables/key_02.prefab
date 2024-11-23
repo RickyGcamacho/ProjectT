@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 2629026664333344424}
   - component: {fileID: 9168518727189771899}
   - component: {fileID: 6880948558658688056}
-  - component: {fileID: 3872989134898586153}
-  - component: {fileID: 1992644498305270399}
   m_Layer: 9
   m_Name: key_02
   m_TagString: Saveables
@@ -85,37 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3872989134898586153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2175840929390149615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 669cc5ed84f2c504d828d971d8eb9791, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: adc3927469b71364d94bc348f595e7d4, type: 2}
---- !u!135 &1992644498305270399
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2175840929390149615}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.1440346
-  m_Center: {x: -0.06725059, y: -0.00963355, z: 0.005141307}

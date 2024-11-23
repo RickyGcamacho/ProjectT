@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 6074449561415386530}
   - component: {fileID: 5809387472532568883}
   - component: {fileID: 4948131151815723570}
-  - component: {fileID: 7727249350491689551}
-  - component: {fileID: 2789255715835450059}
   m_Layer: 9
   m_Name: key_03
   m_TagString: Saveables
@@ -85,37 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7727249350491689551
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 652029178809978679}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.14944874
-  m_Center: {x: -0.06854632, y: -0.00095688284, z: 0.005300743}
---- !u!114 &2789255715835450059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 652029178809978679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 669cc5ed84f2c504d828d971d8eb9791, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: 74d1eff8911f7fc4aa32ebaba6bf1138, type: 2}
