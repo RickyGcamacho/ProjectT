@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Video;
 
-[ExecuteInEditMode]
+
 [AddComponentMenu("Image Effects/GlitchEffect")]
 [RequireComponent(typeof(Camera))]
 [RequireComponent(typeof(VideoPlayer))]

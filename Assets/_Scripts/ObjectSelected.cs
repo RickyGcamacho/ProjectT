@@ -17,6 +17,7 @@ public class ObjectSelected : MonoBehaviour
     private ObjectsSwitchable objSwitch;
 
     [SerializeField]private GameObject inventory;
+    [SerializeField]private EventSystem _eventSystem;
     [SerializeField] private ObjectHandling _objHandling;
   
     private Transform highlight;
@@ -38,7 +39,7 @@ public class ObjectSelected : MonoBehaviour
     {
         menuInspection.SetActive(false);
         SetPointer(true, false);
-        _playerActions = GameObject.Find("Player_Agus").GetComponent<PlayerActions>();
+        _playerActions = GameObject.FindObjectOfType<PlayerActions>();
     }
     private void Update()
     {
@@ -122,8 +123,8 @@ public class ObjectSelected : MonoBehaviour
     public void CheckForHover()
     {
         Ray ray = _mainCam.ScreenPointToRay(Input.mousePosition);
-        print(_raycastHit.transform);
-        if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out _raycastHit, _rayDistance, LayerMask.GetMask("Hovering")))
+        //print(_raycastHit.transform);
+        if (!_eventSystem.IsPointerOverGameObject() && Physics.Raycast(ray, out _raycastHit, _rayDistance, LayerMask.GetMask("Hovering")))
         {
             highlight = _raycastHit.transform;
             SetPointer(false, true);
