@@ -26,12 +26,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244491718359733661}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.068, y: 0.311, z: 1.652}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.01999984, y: -0.18900001, z: 1.6519995}
   m_LocalScale: {x: 0.5121, y: 0.5121, z: 0.5121}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7299270150237854101}
+  m_Father: {fileID: 6410764904394685688}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5250134055830920736
 MeshFilter:
@@ -97,10 +97,8 @@ GameObject:
   - component: {fileID: 7302150070471066649}
   - component: {fileID: 5050691286338877792}
   - component: {fileID: 5689568820466485305}
-  - component: {fileID: 7935442048886068834}
   - component: {fileID: 1069608595565283451}
   - component: {fileID: 3404934407440546817}
-  - component: {fileID: 6986103696867254393}
   m_Layer: 0
   m_Name: Player_Agus
   m_TagString: Player
@@ -122,7 +120,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6410764904394685688}
-  - {fileID: 5510550017451379784}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5749838212467985364
@@ -223,7 +220,7 @@ MonoBehaviour:
   zoomFOV: 30
   runSpeed: 5
   height: 1
-  crouchedSpeed: 1
+  crouchedSpeed: 0.1
   crouchedHeightSizeOriginal: 1.3
   crouchedHeightCenterOriginal: -0.3
   crouchedHeightSizeNew: 0.1
@@ -242,23 +239,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashlightStandUp: {fileID: 7144920420509387153}
---- !u!111 &7935442048886068834
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6398455870166938666}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: b8dd9445f37d3244ba26505172363e0b, type: 2}
-  - {fileID: 7400000, guid: 2ca10e06418e7f84cba0bae87a3ac1d8, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!65 &1069608595565283451
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -301,22 +281,6 @@ MonoBehaviour:
   _objHandling: {fileID: 3204619844292570584}
   _rayDistance: 5
   outlineWidth: 10
---- !u!114 &6986103696867254393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6398455870166938666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7db68ad8b6654542bb4ac3b5efa5658, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 5684273029718065125}
-  doorLayer:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!1 &7144920420509387153
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,6 +410,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4052692077587558410}
+  - {fileID: 5510550017451379784}
   m_Father: {fileID: 7299270150237854101}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &5684273029718065125
@@ -598,6 +563,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 6398455870166938666}
-  holdPos: {fileID: 5510550017451379784}
   throwForce: 500
   pickUpRange: 5

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8408468277548211446}
   - component: {fileID: 4358103442542004497}
-  - component: {fileID: 6597448178960455367}
   m_Layer: 0
   m_Name: locker
   m_TagString: Untagged
@@ -28,8 +27,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 756719434634331291}
   - {fileID: 9004234702276846931}
@@ -49,31 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e288eef5f806154292a8d9305606489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entra: 0
+  enter: 0
   dentro: {fileID: 3077379221902731963}
   fuera: {fileID: 578928924082621079}
   time: 1
---- !u!65 &6597448178960455367
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2320698052899581153}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.6200564, y: 0.45889038, z: 1.0938398}
-  m_Center: {x: -0.047268495, y: 0.2705548, z: 0.5977269}
 --- !u!1 &2821951649740870887
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,8 +77,8 @@ Transform:
   m_GameObject: {fileID: 2821951649740870887}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.253, z: 1.069}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.125, z: 1.069}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8408468277548211446}
@@ -116,7 +94,6 @@ GameObject:
   - component: {fileID: 9004234702276846931}
   - component: {fileID: 7660915548042525680}
   - component: {fileID: 5785805714780153475}
-  - component: {fileID: 121085913861825905}
   m_Layer: 0
   m_Name: locker_door
   m_TagString: Untagged
@@ -189,23 +166,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!111 &121085913861825905
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3202672153209515959}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: ce238b34297065446bfbecb03a2b8153, type: 2}
-  - {fileID: 7400000, guid: 83ee17f8c3ae88e45ac4d3f297c1411e, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &3630099767839290376
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,8 +274,8 @@ Transform:
   m_GameObject: {fileID: 6144770112753144721}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.273, z: 0.351}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.145, z: 0.351}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8408468277548211446}

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2536373459188866492}
   - component: {fileID: 417659165182302887}
   - component: {fileID: 8825219534123473702}
+  - component: {fileID: 490823270689766061}
+  - component: {fileID: 2874385498651069277}
   m_Layer: 0
   m_Name: telephone_01
   m_TagString: Untagged
@@ -26,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5420181689019440997}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 330.30667, y: 60.734756, z: 68.2283}
-  m_LocalScale: {x: 100, y: 100, z: 100}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.960258, y: 0.960258, z: 0.960258}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &417659165182302887
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -83,3 +85,46 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &490823270689766061
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5420181689019440997}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.49031875, y: 0.95683956, z: 0.32201138}
+  m_Center: {x: -0.0030405927, y: -0.36800835, z: 0.15832278}
+--- !u!114 &2874385498651069277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5420181689019440997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79cfa55ee63d7f6458eadf9d7776bce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: Enfermero
+        icon: {fileID: 21300000, guid: 7882f7c91a17a174ea736885e477b054, type: 3}
+      line: Soy gay me llamo nachio
+    - character:
+        name: Boss
+        icon: {fileID: 21300000, guid: b0f269cdf40b7ff4dbd4e6fe652d2798, type: 3}
+      line: Nacho se la come

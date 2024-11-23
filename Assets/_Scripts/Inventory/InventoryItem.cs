@@ -7,13 +7,13 @@ public class InventoryItem
     public InventoryItem(InventoryItemData itemData)
     {
         data = itemData;
-        AddStack();
+        //AddStack();
     }
 
-    public void AddStack()
+   /* public void AddStack()
     {
         stackSize++;
-    }
+    }*/
 
     public void RemoveFromStack()
     {

@@ -169,24 +169,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 5998832102762489625}
     m_Modifications:
     - target: {fileID: 3617457319504949089, guid: 83d439b94823d73488c3acb6d29047bf, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.2630577
-      objectReference: {fileID: 0}
-    - target: {fileID: 3617457319504949089, guid: 83d439b94823d73488c3acb6d29047bf, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.2630577
-      objectReference: {fileID: 0}
-    - target: {fileID: 3617457319504949089, guid: 83d439b94823d73488c3acb6d29047bf, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.9873579
-      objectReference: {fileID: 0}
-    - target: {fileID: 3617457319504949089, guid: 83d439b94823d73488c3acb6d29047bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.2463646
       objectReference: {fileID: 0}
     - target: {fileID: 3617457319504949089, guid: 83d439b94823d73488c3acb6d29047bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0637531
+      value: 1.059
       objectReference: {fileID: 0}
     - target: {fileID: 3617457319504949089, guid: 83d439b94823d73488c3acb6d29047bf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -223,10 +211,6 @@ PrefabInstance:
     - target: {fileID: 7218109255605435446, guid: 83d439b94823d73488c3acb6d29047bf, type: 3}
       propertyPath: m_Name
       value: lamp_ceiling_02
-      objectReference: {fileID: 0}
-    - target: {fileID: 7218109255605435446, guid: 83d439b94823d73488c3acb6d29047bf, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
