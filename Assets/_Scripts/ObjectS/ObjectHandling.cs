@@ -18,10 +18,13 @@ public class ObjectHandling : MonoBehaviour
             MoveObject();
 
             // Soltar con botón derecho del mouse
-            if (Input.GetMouseButtonDown(1))
-            {
-                DropObject();
-            }
+           
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            //DropObject(); 
+
+            ///TODO FOR FIX DROP
         }
     }
 

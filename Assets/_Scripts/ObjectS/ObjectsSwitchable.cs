@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// TODO
+/// Hacer script modular para los otros objetos TOGGLES
+
 public class ObjectsSwitchable : MonoBehaviour
 {
     public Text message;
@@ -30,29 +33,28 @@ public class ObjectsSwitchable : MonoBehaviour
 
                 message.text = "Presiona click izquierdo para apagar";
             }
-        }
+    }
     
 
     void OnMouseDown()
     {
         if (gameObject.tag == "Switchable" && inRange)
         {
-
-                if (ligth != null)
+            if (ligth != null)
+            {
+                if (onObject == true)
                 {
-                    if (onObject == true)
-                    {
-                        ligth.GetComponent<Light>().enabled = false;
+                    ligth.GetComponent<Light>().enabled = false;
                     onObject = false;
                     message.text = "Presiona click izquierdo para encender";
-                    }
-                    else
-                    {
+                }
+                else
+                {
                     ligth.GetComponent<Light>().enabled = true;
                     onObject = true;
                     message.text = "Presiona click izquierdo para apagar";
                 }
-                }
+            }
             else if (ligth == null)
             {
                 if (onObject == true)
@@ -67,7 +69,7 @@ public class ObjectsSwitchable : MonoBehaviour
                     onObject = true;
                     message.text = "Presiona click izquierdo para apagar";
                 }
-                
+
             }
         }
         
@@ -91,7 +93,7 @@ public class ObjectsSwitchable : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            inRange = true;
+            inRange = false;
 
             if (message != null)
             {
