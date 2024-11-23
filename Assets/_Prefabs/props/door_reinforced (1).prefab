@@ -167,8 +167,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -186,9 +186,10 @@ GameObject:
   - component: {fileID: 2143893829493287163}
   - component: {fileID: 5995042843469367932}
   - component: {fileID: 7081260789883949864}
+  - component: {fileID: 5523660482646612511}
   m_Layer: 0
   m_Name: door_reinforced
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -345,3 +346,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 97.78895, y: 198.5842, z: 11.763808}
   m_Center: {x: -50.75577, y: -0.707901, z: 2.6083715}
+--- !u!114 &5523660482646612511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7595240923057948750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb3ac52dab6fb434fb176155ec93cb43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

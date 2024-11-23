@@ -4,7 +4,7 @@ using static UnityEditor.Progress;
 public class ItemObject : MonoBehaviour
 {
     public InventoryItemData itemData;
-
+    [SerializeField] private GameObject inventory;
 
 
     public void OnHandlePickUp()
@@ -16,11 +16,13 @@ public class ItemObject : MonoBehaviour
    private void OnMouseDown()
     {
 
-            if (gameObject.tag == "Saveables")
+        if (gameObject.tag == "Saveables")
+        {
+            if (inventory.transform.childCount <= 3)
             {
                 OnHandlePickUp();
             }
-        
+        }
      
     }
 }

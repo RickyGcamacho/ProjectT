@@ -17,7 +17,7 @@ public class ObjectSelected : MonoBehaviour
     private ItemObject item;
     private ObjectsSwitchable objSwitch;
 
-    [SerializeField]private GameObject inventory;
+ 
     [SerializeField] private ObjectHandling _objHandling;
   
     private Transform highlight;
@@ -41,7 +41,7 @@ public class ObjectSelected : MonoBehaviour
         SetPointer(true, false);
         _playerActions = GameObject.Find("Player_Agus").GetComponent<PlayerActions>();
 
-        item = GameObject.FindWithTag("Saveables").GetComponent<ItemObject>();
+        
  
     }
     private void Update()
@@ -56,10 +56,9 @@ public class ObjectSelected : MonoBehaviour
         {
             if (highlight.CompareTag("Saveables"))
             {
-                if (inventory.transform.childCount <= 3)
-                {
-                    item.OnHandlePickUp();
-                }
+               
+                    //item.OnHandlePickUp();
+               
             }
 
             if (highlight.CompareTag("Pickup"))

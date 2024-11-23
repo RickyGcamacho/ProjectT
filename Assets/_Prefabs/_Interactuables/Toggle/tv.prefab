@@ -12,13 +12,15 @@ GameObject:
   - component: {fileID: 8630687510682887529}
   - component: {fileID: 3014683509043229927}
   - component: {fileID: 2615223414772578861}
+  - component: {fileID: 5232490409836162370}
+  - component: {fileID: 4662314936201150023}
   m_Layer: 0
   m_Name: tv
-  m_TagString: Untagged
+  m_TagString: Switchable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4452840963483424205
 Transform:
   m_ObjectHideFlags: 0
@@ -105,3 +107,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6604314, y: 0.4977837, z: 0.7924961}
   m_Center: {x: 0.0000009518477, y: 0.061290383, z: 0.39624804}
+--- !u!114 &5232490409836162370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5964748192411820137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0d49f726653d64ebbe7abcaee3ea8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: {fileID: 0}
+--- !u!65 &4662314936201150023
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5964748192411820137}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2, y: 1.23, z: 0.7924963}
+  m_Center: {x: -0.00000047683716, y: 0.061291233, z: 0.3962481}
