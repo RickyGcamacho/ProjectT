@@ -4,30 +4,24 @@
 TagManager:
   serializedVersion: 2
   tags:
-
   - Selectable
-
-  - canPickUp
-  - Interactuable
-
+  - Pickup
+  - Saveables
+  - Switchable
+  - Drawer
+  - Table
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-
-  - Enemy
+  - PP
+  - Player
+  - 
+  - Hovering
   - Door
-  - 
-
-  - Door
-  - ThrowLayer
-  - Inspection
-
-  - 
-  - 
   - 
   - 
   - 
