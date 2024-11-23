@@ -17,7 +17,6 @@ public class Flashlight : MonoBehaviour
         {
             isOn = !isOn; // Alterna el valor de isOn entre true y false
             flashlightStandUp.SetActive(isOn); // Activa o desactiva la linterna según el estado de isOn
-            flashlightCrouching.SetActive(isOn);
         }
 
 
