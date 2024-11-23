@@ -30,12 +30,10 @@ public class InventoryUI : MonoBehaviour
 
     public void AddInventorySlot(InventoryItem item)
     {
-      
-            GameObject obj = Instantiate(itemSlotPrefab);
-            obj.transform.SetParent(transform, false);
-            ItemSlot slot = obj.GetComponent<ItemSlot>();
-            slot.Set(item);
-           
-        
+        GameObject obj = Instantiate(itemSlotPrefab);
+        obj.transform.SetParent(transform,false);
+
+        ItemSlot slot = obj.GetComponent<ItemSlot>();
+        slot.Set(item);
     }
 }
