@@ -23,13 +23,18 @@ public class ObjectHandling : MonoBehaviour
         {
             MoveObject();
 
+
            
             if (Input.GetKey(KeyCode.X))
             {
                 DropObject();
                 itemObject.enabled = true;
             }
+
+            // Soltar con botón derecho del mouse
+           
         }
+     
     }
 
     public void PickUpObject()

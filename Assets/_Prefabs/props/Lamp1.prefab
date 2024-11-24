@@ -44,13 +44,13 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.62
-  m_Range: 3.51
+  m_Intensity: 1
+  m_Range: 4
   m_SpotAngle: 90.15427
   m_InnerSpotAngle: 9
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -83,7 +83,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -169,24 +169,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 5998832102762489625}
     m_Modifications:
     - target: {fileID: 3617457319504949089, guid: 83d439b94823d73488c3acb6d29047bf, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.2630577
-      objectReference: {fileID: 0}
-    - target: {fileID: 3617457319504949089, guid: 83d439b94823d73488c3acb6d29047bf, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.2630577
-      objectReference: {fileID: 0}
-    - target: {fileID: 3617457319504949089, guid: 83d439b94823d73488c3acb6d29047bf, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.9873579
-      objectReference: {fileID: 0}
-    - target: {fileID: 3617457319504949089, guid: 83d439b94823d73488c3acb6d29047bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.2463646
       objectReference: {fileID: 0}
     - target: {fileID: 3617457319504949089, guid: 83d439b94823d73488c3acb6d29047bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0637531
+      value: 1.059
       objectReference: {fileID: 0}
     - target: {fileID: 3617457319504949089, guid: 83d439b94823d73488c3acb6d29047bf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -223,10 +211,6 @@ PrefabInstance:
     - target: {fileID: 7218109255605435446, guid: 83d439b94823d73488c3acb6d29047bf, type: 3}
       propertyPath: m_Name
       value: lamp_ceiling_02
-      objectReference: {fileID: 0}
-    - target: {fileID: 7218109255605435446, guid: 83d439b94823d73488c3acb6d29047bf, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5499245073077035380}
-  - component: {fileID: 5466103645717147816}
   m_Layer: 0
   m_Name: door_wooden (8)
   m_TagString: Untagged
@@ -27,29 +26,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 716.1, y: -1.1627, z: 2368.3}
-  m_LocalScale: {x: 0.93812, y: 0.96438736, z: 0.93812}
+  m_LocalScale: {x: 0.93812007, y: 0.9643873, z: 0.93812007}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7785162189416806007}
   - {fileID: 2873686552887082836}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &5466103645717147816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3959564138091668407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7db68ad8b6654542bb4ac3b5efa5658, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  doorLayer:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!1 &5160570016786515392
 GameObject:
   m_ObjectHideFlags: 0
