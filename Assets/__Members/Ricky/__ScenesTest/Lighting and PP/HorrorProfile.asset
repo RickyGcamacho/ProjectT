@@ -92,15 +92,15 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.475
+    value: 0.5
   smoothness:
-    overrideState: 0
+    overrideState: 1
     value: 0.2
   roundness:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 0.9
   rounded:
-    overrideState: 0
+    overrideState: 1
     value: 0
   mask:
     overrideState: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 40
+    value: 38
   intensityX:
     overrideState: 0
     value: 0.28
@@ -266,7 +266,7 @@ MonoBehaviour:
     value: 0
   postExposure:
     overrideState: 1
-    value: 2.5
+    value: 2.9
   contrast:
     overrideState: 0
     value: 0
@@ -1524,10 +1524,10 @@ MonoBehaviour:
     value: 1
   filtering:
     overrideState: 1
-    value: {x: 49.21652, y: 82.26242}
+    value: {x: 14.112038, y: 47.15796}
   minLuminance:
     overrideState: 1
-    value: 0.4
+    value: 0.1
   maxLuminance:
     overrideState: 1
     value: 9

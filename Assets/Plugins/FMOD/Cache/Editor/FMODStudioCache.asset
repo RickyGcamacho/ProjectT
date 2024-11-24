@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: FMOD_Project/Build/Desktop/environment_misc.assets.bank
   Name: environment_misc.assets
   StudioPath: bank:/environment/environment_misc.assets
-  lastModified: 638679798743959370
+  lastModified: 638679922608003639
   FileSizes:
   - Name: Desktop
     Value: 3417568
@@ -89,7 +89,7 @@ MonoBehaviour:
   Path: FMOD_Project/Build/Desktop/environment_openables.bank
   Name: environment_openables
   StudioPath: bank:/environment/environment_openables
-  lastModified: 638679798744029371
+  lastModified: 638679922608053647
   FileSizes:
   - Name: Desktop
     Value: 7834
@@ -164,7 +164,7 @@ MonoBehaviour:
   Path: FMOD_Project/Build/Desktop/ui.assets.bank
   Name: ui.assets
   StudioPath: bank:/ui.assets
-  lastModified: 638679798744119386
+  lastModified: 638679922608098705
   FileSizes:
   - Name: Desktop
     Value: 29728
@@ -211,7 +211,7 @@ MonoBehaviour:
   Path: FMOD_Project/Build/Desktop/player.bank
   Name: player
   StudioPath: bank:/player
-  lastModified: 638679798744119386
+  lastModified: 638679922608088686
   FileSizes:
   - Name: Desktop
     Value: 22938
@@ -612,7 +612,7 @@ MonoBehaviour:
   Path: FMOD_Project/Build/Desktop/environment_openables.assets.bank
   Name: environment_openables.assets
   StudioPath: bank:/environment/environment_openables.assets
-  lastModified: 638679798744019362
+  lastModified: 638679922608043640
   FileSizes:
   - Name: Desktop
     Value: 332128
@@ -796,7 +796,7 @@ MonoBehaviour:
   Path: FMOD_Project/Build/Desktop/enemy.assets.bank
   Name: enemy.assets
   StudioPath: bank:/enemy.assets
-  lastModified: 638679798743689287
+  lastModified: 638679922607908551
   FileSizes:
   - Name: Desktop
     Value: 561984
@@ -871,7 +871,7 @@ MonoBehaviour:
   - {fileID: 7291831028988277649}
   StringsBanks:
   - {fileID: 974843164829965240}
-  cacheTime: 638679798744129394
+  cacheTime: 638679922608103747
   cacheVersion: 131620
 --- !u!114 &299310692339114830
 MonoBehaviour:
@@ -942,7 +942,7 @@ MonoBehaviour:
   Path: FMOD_Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638679798743639329
+  lastModified: 638679922607863403
   FileSizes:
   - Name: Desktop
     Value: 3518
@@ -989,7 +989,7 @@ MonoBehaviour:
   Path: FMOD_Project/Build/Desktop/interactions.assets.bank
   Name: interactions.assets
   StudioPath: bank:/interactions.assets
-  lastModified: 638679798744059370
+  lastModified: 638679922608063651
   FileSizes:
   - Name: Desktop
     Value: 443392
@@ -1065,7 +1065,7 @@ MonoBehaviour:
   Path: FMOD_Project/Build/Desktop/player.assets.bank
   Name: player.assets
   StudioPath: bank:/player.assets
-  lastModified: 638679798744109398
+  lastModified: 638679922608088686
   FileSizes:
   - Name: Desktop
     Value: 432288
@@ -1112,7 +1112,7 @@ MonoBehaviour:
   Path: FMOD_Project/Build/Desktop/Master.assets.bank
   Name: Master.assets
   StudioPath: bank:/Master.assets
-  lastModified: 638679798743609328
+  lastModified: 638679922607853399
   FileSizes:
   - Name: Desktop
     Value: 2084192
@@ -1268,7 +1268,7 @@ MonoBehaviour:
   Path: FMOD_Project/Build/Desktop/interactions.bank
   Name: interactions
   StudioPath: bank:/interactions
-  lastModified: 638679798744069386
+  lastModified: 638679922608073652
   FileSizes:
   - Name: Desktop
     Value: 11338
@@ -1288,7 +1288,7 @@ MonoBehaviour:
   Path: FMOD_Project/Build/Desktop/enemy.bank
   Name: enemy
   StudioPath: bank:/enemy
-  lastModified: 638679798743699295
+  lastModified: 638679922607918560
   FileSizes:
   - Name: Desktop
     Value: 12692
@@ -1308,7 +1308,7 @@ MonoBehaviour:
   Path: FMOD_Project/Build/Desktop/ui.bank
   Name: ui
   StudioPath: bank:/ui
-  lastModified: 638679798744129394
+  lastModified: 638679922608103747
   FileSizes:
   - Name: Desktop
     Value: 5784
@@ -1382,7 +1382,7 @@ MonoBehaviour:
   Path: FMOD_Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638679798743629321
+  lastModified: 638679922607853399
   FileSizes:
   - Name: Desktop
     Value: 12116
@@ -1564,7 +1564,7 @@ MonoBehaviour:
   Path: FMOD_Project/Build/Desktop/environment_misc.bank
   Name: environment_misc
   StudioPath: bank:/environment/environment_misc
-  lastModified: 638679798743979372
+  lastModified: 638679922608003639
   FileSizes:
   - Name: Desktop
     Value: 23244

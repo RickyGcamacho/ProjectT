@@ -16896,6 +16896,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1142314220}
+    - target: {fileID: 3262286836004913933, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4200933435500357914, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -16984,16 +16988,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8507910403694847642, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
---- !u!1 &451746757 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8433496251167449685, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
-  m_PrefabInstance: {fileID: 451746756}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &451746758 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3105691017315032270, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
@@ -74991,7 +74994,7 @@ PrefabInstance:
     - target: {fileID: 7578160160581412023, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 451746757}
+      objectReference: {fileID: 0}
     - target: {fileID: 7578160160581412023, guid: b74c8ba95b0651343b9f1be51bdb925d, type: 3}
       propertyPath: m_Enabled
       value: 1
