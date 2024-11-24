@@ -23,6 +23,7 @@ public class ObjectSelected : MonoBehaviour
     private Transform highlight;
     private RaycastHit _raycastHit;
     private PlayerActions _playerActions;
+    [SerializeField] private GameObject inventory;
     [SerializeField] private float _rayDistance = 5;
 
     private Outline outline;
@@ -40,6 +41,7 @@ public class ObjectSelected : MonoBehaviour
         menuInspection.SetActive(false);
         SetPointer(true, false);
         _playerActions = GameObject.Find("Player_Agus").GetComponent<PlayerActions>();
+        
 
         
  
@@ -57,7 +59,7 @@ public class ObjectSelected : MonoBehaviour
             if (highlight.CompareTag("Saveables"))
             {
                
-                    //item.OnHandlePickUp();
+                    item.OnHandlePickUp();
                
             }
 
@@ -122,7 +124,7 @@ public class ObjectSelected : MonoBehaviour
     }
     public void SetPointer(bool standard, bool hand)
     {
-        pointerStandard.SetActive(standard);
+       
         pointerHand.SetActive(hand);
     }
     public void CheckForHover()
