@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{ec89e737-8811-457d-8dbd-e2d9ff824200}">
+	<object class="AudioFile" id="{422e044d-0fe0-430c-9171-5147606f6cea}">
 		<property name="assetPath">
-			<value>SFX/Boss/sfx_bosstalk4.wav</value>
+			<value>SFX/Ambients/ligths_off.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.30945833333333334</value>
+			<value>0.64987499999999998</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{b9bd1177-7e95-4758-8a90-211c79bd7098}</destination>

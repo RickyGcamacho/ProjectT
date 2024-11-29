@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{e3ab9d27-4ed3-49a3-bc50-d0b64fd95d75}">
+	<object class="AudioFile" id="{e9e37523-eb24-4e95-b567-49f9329d3c82}">
 		<property name="assetPath">
-			<value>SFX/Boss/sfx_bosstalk8.wav</value>
+			<value>Music/music_menu.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -11,7 +14,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.41158333333333336</value>
+			<value>69.154229166666667</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{b9bd1177-7e95-4758-8a90-211c79bd7098}</destination>

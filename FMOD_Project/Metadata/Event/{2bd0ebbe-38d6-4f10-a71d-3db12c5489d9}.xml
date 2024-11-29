@@ -5,7 +5,7 @@
 			<value>bosstalk</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{f9e6a0c0-ccda-41ad-860f-be1b599c7178}</destination>
@@ -56,7 +56,7 @@
 			<destination>{f6c01ff3-abc0-4264-89f6-7069d3cb63c2}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{03dac85e-a1f4-4fc9-ba03-6020f26c0340}</destination>
+			<destination>{aba35314-ff23-483a-afd5-c9ff5474c269}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{326d83af-c4a5-4ad4-b131-2c9fab83f2c5}" />
@@ -84,7 +84,7 @@
 	</object>
 	<object class="MultiSound" id="{37321f9e-4894-4674-ad25-da2975774981}">
 		<relationship name="sounds">
-			<destination>{7da58d43-6a67-449e-94ee-60b70f7fab85}</destination>
+			<destination>{60380240-54df-4888-b3f7-f67544033be7}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{de41a0a8-c722-44ee-8702-99930b2b66f0}">
@@ -100,19 +100,19 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{07054e44-8719-47b3-a384-a3c697eced5e}" />
-	<object class="EventSound" id="{7da58d43-6a67-449e-94ee-60b70f7fab85}">
+	<object class="EventSound" id="{60380240-54df-4888-b3f7-f67544033be7}">
 		<relationship name="event">
-			<destination>{7073903a-bb77-449e-84bc-7ee071a84627}</destination>
+			<destination>{520ecfa1-615a-4589-9626-730a49940d1c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{33ff73ee-44c7-4ba9-a91f-7c56bc778b07}" />
 	<object class="MixerBusFader" id="{f77e2890-23d5-44fa-9d1c-12b2cc89258d}" />
 	<object class="MixerSend" id="{3c33cab7-7f94-4d3a-9f7e-3627a4ccacc4}">
 		<property name="level">
-			<value>-24</value>
+			<value>-17</value>
 		</property>
 		<property name="inputFormat">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<relationship name="mixerReturn">
 			<destination>{86183ab7-38e6-4aaf-abee-fb82b30004ad}</destination>
