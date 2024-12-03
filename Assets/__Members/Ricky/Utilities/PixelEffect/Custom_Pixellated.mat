@@ -25,10 +25,10 @@ Material:
     m_TexEnvs:
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: c8438120644dfea45a170cd441d3bf93, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 100, y: 100}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _PixelSize: 500
+    - _PixelSize: 294.5
     m_Colors: []
   m_BuildTextureStacks: []
