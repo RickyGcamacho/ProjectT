@@ -4649,6 +4649,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 9.955
       objectReference: {fileID: 0}
+    - target: {fileID: 3511921106662224054, guid: eca3bccca3167eb4ead3284f71a407d1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 3310766455909887726, guid: c18106a2c9ef1de47a406065a863d49d, type: 2}
+    - target: {fileID: 7838602574079421408, guid: eca3bccca3167eb4ead3284f71a407d1, type: 3}
+      propertyPath: m_text
+      value: OVERNIGHT SHIFT
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838602574079421408, guid: eca3bccca3167eb4ead3284f71a407d1, type: 3}
+      propertyPath: m_fontSize
+      value: 170.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838602574079421408, guid: eca3bccca3167eb4ead3284f71a407d1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c18106a2c9ef1de47a406065a863d49d, type: 2}
+    - target: {fileID: 7838602574079421408, guid: eca3bccca3167eb4ead3284f71a407d1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 170.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838602574079421408, guid: eca3bccca3167eb4ead3284f71a407d1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3310766455909887726, guid: c18106a2c9ef1de47a406065a863d49d, type: 2}
+    - target: {fileID: 7838602574079421408, guid: eca3bccca3167eb4ead3284f71a407d1, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
