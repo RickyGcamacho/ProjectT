@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class InventorySystem : MonoBehaviour
 {
@@ -18,38 +19,36 @@ public class InventorySystem : MonoBehaviour
 
         Instance = this;
     }
+ 
 
     public void Add(InventoryItemData itemData)
     {
-        if (itemDictionary.TryGetValue(itemData,out InventoryItem value))
-        {
-            Debug.Log("SUMAR STACK EN ITEM");
-            value.AddStack();
+        Debug.Log($"Agregando nuevo ítem: {itemData.itemName}");
 
-            onInventoryChangedEventCallback.Invoke();
-        }
-        else
-        {
-            Debug.Log("AGREGAR NUEVO ITEM");
-            InventoryItem newItem = new InventoryItem(itemData);
-            inventory.Add(newItem);
-            itemDictionary.Add(itemData,newItem);
-            onInventoryChangedEventCallback.Invoke();
-        }
+        // Crear una nueva instancia del ítem cada vez que se agrega
+        InventoryItem newItem = new InventoryItem(itemData);
+
+        // Agregar el ítem a la lista de inventario
+        inventory.Add(newItem);
+
+        // Invocar el evento para actualizar otros sistemas (como la UI)
+        onInventoryChangedEventCallback?.Invoke();
     }
 
     public void Remove(InventoryItemData itemData)
     {
-        if (itemDictionary.TryGetValue(itemData, out InventoryItem value))
-        {
-            value.RemoveFromStack();
+        // Buscar el primer ítem en la lista que coincida con los datos
+        InventoryItem itemToRemove = inventory.Find(item => item.data == itemData);
 
-            if (value.stackSize == 0)
-            {
-                inventory.Remove(value);
-                itemDictionary.Remove(itemData);
-            }
+        if (itemToRemove != null)
+        {
+            inventory.Remove(itemToRemove);
+            Debug.Log($"Eliminado ítem: {itemData.itemName}");
+            onInventoryChangedEventCallback?.Invoke();
         }
-        onInventoryChangedEventCallback.Invoke();
+        else
+        {
+            Debug.LogWarning("No se encontró el ítem para eliminar.");
+        }
     }
 }

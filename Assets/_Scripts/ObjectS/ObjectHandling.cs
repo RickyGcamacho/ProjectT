@@ -9,13 +9,10 @@ public class ObjectHandling : MonoBehaviour
     public float pickUpRange = 5f; //how far the player can pickup the object from
     private GameObject heldObj; //object which we pick up
     private Rigidbody heldObjRb; //rigidbody of object we pick up
-    private ItemObject itemObject;
+
     private Vector3 offSet = new Vector3(0, -0.2f, 0);//Vector so that the grab element appears more in the center when following the camera
 
-    private void Start()
-    {
-        itemObject = GameObject.FindGameObjectWithTag("Saveables").GetComponent<ItemObject>();
-    }
+  
     void Update()
     {
         // Continuar moviendo el objeto si está agarrado
@@ -28,7 +25,7 @@ public class ObjectHandling : MonoBehaviour
             if (Input.GetKey(KeyCode.X))
             {
                 DropObject();
-                itemObject.enabled = true;
+                
             }
 
             // Soltar con botón derecho del mouse
@@ -45,7 +42,7 @@ public class ObjectHandling : MonoBehaviour
             heldObjRb.useGravity = false; // Desactiva la gravedad
             heldObjRb.constraints = RigidbodyConstraints.None; // Permite movimiento y rotación
             Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
-            itemObject.enabled = false;
+            
 
         }
         else

@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Inventory Item Data",menuName ="Inventory System/ Create Item",order = 0)]
+[CreateAssetMenu(fileName = "InventoryItemData", menuName = "Inventory System/Create Item", order = 0)]
 public class InventoryItemData : ScriptableObject
 {
-    public string id, description, itemName;
+    public string id,itemName,itemDescription;
     public Sprite icon;
-    public GameObject itemPrefab;
+    public bool isEquippable; // Si el ítem puede ser equipado
+    public GameObject worldPrefab,equippedPrefab; // Prefab cuando está equipado (opcional)
 }

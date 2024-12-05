@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9107386320032590335}
   - component: {fileID: 3032208320027110784}
   - component: {fileID: 5507678010524561674}
-  - component: {fileID: 3210210592690590001}
+  - component: {fileID: 7351357257813511815}
   m_Layer: 9
   m_Name: key_01
   m_TagString: Saveables
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1956784, y: 0.34604028, z: 0.0153247835}
   m_Center: {x: -0.06857591, y: 0.033275798, z: 0.005190259}
---- !u!114 &3210210592690590001
+--- !u!114 &7351357257813511815
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ObjectSelected : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class ObjectSelected : MonoBehaviour
     private PlayerActions _playerActions;
     [SerializeField] private float _rayDistance = 5;
 
+
     private Outline outline;
     [SerializeField, Range(0f, 10f)]
     private float outlineWidth = 2f;
@@ -39,9 +41,6 @@ public class ObjectSelected : MonoBehaviour
     {
         menuInspection.SetActive(false);
         SetPointer(true, false);
-
-        _playerActions = GameObject.Find("Player_Agus").GetComponent<PlayerActions>();
-        
         _playerActions = GameObject.FindObjectOfType<PlayerActions>();
 
     }
@@ -56,13 +55,15 @@ public class ObjectSelected : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && highlight != null) 
         {
             if (highlight.CompareTag("Saveables"))
-            {               
-                    item.OnHandlePickUp();
-               
+            {
+                if (inventory.transform.childCount <= 3)
+                {
+                    ItemObject currentItem = highlight.gameObject.GetComponent<ItemObject>();
+                    currentItem.OnHandlePickUp();
 
+                }
             }
-
-            if (highlight.CompareTag("Pickup"))
+            else if (highlight.CompareTag("Pickup"))
             {
                 if (!isPickUp)
                 {
@@ -75,13 +76,6 @@ public class ObjectSelected : MonoBehaviour
 
               
             }
-
-
-
-            //if (highlight.CompareTag("Toggle"))
-            //{
-
-            //}
 
         }
         if (highlight != null && isPickUp)
@@ -129,7 +123,6 @@ public class ObjectSelected : MonoBehaviour
     public void CheckForHover()
     {
         Ray ray = _mainCam.ScreenPointToRay(Input.mousePosition);
-        //print(_raycastHit.transform);
         if (!_eventSystem.IsPointerOverGameObject() && Physics.Raycast(ray, out _raycastHit, _rayDistance, LayerMask.GetMask("Hovering")))
         {
             highlight = _raycastHit.transform;
@@ -149,33 +142,6 @@ public class ObjectSelected : MonoBehaviour
         }
     }
 
-    //TODO pasar esto a un solo script
-    public void Save()
-    {
-      
-    }
-
-    public void Inspection()
-    {
-        menuInspection.SetActive(false);
-        item.transform.position = socket.transform.position;
-        _mainCam.transform.rotation = Quaternion.Euler(Vector3.zero);
-        inMenu = false;
-
-    }
-
-    public void ExitMenu()
-    {
-   
-        menuInspection.SetActive(false);
-        Cursor.visible = false; // Asegúrate de que sea visible.
-        Cursor.lockState = CursorLockMode.Locked; // Asegúrate de que no esté bloqueado.
-        inMenu = false;
-        _playerActions.GetComponent<Rigidbody>().isKinematic = false;
-
-    }
-
-    //TODO pasar esto a un solo script
     private void AddOutline()
     {   
         if (!highlight.gameObject.TryGetComponent(out outline))
