@@ -1,9 +1,12 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEditor.Progress;
 
 public class ItemCarousel : MonoBehaviour
 {
+    public PlayerActions playerAction;
+    public Item3DView item3DView;
     public RectTransform contentPanel; // Panel que contiene los ítems
     public InventorySystem inventorySystem;
     public Item3DView itemView;
@@ -55,10 +58,10 @@ public class ItemCarousel : MonoBehaviour
         UpdateCarousel();
     }
 
-    private void UpdateCarousel()
+    private int UpdateCarousel()
     {
         int itemCount = contentPanel.childCount;
-
+        int indexReturn = 0;
         // Iterar sobre los ítems
         for (int i = 0; i < itemCount; i++)
         {
@@ -78,12 +81,12 @@ public class ItemCarousel : MonoBehaviour
                     itemName.text = inventorySystem.inventory[i].data.name;
                     itemDescription.text = inventorySystem.inventory[i].data.itemDescription;
                     itemView.ItemView(inventorySystem.inventory[i].data);
-                    ButtonClicked(i);
+                    
 
                     item.localScale = Vector3.one * 1.2f; // Escalar el ítem seleccionado
                     if (itemImage != null)
                         itemImage.color = highlightedColor;
-
+                    indexReturn = i;
 
                 }
                 else
@@ -98,6 +101,7 @@ public class ItemCarousel : MonoBehaviour
                 item.gameObject.SetActive(false); // Ocultar ítem
             }
         }
+        return indexReturn;
     }
 
     private bool IsVisible(int itemIndex, int itemCount)
@@ -121,37 +125,45 @@ public class ItemCarousel : MonoBehaviour
         }
     }
 
-    public void ButtonClicked(int itemIndex)
+    public void ButtonClicked()
     {
+        int itemIndex = UpdateCarousel();
         if (itemIndex >= 0 && itemIndex < inventorySystem.inventory.Count)
         {
-            InventoryItemData clickedItem = inventorySystem.inventory[itemIndex].data;
+            //InventoryItemData clickedItem = inventorySystem.inventory[itemIndex].data;
 
             // Ejecutar acciones según el ítem clickeado
-            Debug.Log($"Ítem seleccionado: {clickedItem.itemName}");
+            //Debug.Log($"Ítem seleccionado: {clickedItem.itemName}");
 
             // Opciones basadas en botones
-            InspectItem(clickedItem);
-            EquipItem(clickedItem);
-            DropItem(clickedItem);
+            dropButton.onClick.AddListener(() => HandleButtonClick("ButtonDrop", itemIndex));
+            equipButton.onClick.AddListener(() => HandleButtonClick("ButtonEquip", itemIndex));
+            inspectButton.onClick.AddListener(() => HandleButtonClick("ButtonInspect", itemIndex));
         }
         else
         {
             Debug.LogError("Índice de ítem inválido.");
         }
     }
-    private void InspectItem(InventoryItemData item)
-    {
-        Debug.Log($"Inspeccionando: {item.itemName} - {item.itemDescription}");
-    }
 
-    private void EquipItem(InventoryItemData item)
+    void HandleButtonClick(string buttonName,int itemIndex)
     {
-        Debug.Log($"Equipando: {item.itemName}");
-    }
-
-    private void DropItem(InventoryItemData item)
-    {
-        inventorySystem.Remove(item);
-    }
+        InventoryItemData clickedItem = inventorySystem.inventory[itemIndex].data;
+        //Debug.Log("Botón clickeado: " + buttonName);
+   
+            // Lógica específica según el botón
+            if (buttonName == "ButtonDrop")
+            {
+                inventorySystem.Remove(clickedItem);
+                Instantiate(clickedItem.worldPrefab, new Vector3(playerAction.transform.position.x, 0, (playerAction.transform.position.z + 3)), Quaternion.Euler(-90, 0, 0));
+            }
+            else if (buttonName == "ButtonEquip")
+            {
+                Debug.Log($"Equipando: {clickedItem.itemName}");
+            }
+            else if (buttonName == "ButtonInspect")
+            {
+                Debug.Log($"Inspeccionando: {clickedItem.itemName} - {clickedItem.itemDescription}");
+            }
+        }
 }
