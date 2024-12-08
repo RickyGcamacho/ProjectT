@@ -7,15 +7,13 @@ public class ItemCarousel : MonoBehaviour
 {
     public PlayerActions playerAction;
     public Item3DView item3DView;
-    public RectTransform contentPanel; // Panel que contiene los ítems
+    public RectTransform contentPanelPocket, contentPanelNotes, contentPanelCollectables; // Panel que contiene los ítems
     public InventorySystem inventorySystem;
     public Item3DView itemView;
     public Color highlightedColor = Color.yellow; // Color del ítem seleccionado
     public Color normalColor = Color.white;       // Color normal de los ítems
     public Text itemName, itemDescription;
-    public Button inspectButton;
-    public Button equipButton;
-    public Button dropButton;
+    public Button inspectButton,equipButton,dropButton;
 
     private int currentIndex = 0; // Índice del ítem seleccionado
     private const int visibleItems = 3; // Siempre mostrar 3 ítems
@@ -40,7 +38,7 @@ public class ItemCarousel : MonoBehaviour
 
     public void MoveUp()
     {
-        int itemCount = contentPanel.childCount;
+        int itemCount = contentPanelPocket.childCount;
 
         // Si estamos en el primer ítem, saltamos al último
         currentIndex = (currentIndex - 1 + itemCount) % itemCount;
@@ -50,7 +48,7 @@ public class ItemCarousel : MonoBehaviour
 
     public void MoveDown()
     {
-        int itemCount = contentPanel.childCount;
+        int itemCount = contentPanelPocket.childCount;
 
         // Si estamos en el último ítem, saltamos al primero
         currentIndex = (currentIndex + 1) % itemCount;
@@ -60,12 +58,12 @@ public class ItemCarousel : MonoBehaviour
 
     private int UpdateCarousel()
     {
-        int itemCount = contentPanel.childCount;
+        int itemCount = contentPanelPocket.childCount;
         int indexReturn = 0;
         // Iterar sobre los ítems
         for (int i = 0; i < itemCount; i++)
         {
-            Transform item = contentPanel.GetChild(i);
+            Transform item = contentPanelPocket.GetChild(i);
             Image itemImage = item.GetComponent<Image>();
 
             // Determinar si el ítem está dentro del rango visible
@@ -114,11 +112,11 @@ public class ItemCarousel : MonoBehaviour
     public void AddItem(GameObject newItem)
     {
         // Agregar el ítem al contentPanel
-        newItem.transform.SetParent(contentPanel);
+        newItem.transform.SetParent(contentPanelPocket);
         newItem.transform.localScale = Vector3.one;
 
         // Si es el primer ítem, inicializar el carrusel
-        if (contentPanel.childCount == 1)
+        if (contentPanelPocket.childCount == 1)
         {
             currentIndex = 0;
             UpdateCarousel();
@@ -130,12 +128,12 @@ public class ItemCarousel : MonoBehaviour
         int itemIndex = UpdateCarousel();
         if (itemIndex >= 0 && itemIndex < inventorySystem.inventory.Count)
         {
-            //InventoryItemData clickedItem = inventorySystem.inventory[itemIndex].data;
+            // Limpiar listeners previos para evitar duplicaciones
+            dropButton.onClick.RemoveAllListeners();
+            equipButton.onClick.RemoveAllListeners();
+            inspectButton.onClick.RemoveAllListeners();
 
-            // Ejecutar acciones según el ítem clickeado
-            //Debug.Log($"Ítem seleccionado: {clickedItem.itemName}");
-
-            // Opciones basadas en botones
+            // Añadir los nuevos listeners
             dropButton.onClick.AddListener(() => HandleButtonClick("ButtonDrop", itemIndex));
             equipButton.onClick.AddListener(() => HandleButtonClick("ButtonEquip", itemIndex));
             inspectButton.onClick.AddListener(() => HandleButtonClick("ButtonInspect", itemIndex));
@@ -146,11 +144,14 @@ public class ItemCarousel : MonoBehaviour
         }
     }
 
-    void HandleButtonClick(string buttonName,int itemIndex)
+    void HandleButtonClick(string buttonName, int itemIndex)
     {
-        InventoryItemData clickedItem = inventorySystem.inventory[itemIndex].data;
-        //Debug.Log("Botón clickeado: " + buttonName);
-   
+
+        if (itemIndex >= 0 && itemIndex < inventorySystem.inventory.Count)
+        {
+            InventoryItemData clickedItem = inventorySystem.inventory[itemIndex].data;
+            //Debug.Log("Botón clickeado: " + buttonName);
+
             // Lógica específica según el botón
             if (buttonName == "ButtonDrop")
             {
@@ -165,5 +166,11 @@ public class ItemCarousel : MonoBehaviour
             {
                 Debug.Log($"Inspeccionando: {clickedItem.itemName} - {clickedItem.itemDescription}");
             }
+            Debug.Log(itemIndex);
         }
+        else
+        {
+            Debug.LogError("Índice de ítem inválido.");
+        }
+    }
 }

@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-    public GameObject inventory;
+    public Button buttonPocket, buttonNotes, buttonCollectables;
+    public GameObject inventory,pocket,collectables,notes;
     [SerializeField] private bool see;
     private PlayerActions playerActions;
     // Start is called before the first frame update
     void Start()
     {
+        pocket.SetActive(true);
+        notes.SetActive(false);
+        collectables.SetActive(false);
         inventory.SetActive(false);
         see = false;
         playerActions = GameObject.Find("Player_Agus").GetComponent<PlayerActions>();
@@ -40,5 +45,27 @@ public class InventoryManager : MonoBehaviour
                 playerActions.GetComponent<Rigidbody>().isKinematic = false;
             }
         }
+       
     }
+
+
+    public void ActiveInventoryPocket()
+    {
+        pocket.SetActive(true);
+        notes.SetActive(false);
+        collectables.SetActive(false);
+    }
+    public void ActiveInventoryNotes()
+    {
+        pocket.SetActive(false);
+        notes.SetActive(true);
+        collectables.SetActive(false);
+    }
+    public void ActiveInventoryCollectables()
+    {
+        pocket.SetActive(false);
+        notes.SetActive(false);
+        collectables.SetActive(true);
+    }
+
 }
