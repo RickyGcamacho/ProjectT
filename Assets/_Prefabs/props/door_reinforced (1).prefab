@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1059747548633126426}
   - component: {fileID: 1900170673167887844}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: door_reinforced (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -3316.1, y: -3.3856, z: 3412.9}
-  m_LocalScale: {x: 0.9381204, y: 0.9643873, z: 0.9381204}
+  m_LocalScale: {x: 0.9381204, y: 0.9604615, z: 0.9381204}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8875101762351875582}
@@ -73,7 +73,8 @@ GameObject:
   - component: {fileID: 1084636229554617013}
   - component: {fileID: 6692043565137891775}
   - component: {fileID: 5784343160829825963}
-  m_Layer: 0
+  - component: {fileID: 7613236902421140776}
+  m_Layer: 10
   m_Name: door_reinforced_arc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +90,7 @@ Transform:
   m_GameObject: {fileID: 7285688007951385990}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.000035762787, y: 0, z: -9.999993}
+  m_LocalPosition: {x: 1.51, y: -0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -172,6 +173,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &7613236902421140776
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7285688007951385990}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 120.927895, y: 210.0024, z: 26.012808}
+  m_Center: {x: -0.00044631958, y: 105.0012, z: 0}
 --- !u!1 &7595240923057948750
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +208,7 @@ GameObject:
   - component: {fileID: 2143893829493287163}
   - component: {fileID: 5995042843469367932}
   - component: {fileID: 7081260789883949864}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: door_reinforced
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +319,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 2, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 50.000248, y: 101.999985, z: -9.999888}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:

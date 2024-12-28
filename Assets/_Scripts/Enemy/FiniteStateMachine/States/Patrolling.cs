@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Enemy.FiniteStateMachine.States
+namespace _Scripts.Enemy.FiniteStateMachine.States
 {
     public class Patrolling : BaseState
     {
@@ -57,7 +57,7 @@ namespace Enemy.FiniteStateMachine.States
             var myPosition = _myTransform.position;
             var ray = new Ray(myPosition, (_player.position - myPosition).normalized);
             
-            if (Physics.Raycast(ray, out var hit, _distanceToChase, _layerMask, QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(ray, out var hit, _distanceToChase, _layerMask, QueryTriggerInteraction.Collide))
             {
                 if (hit.transform.gameObject.CompareTag("Player"))
                 {
@@ -66,7 +66,7 @@ namespace Enemy.FiniteStateMachine.States
                 }
             }
 
-            var directionalVector = _currentTarget.position - _myTransform.position;
+            var directionalVector = _currentTarget.position - myPosition;
 
             if (directionalVector.magnitude < _distanceToChangeWaypoint)
             {

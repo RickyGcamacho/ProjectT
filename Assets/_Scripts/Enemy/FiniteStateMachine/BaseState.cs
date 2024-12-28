@@ -1,4 +1,4 @@
-namespace Enemy.FiniteStateMachine
+namespace _Scripts.Enemy.FiniteStateMachine
 {
     public abstract class BaseState
     {

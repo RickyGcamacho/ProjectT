@@ -10,6 +10,7 @@ TagManager:
   - Switchable
   - Drawer
   - Table
+  - Door
   layers:
   - Default
   - TransparentFX

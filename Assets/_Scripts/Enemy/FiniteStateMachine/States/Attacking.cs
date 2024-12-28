@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Enemy.FiniteStateMachine.States
+namespace _Scripts.Enemy.FiniteStateMachine.States
 {
     public class Attacking : BaseState
     {

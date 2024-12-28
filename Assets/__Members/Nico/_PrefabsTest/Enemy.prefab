@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4689535186436967200
 Transform:
   m_ObjectHideFlags: 0
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5540fc6be488e334caf6d0722450b7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
+  patrollingWaypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -287,6 +287,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  roomsWaypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -314,7 +315,8 @@ MonoBehaviour:
   player: {fileID: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 129
+    m_Bits: 1153
+  searchingDistance: 10
 --- !u!1001 &4916107162530709604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -382,6 +384,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9d1af7f6f469f8f479aae98a8053ce28, type: 3}
       propertyPath: m_Name
       value: enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d1af7f6f469f8f479aae98a8053ce28, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

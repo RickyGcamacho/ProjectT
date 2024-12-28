@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Enemy.FiniteStateMachine.States
+namespace _Scripts.Enemy.FiniteStateMachine.States
 {
     public class Pursuing : BaseState
     {
@@ -42,13 +42,14 @@ namespace Enemy.FiniteStateMachine.States
             var auxSpeed = _speed * _speedMultiplier;
             _agent.speed = auxSpeed;
             _agent.acceleration = auxSpeed;
+            
+            Debug.Log("Pursuing player");
         }
 
         public override void Exit()
         {
-            var auxSpeed = _speed / _speedMultiplier;
-            _agent.speed = auxSpeed;
-            _agent.acceleration = auxSpeed;
+            _agent.speed = _speed;
+            _agent.acceleration = _speed;
         }
 
         public override void UpdateLogic()
@@ -65,7 +66,7 @@ namespace Enemy.FiniteStateMachine.States
             
             var distanceToPlayer = vectorToPlayer.magnitude;
             
-            if (Physics.Raycast(ray, out var hit, _distanceToChase * 2, _layerMask, QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(ray, out var hit, _distanceToChase * 2, _layerMask, QueryTriggerInteraction.Collide))
             {
                 if (hit.transform.gameObject.CompareTag("Player"))
                 {
@@ -94,7 +95,6 @@ namespace Enemy.FiniteStateMachine.States
 
             playerLastKnownPosition = vectorToPlayer.normalized * (vectorToPlayer.magnitude - 1) + position;
             
-            Debug.Log("Update player position");
             _agent.SetDestination(playerLastKnownPosition);
         }
     }
