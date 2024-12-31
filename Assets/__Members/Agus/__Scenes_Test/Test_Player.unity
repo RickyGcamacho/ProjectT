@@ -291,12 +291,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131597877}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.274612, y: 0, z: 10.34}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -18.437729}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 953007205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &164603424
 GameObject:
@@ -1345,7 +1345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3274264884936762801, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3274264884936762801, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1358,7 +1358,7 @@ PrefabInstance:
     - target: {fileID: 3274264884936762801, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1511898128}
+      objectReference: {fileID: 1511898130}
     - target: {fileID: 3274264884936762801, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1373,7 +1373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3274264884936762801, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: WindowsAction
+      value: ButtonClicked
       objectReference: {fileID: 0}
     - target: {fileID: 3274264884936762801, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -1381,7 +1381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3274264884936762801, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InventoryManager, Assembly-CSharp
+      value: ItemCarousel, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3274264884936762801, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -1613,7 +1613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6527384866054697697, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6527384866054697697, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1626,7 +1626,7 @@ PrefabInstance:
     - target: {fileID: 6527384866054697697, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1511898128}
+      objectReference: {fileID: 1511898130}
     - target: {fileID: 6527384866054697697, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1641,7 +1641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6527384866054697697, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: WindowsAction
+      value: ButtonClicked
       objectReference: {fileID: 0}
     - target: {fileID: 6527384866054697697, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -1649,7 +1649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6527384866054697697, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InventoryManager, Assembly-CSharp
+      value: ItemCarousel, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6527384866054697697, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -1693,7 +1693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6842513963228446021, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6842513963228446021, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1706,7 +1706,7 @@ PrefabInstance:
     - target: {fileID: 6842513963228446021, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1511898128}
+      objectReference: {fileID: 1511898130}
     - target: {fileID: 6842513963228446021, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1721,7 +1721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6842513963228446021, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: WindowsAction
+      value: ButtonClicked
       objectReference: {fileID: 0}
     - target: {fileID: 6842513963228446021, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -1729,7 +1729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6842513963228446021, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InventoryManager, Assembly-CSharp
+      value: ItemCarousel, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6842513963228446021, guid: 9917725872311f147a1612cca29e9a5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -1914,12 +1914,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452881502}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -44.97, y: 0, z: 28.777729}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -34.69539, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 953007205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &497547284
 GameObject:
@@ -1972,6 +1972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventorySystem: {fileID: 1511898129}
   itemContainer: {fileID: 497547284}
+  speed: 0
 --- !u!222 &497547287
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2004,12 +2005,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520152822}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.85, y: 0, z: 28.777729}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.124613, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 953007205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &547406794 stripped
 Transform:
@@ -2192,6 +2193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventorySystem: {fileID: 1511898129}
   itemContainer: {fileID: 597854135}
+  speed: 0
 --- !u!1 &611347172
 GameObject:
   m_ObjectHideFlags: 0
@@ -2867,12 +2869,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782181825}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.3, y: 0, z: 28.777729}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -23.025387, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 953007205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &807826265 stripped
 GameObject:
@@ -2903,12 +2905,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816882691}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.3, y: 0, z: 3.77}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -23.025387, y: 0, z: -25.007729}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 953007205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &855672388
 GameObject:
@@ -2934,12 +2936,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855672388}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.274612, y: 0, z: 53.71}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 24.93227}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 953007205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &878298037 stripped
 MonoBehaviour:
@@ -3291,7 +3293,17 @@ Transform:
   m_LocalPosition: {x: -10.274612, y: 0, z: 28.777729}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2137256981}
+  - {fileID: 1214671355}
+  - {fileID: 520152823}
+  - {fileID: 131597878}
+  - {fileID: 855672389}
+  - {fileID: 782181826}
+  - {fileID: 963140335}
+  - {fileID: 816882692}
+  - {fileID: 452881503}
+  - {fileID: 1796201519}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &960049901
@@ -3389,12 +3401,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963140334}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.87, y: 0, z: 56.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.144611, y: 0, z: 27.722271}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 953007205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &966301153 stripped
 Transform:
@@ -3977,6 +3989,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079916963}
   m_CullTransparentMesh: 1
+--- !u!1 &1082935325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244491718359733661, guid: c00a3a4ac8b23834cab1dbad47de2e1d, type: 3}
+  m_PrefabInstance: {fileID: 3480757415952271842}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1099988914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4340,12 +4357,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214671354}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.18, y: 0, z: 28.777729}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -19.905388, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 953007205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1245236091
 GameObject:
@@ -5393,6 +5410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAction: {fileID: 3318071573345542535}
+  objectEquip: {fileID: 1975773696}
   item3DView: {fileID: 597854140}
   contentPanelPocket: {fileID: 886727395}
   contentPanelNotes: {fileID: 1245236092}
@@ -5406,6 +5424,7 @@ MonoBehaviour:
   inspectButton: {fileID: 1510994218}
   equipButton: {fileID: 1342605883}
   dropButton: {fileID: 421019350}
+  itemContainer: {fileID: 1082935325}
 --- !u!1 &1532245692
 GameObject:
   m_ObjectHideFlags: 0
@@ -5652,18 +5671,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1511898128}
-        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
-        m_MethodName: WindowsAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1511898130}
         m_TargetAssemblyTypeName: ItemCarousel, Assembly-CSharp
         m_MethodName: ButtonClicked
@@ -6066,6 +6073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventorySystem: {fileID: 1511898129}
   itemContainer: {fileID: 1722211533}
+  speed: 0
 --- !u!222 &1722211536
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6316,12 +6324,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796201518}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.3, y: 0, z: 58.85}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -23.025387, y: 0, z: 30.07227}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 953007205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1919948260 stripped
 MonoBehaviour:
@@ -6367,6 +6375,17 @@ Transform:
   - {fileID: 126562370}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1975773696 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3204619844292570584, guid: c00a3a4ac8b23834cab1dbad47de2e1d, type: 3}
+  m_PrefabInstance: {fileID: 3480757415952271842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46fe9011eecef3e4ea00190f21ee766d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1982425408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6612,18 +6631,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1511898128}
-        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
-        m_MethodName: WindowsAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1511898130}
         m_TargetAssemblyTypeName: ItemCarousel, Assembly-CSharp
         m_MethodName: ButtonClicked
@@ -6939,12 +6946,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137256980}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.274612, y: 0, z: 28.777729}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 953007205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1915270409182832685
 PrefabInstance:
@@ -7263,13 +7270,3 @@ SceneRoots:
   - {fileID: 2137131210}
   - {fileID: 1511898127}
   - {fileID: 953007205}
-  - {fileID: 2137256981}
-  - {fileID: 1214671355}
-  - {fileID: 520152823}
-  - {fileID: 131597878}
-  - {fileID: 855672389}
-  - {fileID: 782181826}
-  - {fileID: 963140335}
-  - {fileID: 816882692}
-  - {fileID: 452881503}
-  - {fileID: 1796201519}

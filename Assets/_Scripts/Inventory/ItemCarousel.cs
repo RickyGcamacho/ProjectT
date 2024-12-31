@@ -6,6 +6,7 @@ using static UnityEditor.Progress;
 public class ItemCarousel : MonoBehaviour
 {
     public PlayerActions playerAction;
+    public ObjectHandling objectEquip;
     public Item3DView item3DView;
     public RectTransform contentPanelPocket, contentPanelNotes, contentPanelCollectables; // Panel que contiene los ítems
     public InventorySystem inventorySystem;
@@ -15,12 +16,17 @@ public class ItemCarousel : MonoBehaviour
     public Text itemName, itemDescription;
     public Button inspectButton,equipButton,dropButton;
 
+    [SerializeField] private GameObject itemContainer;
+    private float distanceDrop = 3;
     private int currentIndex = 0; // Índice del ítem seleccionado
     private const int visibleItems = 3; // Siempre mostrar 3 ítems
+    private Turn vueltas;
 
     void Start()
     {
         UpdateCarousel();
+        Turn vueltas = GameObject.FindObjectOfType<Turn>();
+        vueltas.enabled = false;
     }
 
     void Update()
@@ -33,6 +39,10 @@ public class ItemCarousel : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             MoveDown();
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            objectEquip.DropObject();
         }
     }
 
@@ -79,7 +89,8 @@ public class ItemCarousel : MonoBehaviour
                     itemName.text = inventorySystem.inventory[i].data.name;
                     itemDescription.text = inventorySystem.inventory[i].data.itemDescription;
                     itemView.ItemView(inventorySystem.inventory[i].data);
-                    
+                    vueltas.enabled = true;
+
 
                     item.localScale = Vector3.one * 1.2f; // Escalar el ítem seleccionado
                     if (itemImage != null)
@@ -144,7 +155,8 @@ public class ItemCarousel : MonoBehaviour
         }
     }
 
-    void HandleButtonClick(string buttonName, int itemIndex)
+
+void HandleButtonClick(string buttonName, int itemIndex)
     {
 
         if (itemIndex >= 0 && itemIndex < inventorySystem.inventory.Count)
@@ -156,11 +168,46 @@ public class ItemCarousel : MonoBehaviour
             if (buttonName == "ButtonDrop")
             {
                 inventorySystem.Remove(clickedItem);
-                Instantiate(clickedItem.worldPrefab, new Vector3(playerAction.transform.position.x, 0, (playerAction.transform.position.z + 3)), Quaternion.Euler(-90, 0, 0));
+                Instantiate(clickedItem.worldPrefab, new Vector3(playerAction.transform.position.x, 0, (playerAction.transform.position.z + distanceDrop)), Quaternion.Euler(-90, 0, 0));
             }
             else if (buttonName == "ButtonEquip")
             {
-                Debug.Log($"Equipando: {clickedItem.itemName}");
+                if (clickedItem.worldPrefab != null && itemContainer != null)
+                {
+                    // Eliminar cualquier objeto existente en el contenedor antes de instanciar el nuevo
+                    foreach (Transform child in itemContainer.transform)
+                    {
+                        Debug.Log("Eliminando hijo existente: " + child.name);
+                        Destroy(child.gameObject);
+                    }
+
+                    // Instanciar el nuevo objeto
+                    GameObject hand = Instantiate(clickedItem.worldPrefab,itemContainer.transform.position,Quaternion.Euler(-90,-135, 0));
+
+                    // Configurar el nuevo objeto como hijo del contenedor
+                    if (hand != null)
+                    {
+                        Debug.Log("Instanciado nuevo objeto: " + hand.name);
+                        hand.transform.SetParent(itemContainer.transform);
+                    }
+                    else
+                    {
+                        Debug.LogError("Error al instanciar el objeto.");
+                    }
+                    objectEquip.SetHeldObj(hand);
+                    objectEquip.PickUpObject();
+                    hand.GetComponent<ItemObject>().enabled = false;
+                    inventorySystem.Remove(clickedItem);
+
+                }
+                else
+                {
+                    if (clickedItem.worldPrefab == null)
+                        Debug.LogError("El prefab (worldPrefab) es null.");
+
+                    if (itemContainer == null)
+                        Debug.LogError("El contenedor (itemContainer) es null.");
+                }
             }
             else if (buttonName == "ButtonInspect")
             {
@@ -173,4 +220,5 @@ public class ItemCarousel : MonoBehaviour
             Debug.LogError("Índice de ítem inválido.");
         }
     }
+   
 }

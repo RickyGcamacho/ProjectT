@@ -108,7 +108,7 @@ public class ObjectSelected : MonoBehaviour
     }
    
 
-    private void Pickup()
+    public void Pickup()
     {
         SetPointer(true, false);
         isPickUp = true;
