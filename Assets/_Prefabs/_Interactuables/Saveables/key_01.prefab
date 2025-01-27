@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7351357257813511815}
   - component: {fileID: 7605976110019220707}
   - component: {fileID: -1808664343725101171}
-  - component: {fileID: 6973211325908973155}
+  - component: {fileID: 39337310948159285}
   m_Layer: 9
   m_Name: key_01
   m_TagString: Saveables
@@ -167,7 +167,7 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &6973211325908973155
+--- !u!114 &39337310948159285
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

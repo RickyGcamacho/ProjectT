@@ -28,27 +28,34 @@ public class InventoryManager : MonoBehaviour
 
             if (see == false)
             {
-                inventory.SetActive(true);
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.Confined;
-                see = true;
-                playerActions.GetComponent<Rigidbody>().isKinematic = true;
+                OpenInventory();
 
 
             }
             else
             {
-                inventory.SetActive(false);
-                Cursor.lockState = CursorLockMode.Locked; // Asegúrate de que no esté bloqueado.
-                Cursor.visible = false; // Asegúrate de que sea visible.
-                see = false;
-                playerActions.GetComponent<Rigidbody>().isKinematic = false;
+                CloseInventory();
             }
         }
        
     }
 
-
+    private void OpenInventory()
+    {
+        inventory.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        see = true;
+        playerActions.GetComponent<Rigidbody>().isKinematic = true;
+    }
+    public void CloseInventory()
+    {
+        inventory.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked; // Asegúrate de que no esté bloqueado.
+        Cursor.visible = false; // Asegúrate de que sea visible.
+        see = false;
+        playerActions.GetComponent<Rigidbody>().isKinematic = false;
+    }
     public void ActiveInventoryPocket()
     {
         pocket.SetActive(true);

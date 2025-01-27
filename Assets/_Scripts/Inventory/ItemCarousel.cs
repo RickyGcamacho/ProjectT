@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 using static UnityEditor.Progress;
 
 public class ItemCarousel : MonoBehaviour
@@ -15,18 +16,21 @@ public class ItemCarousel : MonoBehaviour
     public Color normalColor = Color.white;       // Color normal de los ítems
     public Text itemName, itemDescription;
     public Button inspectButton,equipButton,dropButton;
+    public InventoryManager inventoryManager;
+    public GameObject information, tapa;
 
     [SerializeField] private GameObject itemContainer;
     private float distanceDrop = 3;
     private int currentIndex = 0; // Índice del ítem seleccionado
     private const int visibleItems = 3; // Siempre mostrar 3 ítems
-    private Turn vueltas;
+    
 
     void Start()
     {
         UpdateCarousel();
-        Turn vueltas = GameObject.FindObjectOfType<Turn>();
-        vueltas.enabled = false;
+        GameObject.FindObjectOfType<Turn>().inInventory = false;
+        tapa.SetActive(false);
+
     }
 
     void Update()
@@ -43,6 +47,8 @@ public class ItemCarousel : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             objectEquip.DropObject();
+            GameObject.FindObjectOfType<ItemObject>().isCatching = false;
+
         }
     }
 
@@ -80,7 +86,8 @@ public class ItemCarousel : MonoBehaviour
             if (IsVisible(i, itemCount))
             {
                 item.gameObject.SetActive(true); // Mostrar el ítem
-
+                
+                
 
                 // Resaltar el ítem seleccionado
                 if (i == currentIndex)
@@ -89,13 +96,16 @@ public class ItemCarousel : MonoBehaviour
                     itemName.text = inventorySystem.inventory[i].data.name;
                     itemDescription.text = inventorySystem.inventory[i].data.itemDescription;
                     itemView.ItemView(inventorySystem.inventory[i].data);
-                    vueltas.enabled = true;
+
 
 
                     item.localScale = Vector3.one * 1.2f; // Escalar el ítem seleccionado
                     if (itemImage != null)
                         itemImage.color = highlightedColor;
                     indexReturn = i;
+                    GameObject.FindObjectOfType<Turn>().inInventory = true;
+                    information.SetActive(true);
+                    tapa.SetActive(false);
 
                 }
                 else
@@ -168,7 +178,11 @@ void HandleButtonClick(string buttonName, int itemIndex)
             if (buttonName == "ButtonDrop")
             {
                 inventorySystem.Remove(clickedItem);
-                Instantiate(clickedItem.worldPrefab, new Vector3(playerAction.transform.position.x, 0, (playerAction.transform.position.z + distanceDrop)), Quaternion.Euler(-90, 0, 0));
+                GameObject objecto = Instantiate(clickedItem.worldPrefab, new Vector3(playerAction.transform.position.x, 0, (playerAction.transform.position.z + distanceDrop)), Quaternion.Euler(-90, 0, 0));
+                objecto.GetComponent<Turn>().inInventory = false;
+                  information.SetActive(false);
+                        tapa.SetActive(true);
+                        inventoryManager.CloseInventory();
             }
             else if (buttonName == "ButtonEquip")
             {
@@ -189,6 +203,10 @@ void HandleButtonClick(string buttonName, int itemIndex)
                     {
                         Debug.Log("Instanciado nuevo objeto: " + hand.name);
                         hand.transform.SetParent(itemContainer.transform);
+                        
+                        information.SetActive(false);
+                        tapa.SetActive(true);
+                        inventoryManager.CloseInventory();
                     }
                     else
                     {
@@ -196,8 +214,9 @@ void HandleButtonClick(string buttonName, int itemIndex)
                     }
                     objectEquip.SetHeldObj(hand);
                     objectEquip.PickUpObject();
-                    hand.GetComponent<ItemObject>().enabled = false;
+                    hand.GetComponent<Turn>().inInventory = false;
                     inventorySystem.Remove(clickedItem);
+                    hand.GetComponent<ItemObject>().isCatching = true;
 
                 }
                 else
@@ -220,5 +239,6 @@ void HandleButtonClick(string buttonName, int itemIndex)
             Debug.LogError("Índice de ítem inválido.");
         }
     }
+
    
 }
