@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2154625507068672401}
   - component: {fileID: 4327520360274641778}
   - component: {fileID: -4742650699232638040}
-  - component: {fileID: -3375238374478964517}
   - component: {fileID: -8541682484226946283}
   m_Layer: 9
   m_Name: jerry_can
@@ -32,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 8621755852863756902}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
-  m_LocalPosition: {x: -14.77415, y: -0.099999905, z: 17.049305}
+  m_LocalPosition: {x: -8.990941, y: 0.44792342, z: 10.618464}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -125,6 +124,7 @@ MonoBehaviour:
   itemsData:
     data: {fileID: 0}
     stackSize: 0
+  isCatching: 0
 --- !u!54 &-4742650699232638040
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -152,21 +152,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!111 &-3375238374478964517
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8621755852863756902}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &-8541682484226946283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,3 +164,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e91195ac7cc524a9ae3f3ff439d2df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inInventory: 0

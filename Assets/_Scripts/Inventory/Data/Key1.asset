@@ -15,7 +15,6 @@ MonoBehaviour:
   id: key_01
   itemName: Key1
   itemDescription: LLave 1
+  tipo: 0
   icon: {fileID: 21300000, guid: bb8079c29fb27a1449bd7c124a1c7767, type: 3}
-  isEquippable: 0
   worldPrefab: {fileID: 6592658109966529155, guid: 008ddf507f10b754bab56f6370812cac, type: 3}
-  equippedPrefab: {fileID: 6592658109966529155, guid: 008ddf507f10b754bab56f6370812cac, type: 3}

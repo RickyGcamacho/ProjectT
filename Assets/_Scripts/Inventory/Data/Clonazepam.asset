@@ -15,7 +15,6 @@ MonoBehaviour:
   id: clonazepam
   itemName: Clonazepam
   itemDescription: Clonazepam Farmaco
+  tipo: 1
   icon: {fileID: 21300000, guid: 7e028e6a4adcff74d910c7e4e5d6818d, type: 3}
-  isEquippable: 0
   worldPrefab: {fileID: 6206219109817546525, guid: 9594f9e0d2d4dcb4bb6b5dd05eb4e561, type: 3}
-  equippedPrefab: {fileID: 6206219109817546525, guid: 9594f9e0d2d4dcb4bb6b5dd05eb4e561, type: 3}

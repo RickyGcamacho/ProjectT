@@ -1,39 +1,85 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
-public class InventaryUI : MonoBehaviour
+public class InventoryUI : MonoBehaviour
 {
     public GameObject itemSlotPrefab;
+    public Transform saveablesPanel, notesPanel; // Paneles de las diferentes pestañas
 
     private void Start()
     {
-        InventorySystem.Instance.onInventoryChangedEventCallback += OnUpdateInventory;
+        if (InventorySystem.Instance != null)
+        {
+            InventorySystem.Instance.onInventoryChangedEventCallback += OnUpdateInventory;
+            DrawInventory();
+        }
+        else
+        {
+            Debug.LogError("❌ InventorySystem.Instance es NULL. ¿Está inicializado?");
+        }
     }
 
-    public void OnUpdateInventory()
+    private void OnDestroy()
     {
-        foreach(Transform t in transform)
+        if (InventorySystem.Instance != null)
         {
-            Destroy(t.transform.gameObject);
+            InventorySystem.Instance.onInventoryChangedEventCallback -= OnUpdateInventory;
         }
+    }
+
+    private void OnUpdateInventory()
+    {
+        // 🔹 Limpiar cada pestaña antes de redibujar
+        foreach (Transform t in saveablesPanel)
+        {
+            Destroy(t.gameObject);
+        }
+        foreach (Transform t in notesPanel)
+        {
+            Destroy(t.gameObject);
+        }
+
         DrawInventory();
     }
 
-    public void DrawInventory()
+    private void DrawInventory()
     {
-        foreach (InventoryItem item in InventorySystem.Instance.inventory)
+        if (InventorySystem.Instance == null) return;
+
+        foreach (InventoryItem itemPocket in InventorySystem.Instance.inventoryPocket)
         {
-            AddInventorySlot(item);
+            AddInventorySlot(itemPocket);
+        }
+
+        foreach (InventoryItem itemNotes in InventorySystem.Instance.inventoryNotes)
+        {
+            AddInventorySlot(itemNotes);
         }
     }
 
-    public void AddInventorySlot(InventoryItem item)
+    private void AddInventorySlot(InventoryItem item)
     {
-        GameObject obj = Instantiate(itemSlotPrefab);
-        obj.transform.SetParent(transform,false);
+        GameObject obj = null;
 
-        ItemSlot slot = obj.GetComponent<ItemSlot>();
-        slot.Set(item);
+        // 🔹 Determinar en qué pestaña agregar el objeto
+        if (item.data.tipo == Tipo.Saveables)
+        {
+            obj = Instantiate(itemSlotPrefab, saveablesPanel, false);
+            ItemSlot slot = obj.GetComponent<ItemSlot>();
+            slot.Set(item);
+        }
+        else if (item.data.tipo == Tipo.Notes)
+        {
+            obj = Instantiate(itemSlotPrefab, notesPanel, false);
+            ItemSlot slot2 = obj.GetComponent<ItemSlot>();
+            slot2.Set(item);
+        }
+
+        if (obj == null)
+        {
+            Debug.LogError($"❌ No se pudo instanciar el objeto para {item.data.name}");
+        }
     }
 }

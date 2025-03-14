@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
+    public ItemCarousel itemCarousel;
     public Button buttonPocket, buttonNotes, buttonCollectables;
     public GameObject inventory,pocket,collectables,notes;
     [SerializeField] private bool see;
@@ -58,18 +59,21 @@ public class InventoryManager : MonoBehaviour
     }
     public void ActiveInventoryPocket()
     {
+        itemCarousel.SwitchToPocket();
         pocket.SetActive(true);
         notes.SetActive(false);
         collectables.SetActive(false);
     }
     public void ActiveInventoryNotes()
     {
+        itemCarousel.SwitchToNotes();
         pocket.SetActive(false);
         notes.SetActive(true);
         collectables.SetActive(false);
     }
     public void ActiveInventoryCollectables()
     {
+        itemCarousel.SwitchToCollectables();
         pocket.SetActive(false);
         notes.SetActive(false);
         collectables.SetActive(true);

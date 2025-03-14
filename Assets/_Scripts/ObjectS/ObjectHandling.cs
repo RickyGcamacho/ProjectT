@@ -19,19 +19,10 @@ public class ObjectHandling : MonoBehaviour
         if (heldObj != null)
         {
             MoveObject();
-
-
-           
-            if (Input.GetKey(KeyCode.X))
-            {
-                DropObject();
-                
-            }
-
-            // Soltar con botón derecho del mouse
-           
         }
-     
+        // Soltar con botón derecho del mouse
+
+        DropObject();
     }
 
     public void PickUpObject()
@@ -55,11 +46,17 @@ public class ObjectHandling : MonoBehaviour
     {
         if (heldObj != null)
         {
-            // Restaurar las propiedades físicas originales
-            Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
-            heldObj.transform.parent = null;
-            heldObjRb.useGravity = true;
-            heldObj = null;
+            if (Input.GetKey(KeyCode.X))
+            {
+                // Restaurar las propiedades físicas originales
+                Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
+                heldObj.transform.parent = null;
+                heldObjRb.useGravity = true;
+                heldObj = null;
+                GameObject.FindObjectOfType<ItemObject>().isCatching = false;
+                GameObject.FindObjectOfType<ItemCarousel>().Inspection = false;
+                GameObject.FindObjectOfType<ItemObject>().transform.localScale = new Vector3(1, 1, 1);
+            }
         }
 
 

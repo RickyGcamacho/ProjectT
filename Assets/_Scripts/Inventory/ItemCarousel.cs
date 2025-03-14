@@ -1,5 +1,8 @@
+Ôªøusing System;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.XR;
 using static UnityEditor.Progress;
@@ -9,33 +12,36 @@ public class ItemCarousel : MonoBehaviour
     public PlayerActions playerAction;
     public ObjectHandling objectEquip;
     public Item3DView item3DView;
-    public RectTransform contentPanelPocket, contentPanelNotes, contentPanelCollectables; // Panel que contiene los Ìtems
+    public RectTransform contentPanelPocket, contentPanelNotes, contentPanelCollectables;
     public InventorySystem inventorySystem;
     public Item3DView itemView;
-    public Color highlightedColor = Color.yellow; // Color del Ìtem seleccionado
-    public Color normalColor = Color.white;       // Color normal de los Ìtems
-    public Text itemName, itemDescription;
-    public Button inspectButton,equipButton,dropButton;
+    public Text itemNamePocket, itemDescriptionPocket, itemNameNotes, itemDescriptionNotes;
+    public Button inspectButtonPocket, equipButtonPocket, dropButtonPocket, inspectButtonNotes;
     public InventoryManager inventoryManager;
-    public GameObject information, tapa;
+    public GameObject information, tapaPocket, tapaNotes, inspectionCamera;
 
     [SerializeField] private GameObject itemContainer;
+    private InventoryItemData clickedItem;
+    private Turn currentInspectedObject;
     private float distanceDrop = 3;
-    private int currentIndex = 0; // Õndice del Ìtem seleccionado
-    private const int visibleItems = 3; // Siempre mostrar 3 Ìtems
-    
+    private int currentIndex = 0;
+    private const int visibleItems = 3;
+    private bool inspection = false;
+
+    private RectTransform activePanel; // Panel activo
+
+    public bool Inspection { get => inspection; set => inspection = value; }
 
     void Start()
     {
+        activePanel = contentPanelPocket; // Empezamos con la pesta√±a "Pocket"
         UpdateCarousel();
-        GameObject.FindObjectOfType<Turn>().inInventory = false;
-        tapa.SetActive(false);
-
+        tapaPocket.SetActive(false);
+        tapaNotes.SetActive(false);
     }
 
     void Update()
     {
-        // NavegaciÛn con teclas W y S
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             MoveUp();
@@ -44,29 +50,24 @@ public class ItemCarousel : MonoBehaviour
         {
             MoveDown();
         }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            objectEquip.DropObject();
-            GameObject.FindObjectOfType<ItemObject>().isCatching = false;
 
-        }
+        objectEquip.DropObject();
+        Debug.Log(activePanel.name);
     }
 
     public void MoveUp()
     {
-        int itemCount = contentPanelPocket.childCount;
+        int itemCount = activePanel.childCount;
 
-        // Si estamos en el primer Ìtem, saltamos al ˙ltimo
         currentIndex = (currentIndex - 1 + itemCount) % itemCount;
 
-        UpdateCarousel();
+       UpdateCarousel();
     }
 
     public void MoveDown()
     {
-        int itemCount = contentPanelPocket.childCount;
+        int itemCount = activePanel.childCount;
 
-        // Si estamos en el ˙ltimo Ìtem, saltamos al primero
         currentIndex = (currentIndex + 1) % itemCount;
 
         UpdateCarousel();
@@ -74,171 +75,316 @@ public class ItemCarousel : MonoBehaviour
 
     private int UpdateCarousel()
     {
-        int itemCount = contentPanelPocket.childCount;
+        int itemCount = activePanel.childCount;
+        if (itemCount == 0) return -1;
+
         int indexReturn = 0;
-        // Iterar sobre los Ìtems
+
         for (int i = 0; i < itemCount; i++)
         {
-            Transform item = contentPanelPocket.GetChild(i);
+            Transform item = activePanel.GetChild(i);
             Image itemImage = item.GetComponent<Image>();
 
-            // Determinar si el Ìtem est· dentro del rango visible
-            if (IsVisible(i, itemCount))
+            bool isSelected = (i == currentIndex);
+            item.gameObject.SetActive(IsVisible(i, itemCount));
+            item.localScale = isSelected ? Vector3.one * 1.2f : Vector3.one;
+
+            if (itemImage != null)
+                itemImage.color = isSelected ? Color.yellow : Color.white;
+
+            if (isSelected)
             {
-                item.gameObject.SetActive(true); // Mostrar el Ìtem
-                
-                
-
-                // Resaltar el Ìtem seleccionado
-                if (i == currentIndex)
-                {
-                    //Debug.Log(inventorySystem.inventory[i].data.name);//Obtengo el dato del objeto correspondiente al indice
-                    itemName.text = inventorySystem.inventory[i].data.name;
-                    itemDescription.text = inventorySystem.inventory[i].data.itemDescription;
-                    itemView.ItemView(inventorySystem.inventory[i].data);
-
-
-
-                    item.localScale = Vector3.one * 1.2f; // Escalar el Ìtem seleccionado
-                    if (itemImage != null)
-                        itemImage.color = highlightedColor;
-                    indexReturn = i;
-                    GameObject.FindObjectOfType<Turn>().inInventory = true;
-                    information.SetActive(true);
-                    tapa.SetActive(false);
-
-                }
-                else
-                {
-                    item.localScale = Vector3.one; // Normalizar escala
-                    if (itemImage != null)
-                        itemImage.color = normalColor;
-                }
-            }
-            else
-            {
-                item.gameObject.SetActive(false); // Ocultar Ìtem
+                Information(i);
+                indexReturn = i;
+                information.SetActive(true);
+                tapaPocket.SetActive(false);
+                tapaNotes.SetActive(false);
             }
         }
         return indexReturn;
     }
 
+    private void Information(int index)
+    {
+        if (index < 0) return;
+
+        InventoryItemData itemData = (activePanel == contentPanelPocket)
+            ? inventorySystem.inventoryPocket[index].data
+            : inventorySystem.inventoryNotes[index].data;
+        switch (itemData.tipo)
+        {
+            case Tipo.Saveables:
+                itemNamePocket.text = itemData.name;
+                itemDescriptionPocket.text = itemData.itemDescription;
+                itemView.ItemView(itemData);
+                break;
+            case Tipo.Notes:
+                itemNameNotes.text = itemData.name;
+                itemDescriptionNotes.text = itemData.itemDescription;
+                itemView.ItemView(itemData);
+                break;
+        }
+        
+        GameObject.FindObjectOfType<Turn>().inInventory = true;
+
+
+    }
+
     private bool IsVisible(int itemIndex, int itemCount)
     {
-        // Determinar si el Ìtem debe estar visible considerando el Ìndice circular
         int offsetIndex = (itemIndex - currentIndex + itemCount) % itemCount;
         return offsetIndex >= 0 && offsetIndex < visibleItems;
     }
 
-    public void AddItem(GameObject newItem)
+    public void AddItem(GameObject newItem, Tipo itemType)
     {
-        // Agregar el Ìtem al contentPanel
-        newItem.transform.SetParent(contentPanelPocket);
+        Transform targetPanel = GetPanelByType(itemType);
+
+        newItem.transform.SetParent(targetPanel);
         newItem.transform.localScale = Vector3.one;
 
-        // Si es el primer Ìtem, inicializar el carrusel
-        if (contentPanelPocket.childCount == 1)
+        if (targetPanel.childCount == 1)
         {
             currentIndex = 0;
             UpdateCarousel();
         }
     }
 
-    public void ButtonClicked()
+    private RectTransform GetPanelByType(Tipo itemType)
     {
-        int itemIndex = UpdateCarousel();
-        if (itemIndex >= 0 && itemIndex < inventorySystem.inventory.Count)
+        switch (itemType)
         {
-            // Limpiar listeners previos para evitar duplicaciones
-            dropButton.onClick.RemoveAllListeners();
-            equipButton.onClick.RemoveAllListeners();
-            inspectButton.onClick.RemoveAllListeners();
-
-            // AÒadir los nuevos listeners
-            dropButton.onClick.AddListener(() => HandleButtonClick("ButtonDrop", itemIndex));
-            equipButton.onClick.AddListener(() => HandleButtonClick("ButtonEquip", itemIndex));
-            inspectButton.onClick.AddListener(() => HandleButtonClick("ButtonInspect", itemIndex));
-        }
-        else
-        {
-            Debug.LogError("Õndice de Ìtem inv·lido.");
+            case Tipo.Notes:
+                return contentPanelNotes;
+            case Tipo.Collectables:
+                return contentPanelCollectables;
+            default:
+                return contentPanelPocket;
         }
     }
 
-
-void HandleButtonClick(string buttonName, int itemIndex)
+    public void SwitchToPocket()
     {
+        currentIndex = 0;
+        activePanel = contentPanelPocket;
+        UpdateCarousel();
+    }
 
-        if (itemIndex >= 0 && itemIndex < inventorySystem.inventory.Count)
+    public void SwitchToNotes()
+    {
+        currentIndex = 0;
+        activePanel = contentPanelNotes;
+        UpdateCarousel();
+    }
+
+    public void SwitchToCollectables()
+    {
+        currentIndex = 0;
+        activePanel = contentPanelCollectables;
+        UpdateCarousel();
+    }
+
+    public void ButtonClicked()
+    {
+        int itemIndex = UpdateCarousel();
+        if (itemIndex >= 0 && itemIndex < inventorySystem.inventoryPocket.Count || itemIndex < inventorySystem.inventoryNotes.Count)
         {
-            InventoryItemData clickedItem = inventorySystem.inventory[itemIndex].data;
-            //Debug.Log("BotÛn clickeado: " + buttonName);
+            dropButtonPocket.onClick.RemoveAllListeners();
+            equipButtonPocket.onClick.RemoveAllListeners();
+            inspectButtonPocket.onClick.RemoveAllListeners();
 
-            // LÛgica especÌfica seg˙n el botÛn
+            dropButtonPocket.onClick.AddListener(() => HandleButtonClick("ButtonDrop", itemIndex));
+            equipButtonPocket.onClick.AddListener(() => HandleButtonClick("ButtonEquip", itemIndex));
+            inspectButtonPocket.onClick.AddListener(() => HandleButtonClick("ButtonInspect", itemIndex));
+            inspectButtonNotes.onClick.AddListener(() => HandleButtonClick("ButtonInspect", itemIndex));
+        }
+        else
+        {
+            Debug.LogError("√çndice de √≠tem inv√°lido.");
+        }
+    }
+
+    /*void HandleButtonClick(string buttonName, int itemIndex)
+    {
+        itemIndex = UpdateCarousel(); // ‚ö†Ô∏è This reassigns a potentially incorrect value
+
+        if (itemIndex < 0) return;
+
+        if (activePanel == contentPanelPocket)
+            clickedItem = inventorySystem.inventoryPocket[itemIndex].data;
+        else if (activePanel == contentPanelNotes)
+            clickedItem = inventorySystem.inventoryNotes[itemIndex].data;
+
+        switch (buttonName)
+        {
+            case "ButtonDrop":
+                DropItem();
+                break;
+            case "ButtonEquip":
+                EquipItem();
+                break;
+            case "ButtonInspect":
+                InspectItem();
+                break;
+        }
+    }
+
+    private void DropItem()
+    {
+        if (clickedItem == null) return;
+
+        inventorySystem.Remove(clickedItem);
+        GameObject droppedObject = Instantiate(clickedItem.worldPrefab,
+            new Vector3(playerAction.transform.position.x, 0, playerAction.transform.position.z + distanceDrop),
+            Quaternion.Euler(-90, 0, 0));
+
+        droppedObject.GetComponent<Turn>().inInventory = false;
+        information.SetActive(false);
+        tapa.SetActive(true);
+        inventoryManager.CloseInventory();
+    }
+
+    private void EquipItem()
+    {
+        if (clickedItem == null) return;
+        SpawnObject(clickedItem);
+    }
+
+    private void InspectItem()
+    {
+        if (clickedItem == null) return;
+
+        inspection = true;
+        GameObject spawnedObject = SpawnObject(clickedItem);
+        if (spawnedObject != null)
+        {
+            Turn turnComponent = spawnedObject.GetComponent<Turn>();
+            if (turnComponent != null)
+            {
+                InspectObject(turnComponent);
+            }
+            else
+            {
+                Debug.LogError("‚ùå No se encontr√≥ el componente 'Turn' en el objeto instanciado.");
+            }
+        }
+        else
+        {
+            Debug.LogError("‚ùå No se pudo instanciar el objeto.");
+        }
+    }*/
+
+    void HandleButtonClick(string buttonName, int itemIndex)
+    {
+        itemIndex = UpdateCarousel();
+        if (itemIndex >= 0 && itemIndex < inventorySystem.inventoryPocket.Count || itemIndex < inventorySystem.inventoryNotes.Count)
+        {
+
+            if (activePanel == contentPanelPocket)
+                clickedItem = inventorySystem.inventoryPocket[itemIndex].data;
+            else if (activePanel == contentPanelNotes)
+                clickedItem = inventorySystem.inventoryNotes[itemIndex].data;
+
+        
+            // L√≥gica espec√≠fica seg√∫n el bot√≥n
             if (buttonName == "ButtonDrop")
             {
                 inventorySystem.Remove(clickedItem);
                 GameObject objecto = Instantiate(clickedItem.worldPrefab, new Vector3(playerAction.transform.position.x, 0, (playerAction.transform.position.z + distanceDrop)), Quaternion.Euler(-90, 0, 0));
                 objecto.GetComponent<Turn>().inInventory = false;
-                  information.SetActive(false);
-                        tapa.SetActive(true);
-                        inventoryManager.CloseInventory();
+                information.SetActive(false);
+                tapaPocket.SetActive(true);
+                inventoryManager.CloseInventory();
             }
             else if (buttonName == "ButtonEquip")
             {
-                if (clickedItem.worldPrefab != null && itemContainer != null)
-                {
-                    // Eliminar cualquier objeto existente en el contenedor antes de instanciar el nuevo
-                    foreach (Transform child in itemContainer.transform)
-                    {
-                        Debug.Log("Eliminando hijo existente: " + child.name);
-                        Destroy(child.gameObject);
-                    }
-
-                    // Instanciar el nuevo objeto
-                    GameObject hand = Instantiate(clickedItem.worldPrefab,itemContainer.transform.position,Quaternion.Euler(-90,-135, 0));
-
-                    // Configurar el nuevo objeto como hijo del contenedor
-                    if (hand != null)
-                    {
-                        Debug.Log("Instanciado nuevo objeto: " + hand.name);
-                        hand.transform.SetParent(itemContainer.transform);
-                        
-                        information.SetActive(false);
-                        tapa.SetActive(true);
-                        inventoryManager.CloseInventory();
-                    }
-                    else
-                    {
-                        Debug.LogError("Error al instanciar el objeto.");
-                    }
-                    objectEquip.SetHeldObj(hand);
-                    objectEquip.PickUpObject();
-                    hand.GetComponent<Turn>().inInventory = false;
-                    inventorySystem.Remove(clickedItem);
-                    hand.GetComponent<ItemObject>().isCatching = true;
-
-                }
-                else
-                {
-                    if (clickedItem.worldPrefab == null)
-                        Debug.LogError("El prefab (worldPrefab) es null.");
-
-                    if (itemContainer == null)
-                        Debug.LogError("El contenedor (itemContainer) es null.");
-                }
+                SpawnObject(clickedItem);
             }
             else if (buttonName == "ButtonInspect")
             {
-                Debug.Log($"Inspeccionando: {clickedItem.itemName} - {clickedItem.itemDescription}");
+                inspection = true;
+                GameObject spawnedObject = SpawnObject(clickedItem); // Ahora devuelve el objeto instanciado
+               
+                if (spawnedObject != null)
+                {
+                    Turn turnComponent = spawnedObject.GetComponent<Turn>();
+                    if (turnComponent != null)
+                    {
+                        InspectObject(turnComponent);
+                        
+                    }
+                    else
+                    {
+                        Debug.LogError("‚ùå No se encontr√≥ el componente 'Turn' en el objeto instanciado.");
+                    }
+                    
+                }
+                else
+                {
+                    Debug.LogError("‚ùå No se pudo instanciar el objeto.");
+                }
             }
-            Debug.Log(itemIndex);
+
         }
         else
         {
-            Debug.LogError("Õndice de Ìtem inv·lido.");
+            Debug.LogError("√çndice de √≠tem inv√°lido.");
         }
     }
 
-   
+    private GameObject SpawnObject(InventoryItemData gameObject)
+{
+    if (gameObject.worldPrefab != null && itemContainer != null)
+    {
+        foreach (Transform child in itemContainer.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        GameObject hand = Instantiate(gameObject.worldPrefab, itemContainer.transform.position, Quaternion.Euler(-90, -135, 0));
+        
+        if (hand != null)
+        {
+            hand.transform.SetParent(itemContainer.transform);
+            objectEquip.SetHeldObj(hand);
+            objectEquip.PickUpObject();
+            hand.GetComponent<Turn>().inInventory = false;
+            hand.GetComponent<ItemObject>().isCatching = true;
+            inventorySystem.Remove(gameObject);
+            information.SetActive(false);
+            tapaPocket.SetActive(true);
+            tapaNotes.SetActive(true);
+            inventoryManager.CloseInventory();
+
+            return hand;  // üî• Devolvemos el objeto instanciado
+        }
+        else
+        {
+            Debug.LogError("‚ùå Error al instanciar el objeto.");
+        }
+    }
+    return null; // En caso de error, devolvemos null
+}
+
+    public void InspectObject(Turn newObject)
+    {
+        if (currentInspectedObject != null)
+        {
+            currentInspectedObject.SetInspectionState(false);
+        }
+
+        currentInspectedObject = newObject;
+        currentInspectedObject.SetInspectionState(true);
+        Inspection = true;
+    }
+
+    public void StopInspecting()
+    {
+        if (currentInspectedObject != null)
+        {
+            currentInspectedObject.SetInspectionState(false);
+            currentInspectedObject = null;
+        }
+        Inspection = false;
+    }
 }

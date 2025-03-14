@@ -17,7 +17,7 @@ public class ObjectSelected : MonoBehaviour
     private ItemObject item;
     private ObjectsSwitchable objSwitch;
 
-    [SerializeField]private GameObject inventory;
+    [SerializeField]private GameObject inventoryPocket,inventoryNotes, inventoryCollectables;
     [SerializeField]private EventSystem _eventSystem;
     [SerializeField] private ObjectHandling _objHandling;
   
@@ -54,29 +54,45 @@ public class ObjectSelected : MonoBehaviour
      
         if (Input.GetMouseButtonDown(0) && highlight != null) 
         {
-            if (highlight.CompareTag("Saveables"))
+            switch (highlight.GetComponent<ItemObject>().itemData.tipo)
             {
-                if (inventory.transform.childCount <= 3)
-                {
-                    ItemObject currentItem = highlight.gameObject.GetComponent<ItemObject>();
-                    currentItem.OnHandlePickUp();
+                case Tipo.Saveables:
+                    if (inventoryPocket.transform.childCount <= 3)
+                    {
+                        ItemObject currentItem = highlight.gameObject.GetComponent<ItemObject>();
+                        currentItem.OnHandlePickUp();
 
-                }
+                    }
+                    break;
+                case Tipo.Notes:
+                    if (inventoryNotes.transform.childCount <= 3)
+                    {
+                        ItemObject currentItem = highlight.gameObject.GetComponent<ItemObject>();
+                        currentItem.OnHandlePickUp();
+
+                    }
+                    break;
+                case Tipo.Collectables:
+                    if (inventoryCollectables.transform.childCount <= 3)
+                    {
+                        ItemObject currentItem = highlight.gameObject.GetComponent<ItemObject>();
+                        currentItem.OnHandlePickUp();
+
+                    }
+                    break;
+                case Tipo.Throw:
+                    if (!isPickUp)
+                    {
+                        Pickup();
+                    }
+                    else
+                    {
+                        isHolding = true;
+                    }
+                    break;
+                default:
+                    break;
             }
-            else if (highlight.CompareTag("Pickup"))
-            {
-                if (!isPickUp)
-                {
-                    Pickup();
-                }
-                else
-                {
-                    isHolding = true;
-                }
-
-              
-            }
-
         }
         if (highlight != null && isPickUp)
         {
@@ -117,7 +133,7 @@ public class ObjectSelected : MonoBehaviour
     }
     public void SetPointer(bool standard, bool hand)
     {
-       
+        pointerStandard.SetActive(standard);
         pointerHand.SetActive(hand);
     }
     public void CheckForHover()
@@ -158,29 +174,15 @@ public class ObjectSelected : MonoBehaviour
     }
     private void RemoveOutline()
     {
-      
         if (outlineAdded)
         {
-            highlight = null;
-            // Si el Outline existe, deshabilitarlo
+            highlight = null; 
             if (outline != null)
             {
                 outline.enabled = false;
             }
             outlineAdded = false;
         }
-
-
     }
-    private void MenuInteraction()
-    {
-        inMenu = true;
-        SetPointer(true, false);
-        highlight = _raycastHit.transform;
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
-        menuInspection.SetActive(true);
-        item = highlight.GetComponent<ItemObject>();
-        _playerActions.GetComponent<Rigidbody>().isKinematic = true;
-    }
+
 }

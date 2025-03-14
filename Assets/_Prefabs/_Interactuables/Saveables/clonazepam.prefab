@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 437893057573719811}
   - component: {fileID: 226260600947451545}
   - component: {fileID: -5630462460721502911}
-  - component: {fileID: -8740628671275423031}
   - component: {fileID: 4418860362740249586}
   m_Layer: 9
   m_Name: clonazepam
@@ -125,6 +124,7 @@ MonoBehaviour:
   itemsData:
     data: {fileID: 0}
     stackSize: 0
+  isCatching: 0
 --- !u!54 &-5630462460721502911
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -152,21 +152,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!111 &-8740628671275423031
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6206219109817546525}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &4418860362740249586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,3 +164,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e91195ac7cc524a9ae3f3ff439d2df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inInventory: 0
