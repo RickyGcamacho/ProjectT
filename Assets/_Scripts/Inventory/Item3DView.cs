@@ -14,9 +14,18 @@ public class Item3DView : MonoBehaviour
         {
             DestroyView();
         }
-        itemContainer.transform.position = new Vector3(1145, 595.5f, 0);
-        itemContainer = Instantiate(item.worldPrefab, itemContainer.transform.position, Quaternion.Euler(-90, item.worldPrefab.transform.rotation.y, item.worldPrefab.transform.rotation.z));
-        itemContainer.transform.localScale = new Vector3(3,3,3);
+        if (item.id == "key")
+        {
+            itemContainer.transform.position = new Vector3(1145, 595.5f, 0);
+            itemContainer = Instantiate(item.worldPrefab, itemContainer.transform.position, Quaternion.Euler(0, item.worldPrefab.transform.rotation.y, item.worldPrefab.transform.rotation.z));
+            itemContainer.transform.localScale = new Vector3(3, 3, 3);
+        }
+        else
+        {
+            itemContainer.transform.position = new Vector3(1145, 595.5f, 0);
+            itemContainer = Instantiate(item.worldPrefab, itemContainer.transform.position, Quaternion.Euler(-90, item.worldPrefab.transform.rotation.y, item.worldPrefab.transform.rotation.z));
+            itemContainer.transform.localScale = new Vector3(3, 3, 3);
+        }
 
         
     }
