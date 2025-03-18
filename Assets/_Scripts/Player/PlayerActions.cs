@@ -25,7 +25,8 @@ public class PlayerActions : MonoBehaviour
     private float defaultFOV;
 
     [Header("Run Parameters")]
-    [SerializeField] private float runSpeed;
+    [SerializeField] private float runSpeed, stamina, maxStamina, staminaDrain, staminaRegen;
+    private bool isRunning = false;
 
     [Header("Parameters")]
     [SerializeField] private float height, crouchedSpeed, crouchedHeightSizeOriginal, crouchedHeightCenterOriginal, crouchedHeightSizeNew, crouchedHeightCenterNew;
@@ -34,6 +35,7 @@ public class PlayerActions : MonoBehaviour
     public bool isNotCrouching;
 
     private Camera playerCamera;
+    private GameManager gameManager;
     private ItemCarousel carrousel;
     private BoxCollider boxColiderPlayer;
     private Rigidbody _rb;
@@ -50,6 +52,7 @@ public class PlayerActions : MonoBehaviour
     {
         boxColiderPlayer = GetComponent<BoxCollider>();
         _rb = GetComponent<Rigidbody>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerCamera = GetComponentInChildren<Camera>();
         carousel = GameObject.FindObjectOfType<ItemCarousel>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -57,6 +60,10 @@ public class PlayerActions : MonoBehaviour
         defaultFOV = playerCamera.fieldOfView;
         isNotCrouching = true;
         crouchingHeight = 0.2f;
+        stamina = 100f;
+        maxStamina = 100f;
+        staminaDrain = 20f;
+        staminaRegen = 10f;
         standingHeight = playerCamera.transform.position.y;
         carrousel = GameObject.FindObjectOfType<ItemCarousel>();
     }
@@ -117,22 +124,39 @@ public class PlayerActions : MonoBehaviour
     }
     private void Running()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && isNotCrouching == true)
+        if (Input.GetKey(KeyCode.LeftShift) && isNotCrouching == true && stamina > 0)
+        {
+            isRunning = true;
+            stamina -= staminaDrain * Time.deltaTime;
+            stamina = Mathf.Clamp(stamina, 0, maxStamina);
+        }
+        else
+        {
+            isRunning = false;
+            stamina += staminaRegen * Time.deltaTime;
+            stamina = Mathf.Clamp(stamina, 0, maxStamina);
+        }
+
+        if (isRunning == true)
         {
             Movement(runSpeed);
+        }
+        else
+        {
+            Movement(speedWalk);
         }
     }
 
     //Camara
     private void HandleMouseLook()
     {
-        if (carousel.Inspection == false)
-        {
+        /*if (carousel.Inspection == false)
+        {*/
             rotationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
             rotationX = Mathf.Clamp(rotationX, -uperLookLimit, lowerLookLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * LookSpeedX, 0);
-        }
+        //}
     
         
     }
@@ -171,18 +195,18 @@ public class PlayerActions : MonoBehaviour
         z = Input.GetAxis("Vertical");
         x = Input.GetAxis("Horizontal");
 
-        if (carousel.Inspection == false)
-        {
-            Vector3 dir = (transform.forward * z) + (transform.right * x);
+        /*if (carousel.Inspection == false)
+        {*/
+        Vector3 dir = (transform.forward * z) + (transform.right * x);
             Vector3 dirSpeed = dir * (speed);
             _rb.velocity = dirSpeed;
             dirSpeed.y = _rb.velocity.y;
             dir.y = 0;
-        }
-        else
-        {
-            speed = 0;
-        }
+        /* }
+       else
+       {
+           speed = 0;
+       }*/
     }
     private IEnumerator ToggleZoom(bool isEnter)
     {
@@ -201,6 +225,24 @@ public class PlayerActions : MonoBehaviour
         zoomRoutine = null;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Generador")
+        {
+            StartCoroutine(LightOn());
 
+        }
+    }
+
+    IEnumerator LightOn()
+    {
+        if (!gameManager.LucesEncendidas)
+        {
+            gameManager.TimeLight = 10f;
+            gameManager.LucesEncendidas = true;
+            yield return new WaitForSeconds(gameManager.TimeLight);
+
+        }
+    }
 
 }
