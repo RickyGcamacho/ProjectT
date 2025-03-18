@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364a4fb30d95ba847a08d4ee36fb6ecd, type: 3}
   m_Name: Key3
   m_EditorClassIdentifier: 
-  id: key_03
+  id: key
   itemName: Key3
   itemDescription: Llave 3
   tipo: 0

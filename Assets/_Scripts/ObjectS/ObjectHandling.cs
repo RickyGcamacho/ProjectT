@@ -46,7 +46,7 @@ public class ObjectHandling : MonoBehaviour
     {
         if (heldObj != null)
         {
-            if (Input.GetKey(KeyCode.X))
+            if (Input.GetKey(KeyCode.X) && heldObj.GetComponent<ItemObject>().itemData.tipo != Tipo.Notes)
             {
                 // Restaurar las propiedades físicas originales
                 Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
