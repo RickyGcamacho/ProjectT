@@ -6,7 +6,7 @@ using static UnityEditor.Progress;
 public class InventorySystem : MonoBehaviour
 {
     public static InventorySystem Instance;
-    public List<InventoryItem> inventoryPocket, inventoryNotes;
+    public List<InventoryItem> inventoryPocket, inventoryNotes, inventoryCollectables;
     public delegate void onInventoryChangedEvent();
     public event onInventoryChangedEvent onInventoryChangedEventCallback;
 
@@ -16,6 +16,7 @@ public class InventorySystem : MonoBehaviour
     {
         inventoryPocket = new List<InventoryItem>();
         inventoryNotes = new List<InventoryItem>();
+        inventoryCollectables = new List<InventoryItem>();
         itemDictionary = new Dictionary<InventoryItemData, Tipo> ();
 
         Instance = this;
@@ -46,6 +47,18 @@ public class InventorySystem : MonoBehaviour
 
                 // Agregar el ítem a la lista de inventario
                 inventoryNotes.Add(newItemNotes);
+
+                // Invocar el evento para actualizar otros sistemas (como la UI)
+                onInventoryChangedEventCallback?.Invoke();
+                break;
+            case Tipo.Collectables:
+                Debug.Log($"Agregando nuevo ítem: {itemData.itemName}");
+
+                // Crear una nueva instancia del ítem cada vez que se agrega
+                InventoryItem newItemCollectables = new InventoryItem(itemData);
+
+                // Agregar el ítem a la lista de inventario
+                inventoryNotes.Add(newItemCollectables);
 
                 // Invocar el evento para actualizar otros sistemas (como la UI)
                 onInventoryChangedEventCallback?.Invoke();

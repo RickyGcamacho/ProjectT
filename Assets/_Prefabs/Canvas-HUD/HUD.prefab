@@ -29,7 +29,7 @@ RectTransform:
   m_GameObject: {fileID: 216326887749995106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4607739063056202967}
@@ -1963,9 +1963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a09145bc28ff114ca84e7fe8624a469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySystem: {fileID: 0}
   itemContainer: {fileID: 2736244752022556052}
-  speed: 0
 --- !u!1 &2869205472549807331
 GameObject:
   m_ObjectHideFlags: 0
@@ -3042,9 +3040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a09145bc28ff114ca84e7fe8624a469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySystem: {fileID: 0}
   itemContainer: {fileID: 3732156599958726598}
-  speed: 0
 --- !u!1 &3754501482677893465
 GameObject:
   m_ObjectHideFlags: 0
@@ -3501,9 +3497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a09145bc28ff114ca84e7fe8624a469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySystem: {fileID: 0}
   itemContainer: {fileID: 4171812585245234395}
-  speed: 0
 --- !u!1 &4252670979823862979
 GameObject:
   m_ObjectHideFlags: 0
@@ -5898,7 +5892,6 @@ GameObject:
   - component: {fileID: 42406534992412218}
   - component: {fileID: 2813855937258114041}
   - component: {fileID: 3459768751854024717}
-  - component: {fileID: 7172797755346759220}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -5992,24 +5985,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7172797755346759220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8507910403694847642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 531e1bfaf665fe64b94b51089ac1adac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterIcon: {fileID: 6924364560719093579}
-  dialogo: {fileID: 8507910403694847642}
-  characterName: {fileID: 719709335293504639}
-  dialogueArea: {fileID: 4295634235932955889}
-  isDialogueActive: 0
-  typingSpeed: 0.1
 --- !u!1 &8538524824283823700
 GameObject:
   m_ObjectHideFlags: 0

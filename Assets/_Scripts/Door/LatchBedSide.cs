@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Latch : MonoBehaviour
+public class LatchBedSide : MonoBehaviour
 {
     private Rigidbody latch;
     private bool close;
 
-    public bool Close { get => close; set => close = value; }
+
 
     // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
         latch = GetComponent<Rigidbody>();
     }
@@ -18,15 +19,18 @@ public class Latch : MonoBehaviour
     private void Update()
     {
         OpenOrCloseDoor();
+
     }
 
-    private void OpenOrCloseDoor()
+    public void OpenOrCloseDoor()
     {
+
         if (Input.GetMouseButton(0))
         {
             latch.isKinematic = false;
             close = false;
         }
+
         else
         {
             latch.isKinematic = true;

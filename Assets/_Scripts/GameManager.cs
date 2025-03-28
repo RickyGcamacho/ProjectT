@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
         }
         Debug.Log(LucesEncendidas);
         StartCoroutine(LightOff());
+        Debug.Log(LucesEncendidas);
     }
 
     IEnumerator LightOff()

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4327520360274641778}
   - component: {fileID: -4742650699232638040}
   - component: {fileID: -8541682484226946283}
+  - component: {fileID: 6749925110231034410}
   m_Layer: 9
   m_Name: jerry_can
   m_TagString: Saveables
@@ -165,3 +166,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inInventory: 0
+--- !u!114 &6749925110231034410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8621755852863756902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e3dd85a7d9aa2940b44036cc25ef261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

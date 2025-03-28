@@ -1,60 +1,59 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
-using UnityEngine;
 using TMPro;
+using UnityEditor.Rendering.PostProcessing;
+using UnityEngine;
+using UnityEngine.UI;
+
 
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
 
-    public Image characterIcon;
-    public GameObject dialogo;
-    public TextMeshProUGUI characterName;
-    public TextMeshProUGUI dialogueArea;
+    [SerializeField] private GameObject dialogueUI; // Panel del diálogo
+    [SerializeField] private Image characterIcon;
+    [SerializeField] private TextMeshProUGUI characterName, dialogueArea;
+    [SerializeField] private float typingSpeed = 0.2f; // Velocidad mejorada
+    
 
     private Queue<DialogueLine> lines;
-    private PlayerActions playerActions;
+    private bool isTyping = false;
 
-    public bool isDialogueActive = false;
-
-    public float typingSpeed = 0.2f;
-
-   // public Animator animator;
+    public GameObject DialogueUI { get => dialogueUI; set => dialogueUI = value; }
 
     private void Awake()
     {
-     //   playerActions = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActions>();
-
-        dialogo.SetActive(false);
         if (Instance == null)
+        {
             Instance = this;
-      
-        lines = new Queue<DialogueLine>();
+        }
+        
     }
-    private void Update()
+
+    private void Start()
     {
-        if (Input.GetMouseButtonDown(0))
+        lines = new Queue<DialogueLine>();
+        DialogueUI.SetActive(false); // Ocultar el cuadro al inicio
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) // O puedes usar un botón de UI
         {
             DisplayNextDialogueLine();
         }
     }
+
     public void StartDialogue(Dialogue dialogue)
-    {  
-        dialogo.SetActive(true);
-        isDialogueActive = true;
-      //  playerActions.GetComponent<Rigidbody>().isKinematic = true;
-       // Cursor.visible = true;
-       // Cursor.lockState = CursorLockMode.Confined;
-
-
-        // animator.Play("show");
-
+    {
+        DialogueUI.SetActive(true);
+        
         lines.Clear();
 
-        foreach (DialogueLine dialogueLine in dialogue.dialogueLines)
+        foreach (DialogueLine line in dialogue.dialogueLines)
         {
-            lines.Enqueue(dialogueLine);
+            lines.Enqueue(line);
         }
 
         DisplayNextDialogueLine();
@@ -62,40 +61,59 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextDialogueLine()
     {
+        if (isTyping) return; // Evita que el jugador salte el tipeo
+
         if (lines.Count == 0)
         {
             EndDialogue();
             return;
         }
-       
-            DialogueLine currentLine = lines.Dequeue();
 
-            characterIcon.sprite = currentLine.character.icon;
-            characterName.text = currentLine.character.name;
+        DialogueLine currentLine = lines.Dequeue();
 
-            //StopAllCoroutines();
+        characterIcon.sprite = currentLine.character.icon;
+        characterName.text = currentLine.character.name;
 
-            StartCoroutine(TypeSentence(currentLine));
-        
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(currentLine));
     }
 
-    IEnumerator TypeSentence(DialogueLine dialogueLine)
+    private void EndDialogue()
     {
-        dialogueArea.text = "";
-        foreach (char letter in dialogueLine.line.ToCharArray())
+        DialogueUI.SetActive(false);
+    }
+
+ IEnumerator TypeSentence(DialogueLine dialogueLine)
+{
+    dialogueArea.text = ""; // Borrar cualquier texto previo
+    string sentence = dialogueLine.line;
+    int maxCharactersPerPage = 101; // Ajusta según tu UI
+
+    string currentText = ""; // Mantener texto actual que se está mostrando
+
+    // Itera por cada carácter del diálogo
+    for (int i = 0; i < sentence.Length; i++)
+    {
+        currentText += sentence[i]; // Agregar cada carácter
+
+        dialogueArea.text = currentText; // Actualizar el texto en la UI
+
+        yield return new WaitForSeconds(typingSpeed); // Efecto de tipeo
+
+        // Si alcanzamos el límite de caracteres por página
+        if (currentText.Length >= maxCharactersPerPage)
         {
-            dialogueArea.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+                dialogueArea.text = currentText + "\n\nContinue....";
+                
+                // Esperar a que el jugador presione `Espacio`
+                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.LeftShift));
+
+            // Limpiar para la siguiente parte
+            currentText = ""; 
         }
     }
 
-    void EndDialogue()
-    {
-        isDialogueActive = false;
-        dialogo.SetActive(false);
-      //  playerActions.GetComponent<Rigidbody>().isKinematic = false;
-        //  Cursor.lockState = CursorLockMode.Locked; // Asegúrate de que no esté bloqueado.
-        //  Cursor.visible = false; // Asegúrate de que sea visible.
-        //  animator.Play("hide");
-    }
+    // Esperar antes de finalizar
+  yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+}
 }

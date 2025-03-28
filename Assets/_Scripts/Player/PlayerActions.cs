@@ -31,10 +31,11 @@ public class PlayerActions : MonoBehaviour
     [Header("Parameters")]
     [SerializeField] private float height, crouchedSpeed, crouchedHeightSizeOriginal, crouchedHeightCenterOriginal, crouchedHeightSizeNew, crouchedHeightCenterNew;
 
-
+    
     public bool isNotCrouching;
 
     private Camera playerCamera;
+    private DialogueManager dialogueManager;
     private GameManager gameManager;
     private ItemCarousel carrousel;
     private BoxCollider boxColiderPlayer;
@@ -47,12 +48,14 @@ public class PlayerActions : MonoBehaviour
 
     public float LookSpeedX { get => lookSpeedX; set => lookSpeedX = value; }
     public bool IsTableUnder { get => isTableUnder; set => isTableUnder = value; }
+    public float SpeedWalk { get => speedWalk; set => speedWalk = value; }
 
     private void Awake()
     {
         boxColiderPlayer = GetComponent<BoxCollider>();
         _rb = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        //dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
         playerCamera = GetComponentInChildren<Camera>();
         carousel = GameObject.FindObjectOfType<ItemCarousel>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -100,7 +103,7 @@ public class PlayerActions : MonoBehaviour
                 boxColiderPlayer.size = new Vector3(boxColiderPlayer.size.x, crouchedHeightSizeOriginal, boxColiderPlayer.size.z);
                 //boxColiderPlayer.center = new Vector3(boxColiderPlayer.center.x, crouchedHeightCenterOriginal, boxColiderPlayer.center.z);
                 playerCamera.transform.position = new Vector3(playerCamera.transform.position.x, standingHeight, playerCamera.transform.position.z);
-                Movement(speedWalk);
+                Movement(SpeedWalk);
             }
         }
     }
@@ -120,7 +123,7 @@ public class PlayerActions : MonoBehaviour
 
     private void Walking()
     {
-        Movement(speedWalk);
+        Movement(SpeedWalk);
     }
     private void Running()
     {
@@ -143,21 +146,23 @@ public class PlayerActions : MonoBehaviour
         }
         else
         {
-            Movement(speedWalk);
+            Movement(SpeedWalk);
         }
     }
 
     //Camara
     private void HandleMouseLook()
     {
-        /*if (carousel.Inspection == false)
-        {*/
-            rotationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
+        /* if (dialogueManager.DialogueUI.activeSelf == false)
+         {
+             if (carousel.Inspection == false)
+             {*/
+        rotationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
             rotationX = Mathf.Clamp(rotationX, -uperLookLimit, lowerLookLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * LookSpeedX, 0);
+            //}
         //}
-    
         
     }
 
@@ -166,8 +171,8 @@ public class PlayerActions : MonoBehaviour
     //Zoom
     private void HandleZoom()
     {
-        if (carrousel.Inspection != true)
-        {
+        //if (carrousel.Inspection != true)
+        //{
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 if (zoomRoutine != null)
@@ -188,15 +193,17 @@ public class PlayerActions : MonoBehaviour
             }
         }
             
-    }
+    //}
 
     public void Movement(float speed)
     {
         z = Input.GetAxis("Vertical");
         x = Input.GetAxis("Horizontal");
 
-        /*if (carousel.Inspection == false)
-        {*/
+        /*  if (dialogueManager.DialogueUI.activeSelf == false)
+         {
+               if (carousel.Inspection == false)
+            {*/
         Vector3 dir = (transform.forward * z) + (transform.right * x);
             Vector3 dirSpeed = dir * (speed);
             _rb.velocity = dirSpeed;
@@ -206,7 +213,9 @@ public class PlayerActions : MonoBehaviour
        else
        {
            speed = 0;
-       }*/
+       }
+    }*/
+
     }
     private IEnumerator ToggleZoom(bool isEnter)
     {
@@ -225,24 +234,6 @@ public class PlayerActions : MonoBehaviour
         zoomRoutine = null;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Generador")
-        {
-            StartCoroutine(LightOn());
-
-        }
-    }
-
-    IEnumerator LightOn()
-    {
-        if (!gameManager.LucesEncendidas)
-        {
-            gameManager.TimeLight = 10f;
-            gameManager.LucesEncendidas = true;
-            yield return new WaitForSeconds(gameManager.TimeLight);
-
-        }
-    }
+   
 
 }

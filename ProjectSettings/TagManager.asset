@@ -11,6 +11,12 @@ TagManager:
   - Drawer
   - Table
   - Door
+  - Generador
+  - Duchas
+  - Celdas
+  - Administracion
+  - BedSide
+  - Floor
   layers:
   - Default
   - TransparentFX

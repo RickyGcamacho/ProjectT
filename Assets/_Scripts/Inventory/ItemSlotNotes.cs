@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemSlotNotes : MonoBehaviour
+public class ItemSlotCollectable : MonoBehaviour
 {
     [SerializeField]
     private Image itemIcon;
