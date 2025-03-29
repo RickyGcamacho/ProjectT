@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Enemy.FiniteStateMachine.States
+namespace _Scripts.Enemy.FiniteStateMachine.States
 {
     public class Searching : BaseState
     {
@@ -25,8 +25,9 @@ namespace Enemy.FiniteStateMachine.States
         private bool _firstSearch;
         private float _timerBeforePatrol;
         private float _timerBeforeChangingWaypoint;
+        private readonly int _searchingDistance;
         
-        public Searching(StateMachine stateMachine, Transform myTransform, Transform player, NavMeshAgent agent, float speed, float distanceToAttack, float distanceToChase, Transform[] waypoints, LayerMask layerMask) : base(stateMachine)
+        public Searching(StateMachine stateMachine, Transform myTransform, Transform player, NavMeshAgent agent, float speed, float distanceToAttack, float distanceToChase, IReadOnlyList<Transform> patrollingWaypoints, IReadOnlyList<Transform> roomsWaypoints, LayerMask layerMask, int searchingDistance) : base(stateMachine)
         {
             _myTransform = myTransform;
             _player = player;
@@ -35,9 +36,20 @@ namespace Enemy.FiniteStateMachine.States
             _speed = speed;
             _distanceToAttack = distanceToAttack;
             _distanceToChase = distanceToChase;
-
-            _waypoints = waypoints;
+            
+            _waypoints = new Transform[patrollingWaypoints.Count + roomsWaypoints.Count];
+            for (var i = 0; i < patrollingWaypoints.Count; i++)
+            {
+                _waypoints[i] = patrollingWaypoints[i];
+            }
+            for (var i = 0; i < roomsWaypoints.Count; i++)
+            {
+                _waypoints[i + patrollingWaypoints.Count] = roomsWaypoints[i];
+            }
+            
             _layerMask = layerMask;
+
+            _searchingDistance = searchingDistance;
         }
 
         public override void Enter()
@@ -47,6 +59,8 @@ namespace Enemy.FiniteStateMachine.States
             _agent.SetDestination(_playerLastKnownPosition);
             _agent.speed = _speed;
             _agent.acceleration = _speed;
+            
+            Debug.Log("I'm searching");
         }
 
         public override void Exit()
@@ -66,25 +80,30 @@ namespace Enemy.FiniteStateMachine.States
             
             var distanceToPlayer = vectorToPlayer.magnitude;
 
-            if (!Physics.Raycast(ray, out var hit, Mathf.Infinity, _layerMask, QueryTriggerInteraction.Ignore)) return;
+            if (!Physics.Raycast(ray, out var hit, Mathf.Infinity, _layerMask, QueryTriggerInteraction.Collide)) return;
             
             if (hit.transform.gameObject.CompareTag("Player"))
             {
                 if (distanceToPlayer < _distanceToAttack)
                 {
                     stateMachine.ChangeState(((PatientStateMachine) stateMachine).attackingState); Debug.Log($"I change state to {((PatientStateMachine) stateMachine).attackingState}");
+                    return;
                 }
-                else if (distanceToPlayer < _distanceToChase)
+                if (distanceToPlayer < _distanceToChase)
                 {
                     stateMachine.ChangeState(((PatientStateMachine) stateMachine).pursuingState); Debug.Log($"I change state to {((PatientStateMachine) stateMachine).pursuingState}");
+                    return;
                 }
             }
-            else if (!_agent.hasPath && !_firstSearch)
+
+            if (_agent.hasPath) return;
+            
+            if (!_firstSearch)
             {
                 _firstSearch = true;
                 AddWaypointsToSearch();
             }
-            else if (!_agent.hasPath && _firstSearch)
+            else
             {
                 SearchNearbyWaypoints();
             }
@@ -94,14 +113,18 @@ namespace Enemy.FiniteStateMachine.States
         {
             foreach (var waypoint in _waypoints)
             {
-                var myPosition = _myTransform.position;
+                if ((waypoint.position - _myTransform.position).magnitude <= _searchingDistance)
+                {
+                    _transformsToSearch.Add(waypoint);
+                }
+                /*var myPosition = _myTransform.position;
 
                 if (!Physics.Raycast(myPosition, waypoint.position - myPosition, out var hitWaypoint, 30, _layerMask)) continue;
                 
                 if (waypoint.gameObject.GetInstanceID() == hitWaypoint.transform.gameObject.GetInstanceID())
                 {
                     _transformsToSearch.Add(waypoint);
-                }
+                }*/
             } Debug.Log($"I have {_transformsToSearch.Count} waypoint to search");
         }
 

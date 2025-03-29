@@ -1,9 +1,9 @@
 using System.Collections;
-using Enemy.FiniteStateMachine;
+using _Scripts.Enemy.FiniteStateMachine;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Enemy
+namespace _Scripts.Enemy
 {
     public class VisionEffect : MonoBehaviour // This script it's intended to go attached to the player
     {

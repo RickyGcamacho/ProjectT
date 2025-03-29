@@ -1,8 +1,8 @@
 using System.Collections;
-using Enemy.FiniteStateMachine;
+using _Scripts.Enemy.FiniteStateMachine;
 using UnityEngine;
 
-namespace Enemy
+namespace _Scripts.Enemy
 {
     public class EnemyManager : MonoBehaviour
     {
@@ -38,7 +38,7 @@ namespace Enemy
             StartCoroutine(_visionEffect.FadeOutEffect());
             yield return new WaitUntil(() => _visionEffect.fadeImage.color.a >= 1);
             
-            _patientStateMachine.player.position = _patientStateMachine.waypoints[Random.Range(0, _patientStateMachine.waypoints.Length)].position;
+            _patientStateMachine.player.position = _patientStateMachine.patrollingWaypoints[Random.Range(0, _patientStateMachine.patrollingWaypoints.Length)].position;
             StartCoroutine(_visionEffect.FadeInEffect());
         }
 

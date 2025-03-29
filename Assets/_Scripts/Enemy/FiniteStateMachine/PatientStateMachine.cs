@@ -1,8 +1,9 @@
-using Enemy.FiniteStateMachine.States;
+using _Scripts.Enemy.FiniteStateMachine.States;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 
-namespace Enemy.FiniteStateMachine
+namespace _Scripts.Enemy.FiniteStateMachine
 {
     [RequireComponent(typeof(NavMeshAgent))]
     public class PatientStateMachine : StateMachine
@@ -12,7 +13,8 @@ namespace Enemy.FiniteStateMachine
         [HideInInspector] public Attacking attackingState;
         [HideInInspector] public Searching searchingState;
         
-        public Transform[] waypoints;
+        public Transform[] patrollingWaypoints;
+        public Transform[] roomsWaypoints;
         public NavMeshAgent agent;
 
         public float speed = 5;
@@ -35,13 +37,16 @@ namespace Enemy.FiniteStateMachine
         [Tooltip("Layers I can see")]
         public LayerMask layerMask;
 
+        [Range(1, 15)]
+        public int searchingDistance;
+
         private void Awake()
         {
             var myTransform = transform;
-            patrollingState = new Patrolling(this, myTransform, player, agent, speed, distanceToChangeWaypoint, distanceToChase, waypoints, layerMask);
+            patrollingState = new Patrolling(this, myTransform, player, agent, speed, distanceToChangeWaypoint, distanceToChase, patrollingWaypoints, layerMask);
             pursuingState = new Pursuing(this, myTransform, player, agent, speed, speedMultiplier, distanceToChase, distanceToAttack, layerMask);
             attackingState = new Attacking(this, myTransform, player, distanceToAttack, timeToAttack, timesBeforeDefeat);
-            searchingState = new Searching(this, myTransform, player, agent, speed, distanceToAttack, distanceToChase, waypoints, layerMask);
+            searchingState = new Searching(this, myTransform, player, agent, speed, distanceToAttack, distanceToChase, patrollingWaypoints, roomsWaypoints, layerMask, searchingDistance);
         }
 
         protected override BaseState GetInitialState()

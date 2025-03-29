@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Enemy.FiniteStateMachine
+namespace _Scripts.Enemy.FiniteStateMachine
 {
     public class StateMachine : MonoBehaviour
     {
@@ -17,7 +17,7 @@ namespace Enemy.FiniteStateMachine
             _currentState?.UpdateLogic();
         }
 
-        private void LateUpdate()
+        private void FixedUpdate()
         {
             _currentState?.UpdatePhysics();
         }
