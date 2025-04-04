@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5499245073077035380}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: door_wooden (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2873686552887082836}
   - component: {fileID: 8302304969803109442}
   - component: {fileID: 4812966857003125961}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: door_wooden_arc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 7785162189416806007}
   - component: {fileID: 575104630493934928}
   - component: {fileID: 8533762538373864804}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: door_wooden
   m_TagString: Untagged
   m_Icon: {fileID: 0}

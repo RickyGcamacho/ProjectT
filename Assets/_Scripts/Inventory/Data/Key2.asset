@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364a4fb30d95ba847a08d4ee36fb6ecd, type: 3}
   m_Name: Key2
   m_EditorClassIdentifier: 
-  id: key
+  id: Key_Celdas
   itemName: Key_2
   itemDescription: Llave 2
   tipo: 2

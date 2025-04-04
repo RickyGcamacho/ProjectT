@@ -58,7 +58,7 @@ public class InventorySystem : MonoBehaviour
                 InventoryItem newItemCollectables = new InventoryItem(itemData);
 
                 // Agregar el ítem a la lista de inventario
-                inventoryNotes.Add(newItemCollectables);
+                inventoryCollectables.Add(newItemCollectables);
 
                 // Invocar el evento para actualizar otros sistemas (como la UI)
                 onInventoryChangedEventCallback?.Invoke();
@@ -75,7 +75,8 @@ public class InventorySystem : MonoBehaviour
         // Buscar el primer ítem en la lista que coincida con los datos
         InventoryItem itemToRemovePocket = inventoryPocket.Find(item => item.data == itemData);
         InventoryItem itemToRemoveNotes = inventoryNotes.Find(item => item.data == itemData);
-        if (itemToRemovePocket != null || itemToRemoveNotes != null)
+        InventoryItem itemToRemoveCollectables = inventoryCollectables.Find(item => item.data == itemData);
+        if (itemToRemovePocket != null || itemToRemoveNotes != null || itemToRemoveCollectables != null)
         {
             switch (itemData.tipo)
             {
@@ -89,7 +90,12 @@ public class InventorySystem : MonoBehaviour
                 Debug.Log($"Eliminado ítem: {itemData.itemName}");
                 onInventoryChangedEventCallback?.Invoke();
                 break;
-            default:
+                case Tipo.Collectables:
+                    inventoryCollectables.Remove(itemToRemoveCollectables);
+                    Debug.Log($"Eliminado ítem: {itemData.itemName}");
+                    onInventoryChangedEventCallback?.Invoke();
+                    break;
+                default:
                 Debug.LogWarning("No se encontró el ítem para eliminar.");
                 break;
             }

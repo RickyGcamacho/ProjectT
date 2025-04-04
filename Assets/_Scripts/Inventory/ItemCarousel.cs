@@ -15,10 +15,10 @@ public class ItemCarousel : MonoBehaviour
     public RectTransform contentPanelPocket, contentPanelNotes, contentPanelCollectables;
     public InventorySystem inventorySystem;
     public Item3DView itemView;
-    public Text itemNamePocket, itemDescriptionPocket, itemNameNotes, itemDescriptionNotes;
-    public Button inspectButtonPocket, equipButtonPocket, dropButtonPocket, inspectButtonNotes;
+    public Text itemNamePocket, itemDescriptionPocket, itemNameNotes, itemDescriptionNotes, itemNameCollectables, itemDescriptionCollectables;
+    public Button inspectButtonPocket, equipButtonPocket, dropButtonPocket, inspectButtonNotes, inspectButtonCollectables, equipButtonCollectables;
     public InventoryManager inventoryManager;
-    public GameObject information, tapaPocket, tapaNotes, inspectionCamera;
+    public GameObject information, tapaPocket, tapaNotes, tapaCollectables, inspectionCamera;
 
     [SerializeField] private GameObject itemContainer;
     private InventoryItemData clickedItem;
@@ -38,6 +38,7 @@ public class ItemCarousel : MonoBehaviour
         UpdateCarousel();
         tapaPocket.SetActive(false);
         tapaNotes.SetActive(false);
+        tapaCollectables.SetActive(false);
     }
 
     void Update()
@@ -99,6 +100,7 @@ public class ItemCarousel : MonoBehaviour
                 information.SetActive(true);
                 tapaPocket.SetActive(false);
                 tapaNotes.SetActive(false);
+                tapaCollectables.SetActive(false);
             }
         }
         return indexReturn;
@@ -108,9 +110,20 @@ public class ItemCarousel : MonoBehaviour
     {
         if (index < 0) return;
 
-        InventoryItemData itemData = (activePanel == contentPanelPocket)
-            ? inventorySystem.inventoryPocket[index].data
-            : inventorySystem.inventoryNotes[index].data;
+        InventoryItemData itemData;
+        if (activePanel == contentPanelPocket)
+        {
+            itemData = inventorySystem.inventoryPocket[index].data;
+        }
+        else if (activePanel == contentPanelNotes)
+        {
+            itemData = inventorySystem.inventoryNotes[index].data;
+        }
+        else
+        {
+            itemData = inventorySystem.inventoryCollectables[index].data;
+        }
+
         switch (itemData.tipo)
         {
             case Tipo.Saveables:
@@ -121,6 +134,11 @@ public class ItemCarousel : MonoBehaviour
             case Tipo.Notes:
                 itemNameNotes.text = itemData.name;
                 itemDescriptionNotes.text = itemData.itemDescription;
+                itemView.ItemView(itemData);
+                break;
+            case Tipo.Collectables:
+                itemNameCollectables.text = itemData.name;
+                itemDescriptionCollectables.text = itemData.itemDescription;
                 itemView.ItemView(itemData);
                 break;
         }
@@ -167,6 +185,9 @@ public class ItemCarousel : MonoBehaviour
     {
         currentIndex = 0;
         activePanel = contentPanelPocket;
+        tapaPocket.SetActive(true);
+        tapaNotes.SetActive(true);
+        tapaCollectables.SetActive(true);
         UpdateCarousel();
     }
 
@@ -174,6 +195,9 @@ public class ItemCarousel : MonoBehaviour
     {
         currentIndex = 0;
         activePanel = contentPanelNotes;
+        tapaPocket.SetActive(true);
+        tapaNotes.SetActive(true);
+        tapaCollectables.SetActive(true);
         UpdateCarousel();
     }
 
@@ -181,22 +205,24 @@ public class ItemCarousel : MonoBehaviour
     {
         currentIndex = 0;
         activePanel = contentPanelCollectables;
+        tapaPocket.SetActive(true);
+        tapaNotes.SetActive(true);
+        tapaCollectables.SetActive(true);
         UpdateCarousel();
     }
 
     public void ButtonClicked()
     {
         int itemIndex = UpdateCarousel();
-        if (itemIndex >= 0 && itemIndex < inventorySystem.inventoryPocket.Count || itemIndex < inventorySystem.inventoryNotes.Count)
+        if (itemIndex >= 0 && itemIndex < inventorySystem.inventoryPocket.Count || itemIndex < inventorySystem.inventoryNotes.Count || itemIndex < inventorySystem.inventoryCollectables.Count)
         {
-            dropButtonPocket.onClick.RemoveAllListeners();
-            equipButtonPocket.onClick.RemoveAllListeners();
-            inspectButtonPocket.onClick.RemoveAllListeners();
 
             dropButtonPocket.onClick.AddListener(() => HandleButtonClick("ButtonDrop", itemIndex));
             equipButtonPocket.onClick.AddListener(() => HandleButtonClick("ButtonEquip", itemIndex));
             inspectButtonPocket.onClick.AddListener(() => HandleButtonClick("ButtonInspect", itemIndex));
             inspectButtonNotes.onClick.AddListener(() => HandleButtonClick("ButtonInspect", itemIndex));
+            equipButtonCollectables.onClick.AddListener(() => HandleButtonClick("ButtonEquip", itemIndex));
+            inspectButtonCollectables.onClick.AddListener(() => HandleButtonClick("ButtonInspect", itemIndex));
         }
         else
         {
@@ -207,15 +233,16 @@ public class ItemCarousel : MonoBehaviour
     void HandleButtonClick(string buttonName, int itemIndex)
     {
         itemIndex = UpdateCarousel();
-        if (itemIndex >= 0 && itemIndex < inventorySystem.inventoryPocket.Count || itemIndex < inventorySystem.inventoryNotes.Count)
+        if (itemIndex >= 0 && itemIndex < inventorySystem.inventoryPocket.Count || itemIndex < inventorySystem.inventoryNotes.Count || itemIndex < inventorySystem.inventoryCollectables.Count)
         {
 
             if (activePanel == contentPanelPocket)
                 clickedItem = inventorySystem.inventoryPocket[itemIndex].data;
             else if (activePanel == contentPanelNotes)
                 clickedItem = inventorySystem.inventoryNotes[itemIndex].data;
+            else if (activePanel == contentPanelCollectables)
+                clickedItem = inventorySystem.inventoryCollectables[itemIndex].data;
 
-        
             // Lógica específica según el botón
             if (buttonName == "ButtonDrop")
             {
@@ -224,6 +251,8 @@ public class ItemCarousel : MonoBehaviour
                 objecto.GetComponent<Turn>().inInventory = false;
                 information.SetActive(false);
                 tapaPocket.SetActive(true);
+                tapaCollectables.SetActive(true);
+                tapaNotes.SetActive(true);
                 inventoryManager.CloseInventory();
             }
             else if (buttonName == "ButtonEquip")
@@ -284,6 +313,7 @@ public class ItemCarousel : MonoBehaviour
             information.SetActive(false);
             tapaPocket.SetActive(true);
             tapaNotes.SetActive(true);
+            tapaCollectables.SetActive(true);
             inventoryManager.CloseInventory();
 
             return hand;  // 🔥 Devolvemos el objeto instanciado

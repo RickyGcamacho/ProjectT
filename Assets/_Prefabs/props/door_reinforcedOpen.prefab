@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7002549678821368861}
   - component: {fileID: 5567647474706974260}
   - component: {fileID: 4418997555632601574}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: door_reinforced_arc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8433703821429971211}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: door_reinforcedOpen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 2443954629737911998}
   - component: {fileID: 8356869537156140896}
   - component: {fileID: 3511066929721194122}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: door_reinforced
   m_TagString: Untagged
   m_Icon: {fileID: 0}

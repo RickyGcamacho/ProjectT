@@ -6,7 +6,7 @@ using static UnityEditor.Progress;
 public class InventoryUI : MonoBehaviour
 {
     public GameObject itemSlotPrefab;
-    public Transform saveablesPanel, notesPanel, colectablesPanel; // Paneles de las diferentes pestañas
+    public Transform saveablesPanel, notesPanel, collectablesPanel; // Paneles de las diferentes pestañas
 
     private void Start()
     {
@@ -40,7 +40,10 @@ public class InventoryUI : MonoBehaviour
         {
             Destroy(t.gameObject);
         }
-
+        foreach (Transform t in collectablesPanel)
+        {
+            Destroy(t.gameObject);
+        }
         DrawInventory();
     }
 
@@ -56,6 +59,11 @@ public class InventoryUI : MonoBehaviour
         foreach (InventoryItem itemNotes in InventorySystem.Instance.inventoryNotes)
         {
             AddInventorySlot(itemNotes);
+        }
+
+        foreach (InventoryItem itemCollectables in InventorySystem.Instance.inventoryCollectables)
+        {
+            AddInventorySlot(itemCollectables);
         }
     }
 
@@ -78,7 +86,7 @@ public class InventoryUI : MonoBehaviour
         }
         else if (item.data.tipo == Tipo.Collectables)
         {
-            obj = Instantiate(itemSlotPrefab, colectablesPanel, false);
+            obj = Instantiate(itemSlotPrefab, collectablesPanel, false);
             ItemSlot slot3 = obj.GetComponent<ItemSlot>();
             slot3.Set(item);
         }
