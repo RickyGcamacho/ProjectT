@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,61 +17,66 @@ public class ObjectsSwitchable : MonoBehaviour
 
     private void Start()
     {
-        if (message.text.Length != 0)
+        if (message.text != null)
         {
             message.gameObject.SetActive(false);
         }
         ligth = GetComponentInChildren<Light>();
-        onObject = true;
-            if (ligth.GetComponent<Light>().enabled != true)
+            onObject = true;
+            if (ligth.GetComponent<Light>().enabled == true)
             {
 
-                message.text = "Presiona click izquierdo para encender";
+                message.text = "Presiona la tecla O para encender";
             }
             else
             {
 
-                message.text = "Presiona click izquierdo para apagar";
+                message.text = "Presiona la tecla O para apagar";
             }
     }
 
-   
+    private void Update()
+    {
+        OnOff();
+    }
 
-
-    void OnMouseDown()
+    void OnOff()
     {
         if (gameObject.tag == "Switchable" && inRange)
         {
-            if (ligth != null)
+            if (Input.GetKeyDown(KeyCode.O))
             {
-                if (onObject == true)
+                if (ligth != null)
                 {
-                    ligth.GetComponent<Light>().enabled = false;
-                    onObject = false;
-                    message.text = "Presiona click izquierdo para encender";
+                    if (onObject == true)
+                    {
+                        ligth.GetComponent<Light>().enabled = false;
+                        onObject = false;
+                        message.text = "Presiona la tecla O para encender";
+                    }
+                    else
+                    {
+                        ligth.GetComponent<Light>().enabled = true;
+                        onObject = true;
+                        message.text = "Presiona la tecla O  para apagar";
+                    }
                 }
-                else
+                else if (ligth == null)
                 {
-                    ligth.GetComponent<Light>().enabled = true;
-                    onObject = true;
-                    message.text = "Presiona click izquierdo para apagar";
-                }
-            }
-            else if (ligth == null)
-            {
-                if (onObject == true)
-                {
-                    Debug.Log(gameObject.name + " se ha apagado");
-                    onObject = false;
-                    message.text = "Presiona click izquierdo para encender";
-                }
-                else
-                {
-                    Debug.Log(gameObject.name + " se ha encendido");
-                    onObject = true;
-                    message.text = "Presiona click izquierdo para apagar";
-                }
+                    if (onObject == true)
+                    {
+                        Debug.Log(gameObject.name + " se ha apagado");
+                        onObject = false;
+                        message.text = "Presiona la tecla O  para encender";
+                    }
+                    else
+                    {
+                        Debug.Log(gameObject.name + " se ha encendido");
+                        onObject = true;
+                        message.text = "Presiona la tecla O  para apagar";
+                    }
 
+                }
             }
         }
         
@@ -87,6 +91,7 @@ public class ObjectsSwitchable : MonoBehaviour
 
             if (message != null)
             {
+                
                 message.gameObject.SetActive(true);
             }
         }

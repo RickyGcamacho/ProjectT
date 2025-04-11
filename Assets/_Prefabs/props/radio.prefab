@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1686851698761520883
+--- !u!1 &6761342168232382293
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8366668731350388804}
-  - component: {fileID: 2706599385030089152}
-  - component: {fileID: 8758999389456500940}
+  - component: {fileID: 5059595737514307579}
+  - component: {fileID: 4925186697288949261}
+  - component: {fileID: 2626731004073854892}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -18,13 +18,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &8366668731350388804
+--- !u!224 &5059595737514307579
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1686851698761520883}
+  m_GameObject: {fileID: 6761342168232382293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -37,21 +37,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2706599385030089152
+--- !u!222 &4925186697288949261
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1686851698761520883}
+  m_GameObject: {fileID: 6761342168232382293}
   m_CullTransparentMesh: 1
---- !u!114 &8758999389456500940
+--- !u!114 &2626731004073854892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1686851698761520883}
+  m_GameObject: {fileID: 6761342168232382293}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CLICK IZQUIERDO PARA ENCENDER/APAGAR
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8b66c7f36a00b149b6f077b42252a16, type: 2}
   m_sharedMaterial: {fileID: -4917710658720636527, guid: d8b66c7f36a00b149b6f077b42252a16, type: 2}
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0d49f726653d64ebbe7abcaee3ea8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: {fileID: 8758999389456500940}
+  message: {fileID: 2626731004073854892}
 --- !u!65 &7641572143622670973
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -378,7 +378,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1852350449240917106, guid: 6d5afd787908b144b8b1e3d44da22b8a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8366668731350388804}
+      addedObject: {fileID: 5059595737514307579}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d5afd787908b144b8b1e3d44da22b8a, type: 3}
 --- !u!224 &543761791650575770 stripped

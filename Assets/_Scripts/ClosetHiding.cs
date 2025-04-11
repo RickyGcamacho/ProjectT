@@ -36,6 +36,7 @@ public class ClosetHiding : MonoBehaviour
     void EnterCloset()
     {
         player.transform.position = hidePoint.position;
+        player.transform.rotation = hidePoint.rotation;
         IsHiding = true;
 
         // Desactivar movimiento del jugador y cámara
