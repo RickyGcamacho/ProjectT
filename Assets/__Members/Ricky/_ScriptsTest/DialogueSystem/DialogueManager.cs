@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Rendering.PostProcessing;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +9,7 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
+    public event Action OnDialogueEnded;
 
     [SerializeField] private GameObject dialogueUI; // Panel del diálogo
     [SerializeField] private Image characterIcon;
@@ -81,9 +81,10 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue()
     {
         DialogueUI.SetActive(false);
+        OnDialogueEnded?.Invoke(); // Notificar a otros scripts que terminó el diálogo
     }
 
- IEnumerator TypeSentence(DialogueLine dialogueLine)
+    IEnumerator TypeSentence(DialogueLine dialogueLine)
 {
     dialogueArea.text = ""; // Borrar cualquier texto previo
     string sentence = dialogueLine.line;

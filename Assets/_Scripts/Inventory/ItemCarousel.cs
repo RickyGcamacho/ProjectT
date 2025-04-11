@@ -293,15 +293,21 @@ public class ItemCarousel : MonoBehaviour
 
     private GameObject SpawnObject(InventoryItemData gameObject)
 {
-    if (gameObject.worldPrefab != null && itemContainer != null)
-    {
-        foreach (Transform child in itemContainer.transform)
+        if (gameObject.worldPrefab != null && itemContainer != null)
         {
-            Destroy(child.gameObject);
-        }
-
-        GameObject hand = Instantiate(gameObject.worldPrefab, itemContainer.transform.position, Quaternion.Euler(-90, -135, 0));
-        
+            foreach (Transform child in itemContainer.transform)
+            {
+                Destroy(child.gameObject);
+            }
+            GameObject hand;
+            if (gameObject.id == "Key_Duchas" || gameObject.id == "Key_Celdas" || gameObject.id == "Key_Administracion")
+            {
+                hand = Instantiate(gameObject.worldPrefab, itemContainer.transform.position, Quaternion.Euler(-90, 0, 0));
+            }
+            else
+            {
+                hand = Instantiate(gameObject.worldPrefab, itemContainer.transform.position, Quaternion.Euler(-90, -135, 0));
+            }
         if (hand != null)
         {
             hand.transform.SetParent(itemContainer.transform);

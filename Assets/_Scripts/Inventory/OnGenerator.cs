@@ -16,7 +16,7 @@ public class OnGenerator : MonoBehaviour
         {
             StartCoroutine(LightOn());
             Destroy(gameObject);
-
+            
         }
     }
 
@@ -24,7 +24,8 @@ public class OnGenerator : MonoBehaviour
     {
         if (!gameManager.LucesEncendidas)
         {
-            gameManager.TimeLight = 10f;
+            gameManager.TimeLight = 30f;
+
             gameManager.LucesEncendidas = true;
             yield return new WaitForSeconds(gameManager.TimeLight);
 

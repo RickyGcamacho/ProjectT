@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,7 @@ using UnityEngine.UI;
 
 public class ObjectsSwitchable : MonoBehaviour
 {
-    public Text message;
+    public TextMeshProUGUI message;
 
     private Light ligth = null;
     private bool onObject,inRange;
@@ -17,7 +18,7 @@ public class ObjectsSwitchable : MonoBehaviour
 
     private void Start()
     {
-        if (message != null)
+        if (message.text.Length != 0)
         {
             message.gameObject.SetActive(false);
         }
@@ -34,7 +35,9 @@ public class ObjectsSwitchable : MonoBehaviour
                 message.text = "Presiona click izquierdo para apagar";
             }
     }
-    
+
+   
+
 
     void OnMouseDown()
     {

@@ -17,6 +17,7 @@ TagManager:
   - Administracion
   - BedSide
   - Floor
+  - Locker
   layers:
   - Default
   - TransparentFX

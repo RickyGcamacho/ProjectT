@@ -110,11 +110,7 @@ public class SpawnManager : MonoBehaviour
     {
         Debug.Log($"HandleObjectPickedUp called for {pickedObject.name}");
 
-        if (occupiedSpawnPoints.Contains(spawnPoint))
-        {
-            occupiedSpawnPoints.Remove(spawnPoint);
-            Debug.Log($"Spawn point {spawnPoint.name} is now free.");
-        }
+        StartCoroutine(FreeSpawnPointWithDelay(spawnPoint, 1f));
 
         if (activeObjectCounts.ContainsKey(spawnableObject.prefab))
         {
@@ -124,7 +120,33 @@ public class SpawnManager : MonoBehaviour
         Destroy(pickedObject);
         Debug.Log($"{pickedObject.name} destroyed.");
 
-        if (!spawnableObject.spawnOnlyOnce && activeObjectCounts[spawnableObject.prefab] < spawnableObject.maxObjectsOnScreen)
+        if (!spawnableObject.spawnOnlyOnce)
+        {
+            float delay = spawnableObject.respawnDelay;
+            if (delay > 0f)
+            {
+                StartCoroutine(RespawnAfterDelay(spawnableObject, delay));
+            }
+            else if (activeObjectCounts[spawnableObject.prefab] < spawnableObject.maxObjectsOnScreen)
+            {
+                SpawnObject(spawnableObject);
+            }
+        }
+    }
+    private IEnumerator FreeSpawnPointWithDelay(Transform spawnPoint, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (occupiedSpawnPoints.Contains(spawnPoint))
+        {
+            occupiedSpawnPoints.Remove(spawnPoint);
+            Debug.Log($"Spawn point {spawnPoint.name} is now free.");
+        }
+    }
+    private IEnumerator RespawnAfterDelay(SpawnableObject spawnableObject, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (activeObjectCounts[spawnableObject.prefab] < spawnableObject.maxObjectsOnScreen)
         {
             SpawnObject(spawnableObject);
         }

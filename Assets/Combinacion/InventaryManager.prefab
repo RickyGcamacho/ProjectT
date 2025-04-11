@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1123160729344123666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 33160962773660167}
+  - component: {fileID: 8288475927908747440}
+  - component: {fileID: 1893351923740121166}
+  - component: {fileID: 6247521316667556071}
+  m_Layer: 0
+  m_Name: InventaryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &33160962773660167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123160729344123666}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8288475927908747440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123160729344123666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c85dcb2acadfa4b8bfd3f463f24f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemCarousel: {fileID: 6247521316667556071}
+  buttonPocket: {fileID: 0}
+  buttonNotes: {fileID: 0}
+  buttonCollectables: {fileID: 0}
+  inventory: {fileID: 0}
+  pocket: {fileID: 0}
+  collectables: {fileID: 0}
+  notes: {fileID: 0}
+  see: 0
+--- !u!114 &1893351923740121166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123160729344123666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5480a77bbc0bc47b2321316f4d96a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryPocket: []
+  inventoryNotes: []
+  inventoryCollectables: []
+--- !u!114 &6247521316667556071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123160729344123666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a28b349d0759da04aa22310c16f21b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAction: {fileID: 0}
+  objectEquip: {fileID: 0}
+  item3DView: {fileID: 0}
+  contentPanelPocket: {fileID: 0}
+  contentPanelNotes: {fileID: 0}
+  contentPanelCollectables: {fileID: 0}
+  inventorySystem: {fileID: 1893351923740121166}
+  itemView: {fileID: 0}
+  itemNamePocket: {fileID: 0}
+  itemDescriptionPocket: {fileID: 0}
+  itemNameNotes: {fileID: 0}
+  itemDescriptionNotes: {fileID: 0}
+  itemNameCollectables: {fileID: 0}
+  itemDescriptionCollectables: {fileID: 0}
+  inspectButtonPocket: {fileID: 0}
+  equipButtonPocket: {fileID: 0}
+  dropButtonPocket: {fileID: 0}
+  inspectButtonNotes: {fileID: 0}
+  inspectButtonCollectables: {fileID: 0}
+  equipButtonCollectables: {fileID: 0}
+  inventoryManager: {fileID: 8288475927908747440}
+  information: {fileID: 0}
+  tapaPocket: {fileID: 0}
+  tapaNotes: {fileID: 0}
+  tapaCollectables: {fileID: 0}
+  inspectionCamera: {fileID: 0}
+  itemContainer: {fileID: 0}

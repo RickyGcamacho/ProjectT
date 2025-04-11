@@ -14,7 +14,7 @@ public class Item3DView : MonoBehaviour
         {
             DestroyView();
         }
-        if (item.name == "Key_1" || item.name == "Key_2" || item.name == "Key_3")
+        if (item.id == "Key_Duchas" || item.id == "Key_Celdas" || item.id == "Key_Administracion")
         {
             itemContainer.transform.position = new Vector3(1145, 595.5f, 0);
             itemContainer = Instantiate(item.worldPrefab, itemContainer.transform.position, Quaternion.Euler(0, item.worldPrefab.transform.rotation.y, item.worldPrefab.transform.rotation.z));

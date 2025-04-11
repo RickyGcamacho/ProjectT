@@ -31,16 +31,16 @@ public class PlayerActions : MonoBehaviour
     [Header("Parameters")]
     [SerializeField] private float height, crouchedSpeed, crouchedHeightSizeOriginal, crouchedHeightCenterOriginal, crouchedHeightSizeNew, crouchedHeightCenterNew;
 
-    
+
     public bool isNotCrouching;
 
     private Camera playerCamera;
-    private DialogueManager dialogueManager;
     private GameManager gameManager;
     private ItemCarousel carrousel;
+    private ClosetHiding closetHiding;
     private BoxCollider boxColiderPlayer;
     private Rigidbody _rb;
-    private ItemCarousel carousel; 
+    private ItemCarousel carousel;
     private Vector3 moveDirection;
     private Vector2 currentInput;
     private float rotationX, x, z, crouchingHeight, standingHeight;
@@ -55,7 +55,7 @@ public class PlayerActions : MonoBehaviour
         boxColiderPlayer = GetComponent<BoxCollider>();
         _rb = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        //dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
+        closetHiding = GameObject.FindGameObjectWithTag("Locker").GetComponent<ClosetHiding>();
         playerCamera = GetComponentInChildren<Camera>();
         carousel = GameObject.FindObjectOfType<ItemCarousel>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -76,7 +76,7 @@ public class PlayerActions : MonoBehaviour
         Walking();
         Running();
         Crouching();
-      
+
         HandleMouseLook();
         HandleZoom();
 
@@ -87,12 +87,12 @@ public class PlayerActions : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftControl) && !IsTableUnder)
         {
-                CrouchingMovement();
+            CrouchingMovement();
             if (isNotCrouching == false)
             {
                 ///TODO: mover la posicion de la camara
                 boxColiderPlayer.size = new Vector3(boxColiderPlayer.size.x, crouchedHeightSizeNew, boxColiderPlayer.size.z);
-               // boxColiderPlayer.center = new Vector3(boxColiderPlayer.center.x, crouchedHeightCenterNew, boxColiderPlayer.center.z);
+                // boxColiderPlayer.center = new Vector3(boxColiderPlayer.center.x, crouchedHeightCenterNew, boxColiderPlayer.center.z);
                 playerCamera.transform.position = new Vector3(playerCamera.transform.position.x, crouchingHeight, playerCamera.transform.position.z);
                 Movement(crouchedSpeed);
             }
@@ -113,9 +113,9 @@ public class PlayerActions : MonoBehaviour
         if (isNotCrouching == true)
         {
             isNotCrouching = false;
- 
+
         }
-        else 
+        else
         {
             isNotCrouching = true;
         }
@@ -153,26 +153,25 @@ public class PlayerActions : MonoBehaviour
     //Camara
     private void HandleMouseLook()
     {
-        /* if (dialogueManager.DialogueUI.activeSelf == false)
-         {
-             if (carousel.Inspection == false)
-             {*/
-        rotationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
+        if (gameManager.GetComponent<DialogueManager>().DialogueUI.activeSelf == false && carousel.Inspection == false)
+        {
+
+            rotationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
             rotationX = Mathf.Clamp(rotationX, -uperLookLimit, lowerLookLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * LookSpeedX, 0);
-            //}
-        //}
-        
+        }
     }
+
+
 
 
 
     //Zoom
     private void HandleZoom()
     {
-        //if (carrousel.Inspection != true)
-        //{
+        if (carrousel.Inspection != true)
+        {
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 if (zoomRoutine != null)
@@ -192,31 +191,31 @@ public class PlayerActions : MonoBehaviour
                 zoomRoutine = StartCoroutine(ToggleZoom(false));
             }
         }
-            
-    //}
+
+    }
 
     public void Movement(float speed)
     {
         z = Input.GetAxis("Vertical");
         x = Input.GetAxis("Horizontal");
 
-        /*  if (dialogueManager.DialogueUI.activeSelf == false)
-         {
-               if (carousel.Inspection == false)
-            {*/
-        Vector3 dir = (transform.forward * z) + (transform.right * x);
+        if (gameManager.GetComponent<DialogueManager>().DialogueUI.activeSelf == false && carousel.Inspection == false)
+        {
+
+
+            Vector3 dir = (transform.forward * z) + (transform.right * x);
             Vector3 dirSpeed = dir * (speed);
             _rb.velocity = dirSpeed;
             dirSpeed.y = _rb.velocity.y;
             dir.y = 0;
-        /* }
-       else
-       {
-           speed = 0;
-       }
-    }*/
-
+        }
+        else
+        {
+            speed = 0;
+        }
     }
+
+
     private IEnumerator ToggleZoom(bool isEnter)
     {
         float targetFOV = isEnter ? zoomFOV : defaultFOV;
@@ -234,6 +233,6 @@ public class PlayerActions : MonoBehaviour
         zoomRoutine = null;
     }
 
-   
+
 
 }

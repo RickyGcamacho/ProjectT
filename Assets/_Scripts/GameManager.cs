@@ -1,45 +1,49 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+
     public GameObject luces;
 
     private float timeLight;
     private bool lucesEncendidas = true;
+    private bool yaSeCortoLaLuz = false;
+    private bool yaVolvioLaLuz = false;
 
     public bool LucesEncendidas { get => lucesEncendidas; set => lucesEncendidas = value; }
     public float TimeLight { get => timeLight; set => timeLight = value; }
+    public bool YaVolvioLaLuz => yaVolvioLaLuz;
 
     private void Awake()
     {
-        TimeLight = 10f;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        if (LucesEncendidas == true)
-        {
-            luces.SetActive(true);
-        }
-        else
-        {
-            luces.SetActive(false);
-        }
-        Debug.Log(LucesEncendidas);
-        StartCoroutine(LightOff());
-        Debug.Log(LucesEncendidas);
+        if (Instance == null) Instance = this;
+
+        TimeLight = 30f;
     }
 
-    IEnumerator LightOff()
+    private void Start()
     {
-        if (LucesEncendidas)
-        {
-            yield return new WaitForSeconds(TimeLight);
-            LucesEncendidas = false;
-            
-        }
+        StartCoroutine(LightCycle());
     }
+
+    void Update()
+    {
+        luces.SetActive(LucesEncendidas);
+
+    }
+
+    IEnumerator LightCycle()
+    {
+        // Espera y corta la luz
+        yield return new WaitForSeconds(TimeLight);
+        LucesEncendidas = false;
+        yaSeCortoLaLuz = true;
+        Debug.Log("💡 Se cortó la luz");
+    }
+
+
 
 }
