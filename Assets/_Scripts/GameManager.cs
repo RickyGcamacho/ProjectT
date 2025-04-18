@@ -6,9 +6,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public GameObject luces;
+    public List<GameObject> luces = new List<GameObject>();
+
 
     private float timeLight;
+    private string objectoNombre = "Light";
     private bool lucesEncendidas = true;
     private bool yaSeCortoLaLuz = false;
     private bool yaVolvioLaLuz = false;
@@ -31,7 +33,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        luces.SetActive(LucesEncendidas);
+        foreach (GameObject luz in luces)
+        {
+            luz.SetActive(lucesEncendidas);
+        }
 
     }
 
@@ -43,7 +48,4 @@ public class GameManager : MonoBehaviour
         yaSeCortoLaLuz = true;
         Debug.Log("💡 Se cortó la luz");
     }
-
-
-
 }

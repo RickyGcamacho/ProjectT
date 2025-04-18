@@ -6,11 +6,11 @@ using UnityEngine.UI;
 /// TODO
 /// Hacer script modular para los otros objetos TOGGLES
 
-public class ObjectsSwitchable : MonoBehaviour
+public class ObjectsSwitchableSound : MonoBehaviour
 {
     public TextMeshProUGUI message;
 
-    private Light ligth = null;
+    private AudioSource audio = null;
     private bool onObject,inRange;
 
 
@@ -21,17 +21,17 @@ public class ObjectsSwitchable : MonoBehaviour
         {
             message.gameObject.SetActive(false);
         }
-        ligth = GetComponentInChildren<Light>();
+             audio = GetComponentInChildren<AudioSource>();
             onObject = true;
-            if (ligth.GetComponent<Light>().enabled == true)
+            if (audio.GetComponentInChildren<AudioSource>().enabled != true)
             {
 
-                message.text = "Presiona la tecla O para encender";
+                message.text = "Haz click para encender";
             }
             else
             {
 
-                message.text = "Presiona la tecla O para apagar";
+                message.text = "Haz click para apagar";
             }
     }
 
@@ -44,43 +44,25 @@ public class ObjectsSwitchable : MonoBehaviour
     {
         if (gameObject.tag == "Switchable" && inRange)
         {
-            if (Input.GetKeyDown(KeyCode.O))
+            if (Input.GetMouseButtonDown(0))
             {
-                if (ligth != null)
+                if (audio != null)
                 {
                     if (onObject == true)
                     {
-                        ligth.GetComponent<Light>().enabled = false;
+                        audio.GetComponentInChildren<AudioSource>().enabled = false;
                         onObject = false;
-                        message.text = "Presiona la tecla O para encender";
+                        message.text = "Haz click para encender";
                     }
                     else
                     {
-                        ligth.GetComponent<Light>().enabled = true;
+                        audio.GetComponentInChildren<AudioSource>().enabled = true;
                         onObject = true;
-                        message.text = "Presiona la tecla O  para apagar";
+                        message.text = "Haz click para apagar";
                     }
-                }
-                else if (ligth == null)
-                {
-                    if (onObject == true)
-                    {
-                        Debug.Log(gameObject.name + " se ha apagado");
-                        onObject = false;
-                        message.text = "Presiona la tecla O  para encender";
-                    }
-                    else
-                    {
-                        Debug.Log(gameObject.name + " se ha encendido");
-                        onObject = true;
-                        message.text = "Presiona la tecla O  para apagar";
-                    }
-
                 }
             }
         }
-        
-        
     }
 
     private void OnTriggerEnter(Collider other)

@@ -15,7 +15,7 @@ public class ObjectSelected : MonoBehaviour
     public GameObject pointerStandard,pointerHand;
     
     private ItemObject item;
-    private ObjectsSwitchable objSwitch;
+    private ObjectsSwitchableSound objSwitch;
 
     [SerializeField]private GameObject inventoryPocket,inventoryNotes, inventoryCollectables;
     [SerializeField]private EventSystem _eventSystem;
