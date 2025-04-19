@@ -6,7 +6,7 @@ using UnityEngine;
 public class ObjectsSwitchableLight : MonoBehaviour
 {
     public TextMeshProUGUI message;
-
+    public GameObject luz;
     private Light light = null;
     private bool onObject, inRange;
 
@@ -48,12 +48,14 @@ public class ObjectsSwitchableLight : MonoBehaviour
                     if (onObject == true)
                     {
                         light.GetComponentInChildren<Light>().enabled = false;
+                        luz.SetActive(false);
                         onObject = false;
                         message.text = "Haz click para encender";
                     }
                     else
                     {
                         light.GetComponentInChildren<Light>().enabled = true;
+                        luz.SetActive(true);
                         onObject = true;
                         message.text = "Haz click para apagar";
                     }
