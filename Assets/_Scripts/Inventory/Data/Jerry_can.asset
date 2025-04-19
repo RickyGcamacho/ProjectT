@@ -15,7 +15,6 @@ MonoBehaviour:
   id: jerry_can
   itemName: Jerry_can
   itemDescription: Bidon de Nafta
+  tipo: 0
   icon: {fileID: 21300000, guid: a53a1b866327c51499bc8ec01bde50e8, type: 3}
-  isEquippable: 0
   worldPrefab: {fileID: 8621755852863756902, guid: f9ea8eb329d4f214baf947056c4da947, type: 3}
-  equippedPrefab: {fileID: 8621755852863756902, guid: f9ea8eb329d4f214baf947056c4da947, type: 3}
